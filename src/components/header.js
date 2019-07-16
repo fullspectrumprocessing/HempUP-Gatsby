@@ -5,10 +5,10 @@ import Image from '../components/image'
 import '../styles/header.scss'
 
 const Header = ({ siteTitle }) => (
-  <header>
+  <header className='header'>
     <Image/>
     <div>
-      <h1 style={{ margin: 0 }}>
+      <h1>
         <Link
           to="/"
           style={{
@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => (
             textAlign: `center`,
           }}
         >
-          {/* {siteTitle} */}
+          {/* {siteTitle} */}TEST
         </Link>
       </h1>
     </div>
