@@ -7,13 +7,7 @@ import '../styles/header.scss'
 const Header = ({ siteTitle }) => (
   <header>
     <Image/>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `10px`,
-      }}
-    >
+    <div>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
