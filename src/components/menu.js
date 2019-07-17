@@ -13,20 +13,40 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+// export const Image = () => {
+//   const data = useStaticQuery(graphql`
+//     query {
+//       placeholderImage: file(relativePath: { eq: "hempUpLogo.png" }) {
+//         childImageSharp {
+//           fixed(width: 100, height: 100) {
+//             ...GatsbyImageSharpFixed
+//           }
+//         }
+//       }
+//     }
+//   `)
+
+//   return <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+// }
+
+export const MenuImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "hempUpLogo.png" }) {
+      shoppingBag: file(relativePath: { eq: "menu.png"}){
         childImageSharp {
-          fixed(width: 100, height: 100) {
+          fixed(width: 100, height: 100){
             ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
+  return (
+  
 
-  return <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+    <Img fixed={data.shoppingBag.childImageSharp.fixed}/>
+ 
+  )
 }
 
-export default Image
+

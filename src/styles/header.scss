@@ -1,49 +1,34 @@
 // this comment will not be include in the compiled css
-/* However, this comoment will be compiled into CSS, UNLESS, it in 'Compressed Mode'. */
+/* However, this comment will be compiled into CSS, UNLESS, it in 'Compressed Mode'. */
 /*! This  comment will be included even in compressed mode */
 
-
-
-@import url(https://use.typekit.net/fdo4rws.css);
-
-///////////////////////////////
-//Poynter Old Style Display 
-$POSDI: poynter-oldstyle-display, serif;
-$fw4: 400;
-$fsi: italic; /* font-style italic*/
-$fsn: normal; /* font-style normal*/
-//PoynterOSDisp Italic
-// font-family: poynter-oldstyle-display, serif;
-// font-weight: 400;
-// font-style: italic;
-////////////////////////////////
-//PoynterOSDisp Roman
-// font-family: poynter-oldstyle-display, serif;
-// font-weight: 400;
-// font-style: normal;
-
-$white: #FFFFFF; 
-$grdntPink: rgba(255, 238, 238, 0.53);
-$grdntGreen: rgba(221, 239, 187, 0.64);
-$textBrown: #98795B;
-$textgreen: #4C7448;
-$bttnGrdntLghtGreen:rgba(54, 120, 47, 0.63);
-$bttnGrdntDrkGrn: rgba(54, 120, 47, 0.85);
+@import 'variables.scss';
 
 
 .header {
-  background: $white;
-  margin-bottom: 1.45rem;
-}
-h1{
-  margin: 0;
-  font-family: $POSDI;
-  font-weight: $fw4;
-  font-style: $fsi;
+    background: $white;
+    margin-bottom: 1.45rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    height: 4.75em;
+    margin-top: 30px;
+    padding: 20px;
 }
 
-div {
-  margin: 0;
-  max-width: 960;
-  padding: 0px;
+h1 {
+    margin: 0;
+    font-family: $POSDI;
+    font-weight: $fw_4;
+    font-style: $fs_i;
 }
+
+div#logo {
+    margin: 0;
+    
+    padding: 0px;
+}
+div#shoppingbag {
+    align-self: flex-end;
+}
+

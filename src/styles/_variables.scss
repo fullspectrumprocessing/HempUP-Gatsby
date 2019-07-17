@@ -1,0 +1,63 @@
+// this comment will not be include in the compiled css
+/* However, this comment will be compiled into CSS, UNLESS, it in 'Compressed Mode'. */
+/*! This  comment will be included even in compressed mode */
+
+// !Fonts //
+// ?Poynter Old Style Display 
+@import url(https://use.typekit.net/fdo4rws.css);
+$POSDI: poynter-oldstyle-display, serif;
+
+// ?Lato
+@import url(https://use.typekit.net/fdo4rws.css);
+$LATO: lato, sans-serif;
+
+// ?Objektiv Mk1 Regular
+@import url(https://use.typekit.net/fdo4rws.css);
+$Objktv: objektiv-mk1, sans-serif;
+
+
+
+// TODO: Font Descriptions // 
+////////////////////////////////
+//Objektiv Mk1 Regular
+// font-family: objektiv-mk1, sans-serif;
+// font-weight: 400;
+// font-style: normal;
+////////////////////////////////
+//Lato
+// font-family: lato,sans-serif;
+// font-weight: 400;
+// font-style: normal;
+////////////////////////////////
+//PoynterOSDisp Italic
+// font-family: poynter-oldstyle-display, serif;
+// font-weight: 400;
+// font-style: italic;
+////////////////////////////////
+//PoynterOSDisp Roman
+// font-family: poynter-oldstyle-display, serif;
+// font-weight: 400;
+// font-style: normal;
+
+// !FONT STYLES
+/* font-style italic*/
+$fs_i: italic;
+/* font-style normal*/
+$fs_n: normal;
+
+// !FONT WEIGHT
+/*font-weight 400 */
+$fw_4: 400;
+
+
+// !COLORS
+$white: #FFFFFF;
+$grdntPink: rgba(255, 238, 238, 0.53);
+$grdntGreen: rgba(221, 239, 187, 0.64);
+$txtBrwn: #98795B;
+$txtGrn: #4C7448;
+$btnGrdntLghtGreen:rgba(54, 120, 47, 0.63);
+$ttnGrdntDrkGrn: rgba(54, 120, 47, 0.85);
+$txtLghtGrn: rgba(236, 255, 214, 1);
+
+
