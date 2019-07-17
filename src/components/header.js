@@ -12,7 +12,7 @@ import {
 } from './menu'
 import '../styles/header.scss'
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
     <header className='header'>
         <div id='shoppingbag'>
             <BagImage />

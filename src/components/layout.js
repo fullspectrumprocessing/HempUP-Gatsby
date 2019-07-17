@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+     
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -49,6 +50,7 @@ const Layout = ({ children }) => {
           <Link to="/landing/">Landing</Link>
         </footer>
       </div>
+      
     </>
      
     

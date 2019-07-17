@@ -1,32 +1,104 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
+// Use the following to support legacy browsers like IE11:
+// import BackgroundImage from 'gatsby-background-image-es5'
+import { generateMedia } from 'styled-media-query'
 
+const media = generateMedia() //for media queries see styled BGImage component at bottom
+/**
+ * In this functional component a <BackgroundImage />  is compared to an <Img />.
+ * @param className   string    className(s) from styled-components.
+ * @param children    nodes     Child-components from index.js / page-2.js.
+ * @return {*}
+ * @constructor
+ */
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
  * `useStaticQuery`, which allows us to load the image from directly within this
  * component, rather than having to pass the image data down from pages.
  *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const BgImage = () => {
+const BgImage = ({className, children}) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "landing_bg.png" }) {
+      placeholderImage: file(relativePath: { eq: "landing_bg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1620) {
+          fluid(quality: 90, maxWidth: 4160) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
+  render =()=> {
+    const imageData = data.placeholderImage.childImageSharp.fluid
+    return (
+      <StyledWrap>
+        <BackgroundImage
+        Tag='section'
+        className={className}
+        fluid={imageData}
+        backgroundColor={'#040e18'}
+        title='HempUpBG'
+        id='BG'
+        role='img'
+        fadeIn={'soft'}
+        aria-label={'hempupbg'}
+        // You are able to set a classId and style by wrapper (see below or
+              // https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles):
+              // classId=" "
+              // style={{
+              //   // Defaults are overwrite-able by setting one of the following:
+              //   // backgroundSize: '',
+              //   // backgroundPosition: '',
+              //   // backgroundRepeat: '',
+              // }}
+        >
+          {children}
+        </BackgroundImage>
+      </StyledWrap>
+    )
+  }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+ 
 }
 
-export default BgImage
+
+
+const StyledWrap  =styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+`
+
+const StyledBackgroundImage = styled(BgImage)`
+  width: 100vw;
+  // !These three crucial styles (if existing) are directly parsed and added to
+  // !the pseudo-elements without further ado (except when overwritten).
+  //background-repeat: repeat-y;
+  //background-position: left center;
+  //background-size: cover;
+
+  // !With media-queries you have to overwrite the default options (see style={{}} above).
+  // ${media.lessThan('large')`
+  //   background-size: cover;
+  //   &:after, &:before {
+  //     background-size: contain;
+  //   }
+  // `}
+  
+  // !For pseudo-elements you have to overwrite the default options (see style={{}} above).
+  // !See: https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles 
+  //&:after, &:before {
+  //   background-clip: content-box;
+  //   background-size: contain;
+  //}
+`
+
+export default StyledBackgroundImage
