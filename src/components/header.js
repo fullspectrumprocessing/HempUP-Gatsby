@@ -2,33 +2,40 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import {
-  LogoImage,
+    LogoImage,
 } from './logoimage'
 import {
-  BagImage
-} from '/bagImage'
+    BagImage
+} from './bagImage'
 import {
-  MenuImage 
+    MenuImage
 } from './menu'
 import '../styles/header.scss'
 
 const Header = ({ siteTitle }) => (
-  <header className='header'>
-    
-    <BagImage/> 
-    
-    <LogoImage />
-    <MenuImage/>
+    <header className='header'>
+        <div id='shoppingbag'>
+            <BagImage />
+        </div>
 
-  </header>
+        <div id='logo'>
+            <LogoImage />
+        </div>
+
+        <div id='menu'>
+            <MenuImage />
+        </div>
+
+
+    </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+    siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+    siteTitle: ``,
 }
 
 export default Header

@@ -10,10 +10,10 @@
     margin-bottom: 1.45rem;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
-    height: 4.75em;
-    margin-top: 30px;
-    padding: 20px;
+    justify-content: space-between;
+    align-content: center;
+    height: 4.30em;
+    
 }
 
 h1 {
@@ -24,11 +24,31 @@ h1 {
 }
 
 div#logo {
-    margin: 0;
     
-    padding: 0px;
+    margin-bottom: 10px;
 }
 div#shoppingbag {
-    align-self: flex-end;
+    flex-direction: column;
+    align-self: center;
+    padding: 15px;
 }
+div#menu {
+    align-self: center;
+    padding: 15px;
+}
+button#explore {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 17px;
+    background: linear-gradient( rgba(54, 120, 47, 0.85), rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85) );
+    color: $txtLghtGrn;
+    font-family: $Objktv;
+    font-size: 18px;
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+
 

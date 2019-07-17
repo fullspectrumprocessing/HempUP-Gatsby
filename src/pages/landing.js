@@ -8,7 +8,14 @@ import Header from '../components/header';
 const Landing = () => (
     <Layout>
         <SEO title='Landing Page'/>
-        <h1>Landing Page</h1>
+        <h2> we are</h2>
+        <h1>CBD</h1>
+        <h2>wellness</h2>
+        <span>
+            <button id='explore'>
+                explore our line >
+            </button>
+        </span>
     </Layout>
 )
 
