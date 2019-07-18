@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
@@ -23,8 +23,8 @@ const media = generateMedia() //for media queries see styled BGImage component a
  *
  */
 
-const BgImage = ({className, children}) => {
-  const data = useStaticQuery(graphql`
+const BgImage = ({className, children}) => (
+  <StaticQuery query={graphql`
     query {
       placeholderImage: file(relativePath: { eq: "landing_bg.jpg" }) {
         childImageSharp {
@@ -34,8 +34,8 @@ const BgImage = ({className, children}) => {
         }
       }
     }
-  `)
-  render =()=> {
+  `}
+  render ={data => {
     const imageData = data.placeholderImage.childImageSharp.fluid
     return (
       <StyledWrap>
@@ -63,10 +63,10 @@ const BgImage = ({className, children}) => {
         </BackgroundImage>
       </StyledWrap>
     )
-  }
+  }}
 
- 
-}
+ />
+)
 
 
 
@@ -77,7 +77,7 @@ const StyledWrap  =styled.div`
   overflow: hidden;
 `
 
-const StyledBackgroundImage = styled(BgImage)`
+const StyledBGImage = styled(BgImage)`
   width: 100vw;
   // !These three crucial styles (if existing) are directly parsed and added to
   // !the pseudo-elements without further ado (except when overwritten).
@@ -101,4 +101,4 @@ const StyledBackgroundImage = styled(BgImage)`
   //}
 `
 
-export default StyledBackgroundImage
+export default StyledBGImage
