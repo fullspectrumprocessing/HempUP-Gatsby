@@ -30,12 +30,12 @@ const StyledFooter = styled.footer`
     position: relative;
     bottom: 0;
     left: 0;
-    background: #00446f;
+    background: linear-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85) );
     z-index: 1;
     width:100vw;
     padding: 1rem;
     text-align: center;
-    color: white;
+    
     
 `
 const StyledLink = styled(Link)`

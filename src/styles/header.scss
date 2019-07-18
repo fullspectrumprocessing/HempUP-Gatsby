@@ -10,18 +10,12 @@
     margin-bottom: 1.45rem;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: space-around;
     height: 4.30em;
     
 }
 
-h1 {
-    margin: 0;
-    font-family: $POSDI;
-    font-weight: $fw_4;
-    font-style: $fs_i;
-}
+
 
 div#logo {
     
@@ -36,18 +30,7 @@ div#menu {
     align-self: center;
     padding: 15px;
 }
-button#explore {
-    width: 200px;
-    height: 50px;
-    border: none;
-    border-radius: 17px;
-    background: linear-gradient( rgba(54, 120, 47, 0.85), rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85) );
-    color: $txtLghtGrn;
-    font-family: $Objktv;
-    font-size: 18px;
-    font-weight: 200;
-    font-style: normal;
-}
+
 
 
 

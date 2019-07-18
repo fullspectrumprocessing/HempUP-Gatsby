@@ -13,7 +13,13 @@ import Header from "./header"
 import { Link } from 'gatsby'
 import '../styles/layout.scss'
 import Footer from '../components/footer'
+import styled from 'styled-components'
 
+const Overlay = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient( rgba(250, 230, 230, 0.43), rgba(220, 230, 180, 0.54));
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,20 +35,17 @@ const Layout = ({ children }) => {
   return (
     <>
 
-      <Header siteTitle={data.site.siteMetadata.title} />
       <StyledBGImage>
+       
+      <Overlay>
 
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+      <Header siteTitle={data.site.siteMetadata.title} />
+
+        <div>
           <main>{children}</main>
-
         </div>
+      </Overlay>
+        
       </StyledBGImage>
       <Footer />
     </>

@@ -34,7 +34,7 @@ export const MenuImage = () => {
     query {
       shoppingBag: file(relativePath: { eq: "menu.png"}){
         childImageSharp {
-          fixed(width: 50, height: 50){
+          fixed(width: 40, height: 40){
             ...GatsbyImageSharpFixed
           }
         }
