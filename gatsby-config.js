@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `hemp-up-cbd`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,

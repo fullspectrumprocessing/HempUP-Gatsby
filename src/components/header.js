@@ -12,10 +12,13 @@ import {
 } from './menu'
 import '../styles/header.scss'
 
-const Header = () => (
+const Header = (props) => (
     <header className='header'>
         <div id='shoppingbag'>
+            
             <BagImage />
+
+            
         </div>
 
         <div id='logo'>
@@ -23,7 +26,10 @@ const Header = () => (
         </div>
 
         <div id='menu'>
+            <a href='#' onClick={props.click}>
+
             <MenuImage />
+            </a>
         </div>
 
 
