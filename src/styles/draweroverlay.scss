@@ -4,7 +4,13 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.3);
+    background: linear-gradient(rgba(216, 190, 190, 0.4),rgba(185, 202, 152, 0.5) );
     z-index: 100;
+}
+
+@media (min-width: 769px) {
+    .backdrop {
+        display: none;
+    }
 }
 

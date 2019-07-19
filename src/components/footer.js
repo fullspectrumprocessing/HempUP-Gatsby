@@ -32,7 +32,7 @@ const StyledFooter = styled.footer`
     left: 0;
     background: linear-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85) );
     z-index: 1;
-    width:100vw;
+    // width:100vw;
     padding: 1rem;
     text-align: center;
     

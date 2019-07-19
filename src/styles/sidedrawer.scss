@@ -1,6 +1,9 @@
+@import 'variables.scss';
+
 .side-drawer {
+  
   height: 100%;
-  background: rgb(201, 240, 176);
+  background: linear-gradient(rgba(255, 238, 238, 0.623),rgba(221, 239, 187, 0.699) );
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -26,17 +29,21 @@
 
 .side-drawer li {
   margin: 0.5rem 0;
+   list-style: none;
+   padding-left: 20px;
 }
 
 .side-drawer a {
-  color: #521751;
+  color: rgba(152, 121, 91, 1);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 32px;
+  font-family: $Objktv;
 }
 
 .side-drawer a:hover,
 .side-drawer a:active {
-  color: #fa923f;
+  // color: #fa923f;
+  color: rgba(76, 116, 72, 1);
 }
 
 @media (min-width: 769px) {
