@@ -22,9 +22,7 @@ const SideDrawer = props => {
     return (
         <nav className={drawerClasses}>
             <li>
-                <a href='#' 
-                // onClick={dropDown}
-                >
+                <a href='#'>
                     store
                 </a>
 
@@ -38,7 +36,6 @@ const SideDrawer = props => {
                 <a href='#'>
                     news
                 </a>
-
             </li>
             <li>
                 <a href='#'>
