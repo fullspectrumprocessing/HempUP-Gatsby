@@ -2,16 +2,17 @@ body {
     // background-image: url(../images/landing_bg.jpg);
     // background-repeat: no-repeat;
     // background-size: 100%, 100%;
-    background: cornsilk;
+    // background: cornsilk;
     width: 100vw;
     margin: 0;
 }
-main {
+main#kids {
     margin: 0 50px 0 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
    margin-top: 2rem;
+   
 }
 
 

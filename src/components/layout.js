@@ -45,18 +45,19 @@ class Layout extends React.Component {
     }
     return (
       <>
+        <Header click={this.handleDrawer} />
         <StyledBGImage>
-          <Overlay>
-            <Header click={this.handleDrawer} />
+          {/* <Overlay> */}
             <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay} />
             {overlay}
-            <div>
-              <main>{children}</main>
-            </div>
-          </Overlay>
+          {/* </Overlay> */}
 
+              <main id='kids'>{children}
+              </main>
         </StyledBGImage>
+            
         <Footer />
+            
       </>
     )
   }

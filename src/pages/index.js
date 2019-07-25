@@ -14,6 +14,8 @@ const Landing = () => (
     <button id='explore'>
       explore our line >
             </button>
+
+    
   </Layout>
 )
 

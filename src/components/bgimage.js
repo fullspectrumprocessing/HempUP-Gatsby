@@ -50,22 +50,22 @@ const BgImage = ({className, children}) => (
         // You are able to set a classId and style by wrapper (see below or
               // https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles):
               // classId=" "
-              // style={{
-              //   // Defaults are overwrite-able by setting one of the following:
-              //   // backgroundSize: '',
-              //   // backgroundPosition: '',
-              //   // backgroundRepeat: '',
-              // }}
+              style={{
+                // Defaults are overwrite-able by setting one of the following:
+                // backgroundSize: 'contain',
+                // backgroundPosition: 'center',
+                // backgroundRepeat: 'norepeat',
+              }}
         >
-          {children}
+        {children}
         </BackgroundImage>
       </StyledWrap>
     )
   }}
- />
+  />
 )
 
-const StyledWrap  =styled.div`
+const StyledWrap = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
