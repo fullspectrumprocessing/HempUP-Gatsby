@@ -10,11 +10,11 @@ import { Link } from 'gatsby'
           {` `}<br></br>
         <a href="https://www.gatsbyjs.org" style={{color: 'red'}}>Gatsby</a>
         {` `}<br />
-        <StyledLink to='/'>Index</StyledLink>
+        <StyledLink to='/'>Home</StyledLink>
         <br />
         <StyledLink to="/page-2/">Go to page 2</StyledLink>
         {` `}<br />
-        <StyledLink to="/landing/">Landing</StyledLink>
+        {/* <StyledLink to="/landing/">Landing</StyledLink> */}
     </StyledFooter>
 )
 
