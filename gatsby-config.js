@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `Hemp Up Test`,
@@ -26,6 +30,17 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/hempUpLogo.png`, // This path is relative to the root of the site.
+      },
+    },
+
+    {
+      resolve: 'gatsby-source-shopify2',
+      options: {
+        shopName: process.env.GATSBY_SHOP_NAME,
+        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+        // shopName: 'hempuptest',
+        // accessToken:'1087437fc7ba5e6705705deb2121c02e',
+        verbose: true,
       },
     },
     // !this (optional) plugin enables Progressive Web App + Offline functionality

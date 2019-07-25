@@ -1,19 +1,25 @@
-import React from "react"
-import { Link } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react'
+import { Link } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Header from '../components/header';
+import '../styles/landing.scss'
 
-import SEO from "../components/seo"
+const Landing = () => (
+    <Layout>
+        <SEO title='Landing Page'/>
+        <div id='landingText'>
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Index</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    
-    
+        <h3> we are</h3>
+        <h1>CBD</h1>
+        <h2>wellness</h2>
 
-  </Layout>
+        </div>
+            <button id='explore'>
+              <Link to="/store"> {"explore our line >"} </Link>
+
+            </button>
+    </Layout>
 )
 
-export default IndexPage
+export default Landing

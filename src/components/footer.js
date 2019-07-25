@@ -11,8 +11,7 @@ import { Link } from 'gatsby'
         <a href="https://www.gatsbyjs.org" style={{color: 'red'}}>Gatsby</a>
         {` `}<br />
         <StyledLink to='/'>Index</StyledLink>
-        <br />
-        <StyledLink to="/page-2/">Go to page 2</StyledLink>
+      
         {` `}<br />
         <StyledLink to="/landing/">Landing</StyledLink>
     </StyledFooter>
@@ -35,8 +34,8 @@ const StyledFooter = styled.footer`
     // width:100vw;
     padding: 1rem;
     text-align: center;
-    
-    
+
+
 `
 const StyledLink = styled(Link)`
     color: white;
