@@ -42,10 +42,10 @@ export const BagImage = () => {
     }
   `)
   return (
-  
 
-    <Img fixed={data.shoppingBag.childImageSharp.fixed}/>
- 
+
+    <Img fixed={data.shoppingBag.childImageSharp.fixed} />
+
   )
 }
 

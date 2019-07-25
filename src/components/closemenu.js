@@ -1,10 +1,25 @@
-import React from ' react'
-import { useStaticQuery, graphql} from 'gatsby'
-import img from 'gatsby-image'
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-const CloseMenu = () => {
-
+const CloseMenuIcon = () => {
+  const data = useStaticQuery(graphql`
+    query {
+        closeMenu : file(relativePath: {
+            eq: "closeMenu.png"
+        }){
+            childImageSharp {
+                fixed(width: 50, height: 50){
+                    ...GatsbyImageSharpFixed
+                }
+            }
+        }
+    }
+  `)
+  return (
+    <Img fixed={data.closeMenu.childImageSharp.fixed} />
+  )
 }
 
 
-export default CloseMenu
+export default CloseMenuIcon

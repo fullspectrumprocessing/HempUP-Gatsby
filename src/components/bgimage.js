@@ -1,6 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 // Use the following to support legacy browsers like IE11:
@@ -22,7 +21,6 @@ const media = generateMedia() //for media queries see styled BGImage component a
  * component, rather than having to pass the image data down from pages.
  *
  */
-
 const BgImage = ({className, children}) => (
   <StaticQuery query={graphql`
     query {
@@ -64,11 +62,8 @@ const BgImage = ({className, children}) => (
       </StyledWrap>
     )
   }}
-
  />
 )
-
-
 
 const StyledWrap  =styled.div`
   width: 100%;
@@ -76,7 +71,6 @@ const StyledWrap  =styled.div`
   display: flex;
   overflow: hidden;
 `
-
 const StyledBGImage = styled(BgImage)`
   width: 100vw;
   // !These three crucial styles (if existing) are directly parsed and added to

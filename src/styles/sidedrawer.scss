@@ -19,15 +19,21 @@
 
 .side-drawer.open {
   transform: translateX(0);
+ 
+}
+#side-drawer-flex-wrapper {
+   display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
 }
 
-.side-drawer ul {
-  height: 100%;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+// .side-drawer ul {
+//   height: 100%;
+//   list-style: none;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
 
 .side-drawer li {
   margin: 0.5rem 0;
@@ -48,7 +54,7 @@
   color: rgba(76, 116, 72, 1);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 796px) {
     .side-drawer {
         display: none;
     }
