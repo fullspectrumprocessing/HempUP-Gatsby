@@ -51,7 +51,7 @@ render(){
       <Overlay>
 
       <Header click={this.handleDrawer}/>
-      <SideDrawer show={this.state.sideDrawerOpen}/>
+      <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay}/>
       {overlay}
         <div>
           <main>{children}</main>
