@@ -10,8 +10,6 @@ import { Link } from 'gatsby'
           {` `}<br></br>
         <a href="https://www.gatsbyjs.org" style={{color: 'red'}}>Gatsby</a>
         {` `}<br />
-        <StyledLink to='/'>Index</StyledLink>
-
         <StyledLink to='/'>Home</StyledLink>
         <br />
         <StyledLink to="/page-2/">Go to page 2</StyledLink>
@@ -29,12 +27,12 @@ Footer.defaultProps = {
 }
 
 const StyledFooter = styled.footer`
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     background: linear-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85) );
-    z-index: 1;
-    // width:100vw;
+    z-index: 100;
+    width:100vw;
     padding: 1rem;
     text-align: center;
     
