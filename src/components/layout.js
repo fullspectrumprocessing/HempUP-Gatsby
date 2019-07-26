@@ -18,7 +18,8 @@ const Overlay = styled.div`
 class Layout extends React.Component {
 
   state = {
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+    // expanded: false
   }
 
   handleDrawer = () => {
@@ -59,7 +60,7 @@ class Layout extends React.Component {
           
 
         </Parallax>
-          <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay} />
+          <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay} expanded={false} />
           {overlay}
         <Parallax pages={3}>
             <Header click={this.handleDrawer} />

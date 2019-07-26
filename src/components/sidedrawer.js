@@ -16,13 +16,12 @@ const SideDrawer = props => {
     console.log('working')
   }
 
-  let expanded = false
+   
   const ExpandList = () => {
     console.log('its alive!!!')
-    if (expanded == false) {
-      expanded = true
+    if (props.expanded == false) {
+    console.log('its false')
     }
-    return expanded
   }
   return (
 
@@ -38,8 +37,8 @@ const SideDrawer = props => {
                 store
                 </a>
             </li>
-            {expanded && (
-              <div id='expanded-store-menu'>
+            
+              {/* <div id='expanded-store-menu'>
                   <ul>
                     <li> All Products</li>
                     <li> Hemp Product</li>
@@ -48,7 +47,7 @@ const SideDrawer = props => {
                     <li> Hemp Product</li>
                   </ul>
                 </div>
-              )}
+               */}
                 
             <li>
               <a href='#'>
