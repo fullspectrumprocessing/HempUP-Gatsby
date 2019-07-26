@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styled from 'styled-components'
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
+import '../styles/layout.scss'
 import StyledBGImage from '../components/bgimage'
 import Header from "./header"
-import '../styles/layout.scss'
 import Footer from '../components/footer'
-import styled from 'styled-components'
 import SideDrawer from '../components/sidedrawer'
 import DrawerOverlay from '../components/draweroverlay'
 
@@ -36,33 +37,43 @@ class Layout extends React.Component {
     })
     console.log(this.state, 'state')
   }
-render(){
+  render() {
 
-  const { children } = this.props
-  let overlay
-  if (this.state.sideDrawerOpen){
-    overlay = <DrawerOverlay click={this.handleDrawerOverlay}/>
-  }
-  return (
-    <>
+    const { children } = this.props
+    let overlay
+    if (this.state.sideDrawerOpen) {
+      overlay = <DrawerOverlay click={this.handleDrawerOverlay} />
+    }
+    return (
+      <>
+        
+        
+        <Parallax pages={1}>
+          <ParallaxLayer speed={0} factor={3} offset={0}>
+            <StyledBGImage>
+              
+              <Overlay>
+              </Overlay>
+            </StyledBGImage>
+          </ParallaxLayer>
+          
 
-      <StyledBGImage>
+        </Parallax>
+          <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay} />
+          {overlay}
+        <Parallax pages={3}>
+            <Header click={this.handleDrawer} />
 
-      <Overlay>
+        <ParallaxLayer offset={0.2} speed={0.5} factor={.25}>
+          <main>
+            {children}
+          </main>
+        </ParallaxLayer>
+          <Footer />
+        </Parallax>
+      </>
 
-      <Header click={this.handleDrawer}/>
-      <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay}/>
-      {overlay}
-        <div>
-          <main>{children}</main>
-        </div>
-      </Overlay>
 
-      </StyledBGImage>
-      <Footer />
-    </>
-
-    
     )
   }
 }

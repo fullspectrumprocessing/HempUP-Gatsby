@@ -26,7 +26,7 @@ const BgImage = ({className, children}) => (
     query {
       placeholderImage: file(relativePath: { eq: "landing_bg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4160) {
+          fluid(quality: 90, maxWidth: 4160,) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -36,7 +36,7 @@ const BgImage = ({className, children}) => (
   render ={data => {
     const imageData = data.placeholderImage.childImageSharp.fluid
     return (
-      <StyledWrap>
+      // <StyledWrap>
         <BackgroundImage
         Tag='section'
         className={className}
@@ -59,7 +59,7 @@ const BgImage = ({className, children}) => (
         >
         {children}
         </BackgroundImage>
-      </StyledWrap>
+      // </StyledWrap>
     )
   }}
   />
@@ -70,6 +70,7 @@ const StyledWrap = styled.div`
   height: 100vh;
   display: flex;
   overflow: hidden;
+ 
 `
 const StyledBGImage = styled(BgImage)`
   width: 100vw;

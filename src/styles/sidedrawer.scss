@@ -23,7 +23,7 @@
 }
 #side-drawer-flex-wrapper {
    display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -58,6 +58,17 @@
     .side-drawer {
         display: none;
     }
+}
+div#side-drawer-list-wrapper{
+  width: 100%;
+}
+div#expanded-store-menu {
+  background-color: $txtGrn;
+  width: 100%;
+}
+
+a#close-icon{
+  height: 50px;
 }
 
 

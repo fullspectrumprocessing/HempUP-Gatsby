@@ -1,6 +1,6 @@
 
 @import 'variables.scss';
-main>a>button#explore {
+button#explore {
     width: 200px;
     height: 50px;
     border: none;
@@ -11,9 +11,12 @@ main>a>button#explore {
     font-size: 18px;
     font-weight: 200;
     font-style: normal;
-
+    text-decoration: none;
     cursor: pointer;
-
+}
+a {
+    text-decoration: none;
+    color: $white;
 }
 h1 {
     margin: 0;
