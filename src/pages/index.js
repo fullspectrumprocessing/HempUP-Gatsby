@@ -15,11 +15,18 @@ const Landing = () => (
         <h2>wellness</h2>
 
         </div>
-            <button id='explore'>
-              <Link to="/store"> {"explore our line >"} </Link>
 
-            </button>
+            <Link
+              to="/store"
+              activeClassName={"explore"}
+            >
+              <button id='explore'>
+                {"explore our line >"}
+              </button>
+            </Link>
+
+
     </Layout>
 )
-
+//
 export default Landing

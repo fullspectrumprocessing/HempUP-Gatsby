@@ -18,7 +18,7 @@ const Overlay = styled.div`
 `
 
 class Layout extends React.Component {
- 
+
   state = {
     sideDrawerOpen: false
   }
@@ -37,7 +37,7 @@ class Layout extends React.Component {
     })
   }
 render(){
-  
+
   const { children } = this.props
   let overlay
   if (this.state.sideDrawerOpen){
@@ -47,7 +47,7 @@ render(){
     <>
 
       <StyledBGImage>
-       
+
       <Overlay>
 
       <Header click={this.handleDrawer}/>
@@ -57,7 +57,7 @@ render(){
           <main>{children}</main>
         </div>
       </Overlay>
-        
+
       </StyledBGImage>
       <Footer />
     </>
@@ -72,4 +72,3 @@ Layout.propTypes = {
 }
 
 export default Layout
- 

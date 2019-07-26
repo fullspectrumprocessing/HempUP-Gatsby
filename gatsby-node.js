@@ -14,13 +14,13 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     result.data.allShopifyProduct.edges.forEach(({ node }) => {
-      // createPage({
-      //   path: `/store/product/${node.handle}/`,
-      //   component: path.resolve(`./src/pages/store/productpage.js`),
-      //   context: {
-      //     handle: node.handle,
-      //   },
-      // })
+      createPage({
+        path: `/store/product/${node.handle}/`,
+        component: path.resolve(`./src/pages/store/productpage.js`),
+        context: {
+          handle: node.handle,
+        },
+      })
     })
   })
 }

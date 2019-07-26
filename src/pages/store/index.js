@@ -1,15 +1,15 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Header from '../components/header';
-import '../styles/landing.scss'
+import { Link, graphql } from 'gatsby'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
 
-const Landing = () => (
-    <Layout>
-        <SEO title='Hemp Up - Store' keywords={['cbd', 'oils', 'edibles']}/>
-        
-    </Layout>
+import ProductGrid from './productgrid'
+
+
+export default () => (
+  <Layout>
+    <SEO title="Hemp Up - Store" keywords={[`CBD`, `hemp`, `oil`, `edibles`]} />
+
+    <ProductGrid />
+  </Layout>
 )
-
-export default Landing
