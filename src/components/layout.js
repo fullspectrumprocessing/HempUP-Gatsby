@@ -15,10 +15,7 @@ const Overlay = styled.div`
 `
 
 class Layout extends React.Component {
-<<<<<<< HEAD
-=======
 
->>>>>>> shopifyadd
   state = {
     sideDrawerOpen: false
   }
@@ -39,30 +36,33 @@ class Layout extends React.Component {
     })
     console.log(this.state, 'state')
   }
+render(){
 
-  render() {
+  const { children } = this.props
+  let overlay
+  if (this.state.sideDrawerOpen){
+    overlay = <DrawerOverlay click={this.handleDrawerOverlay}/>
+  }
+  return (
+    <>
 
-    const { children } = this.props
-    let overlay
-    if (this.state.sideDrawerOpen) {
-      overlay = <DrawerOverlay click={this.handleDrawerOverlay} />
-    }
-    return (
-      <>
-        <Header click={this.handleDrawer} />
-        <StyledBGImage>
-          {/* <Overlay> */}
-            <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay} />
-            {overlay}
-          {/* </Overlay> */}
+      <StyledBGImage>
 
-              <main id='kids'>{children}
-              </main>
-        </StyledBGImage>
+      <Overlay>
 
-        <Footer />
+      <Header click={this.handleDrawer}/>
+      <SideDrawer show={this.state.sideDrawerOpen}/>
+      {overlay}
+        <div>
+          <main>{children}</main>
+        </div>
+      </Overlay>
 
-      </>
+      </StyledBGImage>
+      <Footer />
+    </>
+
+    
     )
   }
 }
