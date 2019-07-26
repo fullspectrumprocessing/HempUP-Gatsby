@@ -22,11 +22,10 @@ const SideDrawer = props => {
           <a id="close-icon" href="#" onClick={props.click}>
             {close}
           </a>
+          {/* Fragment */}
           <>
             <li>
-              <a href="#" onClick={props.expandList}>
-                store
-              </a>
+              <a href="#" onClick={props.expandList}>store</a>
             </li>
             {!!props.expanded && (
               <div id="expanded-store-menu">
@@ -68,6 +67,7 @@ const SideDrawer = props => {
             <li>
               <a href="#">contact us</a>
             </li>
+            {/* Fragment */}
           </>
         </div>
       </Parallax>
