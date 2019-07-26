@@ -1,9 +1,24 @@
 import React from 'react'
 import { useStaticQuery,  graphql, Link } from 'gatsby'
-// import { Flex, Box } from '@rebass/grid/emotion'
+import styled from 'styled-components'
+import ProductGridItem from './ProductGridItem'
+
+const ProductGrid = styled.ul`
+/* display:inline-block; */
+  margin: 30px auto;
+  padding: 0;
+  padding-inline-start: 0;
+
+  @media only screen and (min-width: 400px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 90%;
+  }
+`
 
 
-const ProductGrid = () => {
+export default () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -30,6 +45,15 @@ const ProductGrid = () => {
                   }
                 }
               }
+              priceRange {
+                maxVariantPrice {
+                  amount
+                }
+                minVariantPrice {
+                  amount
+                }
+              }
+
             }
           }
         }
@@ -37,28 +61,14 @@ const ProductGrid = () => {
     `
   )
 
-  const getLink = (handle) => {
-    return `/store/product/${handle}/`
-  }
 
   return (
-    <div>
+    <ProductGrid className="ProductGrid">
       {data.allShopifyProduct.edges.map((product, inx) => (
-        <div className='ProductGridItem' key={inx}>
 
-          <Link to={getLink(product.node.handle)}>
-            <span className="title"> {product.node.title}</span>
-          </Link>
-{console.log(product.node.images[0].localFile.childImageSharp.fluid)}
-          <Link to={getLink(product.node.handle)}>
-            <img src={product.node.images[0].localFile.childImageSharp.fluid.srcWebp}></img>
-          </Link>
-
-        </div>
+          <ProductGridItem product={product} key={inx} />
 
       ))}
-    </div>
+    </ProductGrid>
   )
 }
-
-export default ProductGrid
