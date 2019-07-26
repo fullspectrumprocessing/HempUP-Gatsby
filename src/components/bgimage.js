@@ -1,10 +1,10 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import styled from 'styled-components'
-import BackgroundImage from 'gatsby-background-image'
+import styled from "styled-components"
+import BackgroundImage from "gatsby-background-image"
 // Use the following to support legacy browsers like IE11:
 // import BackgroundImage from 'gatsby-background-image-es5'
-import { generateMedia } from 'styled-media-query'
+import { generateMedia } from "styled-media-query"
 
 const media = generateMedia() //for media queries see styled BGImage component at bottom
 /**
@@ -21,47 +21,50 @@ const media = generateMedia() //for media queries see styled BGImage component a
  * component, rather than having to pass the image data down from pages.
  *
  */
-const BgImage = ({className, children}) => (
-  <StaticQuery query={graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "landing_bg.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 4160,) {
-            ...GatsbyImageSharpFluid
+const BgImage = ({ className, children }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        placeholderImage: file(relativePath: { eq: "landing_bg.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }
-    }
-  `}
-  render ={data => {
-    const imageData = data.placeholderImage.childImageSharp.fluid
-    return (
-      // <StyledWrap>
+    `}
+    render={data => {
+      const imageData = data.placeholderImage.childImageSharp.fluid
+      return (
+        // <StyledWrap>
         <BackgroundImage
-        Tag='section'
-        className={className}
-        fluid={imageData}
-        backgroundColor={'#040e18'}
-        title='HempUpBG'
-        id='BG'
-        role='img'
-        fadeIn={'soft'}
-        aria-label={'hempupbg'}
-        // You are able to set a classId and style by wrapper (see below or
-              // https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles):
-              // classId=" "
-              style={{
-                // Defaults are overwrite-able by setting one of the following:
-                // backgroundSize: 'contain',
-                // backgroundPosition: 'center',
-                // backgroundRepeat: 'norepeat',
-              }}
+          Tag="section"
+          className={className}
+          fluid={imageData}
+          backgroundColor={"#040e18"}
+          title="HempUpBG"
+          id="BG"
+          role="img"
+          fadeIn={"soft"}
+          aria-label={"hempupbg"}
+          // You are able to set a classId and style by wrapper (see below or
+          // https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles):
+          // classId=" "
+          style={
+            {
+              // Defaults are overwrite-able by setting one of the following:
+              // backgroundSize: 'contain',
+              // backgroundPosition: 'center',
+              // backgroundRepeat: 'norepeat',
+            }
+          }
         >
-        {children}
+          {children}
         </BackgroundImage>
-      // </StyledWrap>
-    )
-  }}
+        // </StyledWrap>
+      )
+    }}
   />
 )
 
@@ -70,7 +73,6 @@ const StyledWrap = styled.div`
   height: 100vh;
   display: flex;
   overflow: hidden;
- 
 `
 const StyledBGImage = styled(BgImage)`
   width: 100vw;
@@ -81,7 +83,7 @@ const StyledBGImage = styled(BgImage)`
   //background-size: cover;
 
   // !With media-queries you have to overwrite the default options (see style={{}} above).
-  // ${media.lessThan('large')`
+  // ${media.lessThan("large")`
   //   background-size: cover;
   //   &:after, &:before {
   //     background-size: contain;

@@ -1,10 +1,9 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import React from "react"
+import { Link, graphql } from "gatsby"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
-import ProductGrid from './productgrid'
-
+import ProductGrid from "./productgrid"
 
 export default () => (
   <Layout>

@@ -32,21 +32,14 @@ import Img from "gatsby-image"
 export const BagImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      shoppingBag: file(relativePath: { eq: "bag.png"}){
+      shoppingBag: file(relativePath: { eq: "bag.png" }) {
         childImageSharp {
-          fixed(width: 100, height: 120){
+          fixed(width: 100, height: 120) {
             ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
-  return (
-
-
-    <Img fixed={data.shoppingBag.childImageSharp.fixed} />
-
-  )
+  return <Img fixed={data.shoppingBag.childImageSharp.fixed} />
 }
-
-

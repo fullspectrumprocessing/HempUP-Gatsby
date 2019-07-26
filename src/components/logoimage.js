@@ -43,5 +43,3 @@ export const LogoImage = () => {
 //   `)
 //   return <Img fixed={data.shoppingBag.childImageSharp.fixed}/>
 // }
-
-
