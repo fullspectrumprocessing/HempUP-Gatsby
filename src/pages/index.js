@@ -15,7 +15,7 @@ const Landing = () => (
       explore our line >
             </button>
 
-    
+
   </Layout>
 )
 

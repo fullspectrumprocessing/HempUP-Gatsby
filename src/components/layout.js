@@ -15,6 +15,10 @@ const Overlay = styled.div`
 `
 
 class Layout extends React.Component {
+<<<<<<< HEAD
+=======
+
+>>>>>>> shopifyadd
   state = {
     sideDrawerOpen: false
   }
@@ -55,9 +59,9 @@ class Layout extends React.Component {
               <main id='kids'>{children}
               </main>
         </StyledBGImage>
-            
+
         <Footer />
-            
+
       </>
     )
   }

@@ -86,9 +86,9 @@ const StyledBGImage = styled(BgImage)`
   //     background-size: contain;
   //   }
   // `}
-  
+
   // !For pseudo-elements you have to overwrite the default options (see style={{}} above).
-  // !See: https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles 
+  // !See: https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles
   //&:after, &:before {
   //   background-clip: content-box;
   //   background-size: contain;
