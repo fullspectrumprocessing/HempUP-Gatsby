@@ -19,7 +19,7 @@ class Layout extends React.Component {
 
   state = {
     sideDrawerOpen: false,
-    // expanded: false
+    expanded: false
   }
 
   handleDrawer = () => {
@@ -37,6 +37,18 @@ class Layout extends React.Component {
       sideDrawerOpen: false
     })
     console.log(this.state, 'state')
+  }
+  expandList = () => {
+    console.log('its alive!!!')
+    if (this.state.expanded == false) {
+      this.setState({
+        expanded: true
+      })
+    } else(
+      this.setState({
+        expanded: false
+      })
+    )
   }
   render() {
 
@@ -60,7 +72,12 @@ class Layout extends React.Component {
           
 
         </Parallax>
-          <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay} expanded={false} />
+          <SideDrawer 
+          show={this.state.sideDrawerOpen} 
+          click={this.handleDrawerOverlay} 
+          expanded={this.state.expanded} 
+          expandList={this.expandList}
+          />
           {overlay}
         <Parallax pages={3}>
             <Header click={this.handleDrawer} />

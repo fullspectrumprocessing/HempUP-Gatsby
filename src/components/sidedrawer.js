@@ -17,12 +17,7 @@ const SideDrawer = props => {
   }
 
    
-  const ExpandList = () => {
-    console.log('its alive!!!')
-    if (props.expanded == false) {
-    console.log('its false')
-    }
-  }
+  
   return (
 
     <nav className={drawerClasses}>
@@ -33,21 +28,23 @@ const SideDrawer = props => {
           </a>
           <>
             <li>
-              <a href='#' onClick={ExpandList}>
+              <a href='#' onClick={props.expandList}>
                 store
                 </a>
             </li>
+            {!!props.expanded && (
+
+               <div id='expanded-store-menu'>
+              <ul>
+              <li> All Products</li>
+              <li> Hemp Product</li>
+              <li> Hemp Product</li>
+              <li> Hemp Product</li>
+              <li> Hemp Product</li>
+              </ul>
+              </div>
             
-              {/* <div id='expanded-store-menu'>
-                  <ul>
-                    <li> All Products</li>
-                    <li> Hemp Product</li>
-                    <li> Hemp Product</li>
-                    <li> Hemp Product</li>
-                    <li> Hemp Product</li>
-                  </ul>
-                </div>
-               */}
+            )}
                 
             <li>
               <a href='#'>
