@@ -32,6 +32,7 @@ class Layout extends React.Component {
     })
     console.log("clicked")
     console.log(this.state, "state")
+
   }
 
   handleDrawerOverlay = () => {
@@ -73,7 +74,7 @@ class Layout extends React.Component {
           expandList={this.expandList}
         />
         {overlay}
-        <Parallax pages={3}>
+        <Parallax pages={4.0}>
           <Header click={this.handleDrawer} />
 
           <ParallaxLayer offset={0.2} speed={0.5} factor={0.25}>
