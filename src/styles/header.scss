@@ -5,16 +5,22 @@
 @import "variables.scss";
 
 .header {
-  background: $white;
-  // margin-bottom: 1.45rem;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  height: 4.3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+    background: $white;
+    // margin-bottom: 1.45rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    height: 4.30em;
+
 }
 
 div#logo {
-  margin-bottom: 10px;
+
+    margin-bottom: 10px;
 }
 div#shoppingbag {
   flex-direction: column;

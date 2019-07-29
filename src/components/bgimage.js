@@ -73,14 +73,16 @@ const StyledWrap = styled.div`
   height: 100vh;
   display: flex;
   overflow: hidden;
+  position: fixed;
+
 `
 const StyledBGImage = styled(BgImage)`
-  width: 100vw;
-  // !These three crucial styles (if existing) are directly parsed and added to
-  // !the pseudo-elements without further ado (except when overwritten).
-  //background-repeat: repeat-y;
-  //background-position: left center;
-  //background-size: cover;
+position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -100;
 
   // !With media-queries you have to overwrite the default options (see style={{}} above).
   // ${media.lessThan("large")`
@@ -90,12 +92,6 @@ const StyledBGImage = styled(BgImage)`
   //   }
   // `}
 
-  // !For pseudo-elements you have to overwrite the default options (see style={{}} above).
-  // !See: https://github.com/timhagn/gatsby-background-image/#styling--passed-through-styles
-  //&:after, &:before {
-  //   background-clip: content-box;
-  //   background-size: contain;
-  //}
 `
 
 export default StyledBGImage
