@@ -1,11 +1,11 @@
 import React from "react"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
-import styled from 'styled-components'
+import styled from "styled-components"
 import CloseMenuIcon from "./closemenu"
 import "../styles/sidedrawer.scss"
 
 const ExpandedMenuDiv = styled.div`
-  background-color: rgba(86, 126, 72, .50);
+  background-color: rgba(86, 126, 72, 0.5);
   width: 100%;
   font-family: objektiv-mk1, sans-serif;
   font-size: 20px;
@@ -31,42 +31,51 @@ const SideDrawer = props => {
           {/* Fragment */}
           <>
             <li>
-              <a href="#" onClick={props.expandList}>store</a>
+              <a href="#" onClick={props.expandStoreList}>
+                store
+              </a>
             </li>
-            {!!props.expanded && (
+            {!!props.expandedStore && (
               <ExpandedMenuDiv>
                 <ul>
                   <li> All Products</li>
                   <li> Hemp Product</li>
                   <li> Hemp Product</li>
                   <li> Hemp Product</li>
-                  
                 </ul>
               </ExpandedMenuDiv>
             )}
 
             <li>
-              <a href="#" onClick={props.expandList}>about us</a>
+              <a href="#" onClick={props.expandAboutList}>
+                about us
+              </a>
             </li>
-            <ExpandedMenuDiv>
-              <ul>
-                <li> Who We Are?</li>
-                <li> Why Us?</li>
-                <li> Why CBD?</li>
-                <li> Join Us</li>
-              </ul>
-            </ExpandedMenuDiv>
+            {!!props.expandedAbout && (
+              <ExpandedMenuDiv>
+                <ul>
+                  <li> Who We Are?</li>
+                  <li> Why Us?</li>
+                  <li> Why CBD?</li>
+                  <li> Join Us</li>
+                </ul>
+              </ExpandedMenuDiv>
+            )}
             <li>
-              <a href="#">news</a>
+              <a href="#" onClick={props.expandNewsList}>
+                news
+              </a>
             </li>
-            <ExpandedMenuDiv>
-              <ul>
-                <li> Hemp Product</li>
-                <li> Hemp Product</li>
-                <li> Hemp Product</li>
-                <li> Hemp Product</li>
-              </ul>
-            </ExpandedMenuDiv>
+            {!!props.expandedNews && (
+              <ExpandedMenuDiv>
+                <ul>
+                  <li> Hemp Product</li>
+                  <li> Hemp Product</li>
+                  <li> Hemp Product</li>
+                  <li> Hemp Product</li>
+                </ul>
+              </ExpandedMenuDiv>
+            )}
             <li>
               <a href="#">what is cbd?</a>
             </li>

@@ -5,26 +5,106 @@ import { LogoImage } from "./logoimage"
 import { BagImage } from "./bagImage"
 import { MenuImage } from "./menu"
 import "../styles/header.scss"
+import SideDrawer from "../components/sidedrawer"
+import DrawerOverlay from "../components/draweroverlay"
+class Header extends React.Component {
+  state = {
+    sideDrawerOpen: false,
+    expandedStore: false,
+    expandedAbout: false,
+    expandedNews: false,
+  }
 
-const Header = props => (
-  <header className="header">
-    <div id="shoppingbag">
-      <BagImage />
-    </div>
+  handleDrawer = () => {
+    // e.preventDefault()
+    // this.setState({content: !this.state.content})\
+    this.setState(prevState => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen }
+    })
+    console.log("clicked")
+    console.log(this.state, "state")
+  }
 
-    <div id="logo">
-      <Link to='/'>
-      <LogoImage />
-      </Link>
-    </div>
+  handleDrawerOverlay = () => {
+    this.setState({
+      sideDrawerOpen: false,
+    })
+    console.log(this.state, "state")
+  }
 
-    <div id="menu">
-      <a href="#" onClick={props.click}>
-        <MenuImage />
-      </a>
-    </div>
-  </header>
-)
+  expandStoreList = () => {
+    console.log("its alive!!!")
+    if (this.state.expandedStore == false) {
+      this.setState({
+        expandedStore: true,
+      })
+    } else
+      this.setState({
+        expandedStore: false,
+      })
+  }
+  expandAboutList = () => {
+    if (this.state.expandedAbout == false) {
+      this.setState({
+        expandedAbout: true,
+      })
+    } else {
+      this.setState({
+        expandedAbout: false,
+      })
+    }
+  }
+  expandNewsList = () => {
+    if (this.state.expandedNews == false) {
+      this.setState({
+        expandedNews: true,
+      })
+    } else {
+      this.setState({
+        expandedNews: false,
+      })
+    }
+  }
+
+  render() {
+    let overlay
+    if (this.state.sideDrawerOpen) {
+      overlay = <DrawerOverlay click={this.handleDrawerOverlay} />
+    }
+    return (
+      <header className="header">
+        <SideDrawer
+          show={this.state.sideDrawerOpen}
+          click={this.handleDrawerOverlay}
+          expandedStore={this.state.expandedStore}
+          expandStoreList={this.expandStoreList}
+          expandedAbout={this.state.expandedAbout}
+          expandAboutList={this.expandAboutList}
+          expandedNews={this.state.expandedNews}
+          expandNewsList={this.expandNewsList}
+        />
+        {overlay}
+        <div id="shoppingbag">
+          <Link to='/store/cart'>
+          <BagImage />
+          </Link>
+        </div>
+
+        <div id="logo">
+          <Link to="/">
+            <LogoImage />
+          </Link>
+        </div>
+
+        <div id="menu">
+          <a href="#" onClick={this.handleDrawer}>
+            <MenuImage />
+          </a>
+        </div>
+      </header>
+    )
+  }
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
