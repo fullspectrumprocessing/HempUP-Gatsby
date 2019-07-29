@@ -6,6 +6,7 @@
   "author": "Full Spectrum Processing <fullspectrumprocessing@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
+    "bootstrap": "^4.3.1",
     "gatsby": "^2.13.25",
     "gatsby-background-image": "^0.8.0",
     "gatsby-image": "^2.2.6",
@@ -23,7 +24,9 @@
     "react-dom": "^16.8.6",
     "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.1",
+    "react-parallax": "^2.2.0",
     "react-spring": "^8.0.27",
+    "reactstrap": "^8.0.1",
     "styled-components": "^4.3.2",
     "styled-media-query": "^2.1.2"
   },

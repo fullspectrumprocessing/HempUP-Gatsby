@@ -3,6 +3,23 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+
+const StyledFooter = styled.footer`
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85));
+  z-index: 100;
+  width: 100vw;
+  padding: 1rem;
+  margin-top: 10px;
+  text-align: center;
+`
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`
+
 const Footer = () => (
   <StyledFooter>
     © {new Date().getFullYear()}, Built with
@@ -30,19 +47,6 @@ Footer.defaultProps = {
   siteTitle: "",
 }
 
-const StyledFooter = styled.footer`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85));
-  z-index: 100;
-  width: 100vw;
-  padding: 1rem;
-  text-align: center;
-`
-const StyledLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-`
+
 
 export default Footer

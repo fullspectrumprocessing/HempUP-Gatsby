@@ -5,8 +5,10 @@
 @import "variables.scss";
 
 
+
 div#logo {
-  margin-bottom: 10px;
+    z-index: 2;
+    margin-bottom: 10px;
 }
 div#shoppingbag {
   flex-direction: column;

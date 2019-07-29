@@ -13,17 +13,15 @@ const ProductGridItem = styled.li`
   font-family: 'lato';
   color: #444;
   text-align: center;
-
   background-color: rgba(255,255,255, 0.7);
 
-  @media only screen and (min-width: 400px) {
+  @media only screen and (min-width: 500px) {
     width: calc( 50% - 20px);
   }
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 900px) {
     width: calc( 33% - 20px);
   }
 `
-
 
 const GridTitle = styled.div`
   font-size: 18px;
@@ -50,10 +48,10 @@ const GridImg = styled.img`
   pointer-events: none;
 `
 
-
 export default ({product}) => {
   const max = product.node.priceRange.maxVariantPrice.amount
   const min = product.node.priceRange.minVariantPrice.amount
+  // console.log('product', product)
   return(
     <ProductGridItem className="ProductGridItem">
 
@@ -71,10 +69,11 @@ export default ({product}) => {
         </GridDescription>
 
         <AddToCartButton />
-
-        <Link to={`/store/product/${product.handle}/`} >
+        {console.log('handle', product.node.handle)}
+        <Link to={`/store/product/${product.node.handle}/`} >
           <ViewDetailsButton />
         </Link>
+
     </ProductGridItem>
   )
 

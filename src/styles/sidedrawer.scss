@@ -1,17 +1,18 @@
 @import "variables.scss";
 
 .side-drawer {
-  height: 97.5%;
+  // height: 97.5%;
+  height: calc(100% - 4.30em);
   // margin-top: 19%;
   // background: linear-gradient(rgba(255, 238, 238, 0.623),rgba(221, 239, 187, 0.699) );
   background: rgba($color: #ffffff, $alpha: 0.75);
-  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  // box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   max-width: 400px;
-  z-index: 200;
+  z-index: 1;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
 }
@@ -64,4 +65,3 @@ div#expanded-store-menu {
   background-color: $txtGrn;
   width: 100%;
 }
-
