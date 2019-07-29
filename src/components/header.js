@@ -13,7 +13,9 @@ const Header = props => (
     </div>
 
     <div id="logo">
+      <Link to='/'>
       <LogoImage />
+      </Link>
     </div>
 
     <div id="menu">
