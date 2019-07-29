@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import {CloseMenuIcon} from "./closemenu"
 import { LogoImage } from "./logoimage"
 import { BagImage } from "./bagImage"
 import { MenuImage } from "./menu"
@@ -73,6 +74,28 @@ class Header extends React.Component {
     }
     return (
       <header className="header">
+        <div id="shoppingbag">
+          <Link to="/store/cart">
+            <BagImage />
+          </Link>
+        </div>
+
+        <div id="logo">
+          <Link to="/">
+            <LogoImage />
+          </Link>
+        </div>
+        {!this.state.sideDrawerOpen ? (
+          <div id="menu">
+            <a href="#" onClick={this.handleDrawer}>
+              <MenuImage />
+            </a>
+          </div>
+        ) : (
+          <a id="close-icon" href="#" onClick={this.handleDrawerOverlay}>
+            <CloseMenuIcon />
+          </a>
+        )}
         <SideDrawer
           show={this.state.sideDrawerOpen}
           click={this.handleDrawerOverlay}
@@ -84,23 +107,6 @@ class Header extends React.Component {
           expandNewsList={this.expandNewsList}
         />
         {overlay}
-        <div id="shoppingbag">
-          <Link to='/store/cart'>
-          <BagImage />
-          </Link>
-        </div>
-
-        <div id="logo">
-          <Link to="/">
-            <LogoImage />
-          </Link>
-        </div>
-
-        <div id="menu">
-          <a href="#" onClick={this.handleDrawer}>
-            <MenuImage />
-          </a>
-        </div>
       </header>
     )
   }

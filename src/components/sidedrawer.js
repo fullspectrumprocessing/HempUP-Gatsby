@@ -1,7 +1,7 @@
 import React from "react"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import styled from "styled-components"
-import CloseMenuIcon from "./closemenu"
+import {CloseMenuIcon} from "./closemenu"
 import "../styles/sidedrawer.scss"
 
 const ExpandedMenuDiv = styled.div`
@@ -15,19 +15,19 @@ const ExpandedMenuDiv = styled.div`
 
 const SideDrawer = props => {
   // console.log(props.click, 'click');
-  let close
+  // let close
   let drawerClasses = "side-drawer"
   if (props.show) {
     drawerClasses = "side-drawer open"
-    close = <CloseMenuIcon />
+    // close = <CloseMenuIcon />
   }
   return (
     <nav className={drawerClasses}>
       <Parallax pages={1.5}>
         <div id="side-drawer-flex-wrapper">
-          <a id="close-icon" href="#" onClick={props.click}>
+          {/* <a id="close-icon" href="#" onClick={props.click}>
             {close}
-          </a>
+          </a> */}
           {/* Fragment */}
           <>
             <li>
