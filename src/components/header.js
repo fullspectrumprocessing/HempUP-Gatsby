@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from 'styled-components'
+
 import {CloseMenuIcon} from "./closemenu"
 import { LogoImage } from "./logoimage"
 import { BagImage } from "./bagImage"
@@ -8,6 +10,21 @@ import { MenuImage } from "./menu"
 import "../styles/header.scss"
 import SideDrawer from "../components/sidedrawer"
 import DrawerOverlay from "../components/draweroverlay"
+
+const StyledHeader = styled.header`
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  height: 4.3em;
+`
+const ShoppingBag = styled.div`
+  flex-direction: column;
+  align-self: center;
+  padding: 15px;
+`
+
+
 class Header extends React.Component {
   state = {
     sideDrawerOpen: false,
@@ -16,6 +33,8 @@ class Header extends React.Component {
     expandedNews: false,
   }
 
+
+// !The Below Methods are handling the side drawer animations and state changes.
   handleDrawer = () => {
     // e.preventDefault()
     // this.setState({content: !this.state.content})\
@@ -73,12 +92,12 @@ class Header extends React.Component {
       overlay = <DrawerOverlay click={this.handleDrawerOverlay} />
     }
     return (
-      <header className="header">
-        <div id="shoppingbag">
+      <StyledHeader>
+        <ShoppingBag>
           <Link to="/store/cart">
             <BagImage />
           </Link>
-        </div>
+        </ShoppingBag>
 
         <div id="logo">
           <Link to="/">
@@ -107,7 +126,7 @@ class Header extends React.Component {
           expandNewsList={this.expandNewsList}
         />
         {overlay}
-      </header>
+      </StyledHeader>
     )
   }
 }
