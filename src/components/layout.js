@@ -47,37 +47,27 @@ class Layout extends React.Component {
     }
     return (
       <>
-        
-        
-        <Parallax pages={1}>
-          <ParallaxLayer speed={0} factor={3} offset={0}>
-            <StyledBGImage>
-              
-              <Overlay>
-              </Overlay>
-            </StyledBGImage>
-          </ParallaxLayer>
-          
 
-        </Parallax>
-          <SideDrawer show={this.state.sideDrawerOpen} click={this.handleDrawerOverlay} expanded={false} />
-          {overlay}
-        <Parallax pages={3}>
-            <Header click={this.handleDrawer} />
+                    <Header />
 
-        <ParallaxLayer offset={0.2} speed={0.5} factor={.25}>
-          <main>
-            {children}
-          </main>
-        </ParallaxLayer>
-          <Footer />
-        </Parallax>
+                    <main>
+                      {children}
+                      <Footer />
+                    </main>
+
+                    <StyledBGImage>
+                      <Overlay>
+                      </Overlay>
+                    </StyledBGImage>
+
+
       </>
 
 
     )
   }
 }
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

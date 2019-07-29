@@ -27,7 +27,7 @@ Footer.defaultProps = {
 }
 
 const StyledFooter = styled.footer`
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     left: 0;
     background: linear-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85) );
@@ -35,7 +35,7 @@ const StyledFooter = styled.footer`
     width:100vw;
     padding: 1rem;
     text-align: center;
-    
+
 `
 const StyledLink = styled(Link)`
     color: white;
