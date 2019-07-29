@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery,  graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import ProductGridItem from './ProductGridItem'
+import getProductTypes from '../../utils/getProductTypes'
 
 const ProductGrid = styled.ul`
 /* display:inline-block; */
@@ -17,7 +18,6 @@ const ProductGrid = styled.ul`
   }
 `
 
-
 export default () => {
   const data = useStaticQuery(
     graphql`
@@ -31,6 +31,7 @@ export default () => {
           edges {
             node {
               id
+              productType
               title
               handle
               createdAt
@@ -60,7 +61,17 @@ export default () => {
       }
     `
   )
+  //FITERs
 
+  /*
+  all
+  Drinks
+  Edibles
+  For Pets
+  To go
+  Vape
+
+  */
 
   return (
     <ProductGrid className="ProductGrid">
