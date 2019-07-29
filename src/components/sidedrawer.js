@@ -52,7 +52,7 @@ const SideDrawer = props => {
               <ul>
                 <li> Who We Are?</li>
                 <li> Why Us?</li>
-                <li>Why CBD?</li>
+                <li> Why CBD?</li>
                 <li> Join Us</li>
               </ul>
             </ExpandedMenuDiv>
