@@ -1,7 +1,17 @@
 import React from "react"
-import CloseMenuIcon from "./closemenu"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
+import styled from 'styled-components'
+import CloseMenuIcon from "./closemenu"
 import "../styles/sidedrawer.scss"
+
+const ExpandedMenuDiv = styled.div`
+  background-color: rgba(86, 126, 72, .50);
+  width: 100%;
+  font-family: objektiv-mk1, sans-serif;
+  font-size: 20px;
+  color: white;
+  text-transform: lowercase;
+`
 
 const SideDrawer = props => {
   // console.log(props.click, 'click');
@@ -11,10 +21,6 @@ const SideDrawer = props => {
     drawerClasses = "side-drawer open"
     close = <CloseMenuIcon />
   }
-  const dropDown = () => {
-    console.log("working")
-  }
-
   return (
     <nav className={drawerClasses}>
       <Parallax pages={1.5}>
@@ -28,39 +34,39 @@ const SideDrawer = props => {
               <a href="#" onClick={props.expandList}>store</a>
             </li>
             {!!props.expanded && (
-              <div id="expanded-store-menu">
+              <ExpandedMenuDiv>
                 <ul>
                   <li> All Products</li>
                   <li> Hemp Product</li>
                   <li> Hemp Product</li>
                   <li> Hemp Product</li>
-                  <li> Hemp Product</li>
+                  
                 </ul>
-              </div>
+              </ExpandedMenuDiv>
             )}
 
             <li>
-              <a href="#">about us</a>
+              <a href="#" onClick={props.expandList}>about us</a>
             </li>
-            <div id="expanded-store-menu">
+            <ExpandedMenuDiv>
               <ul>
                 <li> Who We Are?</li>
                 <li> Why Us?</li>
                 <li>Why CBD?</li>
                 <li> Join Us</li>
               </ul>
-            </div>
+            </ExpandedMenuDiv>
             <li>
               <a href="#">news</a>
             </li>
-            <div id="expanded-store-menu">
+            <ExpandedMenuDiv>
               <ul>
                 <li> Hemp Product</li>
                 <li> Hemp Product</li>
                 <li> Hemp Product</li>
                 <li> Hemp Product</li>
               </ul>
-            </div>
+            </ExpandedMenuDiv>
             <li>
               <a href="#">what is cbd?</a>
             </li>

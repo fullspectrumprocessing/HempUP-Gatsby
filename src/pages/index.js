@@ -17,6 +17,7 @@ const LandingMessageP = styled.p`
   line-height: 2;
   color: rgba(152, 121, 91, 1);
   font-family: lato, sans-serif;
+  font-size: 20px;
 `
 
 const Landing = () => (
@@ -36,8 +37,7 @@ const Landing = () => (
       <LandingMessageP>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Habitant morbi
-        tristique senectus et netus et. Quam quisque id diam vel quam elementum
-        pulvinar etiam.
+        tristique senectus et netus et. 
       </LandingMessageP>
     </LandingMessageDiv>
   </Layout>

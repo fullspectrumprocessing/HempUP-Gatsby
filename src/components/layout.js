@@ -22,6 +22,9 @@ class Layout extends React.Component {
   state = {
     sideDrawerOpen: false,
     expanded: false,
+    expandedAbout: false,
+    expandedNews: false,
+    
   }
 
   handleDrawer = () => {
@@ -72,6 +75,8 @@ class Layout extends React.Component {
           click={this.handleDrawerOverlay}
           expanded={this.state.expanded}
           expandList={this.expandList}
+          expandedAbout={this.state.expandedAbout}
+          expandedNews={this.state.expandedNews}
         />
         {overlay}
         <Parallax pages={4.0}>
