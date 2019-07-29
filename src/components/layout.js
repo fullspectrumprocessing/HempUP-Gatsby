@@ -22,21 +22,24 @@ class Layout extends React.Component {
 
     return (
       <>
-        <Parallax pages={1}>
-          <ParallaxLayer speed={0} factor={3} offset={0}>
+
             <StyledBGImage>
               <Overlay></Overlay>
             </StyledBGImage>
-          </ParallaxLayer>
-        </Parallax>
 
-        <Parallax pages={4.0}>
-          <Header/>
-          <ParallaxLayer offset={0.2} speed={0.5} factor={0.25}>
-            <main>{children}</main>
-          </ParallaxLayer>
-          <Footer />
-        </Parallax>
+
+
+
+
+            <main>
+              {children}
+              <Footer />
+            </main>
+
+            <Header/>
+
+
+
       </>
     )
   }
