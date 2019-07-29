@@ -12,6 +12,10 @@ import SideDrawer from "../components/sidedrawer"
 import DrawerOverlay from "../components/draweroverlay"
 
 const StyledHeader = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   background: #FFFFFF;
   display: flex;
   flex-direction: row-reverse;
