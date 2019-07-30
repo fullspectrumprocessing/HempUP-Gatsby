@@ -49,10 +49,19 @@ const GridImg = styled.img`
 `
 
 export default ({product}) => {
-  const max = product.node.priceRange.maxVariantPrice.amount
-  const min = product.node.priceRange.minVariantPrice.amount
-  // console.log('product', product)
+
+
+  let max = 0
+  let min = 0
+
+
+  if(product && product.node){
+    max = product.node.priceRange.maxVariantPrice.amount
+    min = product.node.priceRange.minVariantPrice.amount
+  }
+
   return(
+    (product && product.node) &&(
     <ProductGridItem className="ProductGridItem">
 
         <Link to={`/store/product/${product.handle}/`} >
@@ -69,12 +78,13 @@ export default ({product}) => {
         </GridDescription>
 
         <AddToCartButton />
-        {console.log('handle', product.node.handle)}
         <Link to={`/store/product/${product.node.handle}/`} >
           <ViewDetailsButton />
         </Link>
 
-    </ProductGridItem>
+    </ProductGridItem>)
+
+
   )
 
 }

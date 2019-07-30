@@ -3,8 +3,10 @@ import { Link } from "gatsby"
 import  styled  from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "../styles/landing.scss"
+
 import GlobalStyle from '../theme/globalStyle'
+import "../styles/landing.scss"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LandingMessageDiv = styled.div`
   width: 100vw;
@@ -37,15 +39,10 @@ const Landing = () => (
       <LandingMessageP>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Habitant morbi
-        tristique senectus et netus et. 
+        tristique senectus et netus et.
       </LandingMessageP>
     </LandingMessageDiv>
   </Layout>
 )
 
 export default Landing
-
-
-
-
-

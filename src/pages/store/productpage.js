@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 import Layout from '../../components/layout'
 
-import ProductForm from './productform'
+import ProductForm from '../../components/store/productform'
 
 const ProductHeader = styled.div`
   font-family: objektiv-mk1, sans-serif;
@@ -52,13 +52,6 @@ const StyledContainer = styled(Container)`
 
 `
 
-/*
-
-      <ProductImage fluid={product.images.localFile.childImageSharp.fluid}>
-      </ProductImage>
-
-*/
-
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
   console.log('ProductPage', product)
@@ -75,10 +68,9 @@ const ProductPage = ({ data }) => {
             <ProductImage fluid={product.images[0].localFile.childImageSharp.fluid} />
 
           </Col>
-
           <Col sm >
             <ProductForm
-              variants={product.variants}
+              variants={product.variants || []}
             />
             <ProductDescription>
               {product.description}
