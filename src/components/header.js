@@ -127,14 +127,19 @@ class Header extends React.Component {
         <GlobalStyle/>
         <ShoppingBag>
           <Link to="/store/cart/">
-            <BagImage />
+            <BagImage >
+              <p>
+                0
+                </p>
+                </BagImage>
           </Link>
         </ShoppingBag>
         <DesktopNavBar>
           <StyledLink to="/store">store</StyledLink>
           <StyledLink to='/about'>about us</StyledLink>
           <StyledLink to="/news">news</StyledLink>
-          <StyledLink to='#'>what is cbd?</StyledLink>
+          <StyledLink to='/whatiscbd'>what is cbd?</StyledLink>
+          
         </DesktopNavBar>
         <HempUpLogo>
           <Link to="/">
