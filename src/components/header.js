@@ -45,7 +45,7 @@ const DesktopNavBar = styled.nav`
   display: inline-flex;
   list-style: none;
   align-items: flex-end;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   margin-left: 120px;
   justify-content: space-between;
   @media (max-width: 796px) {
@@ -58,6 +58,10 @@ const StyledLink = styled(Link)`
   padding-left: 20px;
   padding-right: 20px;
   font-family: lato, sans serif;
+  :hover {
+    background-color: rgba(76, 116, 72, 1);
+    color: white;
+  }
 `
 class Header extends React.Component {
   state = {
@@ -135,14 +139,14 @@ class Header extends React.Component {
           </Link>
         </ShoppingBag>
         <DesktopNavBar>
-          <StyledLink to="/store">store</StyledLink>
+          <StyledLink to="/store"  >store</StyledLink>
           <StyledLink to='/about'>about us</StyledLink>
           <StyledLink to="/news">news</StyledLink>
           <StyledLink to='/whatiscbd'>what is cbd?</StyledLink>
           
         </DesktopNavBar>
         <HempUpLogo>
-          <Link to="/">
+          <Link to="/"on>
             <LogoImage />
           </Link>
         </HempUpLogo>
