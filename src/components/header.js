@@ -1,13 +1,11 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import styled from 'styled-components'
-
-import {CloseMenuIcon} from "./closemenu"
+import styled from "styled-components"
+import { CloseMenuIcon } from "./closemenu"
 import { LogoImage } from "./logoimage"
 import { BagImage } from "./bagImage"
 import { MenuImage } from "./menu"
-import "../styles/header.scss"
 import SideDrawer from "../components/sidedrawer"
 import DrawerOverlay from "../components/draweroverlay"
 
@@ -16,7 +14,7 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   width: 100vw;
-  background: #FFFFFF;
+  background: #ffffff;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
@@ -27,8 +25,14 @@ const ShoppingBag = styled.div`
   align-self: center;
   padding: 15px;
 `
-
-
+const HempUpLogo = styled.div`
+  z-index: 2;
+  margin-bottom: 10px;
+`
+const MenuIconWrapper = styled.a`
+  align-self: center;
+  padding: 15px;
+`
 class Header extends React.Component {
   state = {
     sideDrawerOpen: false,
@@ -37,8 +41,7 @@ class Header extends React.Component {
     expandedNews: false,
   }
 
-
-// !The Below Methods are handling the side drawer animations and state changes.
+  // !The Below Methods are handling the side drawer animations and state changes.
   handleDrawer = () => {
     // e.preventDefault()
     // this.setState({content: !this.state.content})\
@@ -103,21 +106,19 @@ class Header extends React.Component {
           </Link>
         </ShoppingBag>
 
-        <div id="logo">
+        <HempUpLogo>
           <Link to="/">
             <LogoImage />
           </Link>
-        </div>
+        </HempUpLogo>
         {!this.state.sideDrawerOpen ? (
-          <div id="menu">
-            <a href="#" onClick={this.handleDrawer}>
-              <MenuImage />
-            </a>
-          </div>
+          <MenuIconWrapper href="#" onClick={this.handleDrawer}>
+            <MenuImage />
+          </MenuIconWrapper>
         ) : (
-          <a id="close-icon" href="#" onClick={this.handleDrawerOverlay}>
+          <MenuIconWrapper href="#" onClick={this.handleDrawerOverlay}>
             <CloseMenuIcon />
-          </a>
+          </MenuIconWrapper>
         )}
         <SideDrawer
           show={this.state.sideDrawerOpen}
