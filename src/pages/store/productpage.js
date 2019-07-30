@@ -65,7 +65,6 @@ const ProductPage = ({ data }) => {
   return (
     <Layout>
 
-
       <StyledContainer>
         <ProductHeader >
             {product.title}
@@ -93,7 +92,7 @@ const ProductPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query($handle: String!) {
+  query($handle: String) {
     shopifyProduct(handle: { eq: $handle }) {
       id
       title
