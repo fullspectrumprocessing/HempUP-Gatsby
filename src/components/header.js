@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import GlobalStyle from "../theme/globalStyle"
 import { CloseMenuIcon } from "./closemenu"
 import { LogoImage } from "./logoimage"
 import { BagImage } from "./bagImage"
@@ -13,13 +14,16 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100vw;
   background: #ffffff;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
   height: 4.3em;
+
+  @media (min-width: 796px) {
+
+  }
 `
 const ShoppingBag = styled.div`
   flex-direction: column;
@@ -33,6 +37,31 @@ const HempUpLogo = styled.div`
 const MenuIconWrapper = styled.a`
   align-self: center;
   padding: 15px;
+  @media (min-width: 796px) {
+    display: none;
+  }
+`
+const DesktopNavBar = styled.nav`
+  display: inline-flex;
+  list-style: none;
+  align-items: flex-end;
+  // margin-bottom: 10px;
+  margin-left: 120px;
+  justify-content: space-between;
+  @media (max-width: 796px) {
+    display: none;
+  }
+`
+
+const StyledLink = styled(Link)`
+  color: rgba(152, 121, 91, 1);
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: lato, sans serif;
+  :hover {
+    background-color: rgba(76, 116, 72, 1);
+    color: white;
+  }
 `
 class Header extends React.Component {
   state = {
@@ -52,14 +81,12 @@ class Header extends React.Component {
     console.log("clicked")
     console.log(this.state, "state")
   }
-
   handleDrawerOverlay = () => {
     this.setState({
       sideDrawerOpen: false,
     })
     console.log(this.state, "state")
   }
-
   expandStoreList = () => {
     console.log("its alive!!!")
     if (this.state.expandedStore == false) {
@@ -101,14 +128,25 @@ class Header extends React.Component {
     }
     return (
       <StyledHeader>
+        <GlobalStyle/>
         <ShoppingBag>
-          <Link to="/store/cart">
-            <BagImage />
+          <Link to="/store/cart/">
+            <BagImage >
+              <p>
+                0
+                </p>
+                </BagImage>
           </Link>
         </ShoppingBag>
-
+        <DesktopNavBar>
+          <StyledLink to="/store"  >store</StyledLink>
+          <StyledLink to='/about'>about us</StyledLink>
+          <StyledLink to="/news">news</StyledLink>
+          <StyledLink to='/whatiscbd'>what is cbd?</StyledLink>
+          
+        </DesktopNavBar>
         <HempUpLogo>
-          <Link to="/">
+          <Link to="/"on>
             <LogoImage />
           </Link>
         </HempUpLogo>

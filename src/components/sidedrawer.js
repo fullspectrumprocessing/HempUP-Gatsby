@@ -1,9 +1,33 @@
 import React from "react"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import styled from "styled-components"
-import {CloseMenuIcon} from "./closemenu"
-import "../styles/sidedrawer.scss"
+import { Link } from "gatsby"
+import GlobalStyle from "../theme/globalStyle"
 
+const ClosedDrawer = styled.nav`
+  height: calc(100% - 4.3em);
+  background: rgba($color: #ffffff, $alpha: 0.75);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px;
+  z-index: 1;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  @media (min-width: 796px) {
+    display: none;
+  }
+`
+const openDrawer = styled(ClosedDrawer)`
+  transform: translateX(0);
+`
+const FlexWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+`
 const ExpandedMenuDiv = styled.div`
   background-color: rgba(86, 126, 72, 0.5);
   width: 100%;
@@ -11,82 +35,129 @@ const ExpandedMenuDiv = styled.div`
   font-size: 20px;
   color: white;
   text-transform: lowercase;
+  display: flex;
+  flex-direction: column;
+`
+const NavTitleLink = styled(Link)`
+  color: rgba(152, 121, 91, 1);
+  text-decoration: none;
+  font-size: 32px;
+  font-family: Objektiv Mk1, sans serif;
+  :active {
+    color: rgba(76, 116, 72, 1);
+  }
+`
+const NavTitle = styled.div`
+  color: rgba(152, 121, 91, 1);
+  text-decoration: none;
+  font-size: 32px;
+  font-family: objektiv-mk1, sans-serif;
+  border: none;
+  background: none;
+  :active {
+    color: rgba(76, 116, 72, 1);
+  }
+`
+const StyledLink = styled(Link)`
+  margin: 0.5rem 0;
+  font-family: Objektiv Mk1, sans serif;
+  font-size: 20px;
+  text-transformation: lowercase;
+`
+const Li = styled.li`
+  list-style: none;
+  padding-left: 20px;
+}
+`
+const Ul = styled.ul`
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const SideDrawer = props => {
-  // console.log(props.click, 'click');
-  // let close
-  let drawerClasses = "side-drawer"
+  let navStyle
+  let open = {
+    transform: "translateX(0)",
+    background: "rgba(255, 255, 255, 0.75)",
+  }
   if (props.show) {
-    drawerClasses = "side-drawer open"
-    // close = <CloseMenuIcon />
+    //props.show is being sent down from the header component slong with all the methods that are handling the sidedrawers functionality
+    //If the menu button is toggled, the ClosedDrawers styling is changed to open and it slides out
+    navStyle = open
   }
   return (
-    <nav className={drawerClasses}>
+    <ClosedDrawer style={navStyle}>
+      <GlobalStyle />
       <Parallax pages={1.5}>
-        <div id="side-drawer-flex-wrapper">
-          {/* <a id="close-icon" href="#" onClick={props.click}>
-            {close}
-          </a> */}
-          {/* Fragment */}
+        <FlexWrapper>
           <>
-            <li>
-              <a href="#" onClick={props.expandStoreList}>
-                store
-              </a>
-            </li>
+            <Li>
+              <NavTitle onClick={props.expandStoreList}>store</NavTitle>
+            </Li>
             {!!props.expandedStore && (
               <ExpandedMenuDiv>
-                <ul>
-                  <li> All Products</li>
-                  <li> Hemp Product</li>
-                  <li> Hemp Product</li>
-                  <li> Hemp Product</li>
-                </ul>
+                <Ul>
+                  <Li>
+                    <StyledLink to="/store">All Products</StyledLink>
+                  </Li>
+                  <Li>
+                    <StyledLink to="/store">Drink</StyledLink>
+                  </Li>
+                  <Li>
+                    <StyledLink to="/store">Edibles</StyledLink>
+                  </Li>
+                  <Li>
+                    <StyledLink to="/store">Pet</StyledLink>
+                  </Li>
+                  <Li>
+                    <StyledLink to="/store">To-Go</StyledLink>
+                  </Li>
+                  <Li>
+                    <StyledLink to="/store">Vape</StyledLink>
+                  </Li>
+                </Ul>
               </ExpandedMenuDiv>
             )}
 
-            <li>
-              <a href="#" onClick={props.expandAboutList}>
-                about us
-              </a>
-            </li>
+            <Li>
+              <NavTitle onClick={props.expandAboutList}>about us</NavTitle>
+            </Li>
             {!!props.expandedAbout && (
               <ExpandedMenuDiv>
-                <ul>
-                  <li> Who We Are?</li>
-                  <li> Why Us?</li>
-                  <li> Why CBD?</li>
-                  <li> Join Us</li>
-                </ul>
+                <Ul>
+                  <Li> Who We Are?</Li>
+                  <Li> Why Us?</Li>
+                  <Li> Why CBD?</Li>
+                  <Li> Join Us</Li>
+                </Ul>
               </ExpandedMenuDiv>
             )}
-            <li>
-              <a href="#" onClick={props.expandNewsList}>
-                news
-              </a>
-            </li>
+            <Li>
+              <NavTitle onClick={props.expandNewsList}>news</NavTitle>
+            </Li>
             {!!props.expandedNews && (
               <ExpandedMenuDiv>
-                <ul>
-                  <li> Hemp Product</li>
-                  <li> Hemp Product</li>
-                  <li> Hemp Product</li>
-                  <li> Hemp Product</li>
-                </ul>
+                <Ul>
+                  <Li>News</Li>
+                  <Li>News</Li>
+                  <Li>News</Li>
+                  
+                </Ul>
               </ExpandedMenuDiv>
             )}
-            <li>
-              <a href="#">what is cbd?</a>
-            </li>
-            <li>
-              <a href="#">contact us</a>
-            </li>
-            {/* Fragment */}
+            <Li>
+              <NavTitleLink to="/whatiscbd">what is cbd?</NavTitleLink>
+            </Li>
+            <Li>
+              <NavTitleLink to="/contactus">contact us</NavTitleLink>
+            </Li>
           </>
-        </div>
+        </FlexWrapper>
       </Parallax>
-    </nav>
+    </ClosedDrawer>
   )
 }
 
