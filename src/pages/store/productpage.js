@@ -1,18 +1,19 @@
-import React from "react"
-import { graphql } from "gatsby"
-import styled from "styled-components"
-import { Container, Row, Col } from "reactstrap"
+
+import React from 'react'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
+import { Container, Row, Col } from 'reactstrap';
 import Img from "gatsby-image"
 
-import Layout from "../../components/layout"
+import Layout from '../../components/layout'
 
-import ProductForm from "./productform"
+import ProductForm from '../../components/store/productform'
 
 const ProductHeader = styled.div`
   font-family: objektiv-mk1, sans-serif;
   text-align: center;
   font-size: 2em;
-  color: #4c7448;
+  color: #4C7448;
 `
 
 const ProductImage = styled(Img)`
@@ -25,7 +26,8 @@ const ProductImage = styled(Img)`
   border: solid 1px grey;
 
   @media only screen and (max-width: 576px) {
-    width: calc(50% - 20px);
+    width: calc( 50% - 20px);
+
   }
 `
 
@@ -34,50 +36,51 @@ const ProductDescription = styled.div`
   /* max-width: 300px; */
   min-width: 200px;
 
-  width: 80%;
+  width:80%;
   font-family: lato, sans-serif;
   margin: 0 auto;
 
   @media only screen and (max-width: 576px) {
     text-align: center;
   }
+
 `
 
 const StyledContainer = styled(Container)`
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255, 0.7);
   margin-bottom: 50px;
   padding-bottom: 50px;
+
 `
-
-/*
-
-      <ProductImage fluid={product.images.localFile.childImageSharp.fluid}>
-      </ProductImage>
-
-*/
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
-  console.log("ProductPage", product)
+  console.log('ProductPage', product)
   return (
     <Layout>
+
       <StyledContainer>
-        <ProductHeader>{product.title}</ProductHeader>
+        <ProductHeader >
+            {product.title}
+        </ProductHeader >
 
         <Row>
-          <Col sm>
-            <ProductImage
-              fluid={product.images[0].localFile.childImageSharp.fluid}
-            />
-          </Col>
+          <Col sm >
+            <ProductImage fluid={product.images[0].localFile.childImageSharp.fluid} />
 
-          <Col sm>
-            <ProductForm variants={product.variants} />
-            <ProductDescription>{product.description}</ProductDescription>
+          </Col>
+          <Col sm >
+            <ProductForm
+              variants={product.variants || []}
+            />
+            <ProductDescription>
+              {product.description}
+            </ProductDescription>
           </Col>
         </Row>
       </StyledContainer>
-    </Layout>
+
+    </ Layout>
   )
 }
 

@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-import ProductGrid from "./productgrid"
+import ProductGrid from "../../components/store/productgrid"
 
 export default () => (
   <Layout>
