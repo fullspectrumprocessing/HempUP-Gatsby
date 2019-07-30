@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100vw;
   background: #ffffff;
   display: flex;
