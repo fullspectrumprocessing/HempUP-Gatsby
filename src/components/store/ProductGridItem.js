@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 import AddToCartButton from '../../components/AddToCartButton'
 import ViewDetailsButton from '../../components/ViewDetailsButton'
@@ -40,7 +41,7 @@ const GridDescription = styled.div`
     pointer-events: none;
 `
 
-const GridImg = styled.img`
+const GridImg = styled(Img)`
   width: calc(100% - 40px);
   border: solid 1px grey;
   margin: 20px 20px 1.45rem 20px ;
@@ -48,12 +49,14 @@ const GridImg = styled.img`
   pointer-events: none;
 `
 
-export default ({product}) => {
+const handleAddToCart = (node) => {
+  console.log('TODO: handleAddToCart', node)
+}
 
+export default ({product}) => {
 
   let max = 0
   let min = 0
-
 
   if(product && product.node){
     max = product.node.priceRange.maxVariantPrice.amount
@@ -61,11 +64,12 @@ export default ({product}) => {
   }
 
   return(
-    (product && product.node) &&(
+    (product && product.node) && (
     <ProductGridItem className="ProductGridItem">
 
         <Link to={`/store/product/${product.handle}/`} >
-          <GridImg src={product.node.images[0].localFile.childImageSharp.fluid.srcWebp}></GridImg>
+          <GridImg fluid={product.node.images[0].localFile.childImageSharp.fluid} />
+
         </Link>
         <GridTitle className="title">
           {product.node.title}
@@ -77,13 +81,13 @@ export default ({product}) => {
           {product.node.description}
         </GridDescription>
 
-        <AddToCartButton />
+        <AddToCartButton handleAddToCart={ () => { handleAddToCart(product.node) } } />
+
         <Link to={`/store/product/${product.node.handle}/`} >
           <ViewDetailsButton />
         </Link>
 
     </ProductGridItem>)
-
 
   )
 

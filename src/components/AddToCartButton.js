@@ -1,7 +1,16 @@
 import React from 'react'
+import PropsType from 'prop-types'
 import { useStaticQuery,  graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
+/*
+TODO:
+AddToCartButton recieves:
+ - 'id' (the main product id)
+ - variants.id
+ - quantity
+ and adds them to the cart data
+*/
 
 const AddToCartButton = styled.button`
   width: 150px;
@@ -25,14 +34,15 @@ const Text = styled.span`
   letter-spacing: 2px;
 `
 
-const handleAddToCart = () => {
-  console.log('TODO: handleAddToCart')
+const handleAddToCart = (evt) => {
+  console.log('TODO: handleAddToCart', evt)
 }
 
-export default () => (
+export default (props) => (
+
   <AddToCartButton
     className ="AddToCartButton"
-    onClick={handleAddToCart}
+    onClick={  props.handleAddToCart}
   >
     <Text>add to cart</Text>
   </AddToCartButton>

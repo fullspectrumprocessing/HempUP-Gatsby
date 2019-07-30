@@ -13,15 +13,19 @@ const ProductHeader = styled.div`
   text-align: center;
   font-size: 2em;
   color: #4C7448;
+  margin: 10px auto;
+  @media only screen and (max-width: 576px) {
+    text-align: center;
+    font-size: 1.5em;
+
+  }
 `
 
 const ProductImage = styled(Img)`
-  /* display: inline-block; */
   max-width: 500px;
-  min-width: 200px;
+  min-width: 250px;
   width: 100%;
-  margin: 0 auto;
-
+  margin: 10px auto;
   border: solid 1px grey;
 
   @media only screen and (max-width: 576px) {
@@ -31,8 +35,6 @@ const ProductImage = styled(Img)`
 `
 
 const ProductDescription = styled.div`
-  /* display: inline-block; */
-  /* max-width: 300px; */
   min-width: 200px;
 
   width:80%;
