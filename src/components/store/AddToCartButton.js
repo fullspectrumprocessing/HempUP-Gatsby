@@ -34,15 +34,11 @@ const Text = styled.span`
   letter-spacing: 2px;
 `
 
-const handleAddToCart = (evt) => {
-  console.log('TODO: handleAddToCart', evt)
-}
-
 export default (props) => (
 
   <AddToCartButton
     className ="AddToCartButton"
-    onClick={  props.handleAddToCart}
+    onClick={ props.handleAddToCart}
   >
     <Text>add to cart</Text>
   </AddToCartButton>

@@ -1,40 +1,56 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import AddToCartButton from '../../components/AddToCartButton'
-import { Container, Row, Col, FormGroup, Label, Input } from 'reactstrap';
 import Img from "gatsby-image"
+
+import { Container, Row, Col, FormGroup, Label, Input } from 'reactstrap'
+import AddToCartButton from '../../components/store/AddToCartButton'
+import {formatPrice} from '../../utils/stringFormatHelpers'
 
 const StyledContainer = styled(Container)`
   width: 20%;
   margin: 10px auto;
-
+  font-family: 'lato';
+  color: #444;
 `
 const StyledFormGroup = styled(FormGroup)`
   margin: 0 auto;
 `
-const ButtonContainer = styled.div`
 
+const Price = styled.div`
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: #98795B;
+  pointer-events: none;
+  margin: 0 auto;
+`
+const ButtonContainer = styled.div`
   margin: 0 auto;
   text-align: center;
 `
 
 class ProductForm extends React.Component {
-
   state = {
     selectedVariant: {},
     selectedQuantity: 1,
   }
 
   handleVarietyChange = (evt) => {
-    console.log('handleVarietyChange', evt.target.value)
-
     this.setState({
-      selectedVariant:
-        this.setState({
-          selectedVariant: this.getVariantDataFromTitle(evt.target.value),
-        })
+      selectedVariant: {...this.getVariantDataFromTitle(evt.target.value)},
     })
+
+  }
+
+  handleQuantityChange = (evt) => {
+    const isDigit = evt.target.value.match(/\d/g, '') && evt.target.value < 21 //number
+    isDigit && (
+      this.setState({
+        selectedQuantity: evt.target.value,
+      })
+    )
+
   }
 
   getVariantDataFromTitle = (title) => {
@@ -45,8 +61,11 @@ class ProductForm extends React.Component {
     }
   }
 
+
+
   handleAddToCart = () => {
-    console.log('TODO: handleAddToCart', this.state)
+    console.log('TODO: create storecontext')
+    console.log('productform handleAddToCart', this.state)
   }
 
   render(){
@@ -57,10 +76,11 @@ class ProductForm extends React.Component {
              <StyledFormGroup>
                <Label for="exampleNumber">Select Quantity:</Label>
                <Input
+                 value={this.state.selectedQuantity}
+                 onChange={this.handleQuantityChange}
                  type="number"
                  name="quantity"
                  id="quantitySelect"
-                 placeholder="1"
                />
              </StyledFormGroup>
              {(this.props.variants && this.props.variants.length > 1) &&
@@ -78,7 +98,14 @@ class ProductForm extends React.Component {
                 </StyledFormGroup>
               }
           </Row>
+          <Row>
+            <Price>
 
+              { this.state.selectedVariant.price &&
+                 formatPrice( this.state.selectedVariant.price )
+              }
+            </Price>
+          </Row>
           <ButtonContainer>
               <AddToCartButton handleAddToCart={this.handleAddToCart} />
           </ButtonContainer>
@@ -89,7 +116,16 @@ class ProductForm extends React.Component {
   }
 
   componentDidMount(){
-    console.log('hello');
+    this.setState({
+      selectedVariant:  this.props.variants[0],
+    })
+  }
+  componentDidUpdate( prevState ,prevProps){
+    // const newSelection = (prevState.selectedVariant.title !== this.state.selectedVariant.title)
+    //
+    // if(newSelection){
+    //   console.log(this.state.selectedVariant)
+    // }
   }
 
 }

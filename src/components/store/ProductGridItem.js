@@ -2,8 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import AddToCartButton from '../../components/AddToCartButton'
-import ViewDetailsButton from '../../components/ViewDetailsButton'
+
+
+import AddToCartButton from '../../components/store/AddToCartButton'
+import ViewDetailsButton from '../../components/store/ViewDetailsButton'
+import {formatPrice} from '../../utils/stringFormatHelpers'
+
+
 
 const ProductGridItem = styled.li`
   display: inline-block;
@@ -25,14 +30,17 @@ const ProductGridItem = styled.li`
 `
 
 const GridTitle = styled.div`
+  font-family: objektiv-mk1, sans-serif;
   font-size: 18px;
+  color: #707070;
+  font-weight: 400;
   pointer-events: none;
 `
 
 const GridPrice = styled.div`
   font-size: 16px;
   font-weight: 700;
-  color: #777;
+  color: #98795B;
   pointer-events: none;
 `
 
@@ -50,7 +58,7 @@ const GridImg = styled(Img)`
 `
 
 const handleAddToCart = (node) => {
-  console.log('TODO: handleAddToCart', node)
+  console.log('TODO: ProductGridItem handleAddToCart', node)
 }
 
 export default ({product}) => {
@@ -59,8 +67,8 @@ export default ({product}) => {
   let min = 0
 
   if(product && product.node){
-    max = product.node.priceRange.maxVariantPrice.amount
-    min = product.node.priceRange.minVariantPrice.amount
+    max =  formatPrice(product.node.priceRange.maxVariantPrice.amount)
+    min = formatPrice(product.node.priceRange.minVariantPrice.amount)
   }
 
   return(
@@ -75,7 +83,7 @@ export default ({product}) => {
           {product.node.title}
         </GridTitle>
         <GridPrice>
-          { "$" + ( min === max ? min : min + " - " + max) + "0"}
+          {( min === max ? min : min + " - " + max)}
         </GridPrice>
         <GridDescription>
           {product.node.description}

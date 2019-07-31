@@ -6,8 +6,9 @@ import { Container, Row, Col } from 'reactstrap';
 import Img from "gatsby-image"
 
 import Layout from '../../components/layout'
-
 import ProductForm from '../../components/store/productform'
+
+
 
 const ProductHeader = styled.div`
   font-family: objektiv-mk1, sans-serif;
