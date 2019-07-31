@@ -45,7 +45,7 @@ const DesktopNavBar = styled.nav`
   display: inline-flex;
   list-style: none;
   align-items: flex-end;
-  // margin-bottom: 10px;
+
   margin-left: 120px;
   justify-content: space-between;
   @media (max-width: 796px) {
@@ -146,7 +146,7 @@ class Header extends React.Component {
 
         </DesktopNavBar>
         <HempUpLogo>
-          <Link to="/"on>
+          <Link to="/">
             <LogoImage />
           </Link>
         </HempUpLogo>
