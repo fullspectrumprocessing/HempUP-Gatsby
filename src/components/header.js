@@ -150,7 +150,7 @@ class Header extends React.Component {
           
         </DesktopNavBar>
         <HempUpLogo>
-          <Link to="/"on>
+          <Link to="/">
             <LogoImage />
           </Link>
         </HempUpLogo>
