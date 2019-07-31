@@ -1,6 +1,5 @@
 
 const formatPrice = (price) => {
-  console.log('formatPrice', price);
   let priceArr = price.split('.')
   let dollar = priceArr[0]
   let cent = priceArr[1]
@@ -13,5 +12,11 @@ const formatPrice = (price) => {
   return '$' + dollar + '.' + cent
 }
 
+const formatProductType = (productType) => {
+  return productType.split('__')[2]
+}
 
-export { formatPrice }
+export {
+  formatPrice,
+  formatProductType,
+ }
