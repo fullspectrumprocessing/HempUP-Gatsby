@@ -5,14 +5,12 @@ import { Link } from "gatsby"
 
 
 const StyledFooter = styled.footer`
-  /* position: fixed; */
-  bottom: 0;
-  left: 0;
+
   background: linear-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85));
   z-index: 100;
   width: 100vw;
-  padding: 1rem;
-  margin-top: 10px;
+  padding: 1rem ;
+  margin-top: 20px;
   text-align: center;
 `
 const StyledLink = styled(Link)`

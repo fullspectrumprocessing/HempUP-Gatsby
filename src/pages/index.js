@@ -5,8 +5,36 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import GlobalStyle from '../theme/globalStyle'
-import "../styles/landing.scss"
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  cssVars from '../theme/_variables'
+
+
+const WeAreCBDText = styled.div`
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    h1 {
+      margin: 0;
+      font-size: 95px;
+    }
+
+    h2 {
+      font-size: 69px;
+      font-weight: ${cssVars.fw_4};
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 53px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+`
 
 const LandingMessageDiv = styled.div`
   width: 100vw;
@@ -22,19 +50,42 @@ const LandingMessageP = styled.p`
   font-size: 20px;
 `
 
+const ExploreButton = styled.button`
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 17px;
+  background: radial-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85));
+  color: ${cssVars.txtLghtGrn};
+  font-family: ${cssVars.Objktv};
+  font-size: 18px;
+  font-weight: 200;
+  font-style: normal;
+  text-decoration: none;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+`
+
+
 const Landing = () => (
   <Layout>
-    <GlobalStyle/>
+
     <SEO title="Landing Page" />
 
-    <div id="landingText">
-      <h3> we are</h3>
+    <WeAreCBDText >
+      <h3>we are</h3>
       <h1>CBD</h1>
       <h2>wellness</h2>
-    </div>
-    <button id="explore">
+    </WeAreCBDText>
+
+    <ExploreButton>
       <Link to="/store/">explore our line ></Link>
-    </button>
+    </ExploreButton>
+
     <LandingMessageDiv>
       <LandingMessageP>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -42,6 +93,7 @@ const Landing = () => (
         tristique senectus et netus et.
       </LandingMessageP>
     </LandingMessageDiv>
+    <GlobalStyle/>
   </Layout>
 )
 

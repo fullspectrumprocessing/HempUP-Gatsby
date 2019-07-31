@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import GlobalStyle from '../theme/globalStyle'
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import "../styles/layout.scss"
 import StyledBGImage from "../components/bgimage"
@@ -16,28 +17,32 @@ const Overlay = styled.div`
   );
 `
 
+const Main = styled.main`
+  min-height: 70vh;
+  margin: 100px 0px 0 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 class Layout extends React.Component {
   render() {
     const { children } = this.props
 
     return (
       <>
-
+            <GlobalStyle />
             <StyledBGImage>
               <Overlay></Overlay>
             </StyledBGImage>
 
 
-
-
-
-            <main>
+            <Main>
               {children}
-              <Footer />
-            </main>
 
+            </Main>
+            <Footer />
             <Header/>
-
 
 
       </>

@@ -63,6 +63,8 @@ const StyledLink = styled(Link)`
   font-family: Objektiv Mk1, sans serif;
   font-size: 20px;
   text-transformation: lowercase;
+  text-decoration: none;
+  color: white;
 `
 const Li = styled.li`
   list-style: none;
@@ -144,7 +146,7 @@ const SideDrawer = props => {
                   <Li>News</Li>
                   <Li>News</Li>
                   <Li>News</Li>
-                  
+
                 </Ul>
               </ExpandedMenuDiv>
             )}

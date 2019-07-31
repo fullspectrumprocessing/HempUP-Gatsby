@@ -7,14 +7,13 @@ import Img from "gatsby-image"
 
 import Layout from '../../components/layout'
 import ProductForm from '../../components/store/productform'
-
-
+import cssVars from '../../theme/_variables'
 
 const ProductHeader = styled.div`
   font-family: objektiv-mk1, sans-serif;
   text-align: center;
   font-size: 2em;
-  color: #4C7448;
+  color: ${cssVars.txtGrn}
   margin: 10px auto;
   @media only screen and (max-width: 576px) {
     text-align: center;

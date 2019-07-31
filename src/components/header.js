@@ -139,11 +139,11 @@ class Header extends React.Component {
         <ShoppingBag>
           <Link to="/store/cart/">
             <BagSvg src={ShopBag} />
-                
+
           </Link>
         </ShoppingBag>
         <DesktopNavBar>
-          <StyledLink to="/store"  >store</StyledLink>
+          <StyledLink to="/store">store</StyledLink>
           <StyledLink to='/about'>about us</StyledLink>
           <StyledLink to="/news">news</StyledLink>
           <StyledLink to='/whatiscbd'>what is cbd?</StyledLink>
