@@ -9,6 +9,8 @@ import { BagImage } from "./bagImage"
 import { MenuImage } from "./menu"
 import SideDrawer from "../components/sidedrawer"
 import DrawerOverlay from "../components/draweroverlay"
+import ShopBag from '../images/bag.svg'
+
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -62,6 +64,11 @@ const StyledLink = styled(Link)`
     background-color: rgba(76, 116, 72, 1);
     color: white;
   }
+`
+const BagSvg = styled.img`
+  width: 31px;
+  height: 41px;
+
 `
 class Header extends React.Component {
   state = {
@@ -131,11 +138,8 @@ class Header extends React.Component {
         <GlobalStyle/>
         <ShoppingBag>
           <Link to="/store/cart/">
-            <BagImage >
-              <p>
-                0
-                </p>
-                </BagImage>
+            <BagSvg src={ShopBag} />
+                
           </Link>
         </ShoppingBag>
         <DesktopNavBar>
