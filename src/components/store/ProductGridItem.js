@@ -75,7 +75,7 @@ export default ({product}) => {
     (product && product.node) && (
     <ProductGridItem className="ProductGridItem">
 
-        <Link to={`/store/product/${product.handle}/`} >
+        <Link to={`/store/product/${product.node.handle}/`} >
           <GridImg fluid={product.node.images[0].localFile.childImageSharp.fluid} />
 
         </Link>

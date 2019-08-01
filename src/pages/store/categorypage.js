@@ -3,7 +3,9 @@ import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
+import SEO from "../../components/seo"
 
+import ProductGrid from "../../components/store/productgrid"
 import Layout from '../../components/layout'
 import cssVars from '../../theme/_variables'
 
@@ -26,25 +28,12 @@ const StyledContainer = styled(Container)`
   padding-bottom: 50px;
 
 `
-const ProducTypePage = (props) => {
-  const products = props.data.allShopifyProduct.edges
-
-  console.log('ProductTypePage props' , props)
-  // console.log('ProductTypePage' , props.data, props.pageContext)
-
+const ProducTypePage = ({data}) => {
   return (
     <Layout>
 
       <StyledContainer>
-        <ProductHeader >
-            {
-              products.map( (product, inx) => {
-              return <div key={inx}> {product.node.title} </div>
-            })
-          }
-        </ProductHeader >
-
-
+        <ProductGrid products={data.allShopifyProduct.edges} />
       </StyledContainer>
 
     </ Layout>
@@ -52,16 +41,38 @@ const ProducTypePage = (props) => {
 }
 
 export const query = graphql`
-  query ($productType: String) {
-    allShopifyProduct(filter: {productType: {eq: $productType}}) {
-      edges {
-        node {
-          handle
-          title
+query ($productType: String) {
+allShopifyProduct(filter: {productType: {eq: $productType}}) {
+  edges {
+    node {
+      handle
+      title
+      id
+      productType
+      createdAt
+      images {
+        id
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+      priceRange {
+        maxVariantPrice {
+          amount
+        }
+        minVariantPrice {
+          amount
         }
       }
     }
   }
+}
+}
+
 `
 
 export default ProducTypePage

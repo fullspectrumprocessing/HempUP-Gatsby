@@ -2,14 +2,14 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import GlobalStyle from "../theme/globalStyle"
+import GlobalStyle from "../../theme/globalStyle"
 import { CloseMenuIcon } from "./closemenu"
 import { LogoImage } from "./logoimage"
 import { BagImage } from "./bagImage"
 import { MenuImage } from "./menu"
-import SideDrawer from "../components/sidedrawer"
-import DrawerOverlay from "../components/draweroverlay"
-import ShopBag from '../images/bag.svg'
+import SideDrawer from "./sidedrawer"
+import DrawerOverlay from "./draweroverlay"
+import ShopBag from '../../images/bag.svg'
 
 
 const StyledHeader = styled.header`
@@ -55,6 +55,8 @@ const DesktopNavBar = styled.nav`
   }
 `
 
+
+
 const StyledLink = styled(Link)`
   color: rgba(152, 121, 91, 1);
   padding-left: 20px;
@@ -80,6 +82,7 @@ class Header extends React.Component {
 
   // !The Below Methods are handling the side drawer animations and state changes.
   handleDrawer = () => {
+
     // e.preventDefault()
     // this.setState({content: !this.state.content})\
     this.setState(prevState => {
@@ -129,6 +132,7 @@ class Header extends React.Component {
   }
 
   render() {
+
     let overlay
     if (this.state.sideDrawerOpen) {
       overlay = <DrawerOverlay click={this.handleDrawerOverlay} />
@@ -149,6 +153,9 @@ class Header extends React.Component {
           <StyledLink to='/whatiscbd'>what is cbd?</StyledLink>
 
         </DesktopNavBar>
+
+
+
         <HempUpLogo>
           <Link to="/">
             <LogoImage />
@@ -174,6 +181,7 @@ class Header extends React.Component {
           expandNewsList={this.expandNewsList}
         />
         {overlay}
+
       </StyledHeader>
     )
   }

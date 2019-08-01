@@ -1,7 +1,7 @@
-
+import React from 'react'
 import { useStaticQuery,  graphql } from 'gatsby'
 
-export default () => {
+const queryProductTypes = () => {
   const data = useStaticQuery(
     graphql`
     query {
@@ -17,7 +17,9 @@ export default () => {
   )
   console.log('productTypes data', data)
 
-  let productTypes = data.allShopifyProductType.edges
+  let productTypes = data.allShopifyProductType.edges.map((item) => {
+    return item.node.name
+  })
 
   console.log('productTypes', productTypes)
 
@@ -26,3 +28,5 @@ export default () => {
 
   )
 }
+
+export default queryProductTypes

@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery,  graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import ProductGridItem from './ProductGridItem'
-import getProductTypes from '../../utils/getProductTypes'
+
 
 const ProductGrid = styled.ul`
 /* display:inline-block; */
@@ -18,64 +18,12 @@ const ProductGrid = styled.ul`
   }
 `
 
-export default () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allShopifyProduct(
-          sort: {
-            fields: [createdAt]
-            order: DESC
-          }
-        ) {
-          edges {
-            node {
-              id
-              productType
-              title
-              handle
-              createdAt
-              images {
-                id
-                originalSrc
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 400) {
-                      ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                    }
-                  }
-                }
-              }
-              priceRange {
-                maxVariantPrice {
-                  amount
-                }
-                minVariantPrice {
-                  amount
-                }
-              }
+export default ({products}) => {
 
-            }
-          }
-        }
-      }
-    `
-  )
-  //FITERs
-
-  /*
-  all
-  Drinks
-  Edibles
-  For Pets
-  To go
-  Vape
-
-  */
 
   return (
     <ProductGrid className="ProductGrid">
-      {data.allShopifyProduct.edges.map((product, inx) => (
+      {products.map((product, inx) => (
 
           <ProductGridItem product={product} key={inx} />
 

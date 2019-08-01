@@ -4,9 +4,9 @@ import styled from "styled-components"
 import GlobalStyle from '../theme/globalStyle'
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import "../styles/layout.scss"
-import StyledBGImage from "../components/bgimage"
-import Header from "./header"
-import Footer from "../components/footer"
+import StyledBGImage from "./bgimage"
+import Header from "./header/header"
+import Footer from "./footer"
 
 const Overlay = styled.div`
   width: 100vw;
