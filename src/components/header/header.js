@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
@@ -9,6 +9,7 @@ import { BagImage } from "./bagImage"
 import { MenuImage } from "./menu"
 import SideDrawer from "./sidedrawer"
 import DrawerOverlay from "./draweroverlay"
+import DesktopNavSubBar from './desktopnavsub'
 import ShopBag from '../../images/bag.svg'
 
 
@@ -55,18 +56,6 @@ const DesktopNavBar = styled.nav`
   }
 `
 
-
-
-const StyledLink = styled(Link)`
-  color: rgba(152, 121, 91, 1);
-  padding-left: 20px;
-  padding-right: 20px;
-  font-family: lato, sans serif;
-  :hover {
-    background-color: rgba(76, 116, 72, 1);
-    color: white;
-  }
-`
 const BagSvg = styled.img`
   width: 31px;
   height: 41px;
@@ -91,45 +80,37 @@ class Header extends React.Component {
     console.log("clicked")
     console.log(this.state, "state")
   }
+
+
+
   handleDrawerOverlay = () => {
     this.setState({
       sideDrawerOpen: false,
     })
     console.log(this.state, "state")
   }
-  expandStoreList = () => {
-    console.log("its alive!!!")
-    if (this.state.expandedStore == false) {
-      this.setState({
-        expandedStore: true,
-      })
-    } else
-      this.setState({
-        expandedStore: false,
-      })
+
+  //refactored a bit so the desktop nav can share the same state as the mobile nav
+  handleSubMenu = (type) => {
+    this.setState( (prevState) => {
+      let newState = {}
+      for( let nav in prevState ){
+        const openSubMenu = (type && nav.search(type) > -1 )
+        if( nav.search('expanded') > -1 ){
+          newState[nav] =  openSubMenu ? !prevState[nav] :  false;
+        }else{
+          newState[nav] = prevState[nav]
+        }
+      }
+      return newState
+    })
   }
-  expandAboutList = () => {
-    if (this.state.expandedAbout == false) {
-      this.setState({
-        expandedAbout: true,
-      })
-    } else {
-      this.setState({
-        expandedAbout: false,
-      })
-    }
-  }
-  expandNewsList = () => {
-    if (this.state.expandedNews == false) {
-      this.setState({
-        expandedNews: true,
-      })
-    } else {
-      this.setState({
-        expandedNews: false,
-      })
-    }
-  }
+
+
+  expandStoreList = () => this.handleSubMenu('expandedStore')
+  expandAboutList = () => this.handleSubMenu('expandedAbout')
+  expandNewsList = () => this.handleSubMenu('expandedNews')
+
 
   render() {
 
@@ -146,21 +127,41 @@ class Header extends React.Component {
 
           </Link>
         </ShoppingBag>
+
         <DesktopNavBar>
-          <StyledLink to="/store">store</StyledLink>
-          <StyledLink to='/about'>about us</StyledLink>
-          <StyledLink to="/news">news</StyledLink>
-          <StyledLink to='/whatiscbd'>what is cbd?</StyledLink>
-
+          <DesktopNavSubBar to="/store"
+            expandState={this.state.expandedStore}
+            handleExpand={this.expandStoreList}
+            subMenu={this.props.productTypes.map(item => item.node.name)}
+            >
+            store
+          </DesktopNavSubBar>
+          <DesktopNavSubBar to="/about"
+            expandState={this.state.expandedAbout}
+            handleExpand={this.expandStoreList}
+            subMenu={[]}>
+            about us
+          </DesktopNavSubBar>
+          <DesktopNavSubBar to="/news"
+            expandState={this.state.expandedStore}
+            handleExpand={this.expandedNews}
+            subMenu={[]}>
+            news
+          </DesktopNavSubBar>
+          <DesktopNavSubBar to="/whatiscbd"
+            expandState={this.state.expandedStore}
+            handleExpand={this.expandStoreList}
+            subMenu={[]}>
+            what is cbd?
+          </DesktopNavSubBar>
         </DesktopNavBar>
-
-
 
         <HempUpLogo>
           <Link to="/">
             <LogoImage />
           </Link>
         </HempUpLogo>
+
         {!this.state.sideDrawerOpen ? (
           <MenuIconWrapper href="#" onClick={this.handleDrawer}>
             <MenuImage />
@@ -195,4 +196,20 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allShopifyProductType {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Header productTypes={data.allShopifyProductType.edges} {...props} />}
+  />
+)

@@ -16,5 +16,3 @@ export const CloseMenuIcon = () => {
   `)
   return <Img fixed={data.closeMenu.childImageSharp.fixed} />
 }
-
-
