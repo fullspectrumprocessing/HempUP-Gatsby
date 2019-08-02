@@ -17,49 +17,23 @@ const DesktopNavSubBarContainer = styled.div`
 
 `
 const StyledLink = styled(Link)`
-  color: rgba(152, 121, 91, 1);
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 15px 15px 0 0;
-  font-family: lato, sans serif;
-`
-const StyledLinkHighlight = styled(Link)`
-  background-color: rgba(76, 116, 72, 1);
-  color: white;
+  padding: 5px 20px;
+  margin: 0 3px;
+  border-radius: 10px 10px 0 0;
+  font-family: ${cssVars.Objktv};
+  color: ${props => props.highlighted ? 'white' : 'rgba(152, 121, 91, 1)'} ;
+  background: ${props => props.highlighted ?  cssVars.grdntGreen : 'white'} ;
 
-`
-
-const SubMenu = styled.div`
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    top: 4.3em;
-    width: 100vw;
-    left: 0px;
-    background: #4c7448;
-    color: white;
 `
 
 /*
+notes
 shows up on hover
 OR
 when a specific category is clicked
-
 does not show up on mobile (parent component should be doing this already)
-
 dynamically makes list based on graphQLfeed
-
 shows up below nav bar, pushing the rest of the page down...
-
-props:
--title:string
--links:array
-[
-  store: ['edibles', 'pet', ...], !!! getProductTypes !!
-  'about us': [] //no sub menu
-  news: []
-
-]
 
 */
 
@@ -70,38 +44,35 @@ class DesktopNavSubBar extends React.Component {
   }
 
   handleMouseOver = (evt) => {
-    this.setState({menuSelected: true })
+    this.setState({menuSelected: true})
   }
-
   handleMouseOut = (evt) => {
     this.setState({menuSelected: false})
   }
 
-  handleClick = (evt) => {
-    this.props.handleExpand()
-  }
+
   render() {
 
+    const targetName = 'dnav' + this.props.to
+
     return(
-      <DesktopNavSubBarContainer>
-
+      <DesktopNavSubBarContainer
+        onMouseMove={this.handleMouseMove}
+      >
+          <GlobalStyle />
           <StyledLink
+            highlighted={( this.state.menuSelected) ? 'true' : ''}
             to={this.props.to}
+            activeStyle={{
+              color:"white",
+              background: cssVars.grdntGreen,
+            }}
+            partiallyActive={true}
+            className={targetName}
             onMouseOver={this.handleMouseOver}
-            onClick={this.handleClick}>
-            {this.props.children}
+            onMouseOut={this.handleMouseOut}>
+              {this.props.children}
           </StyledLink>
-
-          { (this.props.subMenu && (this.props.expandState|| this.state.menuSelected)) &&
-            <SubMenu onMouseOut={this.handleMouseOut}>
-              {
-                this.props.subMenu.map((item,inx) => {
-                  return <div key={inx}> {item} </div>
-                })
-              }
-
-            </SubMenu>
-          }
 
       </DesktopNavSubBarContainer>
     )

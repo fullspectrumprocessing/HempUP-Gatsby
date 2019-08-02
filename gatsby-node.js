@@ -13,23 +13,17 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(`
     {
       allShopifyProduct {
-            edges {
-              node {
-                handle
-              }
-            }
-          }
-      allShopifyProductType {
         edges {
           node {
-            id
+            handle
+            productType
           }
         }
       }
     }
   `).then(result => {
     const allProducts = result.data.allShopifyProduct.edges
-    const allProductTypes = result.data.allShopifyProductType.edges
+    const allProductTypes = []
 
     allProducts.forEach(({ node }) => {
 
@@ -41,17 +35,18 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
 
+      !allProductTypes.includes(node.productType) && allProductTypes.push(node.productType)
+
     })
 
 
-    allProductTypes.forEach(({ node }) => {
+    allProductTypes.forEach((item) => {
 
-      const productType = node.id.split('__')[2]
       createPage({
-        path: `/store/category/${productType}/`,
+        path: `/store/category/${item}/`,
         component: path.resolve(`./src/pages/store/categorypage.js`),
         context: {
-          productType: productType,
+          productType: item,
         },
       })
 

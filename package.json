@@ -25,6 +25,7 @@
     "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.1",
     "react-parallax": "^2.2.0",
+    "react-reveal": "^1.2.2",
     "react-spring": "^8.0.27",
     "reactstrap": "^8.0.1",
     "styled-components": "^4.3.2",
