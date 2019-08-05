@@ -2,23 +2,20 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import GlobalStyle from "../../theme/globalStyle"
+import Slide from 'react-reveal/Slide';
 
+import GlobalStyle from "../../theme/globalStyle"
 import NavMobile from './NavMobile'
 import HempUpLogo from './HempUpLogo'
 import ShoppingBag from './ShoppingBag'
-
 import DrawerOverlay from "./draweroverlay"
-import DesktopNavLink from './desktopnavsub'
-import cssVars from "../../theme/_variables.js"
+import DesktopNavButton from './DesktopNavButton'
+import NavDesktopSubMenu from './NavDesktopSubMenu'
+import cssVars from "../../theme/_variables"
+import {navigationMap} from './navigationMap'
 
-const navigationMap = {
-  "store": ["Edibles", "Pet", "To Go", "Drink", "Vape"],
-  "about": ["who we are", "why us", "follow"],
-  "news": [],
-  "whatiscbd": [],
-}
 
+import { Location } from "@reach/router";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -38,20 +35,8 @@ const NavbarContainerUpper = styled.div`
   flex-direction: row-reverse;
   justify-content: space-around;
   height: 4.3em;
+  z-index: 10;
 
-`
-const SubMenu = styled.div`
-    display: none;
-    @media (min-width: 796px) {
-      display: flex;
-      justify-content: center;
-      top: 4.3em;
-      left: 0px;
-      width: 100vw;
-      height: 2em;
-      background: ${cssVars.navBarGreenGradient};
-      color: white;
-    }
 `
 
 const DesktopNavBar = styled.nav`
@@ -66,74 +51,57 @@ const DesktopNavBar = styled.nav`
   }
 `
 
-
 class Header extends React.Component {
-  state = {
+  state = { }
 
-  }
 
-  getSubMenu = () => {
-    let subMenuItems = []
-    switch(window.location.pathname){
-      case "/store":
-        return  navigationMap.store
-      case "/about":
-        return  navigationMap.about
-      case "/news":
-        return  navigationMap.news
-      case "/whatiscbd":
-        return  navigationMap.whatiscbd
-
+  getMenuName(page){
+    switch(page){
+      case 'whatiscbd':
+        return 'what is cbd?';
       default:
-        return []
+        return page;
     }
   }
+
 
   componentDidMount(){
     navigationMap.store = [...this.props.productTypes]
   }
 
   render() {
-    console.log('locaiont', window.location.pathname)
+
     return (
       <StyledHeader>
         <GlobalStyle/>
+
         <NavbarContainerUpper>
-
           <ShoppingBag />
-
           <DesktopNavBar>
-            <DesktopNavLink to="/store">
-              store
-            </DesktopNavLink>
-            <DesktopNavLink to="/about">
-              about us
-            </DesktopNavLink>
-            <DesktopNavLink to="/news">
-              news
-            </DesktopNavLink>
-            <DesktopNavLink to="/whatiscbd">
-              what is cbd?
-            </DesktopNavLink>
+            {Object.keys(navigationMap).map( (slug, inx) => {
 
+                return (
+                  <DesktopNavButton
+                    to={slug} key={inx}
+                  >
+                    {this.getMenuName(slug)}
+                  </DesktopNavButton>
+                )
+              })}
           </DesktopNavBar>
-
           <HempUpLogo />
           <NavMobile />
-
         </NavbarContainerUpper>
 
-        { this.getSubMenu().length &&
-
-          <SubMenu>
-
-            {
-              this.getSubMenu().map((item, inx) => {
-                return <div key={inx}>{ item} </div>
-              })
-            }
-          </SubMenu>
-        }
+        <Location>
+          {({ location }) => {
+             return  (
+               <Slide top duration={300}>
+                 <NavDesktopSubMenu location={location} />
+               </Slide>
+             )
+          }}
+        </Location>
 
       </StyledHeader>
     )
@@ -164,13 +132,16 @@ export default props => (
       }
     `}
 
-    render={data => <Header
+    render={data => (
+        <Header
+            productTypes={data.allShopifyProduct.edges.reduce((acc, cur) => {
+              return acc.includes(cur.node.productType) ? acc :  [...acc, cur.node.productType]
+            }, [] )}
 
-                      productTypes={data.allShopifyProduct.edges.reduce((acc, cur) => {
-                        return acc.includes(cur.node.productType) ? acc :  [...acc, cur.node.productType]
-                      }, [] )}
+            slug={'test'}
 
-                      {...props}
-                     />}
+            {...props}
+        />
+    )}
   />
 )

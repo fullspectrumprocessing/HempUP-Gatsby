@@ -3,11 +3,9 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-
 import AddToCartButton from '../../components/store/AddToCartButton'
 import ViewDetailsButton from '../../components/store/ViewDetailsButton'
 import {formatPrice} from '../../utils/stringFormatHelpers'
-
 
 
 const ProductGridItem = styled.li`
@@ -35,6 +33,8 @@ const GridTitle = styled.div`
   color: #707070;
   font-weight: 400;
   pointer-events: none;
+  min-height: 20px;
+  padding: 0 10px;
 `
 
 const GridPrice = styled.div`

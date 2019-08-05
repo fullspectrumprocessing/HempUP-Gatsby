@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Full Spectrum Processing <fullspectrumprocessing@gmail.com>",
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "babel-plugin-styled-components": "^1.10.6",
     "bootstrap": "^4.3.1",
     "gatsby": "^2.13.25",

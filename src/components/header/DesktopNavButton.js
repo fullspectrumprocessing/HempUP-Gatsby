@@ -6,7 +6,7 @@ import styled from "styled-components"
 import GlobalStyle from "../../theme/globalStyle"
 import cssVars from "../../theme/_variables.js"
 
-const DesktopNavSubBarContainer = styled.div`
+const DesktopNavButtonContainer = styled.div`
   display: inline-flex;
   list-style: none;
   align-items: center;
@@ -26,26 +26,20 @@ const StyledLink = styled(Link)`
 
 `
 
-/*
-notes
-shows up on hover
-OR
-when a specific category is clicked
-does not show up on mobile (parent component should be doing this already)
-dynamically makes list based on graphQLfeed
-shows up below nav bar, pushing the rest of the page down...
-
-*/
-
-class DesktopNavSubBar extends React.Component {
+class DesktopNavButton extends React.Component {
 
   state = {
     menuSelected: false,
   }
 
+  getSlug(slug){
+    return slug
+  }
+
   handleMouseOver = (evt) => {
     this.setState({menuSelected: true})
   }
+
   handleMouseOut = (evt) => {
     this.setState({menuSelected: false})
   }
@@ -53,38 +47,30 @@ class DesktopNavSubBar extends React.Component {
 
   render() {
 
-    const targetName = 'dnav' + this.props.to
-
     return(
-      <DesktopNavSubBarContainer
-        onMouseMove={this.handleMouseMove}
-      >
+      <DesktopNavButtonContainer>
           <GlobalStyle />
           <StyledLink
-            highlighted={( this.state.menuSelected) ? 'true' : ''}
             to={this.props.to}
+            highlighted={( this.state.menuSelected) ? 'true' : ''}
             activeStyle={{
               color:"white",
               background: cssVars.grdntGreen,
             }}
             partiallyActive={true}
-            className={targetName}
             onMouseOver={this.handleMouseOver}
             onMouseOut={this.handleMouseOut}>
               {this.props.children}
           </StyledLink>
-
-      </DesktopNavSubBarContainer>
+      </DesktopNavButtonContainer>
     )
   }
-
-
 }
 
-DesktopNavSubBar.propTypes = {
+DesktopNavButton.propTypes = {
   expandState: PropTypes.bool,
   handleExpand: PropTypes.func,
   subMenu: PropTypes.array
 }
 
-export default DesktopNavSubBar
+export default DesktopNavButton

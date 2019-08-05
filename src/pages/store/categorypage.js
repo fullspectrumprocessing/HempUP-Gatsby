@@ -9,6 +9,18 @@ import ProductGrid from "../../components/store/productgrid"
 import Layout from '../../components/layout'
 import cssVars from '../../theme/_variables'
 
+const PageHeader = styled.div`
+  font-family: objektiv-mk1, sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  color: ${cssVars.txtGrn}
+  margin: 10px auto;
+  @media only screen and (max-width: 576px) {
+    text-align: center;
+    font-size: 1.5em;
+
+  }
+`
 
 const ProductHeader = styled.div`
   font-family: objektiv-mk1, sans-serif;
@@ -23,16 +35,27 @@ const ProductHeader = styled.div`
   }
 `
 const StyledContainer = styled(Container)`
-  background: rgba(255,255,255, 0.7);
-  margin-bottom: 50px;
-  padding-bottom: 50px;
+  /* background: rgba(255,255,255, 0.7); */
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+
+  @media only screen and (max-width: 576px) {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+
+  }
 
 `
-const ProducTypePage = ({data}) => {
+const ProducTypePage = (props) => {
+  const {data} = props
+  console.log('PRO TYPE', data.allShopifyProduct.edges[0].node.productType);
+
   return (
     <Layout>
 
+
       <StyledContainer>
+        <PageHeader>{data.allShopifyProduct.edges[0].node.productType}</PageHeader>
         <ProductGrid products={data.allShopifyProduct.edges} />
       </StyledContainer>
 
