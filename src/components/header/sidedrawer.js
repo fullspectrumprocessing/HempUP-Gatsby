@@ -2,7 +2,7 @@ import React from "react"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import GlobalStyle from "../theme/globalStyle"
+import GlobalStyle from "../../theme/globalStyle"
 
 const ClosedDrawer = styled.nav`
   height: calc(100% - 4.3em);

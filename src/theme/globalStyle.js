@@ -5,8 +5,13 @@ const GlobalStyle = createGlobalStyle`
     @import url(https://use.typekit.net/fdo4rws.css);
 
     a {
-      text-decoration: none;
-      color: white;
+      text-decoration: none !important;
+  
+    }
+
+    a:hover{
+      text-decoration: none !important;
+      color: white !important;
     }
 
     h1 {

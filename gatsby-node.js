@@ -2,7 +2,7 @@ const path = require(`path`)
 
 /*
 TODO:
- - make another createPages call with allShopifyProductTypes
+
  - also use allShopifyProductTypes to generate sub menus and links, with different graphql node method?
 https://www.gatsbyjs.org/docs/node-apis
 
@@ -16,12 +16,16 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             handle
+            productType
           }
         }
       }
     }
   `).then(result => {
-    result.data.allShopifyProduct.edges.forEach(({ node }) => {
+    const allProducts = result.data.allShopifyProduct.edges
+    const allProductTypes = []
+
+    allProducts.forEach(({ node }) => {
 
       createPage({
         path: `/store/product/${node.handle}/`,
@@ -30,6 +34,23 @@ exports.createPages = ({ graphql, actions }) => {
           handle: node.handle,
         },
       })
+
+      !allProductTypes.includes(node.productType) && allProductTypes.push(node.productType)
+
+    })
+
+
+    allProductTypes.forEach((item) => {
+
+      createPage({
+        path: `/store/category/${item}/`,
+        component: path.resolve(`./src/pages/store/categorypage.js`),
+        context: {
+          productType: item,
+        },
+      })
+
     })
   })
+
 }
