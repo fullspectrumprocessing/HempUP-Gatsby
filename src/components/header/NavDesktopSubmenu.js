@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Slide from 'react-reveal/Slide';
 
-import {navigationMap} from './navigationMap'
+import {navigationMap} from '../navigationMap'
 import cssVars from "../../theme/_variables"
 import GlobalStyle from "../../theme/globalStyle"
 
