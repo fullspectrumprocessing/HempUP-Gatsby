@@ -4,9 +4,10 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Hemp Up Test`,
-    description: `CBD Wellness Site Testing.`,
+    title: `Hemp Up`,
+    description: `We are CBD Wellness`,
     author: `Full Spectrum Processing`,
+    
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,8 +39,6 @@ module.exports = {
       options: {
         shopName: process.env.GATSBY_SHOP_NAME,
         accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
-        // shopName: 'hempuptest',
-        // accessToken:'1087437fc7ba5e6705705deb2121c02e',
         verbose: true,
       },
     },
