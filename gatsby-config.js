@@ -1,7 +1,7 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
 })
-import config from './content/meta/config';
+const config = require("./content/meta/config")
 
 module.exports = {
   siteMetadata: {
@@ -9,7 +9,7 @@ module.exports = {
     description: config.siteDescription,
     author: config.authorName,
     siteUrl: config.siteUrl,
-    
+    lamguage: config.siteLanguage,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,11 +22,10 @@ module.exports = {
         policy: [
           {
             userAgent: `*`,
-            allow: [`/`]
-          }
-        ]
-      }
-
+            allow: [`/`],
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -52,7 +51,7 @@ module.exports = {
     },
 
     {
-      resolve: 'gatsby-source-shopify2',
+      resolve: "gatsby-source-shopify2",
       options: {
         shopName: process.env.GATSBY_SHOP_NAME,
         accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
