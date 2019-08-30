@@ -23,6 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     const allProducts = result.data.allShopifyProduct.edges
+    // edges come back as an array
     const allProductTypes = []
 
     allProducts.forEach(({ node }) => {

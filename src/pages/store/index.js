@@ -10,7 +10,7 @@ const StorePageIndex = ({data}) => {
   return (
 
     <Layout>
-      <SEO title="Hemp Up - Store" keywords={[`CBD`, `hemp`, `pet`, `edibles`]} />
+      <SEO title="Hemp Up - Store" keywords={[`CBD`, `hemp`, `pet`, `edibles`, `tinctures`, `oil`]} />
 
       <ProductGrid products={data.allShopifyProduct.edges} />
     </Layout>

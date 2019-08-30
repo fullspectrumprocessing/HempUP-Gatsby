@@ -1,16 +1,41 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
 })
+const config = require("./content/meta/config")
 
 module.exports = {
   siteMetadata: {
-    title: `Hemp Up`,
-    description: `We are CBD Wellness`,
-    author: `Full Spectrum Processing`,
-    
+    title: config.siteTitle,
+    description: config.siteDescription,
+    author: config.authorName,
+    siteUrl: config.siteUrl,
+    lamguage: config.siteLanguage,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: true,
+        fileName: false,
+        //Add any options here
+        //refer to => https://www.styled-components.com/docs/tooling#babel-plugin//
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: config.siteUrl,
+        sitemap: `${config.siteUrl}/sitemap.xml`,
+        policy: [
+          {
+            userAgent: `*`,
+            allow: [`/`],
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,7 +60,7 @@ module.exports = {
     },
 
     {
-      resolve: 'gatsby-source-shopify2',
+      resolve: "gatsby-source-shopify2",
       options: {
         shopName: process.env.GATSBY_SHOP_NAME,
         accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
