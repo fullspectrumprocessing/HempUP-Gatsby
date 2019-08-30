@@ -7,10 +7,26 @@ module.exports = {
     title: `Hemp Up`,
     description: `We are CBD Wellness`,
     author: `Full Spectrum Processing`,
+    siteUrl: `https://hempup.com`,
     
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `${this.siteMetadata.siteUrl}`,
+        sitemap: `${this.siteMetadata.siteUrl}/sitemap.xml`,
+        policy: [
+          {
+            userAgent: `*`,
+            allow: [`/`]
+          }
+        ]
+      }
+
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
