@@ -15,6 +15,15 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: true,
+        fileName: false,
+        //Add any options here
+        //refer to => https://www.styled-components.com/docs/tooling#babel-plugin//
+      },
+    },
+    {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: config.siteUrl,
