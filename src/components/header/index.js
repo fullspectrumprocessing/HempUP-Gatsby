@@ -12,7 +12,7 @@ import DrawerOverlay from "./draweroverlay"
 import DesktopNavButton from './DesktopNavButton'
 import NavDesktopSubMenu from './NavDesktopSubMenu'
 import cssVars from "../../theme/_variables"
-import {navigationMap} from './navigationMap'
+import {navigationMap} from '../navigationMap'
 
 
 import { Location } from "@reach/router";
@@ -79,7 +79,6 @@ class Header extends React.Component {
           <ShoppingBag />
           <DesktopNavBar>
             {Object.keys(navigationMap).map( (slug, inx) => {
-
                 return (
                   <DesktopNavButton
                     to={slug} key={inx}
