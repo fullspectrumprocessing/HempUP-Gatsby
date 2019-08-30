@@ -1,13 +1,14 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 })
+import config from './content/meta/config';
 
 module.exports = {
   siteMetadata: {
-    title: `Hemp Up`,
-    description: `We are CBD Wellness`,
-    author: `Full Spectrum Processing`,
-    siteUrl: `https://hempup.com`,
+    title: config.siteTitle,
+    description: config.siteDescription,
+    author: config.authorName,
+    siteUrl: config.siteUrl,
     
   },
   plugins: [
@@ -16,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `${this.siteMetadata.siteUrl}`,
-        sitemap: `${this.siteMetadata.siteUrl}/sitemap.xml`,
+        host: config.siteUrl,
+        sitemap: `${config.siteUrl}/sitemap.xml`,
         policy: [
           {
             userAgent: `*`,
