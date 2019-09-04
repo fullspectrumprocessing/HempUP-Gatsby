@@ -9,7 +9,7 @@ const navigationMap = {
 
 const navigationFooterLinks = {
   'Home': '/',
-  'Contact Us': '/contact',
+  'Contact Us': '/contactus',
   'Sign up for our Newsletter': '/subscribe',
   'What is CBD?': '/whatiscbd',
   'Privacy Policy': '/privacypolicy',
