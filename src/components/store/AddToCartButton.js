@@ -4,8 +4,8 @@ import { useStaticQuery,  graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
 /*
-TODO:
-AddToCartButton recieves:
+
+TODO: AddToCartButton recieves:
  - 'id' (the main product id)
  - variants.id
  - quantity
