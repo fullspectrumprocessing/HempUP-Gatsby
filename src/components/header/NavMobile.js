@@ -31,8 +31,7 @@ class NavMobile extends React.Component {
   // !The Below Methods are handling the side drawer animations and state changes.
   handleDrawer = () => {
 
-    // e.preventDefault()
-    // this.setState({content: !this.state.content})\
+    // Pretty much setting state to be the opposite of what state was previously 
     this.setState(prevState => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen }
     })
