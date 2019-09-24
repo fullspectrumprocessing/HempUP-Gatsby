@@ -1,6 +1,7 @@
 # TO-DOs
 
 - Shopping Cart
+  - use local storage in conjunction with state/store to holditems for users
 - Better Styling
   - Smaller buttons under products
 - Shopify checkout
@@ -19,6 +20,7 @@
 - Subscription Modal
   - Reactmodal
 - Age Restriction Modal
+  - Use local storage or state to handle a token that verifies the user is of age
 - Google Analytics
 
 ## Future Implementaion

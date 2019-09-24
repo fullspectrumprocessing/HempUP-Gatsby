@@ -1,12 +1,25 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import ReactModal from "react-modal"
+import styled from "styled-components"
 
+const CloseModal = styled.button`
+  width: 100px;
+  padding: 10px;
+  background-color: magenta;
+  font-size: 20px;
+`
 
-const AgeModal = () =>{ 
+ReactModal.setAppElement("#___gatsby")
 
-    return (
-        <ReactModal></ReactModal>
-    )
+const AgeModal = () => {
+  const [showModal, setShowModal] = useState(false)
+  useEffect(() => setShowModal(true), [])
+
+  return (
+    <ReactModal isOpen={showModal} contentLabel="Are You Even Of Age???!!">
+      <CloseModal onClick={() => setShowModal(false)}> Close Me</CloseModal>
+    </ReactModal>
+  )
 }
 
-export default AgeModal; 
+export default AgeModal

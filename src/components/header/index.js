@@ -9,10 +9,11 @@ import HempUpLogo from "./HempUpLogo"
 import ShoppingBag from "./ShoppingBag"
 // import DrawerOverlay from "./draweroverlay"
 import DesktopNavButton from "./DesktopNavButton"
-import NavDesktopSubMenu from "./NavDesktopSubMenu"
+import NavDesktopSubMenu from "./NavDesktopSubmenu"
 // import cssVars from "../../theme/_variables"
 import { navigationMap } from "../navigationMap"
 import { Location } from "@reach/router"
+import AgeModal from "../modals/ageRestriction"
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -48,7 +49,6 @@ const DesktopNavBar = styled.nav`
 
 class Header extends React.Component {
   state = {
-    showModal: false,
   }
 
   getMenuName(page) {
@@ -60,27 +60,16 @@ class Header extends React.Component {
     }
   }
 
-  showModal() {
-    this.setState({
-      showModal: true,
-    })
-  }
-  hideModal() {
-    this.setState({
-      showModal: false,
-    })
-  }
 
   componentDidMount() {
     navigationMap.store = [...this.props.productTypes]
-    console.log('heyyyyyyyyyyyyyyy')
   }
 
   render() {
     return (
       <StyledHeader>
         <GlobalStyle />
-
+        <AgeModal />
         <NavbarContainerUpper>
           <ShoppingBag />
           <DesktopNavBar>
