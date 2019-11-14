@@ -1,4 +1,4 @@
-
+//  I am Assuming that this file is handing product cost strings and concatenating the respective punctuation 
 const formatPrice = (price) => {
   let priceArr = price.split('.')
   let dollar = priceArr[0]

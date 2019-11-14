@@ -86,7 +86,7 @@ const SideDrawer = props => {
     background: "rgba(255, 255, 255, 0.75)",
   }
   if (props.show) {
-    //props.show is being sent down from the header component slong with all the methods that are handling the sidedrawers functionality
+    //props.show is being sent down from the header component along with all the methods that are handling the sidedrawers functionality
     //If the menu button is toggled, the ClosedDrawers styling is changed to open and it slides out
     navStyle = open
   }
@@ -119,6 +119,9 @@ const SideDrawer = props => {
                   </Li>
                   <Li>
                     <StyledLink to="/store">Vape</StyledLink>
+                  </Li>
+                  <Li>
+                    <StyledLink to="/store">Pills</StyledLink>
                   </Li>
                 </Ul>
               </ExpandedMenuDiv>

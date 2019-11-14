@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from "gatsby-image"
+
 import styled from 'styled-components'
-import { Container, Row, Col } from 'reactstrap'
+import { Container } from 'reactstrap'
 import SEO from "../../components/seo"
 
 import ProductGrid from "../../components/store/productgrid"
@@ -52,14 +52,18 @@ const ProducTypePage = (props) => {
 
   return (
     <Layout>
-
+      <SEO
+        title="Hemp Up Product Types"
+        keywords={[`CBD`, `hemp`, `pet`, `edibles`, `tinctures`, `oil`]}
+      />
 
       <StyledContainer>
-        <PageHeader>{data.allShopifyProduct.edges[0].node.productType}</PageHeader>
+        <PageHeader>
+          {data.allShopifyProduct.edges[0].node.productType}
+        </PageHeader>
         <ProductGrid products={data.allShopifyProduct.edges} />
       </StyledContainer>
-
-    </ Layout>
+    </Layout>
   )
 }
 

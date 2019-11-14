@@ -2,20 +2,18 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import Slide from 'react-reveal/Slide';
-
+import Slide from "react-reveal/Slide"
 import GlobalStyle from "../../theme/globalStyle"
-import NavMobile from './NavMobile'
-import HempUpLogo from './HempUpLogo'
-import ShoppingBag from './ShoppingBag'
-import DrawerOverlay from "./draweroverlay"
-import DesktopNavButton from './DesktopNavButton'
-import NavDesktopSubMenu from './NavDesktopSubMenu'
-import cssVars from "../../theme/_variables"
-import {navigationMap} from '../navigationMap'
-
-
-import { Location } from "@reach/router";
+import NavMobile from "./NavMobile"
+import HempUpLogo from "./HempUpLogo"
+import ShoppingBag from "./ShoppingBag"
+// import DrawerOverlay from "./draweroverlay"
+import DesktopNavButton from "./DesktopNavButton"
+import NavDesktopSubMenu from "./NavDesktopSubmenu"
+// import cssVars from "../../theme/_variables"
+import { navigationMap } from "../navigationMap"
+import { Location } from "@reach/router"
+import AgeModal from "../modals/ageRestriction"
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -26,7 +24,6 @@ const StyledHeader = styled.header`
   flex-direction: column;
 
   @media (min-width: 796px) {
-
   }
 `
 const NavbarContainerUpper = styled.div`
@@ -36,7 +33,6 @@ const NavbarContainerUpper = styled.div`
   justify-content: space-around;
   height: 4.3em;
   z-index: 10;
-
 `
 
 const DesktopNavBar = styled.nav`
@@ -52,41 +48,38 @@ const DesktopNavBar = styled.nav`
 `
 
 class Header extends React.Component {
-  state = { }
+  state = {
+  }
 
-
-  getMenuName(page){
-    switch(page){
-      case 'whatiscbd':
-        return 'what is cbd?';
+  getMenuName(page) {
+    switch (page) {
+      case "whatiscbd":
+        return "what is cbd?"
       default:
-        return page;
+        return page
     }
   }
 
 
-  componentDidMount(){
+  componentDidMount() {
     navigationMap.store = [...this.props.productTypes]
   }
 
   render() {
-
     return (
       <StyledHeader>
-        <GlobalStyle/>
-
+        <GlobalStyle />
+        <AgeModal />
         <NavbarContainerUpper>
           <ShoppingBag />
           <DesktopNavBar>
-            {Object.keys(navigationMap).map( (slug, inx) => {
-                return (
-                  <DesktopNavButton
-                    to={slug} key={inx}
-                  >
-                    {this.getMenuName(slug)}
-                  </DesktopNavButton>
-                )
-              })}
+            {Object.keys(navigationMap).map((slug, inx) => {
+              return (
+                <DesktopNavButton to={slug} key={inx}>
+                  {this.getMenuName(slug)}
+                </DesktopNavButton>
+              )
+            })}
           </DesktopNavBar>
           <HempUpLogo />
           <NavMobile />
@@ -94,14 +87,13 @@ class Header extends React.Component {
 
         <Location>
           {({ location }) => {
-             return  (
-               <Slide top duration={300}>
-                 <NavDesktopSubMenu location={location} />
-               </Slide>
-             )
+            return (
+              <Slide top duration={300}>
+                <NavDesktopSubMenu location={location} />
+              </Slide>
+            )
           }}
         </Location>
-
       </StyledHeader>
     )
   }
@@ -114,7 +106,6 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
-
 
 export default props => (
   <StaticQuery
@@ -130,17 +121,16 @@ export default props => (
         }
       }
     `}
-
     render={data => (
-        <Header
-            productTypes={data.allShopifyProduct.edges.reduce((acc, cur) => {
-              return acc.includes(cur.node.productType) ? acc :  [...acc, cur.node.productType]
-            }, [] )}
-
-            slug={'test'}
-
-            {...props}
-        />
+      <Header
+        productTypes={data.allShopifyProduct.edges.reduce((acc, cur) => {
+          return acc.includes(cur.node.productType)
+            ? acc
+            : [...acc, cur.node.productType]
+        }, [])}
+        slug={"test"}
+        {...props}
+      />
     )}
   />
 )

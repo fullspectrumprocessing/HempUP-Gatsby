@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from "gatsby-image"
-
 import { Container, Row, Col, FormGroup, Label, Input } from 'reactstrap'
 import AddToCartButton from '../../components/store/AddToCartButton'
 import {formatPrice} from '../../utils/stringFormatHelpers'
@@ -42,7 +41,7 @@ class ProductForm extends React.Component {
     })
 
   }
-
+  // this function handles the change in quantity via the number selector 
   handleQuantityChange = (evt) => {
     const isDigit = evt.target.value.match(/\d/g, '') && evt.target.value < 21 //number
     isDigit && (
@@ -62,8 +61,9 @@ class ProductForm extends React.Component {
   }
 
 
-
+  // this handles the add to cart submission 
   handleAddToCart = () => {
+    // TODO: Create Store Context for shopping cart
     console.log('TODO: create storecontext')
     console.log('productform handleAddToCart', this.state)
   }
