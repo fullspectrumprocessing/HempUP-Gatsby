@@ -1,6 +1,7 @@
 //store categories fill out automatically from the Shopify storefront API (gastby-source-shopify2)
 
 const navigationMap = {
+  "/": [],
   "store": ["edibles", "pet", "to go", "drink", "vape", "pills"],
   "about": ["who we are", "why us", "follow", "contact us"],
   "news": [],

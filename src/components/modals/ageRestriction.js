@@ -13,7 +13,7 @@ ReactModal.setAppElement("#___gatsby")
 
 const AgeModal = () => {
   const [showModal, setShowModal] = useState(false)
-  useEffect(() => setShowModal(true), [])
+  useEffect(() => setShowModal(false), [])
 
   return (
     <ReactModal isOpen={showModal} contentLabel="Are You Even Of Age???!!">

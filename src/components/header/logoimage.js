@@ -18,18 +18,3 @@ export const LogoImage = () => {
 
   return <Img fixed={data.placeholderImage.childImageSharp.fixed} />
 }
-
-// export const BagImage = () => {
-//   const data = useStaticQuery(graphql`
-//     query {
-//       shoppingBag: file(relativePath: { eq: "bag.png"}){
-//         childImageSharp {
-//           fixed(width: 100, height: 100){
-//             ...GatsbyImageSharpFixed
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   return <Img fixed={data.shoppingBag.childImageSharp.fixed}/>
-// }
