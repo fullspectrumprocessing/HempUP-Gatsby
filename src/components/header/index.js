@@ -7,10 +7,8 @@ import GlobalStyle from "../../theme/globalStyle"
 import NavMobile from "./NavMobile"
 import HempUpLogo from "./HempUpLogo"
 import ShoppingBag from "./ShoppingBag"
-// import DrawerOverlay from "./draweroverlay"
 import DesktopNavButton from "./DesktopNavButton"
 import NavDesktopSubMenu from "./NavDesktopSubmenu"
-// import cssVars from "../../theme/_variables"
 import { navigationMap } from "../navigationMap"
 import { Location } from "@reach/router"
 import AgeModal from "../modals/ageRestriction"
@@ -48,23 +46,20 @@ const DesktopNavBar = styled.nav`
 `
 
 class Header extends React.Component {
-  state = {
-  }
-
+  state = {}
   getMenuName(page) {
     switch (page) {
       case "whatiscbd":
         return "what is cbd?"
+      case "/":
+        return "home"
       default:
         return page
     }
   }
-
-
   componentDidMount() {
     navigationMap.store = [...this.props.productTypes]
   }
-
   render() {
     return (
       <StyledHeader>
@@ -84,7 +79,6 @@ class Header extends React.Component {
           <HempUpLogo />
           <NavMobile />
         </NavbarContainerUpper>
-
         <Location>
           {({ location }) => {
             return (

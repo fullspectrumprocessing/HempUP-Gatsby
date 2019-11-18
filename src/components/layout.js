@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import GlobalStyle from '../theme/globalStyle'
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import "../styles/layout.scss"
 import StyledBGImage from "./bgimage"
 import Header from "./header/"

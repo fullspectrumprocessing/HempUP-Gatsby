@@ -124,6 +124,11 @@ const ExploreButtonArrow = styled.div`
   font-family: ${cssVars.LATO};
 `
 
+const HomeProductWrapper = styled.div`
+display: flex; 
+justify-content: space-around; 
+`
+
 const Landing = () =>{
 
   const fadeNSlide = (component, delay=0) => {

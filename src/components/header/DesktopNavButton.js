@@ -57,7 +57,7 @@ class DesktopNavButton extends React.Component {
               color:"white",
               background: cssVars.grdntGreen,
             }}
-            partiallyActive={true}
+            partiallyActive={false}
             onMouseOver={this.handleMouseOver}
             onMouseOut={this.handleMouseOut}>
               {this.props.children}
