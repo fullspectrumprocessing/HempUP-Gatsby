@@ -9,28 +9,22 @@ const FormWrap = styled.div`
   flex-direction: column;
   align-items: center;
 `
-
 const FORM = styled.form`
 width: 60%;
 padding: 20px
 margin: 30px 20px;
-
 `
-
 const StyledInput = styled.input`
   padding: 5px 10px;
 `
-
 const StyledTextArea = styled.textarea`
   padding: 5px 10px;
 `
-
 const StyledButton = styled.button`
   width: 100px;
   padding: 20px;
   background-color: ${cssVars.btnGrdntLghtGreen};
 `
-
 const ContactForm = () => {
   const [state, updateState] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
@@ -43,14 +37,12 @@ const ContactForm = () => {
       message: "",
     }
   )
-
   function encode(data) {
     return Object.keys(data).map(
       key =>
         encodeURIComponent(key) + "=" + encodeURIComponent(data[key]).join("&")
     )
   }
-
   function submission(e) {
     e.preventDefault()
     // console.log(state, "this is state").navigate("/thankyou")
@@ -67,7 +59,6 @@ const ContactForm = () => {
         .catch(error => alert(error))
     }
   }
-
   const { firstName, lastName, email, phoneNumber, subject, message } = state
   return (
     <>
