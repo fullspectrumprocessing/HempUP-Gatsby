@@ -2,22 +2,21 @@
 
 const navigationMap = {
   "/": [],
-  "store": ["edibles", "pet", "to go", "drink", "vape", "pills"],
-  "about": ["who we are", "why us", "follow", "contact us"],
-  "news": [],
-  "whatiscbd": [],
+  store: ["edibles", "pet", "to go", "drink", "vape", "pills"],
+  about: [], //["who we are", "why us", "follow", "contact us"],
+  news: [],
+  whatiscbd: [],
 }
 
 const navigationFooterLinks = {
-  'Home': '/',
-  'Contact Us': '/contactus',
-  'Sign up for our Newsletter': '/subscribe',
-  'What is CBD?': '/whatiscbd',
-  'Privacy Policy': '/privacypolicy',
-  'Terms and Conditions': '/termsandconditions',
+  Home: "/",
+  "Contact Us": "/contactus",
+  "Sign up for our Newsletter": "/subscribe",
+  "What is CBD?": "/whatiscbd",
+  "About Us": "/about",
+  News: "/news",
+  "Privacy Policy": "/privacypolicy",
+  "Terms and Conditions": "/termsandconditions",
 }
 
-export {
-  navigationMap,
-  navigationFooterLinks
-}
+export { navigationMap, navigationFooterLinks }
