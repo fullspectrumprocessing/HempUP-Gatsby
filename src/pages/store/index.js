@@ -22,7 +22,7 @@ export const query = graphql`
     allShopifyProduct(
       sort: {
         fields: [createdAt]
-        order: DESC
+        order: ASC
       }
     ) {
       edges {
