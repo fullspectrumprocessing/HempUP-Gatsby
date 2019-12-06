@@ -4,14 +4,44 @@ import {
   WhoWeAre,
   WhyUs,
   ContactButton,
+  ContactUs,
   WhatIsTitle,
   WhatIsTextWrap,
   AboutRow,
   WhoWeAreTitle,
   WhoTextWrap,
+  WhyUsTitle,
+  WhyTextWrap,
+  ShoptButton,
+  Animate,
+  H3,
 } from "./about.css"
+import { Link } from "gatsby"
+import { useSpring } from "react-spring"
 
 const AboutUsComp = () => {
+  const calc = (x, y) => [
+    -(y - window.innerHeight / 2) / 30,
+    (x - window.innerWidth / 2) / 30,
+    1.1,
+  ]
+  const trans = (x, y, s) =>
+    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+  function Card({ children }) {
+    const [props, set] = useSpring(() => ({
+      xys: [0, 0, 1],
+      config: { mass: 5, tension: 350, friction: 60 },
+    }))
+    return (
+      <Animate
+        onMouseMove={({ clientX: y, clientY: x }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        style={{ transform: props.xys.interpolate(trans) }}
+      >
+        {children}
+      </Animate>
+    )
+  }
   return (
     <>
       <AboutRow>
@@ -61,9 +91,35 @@ const AboutUsComp = () => {
       </AboutRow>
 
       <AboutRow>
-        <WhyUs>Why Us</WhyUs>
+        <WhyUsTitle>Why Us</WhyUsTitle>
+        <WhyUs>
+          <WhyTextWrap>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa
+            tempor nec feugiat nisl pretium fusce id velit. Id leo in vitae
+            turpis massa sed elementum tempus egestas. Gravida in fermentum et
+            sollicitudin ac orci. Cursus euismod quis viverra nibh cras
+            pulvinar. In egestas erat imperdiet sed euismod nisi. tempor nec
+            feugiat nisl pretium fusce id velit. Id leo in vitae turpis massa
+            sed elementum tempus egestas. Gravida in fermentum et sollicitudin
+            ac orci. Cursus euismod quis viverra nibh cras pulvinar. In egestas
+            erat imperdiet sed euismod nisi.
+          </WhyTextWrap>
+        </WhyUs>
       </AboutRow>
-      <ContactButton>Contact Us Button</ContactButton>
+
+      <ContactUs>
+        <Card>
+          <ContactButton>
+            <Link to="/contactus">
+              <H3>Contact Us Now</H3>
+            </Link>
+          </ContactButton>
+        </Card>
+        <ShoptButton>
+          <Link to="/shop">View Our Products</Link>
+        </ShoptButton>
+      </ContactUs>
     </>
   )
 }
