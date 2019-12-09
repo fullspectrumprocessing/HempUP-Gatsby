@@ -20,7 +20,7 @@ import {
   P1,
   A,
   RowWrap,
-} from "./Contact.css"
+} from "./contact.css"
 // import ContactBG from "./ContactBG"
 import Bounce from "react-reveal/Bounce"
 
