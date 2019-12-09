@@ -11,7 +11,7 @@ const navigationMap = {
 const navigationFooterLinks = {
   Home: "/",
   "Contact Us": "/contactus",
-  "Sign up for our Newsletter": "/subscribe",
+  // "Sign up for our Newsletter": "/subscribe",
   "What is CBD?": "/whatiscbd",
   "About Us": "/about",
   News: "/news",
