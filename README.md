@@ -1,5 +1,7 @@
 # TO-DOs
 
+### Need to dorp all pages from the header using padding and/or margins compare about opage and store page with other pages
+
 - Brand Statement
 - Shopping Cart
   - use local storage in conjunction with global state/store to hold items for users
@@ -15,7 +17,7 @@
   - Need Relevant Tags for the products
 - <strong>Pages and Routes</strong>
 
-  - What is CBD?
+  - <del>What is CBD?</del>
   - Terms & Conditions
   - Privacy Policy
   - SHOPPING CART
