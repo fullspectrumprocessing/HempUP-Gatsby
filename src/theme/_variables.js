@@ -18,6 +18,7 @@ const cssVars = {
   btnGrdntLghtGreen: "rgba(54, 120, 47, 0.75)",
   ttnGrdntDrkGrn: "rgba(54, 120, 47, 0.85)",
   txtLghtGrn: "rgba(236, 255, 214, 1)",
+  h1shadow: "1px 2px 5px #573f27",
 }
 
 export default cssVars

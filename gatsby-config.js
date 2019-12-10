@@ -18,7 +18,7 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: true,
-        fileName: false,
+        fileName: true,
         //Add any options here
         //refer to => https://www.styled-components.com/docs/tooling#babel-plugin//
       },

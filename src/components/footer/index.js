@@ -72,6 +72,9 @@ const LowerSection = styled.section`
   display: flex;
   flex-direction: column;
   font-size: 8px;
+  width: 50%;
+  align-self: center;
+  text-align: center;
 `
 const Footer = () => {
   const [email, setEmail] = useState("")
@@ -163,13 +166,20 @@ const Footer = () => {
       </UpperSection>
 
       <LowerSection>
-        <div>
-          **I understand the statements regarding these products have not been
-          evaluated by the Food and Drug Administration. This product is not
-          intended to diagnose, treat, cure or prevent any disease. Results from
-          products may vary.**
+        <div style={{ fontSize: "10px" }}>
+          **This product is not for use by or sale to persons under the age of
+          18. This product should be used only as directed on the label. It
+          should not be used if you are pregnant or nursing. Consult with a
+          physician before use if you have a serious medical condition or use
+          prescription medications. A Doctor’s advice should be sought before
+          using this and any supplemental dietary product. The statements
+          regarding these products have not been evaluated by the Food and Drug
+          Administration. This product is not intended to diagnose, treat, cure
+          or prevent any disease. Results from products may vary.**
         </div>
-        <div>© {new Date().getFullYear()} Hemp Up</div>
+        <div style={{ fontSize: "10px" }}>
+          © {new Date().getFullYear()} Hemp Up
+        </div>
       </LowerSection>
     </StyledFooter>
   )

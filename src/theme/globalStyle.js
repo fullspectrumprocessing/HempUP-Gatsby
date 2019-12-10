@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
       font-style: ${cssVars.fs_n};
       font-size: 95px;
       color: ${cssVars.txtBrwn};
+      text-shadow: ${cssVars.h1shadow} ;
     }
 
     h2 {

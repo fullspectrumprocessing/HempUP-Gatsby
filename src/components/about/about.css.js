@@ -8,7 +8,7 @@ export const H3 = styled.h3`
   //! WHat is CBD section
 `
 export const WhatRow = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -16,18 +16,21 @@ export const WhatRow = styled.div`
 
 export const WhatIsCbd = styled.div`
   display: flex;
-  width: 100%;
+  width: 50%;
   justify-content: center;
   padding: 5px;
   margin: 10px;
+  display: flex;
+  justify-content: center;
 `
 
 export const WhatIsTitle = styled.h2`
-  font-size: 30px;
+  font-size: 40px;
   color: ${cssVars.txtGrn};
   font-family: ${cssVars.POSDI};
   font-style: normal;
   margin-left: 50px;
+  text-shadow: 1px 1px 10px #ffffff80;
 `
 
 export const WhatIsTextWrap = styled.div`
@@ -40,27 +43,41 @@ export const WhatIsTextWrap = styled.div`
   color: ${cssVars.txtBrwnDrk};
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+  &:hover {
+    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+  }
+`
+
+export const WhatImgDiv = styled.div`
+  align-self: center;
+  background-color: ${cssVars.grdntPink};
+  width: 50%;
+  height: 150px;
 `
 
 //! Who we are components
 export const WhoRow = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
 `
 export const WhoWeAre = styled.div`
-  width: 100%;
+  width: 50%;
   padding: 5px;
   margin: 10px;
   align-self: flex-end;
+  display: flex;
+  justify-content: center;
 `
 export const WhoWeAreTitle = styled.h2`
-  font-size: 30px;
+  font-size: 40px;
   color: ${cssVars.txtGrn};
   font-family: ${cssVars.POSDI};
   font-style: normal;
   align-self: flex-end;
+  margin-right: 70px;
+  text-shadow: 1px 1px 10px #ffffff80;
 `
 export const WhoTextWrap = styled.div`
   text-align: center;
@@ -68,28 +85,45 @@ export const WhoTextWrap = styled.div`
   margin: 20px 0px 20px 0px;
   background: ${cssVars.whiteGlow};
   font-family: ${cssVars.Objktv};
+  padding: 15px;
+  color: ${cssVars.txtBrwnDrk};
+  border: 1px ghostwhite solid;
+  box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+  &:hover {
+    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+  }
+`
+
+export const WhoImgDiv = styled.div`
+  align-self: center;
+  background-color: ${cssVars.grdntPink};
+  width: 50%;
+  height: 150px;
 `
 
 //! WhyUS components
 export const WhyRow = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
 `
 export const WhyUs = styled.div`
-  width: 100%;
+  width: 50%;
   padding: 5px;
   margin: 10px;
   align-self: flex-start;
+  display: flex;
+  justify-content: center;
 `
 export const WhyUsTitle = styled.h2`
-  font-size: 30px;
+  font-size: 40px;
   color: ${cssVars.txtGrn};
   font-family: ${cssVars.POSDI};
   font-style: normal;
   align-self: flex-start;
   margin-left: 50px;
+  text-shadow: 1px 1px 10px #ffffff80;
 `
 
 export const WhyTextWrap = styled.div`
@@ -98,6 +132,20 @@ export const WhyTextWrap = styled.div`
   margin: 20px 0px 20px 0px;
   background: ${cssVars.whiteGlow};
   font-family: ${cssVars.Objktv};
+  padding: 15px;
+  color: ${cssVars.txtBrwnDrk};
+  border: 1px ghostwhite solid;
+  box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+  &:hover {
+    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+  }
+`
+
+export const WhyImgDiv = styled.div`
+  align-self: center;
+  background-color: ${cssVars.grdntPink};
+  width: 50%;
+  height: 150px;
 `
 
 //! React Srping Wrapper
@@ -115,7 +163,7 @@ export const ContactButton = styled.button`
   border-radius: 20px;
   background-color: ${cssVars.btnGrdntLghtGreen};
 
-  color: magenta;
+  color: ${cssVars.grdntPink};
 `
 export const Animate = styled(animated.div)`
   display: flex;
@@ -137,7 +185,7 @@ export const ShopButton = styled.button`
   border-radius: 20px;
   background-color: ${cssVars.btnGrdntLghtGreen};
 
-  color: magenta;
+  color: ${cssVars.grdntPink};
 `
 export const AnimateShop = styled(animated.div)`
   display: flex;

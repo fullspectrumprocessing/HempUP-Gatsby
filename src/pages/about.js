@@ -5,10 +5,20 @@ import AboutUsComp from "../components/about/about"
 import Slide from "react-reveal/Slide"
 import Fade from "react-reveal/Fade"
 import SEO from "../components/seo"
+import cssVars from "../theme/_variables"
 const AboutTitle = styled.h1`
-  font-size: 50px;
+  font-size: 60px;
   font-family: lato, sans serif;
-  margin-bottom: 20px;
+  margin: 20px;
+  color: ghostwhite;
+`
+const AboutHeader = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  height: 100px;
+  background-image: ${cssVars.grdntGreen};
+  align-self: flex-start;
+  text-align: center;
 `
 
 const About = () => {
@@ -28,7 +38,9 @@ const About = () => {
           title="About Hemp Up"
           keywords={["Who We Are", "What is CBD?", "Hemp Information"]}
         />
-        {fadeNSlide(<AboutTitle>About Us</AboutTitle>)}
+        <AboutHeader>
+          {fadeNSlide(<AboutTitle>About Us</AboutTitle>)}
+        </AboutHeader>
 
         <AboutUsComp />
       </Layout>

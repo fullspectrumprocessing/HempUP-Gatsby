@@ -18,6 +18,9 @@ import {
   Animate,
   H3,
   AnimateShop,
+  WhyImgDiv,
+  WhatImgDiv,
+  WhoImgDiv,
 } from "./about.css"
 import { Link } from "gatsby"
 import { useSpring } from "react-spring"
@@ -67,16 +70,16 @@ const AboutUsComp = () => {
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          padding: "25px",
+          padding: "25px 100px 25px 100px",
         }}
       >
         <WhatRow>
           <WhatIsTitle>What Is CBD</WhatIsTitle>
           <WhatIsCbd>
             <WhatIsTextWrap>
-              CBD, which is an abbreviation for Cannabidiol, is a chemical
-              compound found in cannabis plants. Most people associate cannabis
-              with the effects of THC or tetrahydrocannabinol, the psychoactive
+              CBD, an abbreviation for Cannabidiol, is a chemical compound found
+              in cannabis plants. Most people associate cannabis with the
+              effects of THC or tetrahydrocannabinol, the psychoactive
               cannabinoid that makes you high. However, CBD products containing
               less than 0.3% THC are derived from industrial plants, which
               became federally legal for cultivation by state authorized
@@ -86,6 +89,7 @@ const AboutUsComp = () => {
               it does have various beneficial uses.
             </WhatIsTextWrap>
           </WhatIsCbd>
+          <WhatImgDiv>IMAGES</WhatImgDiv>
         </WhatRow>
 
         <WhoRow>
@@ -93,26 +97,35 @@ const AboutUsComp = () => {
           <WhoWeAre>
             {" "}
             <WhoTextWrap>
-              Hemp Up is a .............. lorem ipsum blah blah blah ........
+              Here at Hemp Up, we are dedicated to improving your physical and
+              mental well-being. We’ve crafted products with your life in mind
+              and we offer CBD in many forms. All our products are produced in
+              clean, modern facilities, every ingredient is lab-tested, and our
+              local hemp source comes from the beautiful state of Colorado. At
+              Hemp Up, we manufacture CBD to enhance the wellness of everybody
+              who uses our products.
             </WhoTextWrap>
           </WhoWeAre>
+          <WhoImgDiv>IMAGES</WhoImgDiv>
         </WhoRow>
 
         <WhyRow>
           <WhyUsTitle>Why Us</WhyUsTitle>
           <WhyUs>
             <WhyTextWrap>
-              Here at Hemp Up, we are dedicated to improving your physical and
-              mental well-being. We’ve crafted products with your life in mind
-              and we offer CBD in many forms. You may have seen people use
-              sublingual CBD Oils, also known as CBD tinctures or CBD hemp oil.
-              These oils are popular because they are absorbed under the tongue
-              and take effect relatively quickly. However, we offer a range of
-              products designed to plug into any lifestyle, including
-              CBD-infused Coffee, CBD edibles, an deven CBD treats for your
-              pets!
+              All our products are produced in clean, modern facilities, every
+              ingredient is lab-tested, and our local hemp source comes from the
+              beautiful state of Colorado. At Hemp Up, we manufacture CBD to
+              enhance the wellness of everybody who uses our products. You may
+              have seen people use sublingual CBD Oils, also known as CBD
+              tinctures or CBD hemp oil. These oils are popular because they are
+              absorbed under the tongue and take effect relatively quickly.
+              However, we offer a range of products designed to plug into any
+              lifestyle, including CBD-infused Coffee, CBD edibles, and even CBD
+              treats for your pets!
             </WhyTextWrap>
           </WhyUs>
+          <WhyImgDiv>IMAGES</WhyImgDiv>
         </WhyRow>
         <ContactUs>
           <Link to="/contactus">
