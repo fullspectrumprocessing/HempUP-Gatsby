@@ -1,5 +1,6 @@
 # TO-DOs
 
+-Brand Statement
 - Shopping Cart
   - use local storage in conjunction with global state/store to hold items for users
   - Global Context Provider
@@ -8,29 +9,28 @@
   - Smaller buttons under products
 - Shopify checkout
   - Set up the embedded Shopify Shopping CArt
-  - Add new products to HempUp Test shopify products acct.
-  - Need SKUs for products
-  - Need pricing for products
+  - <del>Add new products to HempUp Test shopify products acct.</del>
+  - <del>Need SKUs for products</del>
+  - <del>Need pricing for products</del>
   - Need Relevant Tags for the products
-- Add the needed Pages/Routes
+- <strong>Pages and Routes</strong>
   - What is CBD?
-  - Terms & COnditions
+  - Terms & Conditions
   - Privacy Policy
   - SHOPPING CART
-  - Contact Page and Form
-  - News/Blog
-  - 404 page (Make the 404 page pretty unique; look for examples)
-- Subscription Modal
+  - <del> Contact Page and Form </del>
+  - 404 page <em>Make the 404 page pretty unique; look for examples</em>
   - Reactmodal
 - Age Restriction Modal
   - Use local storage or state to handle a token that verifies the user is of age
-- Google Analytics
+- <del>Google Analytics</del>
+  - Config GA
 
 ## Future Implementaion
 
 - News API
 - Reviews/Comments API
-- Social Media Links and acct creation
+- Social Media Links and SM acct creation
 - Facebook API Implementation
 - Get internal IP Address from HempUp team in Colorado
 
