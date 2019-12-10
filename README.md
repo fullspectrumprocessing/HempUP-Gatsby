@@ -1,6 +1,6 @@
 # TO-DOs
 
--Brand Statement
+- Brand Statement
 - Shopping Cart
   - use local storage in conjunction with global state/store to hold items for users
   - Global Context Provider
@@ -14,15 +14,17 @@
   - <del>Need pricing for products</del>
   - Need Relevant Tags for the products
 - <strong>Pages and Routes</strong>
+
   - What is CBD?
   - Terms & Conditions
   - Privacy Policy
   - SHOPPING CART
   - <del> Contact Page and Form </del>
   - 404 page <em>Make the 404 page pretty unique; look for examples</em>
-  - Reactmodal
+
 - Age Restriction Modal
   - Use local storage or state to handle a token that verifies the user is of age
+  - Reactmodal
 - <del>Google Analytics</del>
   - Config GA
 
