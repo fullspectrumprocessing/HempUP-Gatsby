@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import Layout from '../components/layout'
+import FAQ from '../components/FAQ/FAQ'
 
 const WhatIsTitle = styled.h1`
 font-size: 50px;
 `
 
-const WhatIsCBD = () => (
+const FAQPage = () => (
 
     <>
     <Layout>
-        <WhatIsTitle>
-            What Is CBD!!????!!!
-        </WhatIsTitle>
+        <FAQ>
+            FAQ
+        </FAQ>
     </Layout>
     </>
 )
 
-export default WhatIsCBD
+export default FAQPage

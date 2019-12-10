@@ -51,8 +51,6 @@ export const NavWrap = styled.div`
   
   @media (max-width: 600px) {
     width: 80%;
-    // align-items: center;
-    // margin: 30px 0;
     height: auto;
   }
 
@@ -67,7 +65,6 @@ export const ContactWrap = styled.div`
   @media (max-width: 600px) {
     width: 80%;
     align-items: center;
-    // margin: 30px 0;
     height: auto;
     margin-top: 0px;
     padding-top: 0px;
@@ -127,7 +124,6 @@ export const LogoWrap = styled.div`
   align-items: center;
 }
   @media (max-width: 900px) {
-    // display: none;
     width: 20%;
     height: 350px;
    justify-content: left;
