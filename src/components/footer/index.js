@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby"
@@ -17,11 +17,11 @@ import {
   Input,
   Submit,
   NavWrap,
-  ContactWrap
+  ContactWrap,
 } from "./footer.css"
 import Img from "gatsby-image"
-import  cssVars from '../../theme/_variables'
-import {navigationFooterLinks} from '../navigationMap'
+import cssVars from "../../theme/_variables"
+import { navigationFooterLinks } from "../navigationMap"
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -66,21 +66,14 @@ const UpperSection = styled.section`
     flex-direction: row;
     font-size: 15px;
   }
-
 `
 const LowerSection = styled.section`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   font-size: 8px;
-
-  @media (min-width: 796px) {
-    flex-direction: row;
-  }
-
 `
 const Footer = () => {
-
   const [email, setEmail] = useState("")
 
   function encode(data) {
@@ -109,82 +102,76 @@ const Footer = () => {
   }
 
   const data = useStaticQuery(graphql`
-  query {
-    logo: file(relativePath: { eq: "hempUpLogo.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_withWebp
+    query {
+      logo: file(relativePath: { eq: "hempUpLogo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
-  }
-`)
-  return(
-  <StyledFooter>
-    <UpperSection>
-      <Foot>
+  `)
+  return (
+    <StyledFooter>
+      <UpperSection>
+        <Foot>
+          <LogoWrap>
+            <Img fluid={data.logo.childImageSharp.fluid} alt="Hemp UP logo" />
+          </LogoWrap>
 
-      <LogoWrap>
-      <Img fluid={data.logo.childImageSharp.fluid} alt="Hemp UP logo" />
-      </LogoWrap>
+          <NavWrap>
+            <UL>
+              <H3>MENU</H3>
+              {Object.keys(navigationFooterLinks).map((item, inx) => {
+                return (
+                  <LI>
+                    <StyledLink to={navigationFooterLinks[item]}>
+                      {item}
+                    </StyledLink>
+                  </LI>
+                )
+              })}
+            </UL>
+          </NavWrap>
 
-      <NavWrap>
-        <UL>
-        <H3>MENU</H3>
-    {
-      Object.keys(navigationFooterLinks).map( (item, inx) => {
-        return (
-          <LI>
-          <StyledLink to={navigationFooterLinks[item]}>{item}</StyledLink>
-          </LI>
-        )
-      })
-    }
-    </UL>
-    </NavWrap>
+          <SubWrapper>
+            <H3>NEWSLETTER</H3>
+            <P>Sign up to receive our monthly newsletter</P>
+            <Form
+              onSubmit={Subscribe}
+              data-netlify-honeypot="bot-field"
+              method="post"
+              action="/"
+              data-netlify="true"
+              name="subscribe"
+            >
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="subscribe" />
+              {/* <label>Email Address:</label> */}
+              <Input
+                name="Email"
+                type="email"
+                placeholder="Your Email Address"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+              <Submit type="submit">Sign Up</Submit>
+            </Form>
+          </SubWrapper>
+        </Foot>
+      </UpperSection>
 
-    <SubWrapper>
-      <H3>NEWSLETTER</H3>
-      <P>Sign up to receive our monthly newsletter</P>
-      <Form
-        onSubmit={Subscribe}
-        data-netlify-honeypot="bot-field"
-        method="post"
-        action="/"
-        data-netlify="true"
-        name="subscribe"
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="subscribe" />
-        {/* <label>Email Address:</label> */}
-        <Input
-          name="Email"
-          type="email"
-          placeholder="Your Email Address"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-        <Submit type="submit" >Sign Up</Submit>
-      </Form>
-    </SubWrapper>
-    </Foot>
-    </UpperSection>
-
-    <LowerSection>
-      <div>
-        © {new Date().getFullYear()} Hemp Up
-      </div>
-
-      <div>
-        Legal ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </div>
-
-    </LowerSection>
-
-
-
-
-  </StyledFooter>
+      <LowerSection>
+        <div>
+          **I understand the statements regarding these products have not been
+          evaluated by the Food and Drug Administration. This product is not
+          intended to diagnose, treat, cure or prevent any disease. Results from
+          products may vary.**
+        </div>
+        <div>© {new Date().getFullYear()} Hemp Up</div>
+      </LowerSection>
+    </StyledFooter>
   )
 }
 
@@ -195,7 +182,5 @@ Footer.propTypes = {
 Footer.defaultProps = {
   siteTitle: "",
 }
-
-
 
 export default Footer
