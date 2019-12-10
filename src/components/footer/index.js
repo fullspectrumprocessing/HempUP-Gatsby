@@ -182,6 +182,8 @@ const Footer = () => {
         </div>
       </LowerSection>
     </StyledFooter>
+
+
   )
 }
 
