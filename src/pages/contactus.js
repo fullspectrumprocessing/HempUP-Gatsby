@@ -15,7 +15,6 @@ class ContactUs extends React.Component {
     return (
       <>
         <Layout>
-          <StyledH1>This is the contact US page. ;-)</StyledH1>
           <ContactForm />
         </Layout>
       </>
