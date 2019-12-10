@@ -49,8 +49,8 @@ class Header extends React.Component {
   state = {}
   getMenuName(page) {
     switch (page) {
-      case "whatiscbd":
-        return "what is cbd?"
+      case "FAQ":
+        return "FAQ"
       case "/":
         return "home"
       default:
