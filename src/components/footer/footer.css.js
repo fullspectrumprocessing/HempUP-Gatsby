@@ -118,7 +118,7 @@ export const LogoWrap = styled.div`
   flex-direction: column;
   //nesting
 .gatsby-image-wrapper {
-      width: 250px;
+      width: 200px;
 }
 @media (min-width: 1300px) {
   align-items: center;
