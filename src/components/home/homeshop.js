@@ -1,14 +1,16 @@
 import {
   H2,
   Wrapper,
-  Button,
+  ButtonRight,
+  ButtonLeft,
   Card,
   Image,
-  ImgWrap,
   ContentWrap,
+  Title,
+  Price,
 } from "./homeshop.css"
 import { graphql, useStaticQuery } from "gatsby"
-import React, { useState } from "react"
+import React, { useState, useEffect} from "react"
 import { Link } from "gatsby"
 import ItemsCarousel from "react-items-carousel"
 import AddToCartButton from "../../components/store/AddToCartButton"
@@ -51,6 +53,52 @@ const HomeShop = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
   const chevronWidth = 40
 
+  function useWindowSize() {
+    const isClient = typeof window === "object"
+
+    function getSize() {
+      return {
+        width: isClient ? window.innerWidth : undefined,
+        height: isClient ? window.innerHeight : undefined,
+      }
+    }
+
+    const [windowSize, setWindowSize] = useState(getSize)
+
+    useEffect(() => {
+      if (!isClient) {
+        return false
+      }
+
+      function handleResize() {
+        setWindowSize(getSize())
+      }
+
+      window.addEventListener("resize", handleResize)
+      return () => window.removeEventListener("resize", handleResize)
+    }, []) // Empty array ensures that effect is only run on mount and unmount
+
+    return windowSize
+  }
+  //! setting size as window size object
+  const size = useWindowSize()
+
+  // state for screen width
+  const [width, setWidth] = useState(size.width)
+
+  // on window change set state to window width
+  useEffect(() => {
+    const handleResize = () => setWidth(size.width)
+    // add event listener to call function to read window size
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      // remove event listener so it doesn't constintly update
+      window.removeEventListener("resize", handleResize)
+    }
+  })
+
+// add to cart
   const handleAddToCart = node => {
     console.log("TODO: ProductGridItem handleAddToCart", node)
   }
@@ -64,11 +112,19 @@ const HomeShop = () => {
                alwaysShowChevrons={true}
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
-            numberOfCards={3}
+            numberOfCards={(() => {
+              if (width > 1100) {
+                return 3
+              } else if (width < 1101 && width > 750) {
+                return 2
+              } else {
+                return 1
+              }
+            })()}
             gutter={20}
             infiniteLoop={true}
-            leftChevron={<Button>{"<"}</Button>}
-            rightChevron={<Button>{">"}</Button>}
+            leftChevron={<ButtonLeft>{"<"}</ButtonLeft>}
+            rightChevron={<ButtonRight>{">"}</ButtonRight>}
             outsideChevron
             chevronWidth={chevronWidth}
           >
@@ -84,9 +140,9 @@ const HomeShop = () => {
                     }
                   />
             
-                <p>{data.allShopifyProduct.edges[8].node.title}</p>
+                <Title>{data.allShopifyProduct.edges[8].node.title}</Title>
 
-                <p>${data.allShopifyProduct.edges[8].node.variants[0].price}</p>
+                <Price>${data.allShopifyProduct.edges[8].node.variants[0].price}</Price>
                 {/* buttons section */}
                 <AddToCartButton
                   handleAddToCart={() => {
@@ -113,10 +169,10 @@ const HomeShop = () => {
                   }
                 />
 
-                <p>{data.allShopifyProduct.edges[6].node.title}</p>
+                <Title>{data.allShopifyProduct.edges[6].node.title}</Title>
 
           
-                <p>${data.allShopifyProduct.edges[6].node.variants[0].price}</p>
+                <Price>${data.allShopifyProduct.edges[6].node.variants[0].price}</Price>
 
                 {/* buttons section */}
                 <AddToCartButton
@@ -143,10 +199,10 @@ const HomeShop = () => {
                   }
                 />
 
-                <p>{data.allShopifyProduct.edges[2].node.title}</p>
+                <Title>{data.allShopifyProduct.edges[2].node.title}</Title>
 
              
-                <p>${data.allShopifyProduct.edges[2].node.variants[0].price}</p>
+                <Price>${data.allShopifyProduct.edges[2].node.variants[0].price}</Price>
 
                 {/* buttons section */}
                 <AddToCartButton
@@ -166,18 +222,18 @@ const HomeShop = () => {
             <Card>
              
               <ContentWrap>
-                <ImgWrap>
+             
                   <Image
                     fluid={
                       data.allShopifyProduct.edges[4].node.images[0].localFile
                         .childImageSharp.fluid
                     }
                   />
-                </ImgWrap>
-                <p>{data.allShopifyProduct.edges[4].node.title}</p>
+         
+                <Title>{data.allShopifyProduct.edges[4].node.title}</Title>
 
             
-                <p>${data.allShopifyProduct.edges[4].node.variants[0].price}</p>
+                <Price>${data.allShopifyProduct.edges[4].node.variants[0].price}</Price>
 
                 {/* buttons section */}
                 <AddToCartButton
@@ -204,9 +260,9 @@ const HomeShop = () => {
                   }
                 />
 
-                <p>{data.allShopifyProduct.edges[5].node.title}</p>
+                <Title>{data.allShopifyProduct.edges[5].node.title}</Title>
 
-                <p>${data.allShopifyProduct.edges[5].node.variants[0].price}</p>
+                <Price>${data.allShopifyProduct.edges[5].node.variants[0].price}</Price>
 
                 {/* buttons section */}
                 <AddToCartButton

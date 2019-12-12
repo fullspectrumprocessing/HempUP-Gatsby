@@ -1,3 +1,11 @@
+  
+// import React from 'react'
+
+// const StoreContext = React.createContext()
+
+// export default StoreContext
+
+
 import React, { useReducer } from "react"
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()
@@ -7,7 +15,7 @@ const initialState = {
   cart: [],
 }
 
-//Reducer uses state and actions to update teh Global State
+// Reducer uses state and actions to update teh Global State
 function reducer(state, action) {
   switch (action.type) {
     case "SET_USER": {
@@ -27,7 +35,7 @@ function reducer(state, action) {
   }
 }
 
-//Here we use the reducer in the global context provider and make it available in other components so we can access state and dispatch at anytime
+// Here we use the reducer in the global context provider and make it available in other components so we can access state and dispatch at anytime
 
 const GlobalContexProvider = ({ children }) => {
   // using reducer hook to set the state and dipatch(which alters the state)
@@ -41,3 +49,6 @@ const GlobalContexProvider = ({ children }) => {
   )
 }
 export default GlobalContexProvider
+
+
+export const StoreContext = React.createContext()
