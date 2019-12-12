@@ -9,6 +9,7 @@ import GlobalStyle from '../theme/globalStyle'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  cssVars from '../theme/_variables'
+import HomeShop from '../components/home/homeshop'
 
 
 const WeAreCBDText = styled.div`
@@ -81,6 +82,8 @@ const LandingMessageP = styled.p`
   color: rgba(152, 121, 91, 1);
   font-family: lato, sans-serif;
   font-size: 20px;
+  max-width: 700px;
+  padding-top: 20px;
   @media (min-width: 796px) {
     font-size: 16px;
   }
@@ -168,14 +171,14 @@ const Landing = () =>{
 
         , 1500) }
 
-
-
-      <LandingMessageDiv>
-        <LandingMessageP>
+<LandingMessageP>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Habitant morbi
           tristique senectus et netus et.
         </LandingMessageP>
+
+      <LandingMessageDiv>
+        <HomeShop/>
       </LandingMessageDiv>
       <GlobalStyle/>
     </Layout>
