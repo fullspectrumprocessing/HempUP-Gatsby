@@ -1,54 +1,52 @@
 import React from "react"
 import { Link } from "gatsby"
-import  styled  from 'styled-components'
+import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Slide from 'react-reveal/Slide';
-import Fade from 'react-reveal/Fade';
-import GlobalStyle from '../theme/globalStyle'
+import Slide from "react-reveal/Slide"
+import Fade from "react-reveal/Fade"
+import GlobalStyle from "../theme/globalStyle"
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import  cssVars from '../theme/_variables'
-import HomeShop from '../components/home/homeshop'
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import cssVars from "../theme/_variables"
+import HomeShop from "../components/home/homeshop"
 
 const WeAreCBDText = styled.div`
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 50px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
 
+  h1 {
+    margin: 0;
+    font-size: 95px;
+  }
+
+  h2 {
+    font-size: 69px;
+    font-weight: ${cssVars.fw_4};
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 53px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  @media (min-width: 796px) {
+    margin-top: 40px;
     h1 {
-      margin: 0;
-      font-size: 95px;
+      line-height: 90px;
     }
-
     h2 {
-      font-size: 69px;
+      font-size: 80px;
+      line-height: 90px;
       font-weight: ${cssVars.fw_4};
-      margin: 0;
+      margin-left: 20px;
     }
-
-    h3 {
-      font-size: 53px;
-      font-weight: 400;
-      margin: 0;
-    }
-
-    @media (min-width: 796px) {
-      margin-top: 40px;
-      h1 {
-        line-height: 90px;
-      }
-      h2 {
-        font-size: 80px;
-        line-height: 90px;
-        font-weight: ${cssVars.fw_4};
-        margin-left: 20px;
-
-      }
-    }
+  }
 `
 
 const CBDTextUpper = styled.div`
@@ -67,7 +65,7 @@ const CBDTextLower = styled.div`
 `
 const LandingMessageDiv = styled.div`
   /* width: 100vw; */
-  background-color: rgba(255, 255, 255, .70);
+  background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   margin-top: 60px;
 
@@ -114,8 +112,11 @@ const ExploreButton = styled.button`
     text-decoration: none;
     color: white;
   }
-  :hover{
-    background:  radial-gradient(rgba(74, 140, 67, 0.63), rgba(74, 140, 67, 0.85));
+  :hover {
+    background: radial-gradient(
+      rgba(74, 140, 67, 0.63),
+      rgba(74, 140, 67, 0.85)
+    );
   }
 
   @media (min-width: 796px) {
@@ -132,59 +133,57 @@ const ExploreButtonArrow = styled.div`
 `
 
 const HomeProductWrapper = styled.div`
-display: flex; 
-justify-content: space-around; 
+  display: flex;
+  justify-content: space-around;
 `
 
-const Landing = () =>{
-
-  const fadeNSlide = (component, delay=0) => {
-    return(
+const Landing = () => {
+  const fadeNSlide = (component, delay = 0) => {
+    return (
       <Fade delay={delay}>
         <Slide bottom cascade delay={delay}>
-          {  component }
+          {component}
         </Slide>
       </Fade>
     )
   }
 
-
   return (
     <Layout>
+      <SEO
+        title="Hemp Up - Landing Page"
+        keywords={["wellness", "CBD", "herbal", "hemp"]}
+      />
 
-      <SEO title="Hemp Up - Landing Page" keywords={['wellness', 'CBD', 'herbal', 'hemp' ]}/>
-
-      <WeAreCBDText >
-        <CBDTextUpper>
-            { fadeNSlide(<h3>we are</h3>) }
-        </CBDTextUpper>
+      <WeAreCBDText>
+        <CBDTextUpper>{fadeNSlide(<h3>we are</h3>)}</CBDTextUpper>
         <CBDTextLower>
-            { fadeNSlide(<h1>CBD</h1>, 500) }
-            { fadeNSlide(<h2>wellness</h2>, 1000) }
+          {fadeNSlide(<h1>CBD</h1>, 500)}
+          {fadeNSlide(<h2>wellness</h2>, 1000)}
         </CBDTextLower>
       </WeAreCBDText>
 
-      { fadeNSlide(
-
+      {fadeNSlide(
         <Link to="/store/">
           <ExploreButton>
-            <div>  explore our line </div>
+            <div> explore our line </div>
             <ExploreButtonArrow> > </ExploreButtonArrow>
           </ExploreButton>
-        </Link>
+        </Link>,
 
-        , 1500) }
+        1500
+      )}
 
-<LandingMessageP>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Habitant morbi
-          tristique senectus et netus et.
-        </LandingMessageP>
+      <LandingMessageP>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Habitant morbi
+        tristique senectus et netus et.
+      </LandingMessageP>
 
       <LandingMessageDiv>
-        <HomeShop/>
+        <HomeShop />
       </LandingMessageDiv>
-      <GlobalStyle/>
+      <GlobalStyle />
     </Layout>
   )
 }
