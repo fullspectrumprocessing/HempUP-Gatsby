@@ -57,7 +57,7 @@ const ProductPage = ({ data }) => {
             />
           </Col>
           <Col sm>
-            <ProductForm variants={product.variants || []} />
+            <ProductForm variants={product.variants || []} product={product} />
             <ProductDescription>{product.description}</ProductDescription>
           </Col>
         </Row>
