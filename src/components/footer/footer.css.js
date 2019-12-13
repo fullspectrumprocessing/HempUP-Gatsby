@@ -134,7 +134,7 @@ export const LogoWrap = styled.div`
   @media (max-width: 600px) {
     width: 80%;
     align-items: center;
-    // margin: 30px 0;
+    display: none;
     height: auto;
     margin-left: -50px;
   }

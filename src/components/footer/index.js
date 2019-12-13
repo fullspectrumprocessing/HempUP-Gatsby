@@ -139,7 +139,7 @@ const Footer = () => {
           </NavWrap>
 
           <SubWrapper>
-            <H3>NEWSLETTER</H3>
+            <H3>Sign Up</H3>
             <P>Sign up to receive our monthly newsletter</P>
             <Form
               onSubmit={Subscribe}

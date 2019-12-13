@@ -75,6 +75,10 @@ const LandingMessageDiv = styled.div`
     margin: 60px 140px 0 140px;
     border-radius: 5px;
   }
+  @media (max-width: 400px) {
+    margin: 60px 0px 0 0px;
+    border-radius: 5px;
+  }
 `
 const LandingMessageP = styled.p`
   margin: 20px 35px 20px 35px;

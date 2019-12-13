@@ -6,8 +6,13 @@
 
 // You can delete this file if you're not using it
 
-import React from "react"
-import GlobalContextProvider from "./src/context/globalcontext"
+const React = ('react');
+const GlobalContextProvider = require("./src/context/globalcontext").default
+
+
+// const React = require('react');
+// const GlobalContextProvider = require('./src/context/GlobalContextProvider').default;
+
 
 exports.wrapRootElement = ({ element }) => {
   return <GlobalContextProvider>{element}</GlobalContextProvider>
