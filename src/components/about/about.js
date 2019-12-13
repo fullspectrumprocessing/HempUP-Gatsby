@@ -89,7 +89,7 @@ const AboutUsComp = () => {
               it does have various beneficial uses.
             </WhatIsTextWrap>
           </WhatIsCbd>
-          <WhatImgDiv>IMAGES</WhatImgDiv>
+          {/* <WhatImgDiv>IMAGES</WhatImgDiv> */}
         </WhatRow>
 
         <WhoRow>
@@ -106,7 +106,7 @@ const AboutUsComp = () => {
               who uses our products.
             </WhoTextWrap>
           </WhoWeAre>
-          <WhoImgDiv>IMAGES</WhoImgDiv>
+          {/* <WhoImgDiv>IMAGES</WhoImgDiv> */}
         </WhoRow>
 
         <WhyRow>
@@ -125,7 +125,7 @@ const AboutUsComp = () => {
               treats for your pets!
             </WhyTextWrap>
           </WhyUs>
-          <WhyImgDiv>IMAGES</WhyImgDiv>
+          {/* <WhyImgDiv>IMAGES</WhyImgDiv> */}
         </WhyRow>
         <ContactUs>
           <Link to="/contactus">
