@@ -20,11 +20,14 @@ export const ToggleWrap = styled.div`
   height: auto;
   display: inline-block;
   background: rgba(6, 12, 7, 0.35);
-  font-family: Hind, sans-serif;
+  font-family: Hind sans-serif;
   //   border-bottom: 1px solid white;
   border-radius: 50px;
   margin-bottom: 40px;
   padding: 35px;
+  @media (max-width: 920px) {
+   width: 80%;
+  }
 `
 
 export const Symbol = styled.span`
@@ -53,6 +56,10 @@ export const DivWrap = styled.div`
   }
   @media (max-width: 500px) {
     padding: 20px;
+  }
+  @media (max-width: 1444px) {
+    width: 75%;
+    margin: 0 auto;
   }
 `
 

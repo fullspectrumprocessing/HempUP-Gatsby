@@ -11524,6 +11524,11 @@ shell-quote@1.6.1:
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
+shopify-buy@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/shopify-buy/-/shopify-buy-2.8.1.tgz#f9de681d36a7b61eaeb22aff5305b8aa2174cc99"
+  integrity sha512-dO2CkcSqUFrZQQzcOGT3rQQPvAsWi8ADPgBYD/Te1HN+KPsO7gTlBCy3G7+RdHvD+iO9BAVjobWUbOkcQGBoKg==
+
 short-uuid@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/short-uuid/-/short-uuid-3.1.1.tgz#3ff427074b5fa7822c3793994d18a7a82e2f73a4"

@@ -13,34 +13,93 @@ font-family: ${cssVars.Objktv};
 export const Wrapper = styled.div`
 max-width: 1000px;
 margin: 50px;
+@media (max-width: 1101px) {
+    max-width: none;
+    width: 700px;
+}
+
+@media (max-width: 751px) {
+    max-width: none;
+    width: 500px;
+}
+
+@media (max-width: 600px) {
+    margin: 0 auto;
+}
+@media (max-width: 500px) {
+    width: 370px;
+}
+
+@media (max-width: 400px) {
+    width: 370px;
+}
+
+// @media (max-width: 300px) {
+//     width: 250px;
+// }
 
 `
 export const ContentWrap = styled.div`
 width: 200px;
 background: white;
 margin: 0 auto;
-
+padding-top: 15px;
+@media (max-width: 400px) {
+    width: 17s0px;
+}
 `
 
 export const Image = styled(Img)`
 height: 230px;
 overflow: hidden;
 
-`
-
-
-export const Button = styled.div`
-
 
 `
-export const ImgWrap = styled.div`
-height: 230px;
 
+
+export const ButtonLeft= styled.div`
+padding: 0px;
+color: pink;
+position: absolute;
+top: 45%;
+left: 19;
+@media (max-width: 400px) {
+   left: 30px;
+}
 `
+
+export const ButtonRight= styled.div`
+padding: 0px;
+color: pink;
+position: absolute;
+top: 45%;
+right: 19;
+@media (max-width: 400px) {
+    right: 30px;
+}
+`
+
 
 export const Card = styled.div`
-height: 500px;
+height: 450px;
 width: 300px;
 background: #FFF;
+@media (max-width: 751px) {
+    margin: 0 auto;
+}
+@media (max-width: 400px) {
+width: 270px;
+}
 
+`
+export const Title = styled.h3`
+font-size: 16px;
+height: 45px;
+color: grey;
+font-family: ${cssVars.Objktv};
+padding-bottom: 5px;
+`
+export const Price = styled.h3`
+font-size: 18px;
+color: ${cssVars.txtBrwn};
 `
