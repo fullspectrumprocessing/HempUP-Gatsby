@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import {GlobalStateContext} from '../../../context/globalcontext'
+import StoreContext from '../../../context/globalcontext'
 import { Wrapper } from './lineItem.css'
 
 const LineItem = props => {
@@ -8,7 +8,7 @@ const LineItem = props => {
   const {
     removeLineItem,
     store: { client, checkout },
-  } = useContext(GlobalStateContext)
+  } = useContext(StoreContext)
 
   const variantImage = line_item.variant.image ? (
     <img
