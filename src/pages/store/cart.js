@@ -10,8 +10,7 @@ class CartPage extends React.Component {
             <>
             <Layout>
 
-            <h1>Shoppin Cart</h1>
-            <p>This is your Chopin Cart!!</p>
+           
             <Cart />
             </Layout>
             </>
