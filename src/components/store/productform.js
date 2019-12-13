@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext, useCallback } from "react"
-// import PropTypes from "prop-types"
 import styled from "styled-components"
-// import Img from "gatsby-image"
 import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"

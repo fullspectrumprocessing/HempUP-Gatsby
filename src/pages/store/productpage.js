@@ -44,7 +44,7 @@ const StyledContainer = styled(Container)`
 `
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
-  console.log("ProductPage", product)
+  // console.log("ProductPage", product)
   return (
     <Layout>
       <StyledContainer>

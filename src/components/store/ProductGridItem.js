@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-
+import StoreContext from "../../context/globalcontext"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import ViewDetailsButton from "../../components/store/ViewDetailsButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
@@ -56,11 +56,22 @@ const GridImg = styled(Img)`
   pointer-events: none;
 `
 
-const handleAddToCart = node => {
-  console.log("TODO: ProductGridItem handleAddToCart", node)
-}
-
 export default ({ product }) => {
+  const {
+    addVariantToCart,
+    store: { client, adding },
+  } = useContext(StoreContext)
+
+
+  //! Sending product to shoppoing cart
+  const handleAddToCart = () => {
+    // let variant = 
+    console.log("shopify id", product.node.shopifyId)
+    console.log("quantity", quantity)
+    addVariantToCart(product.node.shopifyId, quantity)
+  }
+  const quantity = 1
+
   let max = 0
   let min = 0
 
@@ -83,9 +94,7 @@ export default ({ product }) => {
         <GridDescription>{product.node.description}</GridDescription>
 
         <AddToCartButton
-          handleAddToCart={() => {
-            handleAddToCart(product.node)
-          }}
+          handleAddToCart={handleAddToCart}
         />
 
         <Link to={`/store/product/${product.node.handle}/`}>

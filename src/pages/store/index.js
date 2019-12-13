@@ -5,12 +5,13 @@ import SEO from "../../components/seo"
 
 import ProductGrid from "../../components/store/productgrid"
 
-const StorePageIndex = ({data}) => {
-
+const StorePageIndex = ({ data }) => {
   return (
-
     <Layout>
-      <SEO title="Hemp Up - Store" keywords={[`CBD`, `hemp`, `pet`, `edibles`, `tinctures`, `oil`]} />
+      <SEO
+        title="Hemp Up - Store"
+        keywords={[`CBD`, `hemp`, `pet`, `edibles`, `tinctures`, `oil`]}
+      />
 
       <ProductGrid products={data.allShopifyProduct.edges} />
     </Layout>
@@ -19,12 +20,7 @@ const StorePageIndex = ({data}) => {
 
 export const query = graphql`
   query {
-    allShopifyProduct(
-      sort: {
-        fields: [createdAt]
-        order: ASC
-      }
-    ) {
+    allShopifyProduct(sort: { fields: [createdAt], order: ASC }) {
       edges {
         node {
           id
@@ -32,6 +28,7 @@ export const query = graphql`
           title
           handle
           createdAt
+          shopifyId
           images {
             id
             originalSrc
@@ -51,11 +48,9 @@ export const query = graphql`
               amount
             }
           }
-
         }
       }
     }
   }
-
 `
 export default StorePageIndex
