@@ -6,7 +6,7 @@ import "../styles/layout.scss"
 import StyledBGImage from "./bgimage"
 import Header from "./header/"
 import Footer from "./footer/"
-
+import ContextProvider from "../provider/ContextProvider"
 const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
@@ -30,14 +30,16 @@ class Layout extends React.Component {
 
     return (
       <>
-        <GlobalStyle />
-        <StyledBGImage>
-          <Overlay></Overlay>
-        </StyledBGImage>
+        <ContextProvider>
+          <GlobalStyle />
+          <StyledBGImage>
+            <Overlay></Overlay>
+          </StyledBGImage>
 
-        <Main>{children}</Main>
-        <Footer />
-        <Header />
+          <Main>{children}</Main>
+          <Footer />
+          <Header />
+        </ContextProvider>
       </>
     )
   }
