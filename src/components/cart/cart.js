@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import StoreContext from "../../context/globalcontext"
-import LineItem from "./LineItem"
+import LineItem from "./lineItem"
 
 const Cart = () => {
   const {
