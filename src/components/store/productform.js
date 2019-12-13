@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from "gatsby-image"
@@ -29,67 +29,83 @@ const ButtonContainer = styled.div`
   text-align: center;
 `
 
-class ProductForm extends React.Component {
-  state = {
+const ProductForm = (props) => {
+
+  const [state, setState] = useState({
     selectedVariant: {},
     selectedQuantity: 1,
-  }
+    
+  })
 
-  handleVarietyChange = (evt) => {
-    this.setState({
-      selectedVariant: {...this.getVariantDataFromTitle(evt.target.value)},
+
+  const handleVarietyChange = (evt) => {
+    setState({
+      selectedVariant: {...getVariantDataFromTitle(evt.target.value)},
     })
 
   }
   // this function handles the change in quantity via the number selector 
-  handleQuantityChange = (evt) => {
+  const handleQuantityChange = (evt) => {
     const isDigit = evt.target.value.match(/\d/g, '') && evt.target.value < 21 //number
     isDigit && (
-      this.setState({
+      setState({
         selectedQuantity: evt.target.value,
       })
     )
 
   }
 
-  getVariantDataFromTitle = (title) => {
-    for(let i=0; i < this.props.variants.length; i++){
-        if(this.props.variants[i].title === title){
-          return this.props.variants[i]
+  const getVariantDataFromTitle = (title) => {
+    for(let i=0; i < props.variants.length; i++){
+        if(props.variants[i].title === title){
+          return props.variants[i]
         }
     }
   }
 
 
   // this handles the add to cart submission 
-  handleAddToCart = () => {
+  const handleAddToCart = () => {
     // TODO: Create Store Context for shopping cart
     console.log('TODO: create storecontext')
-    console.log('productform handleAddToCart', this.state)
+    console.log('productform handleAddToCart', state)
   }
 
-  render(){
-     return(
+  const componentDidMount = () => {
+    setState({
+      selectedVariant:  props.variants[0],
+    })
+  }
+  const componentDidUpdate = ( prevState ,prevProps)=> {
+    // const newSelection = (prevState.selectedVariant.title !== this.state.selectedVariant.title)
+    //
+    // if(newSelection){
+    //   console.log(this.state.selectedVariant)
+    // }
+  }
+
+
+     return (
 
          <StyledContainer>
            <Row>
              <StyledFormGroup>
                <Label for="exampleNumber">Select Quantity:</Label>
                <Input
-                 value={this.state.selectedQuantity}
-                 onChange={this.handleQuantityChange}
+                 value={state.selectedQuantity}
+                 onChange={handleQuantityChange}
                  type="number"
                  name="quantity"
                  id="quantitySelect"
                />
              </StyledFormGroup>
-             {(this.props.variants && this.props.variants.length > 1) &&
+             {(props.variants && props.variants.length > 1) &&
                 <StyledFormGroup>
                     <Label for="exampleSelect">Select Variety: </Label>
                     <Input
-                      onChange={this.handleVarietyChange}
+                      onChange={handleVarietyChange}
                       type="select" name="variety" id="varietySelect">
-                         {this.props.variants.map( (item, inx) => {
+                         {props.variants.map( (item, inx) => {
                              return <option key={inx.toString()} inx={inx}>
                                       {item.title}
                                     </option>
@@ -101,32 +117,21 @@ class ProductForm extends React.Component {
           <Row>
             <Price>
 
-              { this.state.selectedVariant.price &&
-                 formatPrice( this.state.selectedVariant.price )
+              {state.selectedVariant.price &&
+                 formatPrice( state.selectedVariant.price )
               }
             </Price>
           </Row>
           <ButtonContainer>
-              <AddToCartButton handleAddToCart={this.handleAddToCart} />
+              <AddToCartButton handleAddToCart={handleAddToCart} />
           </ButtonContainer>
 
           </StyledContainer>
 
      )
-  }
+  
 
-  componentDidMount(){
-    this.setState({
-      selectedVariant:  this.props.variants[0],
-    })
-  }
-  componentDidUpdate( prevState ,prevProps){
-    // const newSelection = (prevState.selectedVariant.title !== this.state.selectedVariant.title)
-    //
-    // if(newSelection){
-    //   console.log(this.state.selectedVariant)
-    // }
-  }
+ 
 
 }
 
