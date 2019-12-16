@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import StoreContext from "../../context/globalcontext"
 import LineItem from "./lineItem"
+import {Button} from "./cart.css"
 
 const Cart = () => {
   const {
@@ -28,7 +29,7 @@ const Cart = () => {
       <h2>Total</h2>
       <p>$ {checkout.totalPrice}</p>
       <br />
-      <button onClick={handleCheckout}>Check out</button>
+      <Button onClick={handleCheckout}>Check out</Button>
     </div>
   )
 }

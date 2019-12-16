@@ -1,4 +1,5 @@
-import React, { useContext } from "react"
+
+import React, { useState, useEffect, useContext, useCallback } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -6,8 +7,9 @@ import StoreContext from "../../context/globalcontext"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import ViewDetailsButton from "../../components/store/ViewDetailsButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
+import StoreContext from "../../context/globalcontext"
 
-const ProductGridItem = styled.li`
+const GridItem = styled.li`
   display: inline-block;
   width: calc(100% - 20px);
   height: auto;
@@ -56,24 +58,91 @@ const GridImg = styled(Img)`
   pointer-events: none;
 `
 
-export default ({ product }) => {
-  const {
-    addVariantToCart,
-    store: { client, adding },
-  } = useContext(StoreContext)
+// const handleAddToCart = node => {
+//   console.log("TODO: ProductGridItem handleAddToCart", node)
+// }
 
 
-  //! Sending product to shoppoing cart
-  const handleAddToCart = () => {
-    // let variant = 
-    console.log("shopify id", product.node.shopifyId)
-    console.log("quantity", quantity)
-    addVariantToCart(product.node.shopifyId, quantity)
-  }
-  const quantity = 1
+// export default ({ product }) => {
+  const ProductGridItem = ({product}) => {
+
+  
 
   let max = 0
   let min = 0
+
+  // const {
+  //   variants,
+  //   variants: [initialVariant],
+  // } = product
+
+    //!variant handling hook
+    // const [variant, setVariant] = useState({ ...initialVariant })
+
+     //!quantity handlinh hook
+  // const [quantity, setQuantity] = useState(1)
+
+    //!Initializing context
+    // const {
+    //   addVariantToCart,
+    //   store: { client, adding },
+    // } = useContext(StoreContext)
+  
+
+      //!Handling variant changes
+  // const handleVarietyChange = evt => {
+  //   setVariant({
+  //     ...getVariantDataFromTitle(evt.target.value),
+  //   })
+  // }
+
+    //! getting product data based on it title
+    // const getVariantDataFromTitle = title => {
+    //   for (let i = 0; i < product.variants.length; i++) {
+    //     if (product.variants[i].title === title) {
+    //       return product.variants[i]
+    //     }
+    //   }
+    // }
+
+      //! this handles the add to cart submission
+  // TODO: Create Store Context for shopping cart
+  const handleAddToCart = () => {
+    console.log("TODO: create storecontext")
+    // console.log("sel variant", productVariant.shopifyId)
+    // console.log("sel quantity", quantity)
+    // checkAvailability(product.shopifyId)
+    // addVariantToCart(productVariant.shopifyId, quantity)
+  }
+
+  //!Handling product variant availability
+  // const productVariant =
+  //   client.product.helpers.variantForOptions(product, variant) || variant
+  // const [available, setAvailable] = useState(productVariant.availableForSale)
+
+  // const checkAvailability = useCallback(
+  //   productId => {
+  //     client.product.fetch(productId).then(() => {
+  //       // this checks the currently selected variant for availability
+  //       const result = variants.filter(
+  //         variant => variant.shopifyId === productVariant.shopifyId
+  //       )
+  //       setAvailable(result[0].availableForSale)
+  //     })
+  //   },
+  //   [client.product, productVariant.shopifyId, variants]
+  // )
+
+  // ! checking for product availability on mount
+  // useEffect(() => {
+    
+  //   checkAvailability(product.shopifyId)
+  // }, [productVariant, checkAvailability, product.shopifyId])
+  
+useEffect(() => {
+  console.log(product)
+}, [])
+
 
   if (product && product.node) {
     max = formatPrice(product.node.priceRange.maxVariantPrice.amount)
@@ -83,24 +152,32 @@ export default ({ product }) => {
   return (
     product &&
     product.node && (
-      <ProductGridItem>
+      <GridItem>
         <Link to={`/store/product/${product.node.handle}/`}>
           <GridImg
             fluid={product.node.images[0].localFile.childImageSharp.fluid}
           />
-        </Link>
+     
         <GridTitle className="title">{product.node.title}</GridTitle>
         <GridPrice>{min === max ? min : min + " - " + max}</GridPrice>
         <GridDescription>{product.node.description}</GridDescription>
-
+{/* 
         <AddToCartButton
-          handleAddToCart={handleAddToCart}
-        />
+
+          // handleAddToCart={() => {
+          //   handleAddToCart(product.node)
+          // }}
+          // handleAddToCart={handleAddToCart}
+          // disabled={!available || adding}
+        /> */}
+
 
         <Link to={`/store/product/${product.node.handle}/`}>
           <ViewDetailsButton />
         </Link>
-      </ProductGridItem>
+        </Link>
+      </GridItem>
     )
   )
 }
+export default ProductGridItem

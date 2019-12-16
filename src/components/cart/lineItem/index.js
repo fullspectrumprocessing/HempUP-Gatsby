@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import StoreContext from '../../../context/globalcontext'
-import { Wrapper, Card, ContentWrap, Title, Price, Image  } from './lineItem.css'
+import { Wrapper, Card, ContentWrap, Title, Price, Image, RemoveButton } from './lineItem.css'
 
 const LineItem = props => {
   const { line_item } = props
@@ -65,9 +65,10 @@ const LineItem = props => {
           : ''}
       </Title>
       {/* <Price>{selectedOptions}</Price> */}
-  <Price>{line_item.variant.price}</Price>
+  <Price>${line_item.variant.price}</Price>
       {line_item.quantity}
-      <button onClick={handleRemove}>Remove</button>
+      <br></br>
+      <RemoveButton onClick={handleRemove}>X</RemoveButton>
       </ContentWrap>
       </Card>
     </Wrapper>
