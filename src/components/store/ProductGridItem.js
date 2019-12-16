@@ -32,7 +32,7 @@ const GridTitle = styled.div`
   color: #707070;
   font-weight: 400;
   pointer-events: none;
-  min-height: 20px;
+  height: 54px;
   padding: 0 10px;
 `
 
