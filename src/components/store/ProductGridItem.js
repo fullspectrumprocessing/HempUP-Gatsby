@@ -1,8 +1,9 @@
+
 import React, { useState, useEffect, useContext, useCallback } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-
+import StoreContext from "../../context/globalcontext"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import ViewDetailsButton from "../../components/store/ViewDetailsButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
@@ -66,6 +67,7 @@ const GridImg = styled(Img)`
   const ProductGridItem = ({product}) => {
 
   
+
   let max = 0
   let min = 0
 
@@ -161,12 +163,14 @@ useEffect(() => {
         <GridDescription>{product.node.description}</GridDescription>
 {/* 
         <AddToCartButton
+
           // handleAddToCart={() => {
           //   handleAddToCart(product.node)
           // }}
           // handleAddToCart={handleAddToCart}
           // disabled={!available || adding}
         /> */}
+
 
         <Link to={`/store/product/${product.node.handle}/`}>
           <ViewDetailsButton />
