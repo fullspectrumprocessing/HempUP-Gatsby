@@ -18,6 +18,11 @@ font-size: 30px;
 font-family: ${cssVars.Objktv};
 
 `
+
+export const RemoveButton = styled.button`
+color: red;
+
+`
 export const Wrapper = styled.div`
 max-width: 1000px;
 margin: 50px;

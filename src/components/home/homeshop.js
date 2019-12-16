@@ -131,6 +131,7 @@ const HomeShop = () => {
             {/* first card------------------------------ */}
             <Card>
               {console.log(data)}
+              <Link to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}>
               <ContentWrap>
               
                   <Image
@@ -144,11 +145,11 @@ const HomeShop = () => {
 
                 <Price>${data.allShopifyProduct.edges[8].node.variants[0].price}</Price>
                 {/* buttons section */}
-                <AddToCartButton
+                {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[8].node)
                   }}
-                />
+                /> */}
 
                 <Link
                   to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}
@@ -156,11 +157,11 @@ const HomeShop = () => {
                   <ViewDetailsButton />
                 </Link>
               </ContentWrap>
+              </Link>
             </Card>
             {/* card 2 ---------------------------------- */}
             <Card>
-           
-              {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
+            <Link to={`/store/product/${data.allShopifyProduct.edges[6].node.handle}/`}>
               <ContentWrap>
                 <Image
                   fluid={
@@ -175,11 +176,11 @@ const HomeShop = () => {
                 <Price>${data.allShopifyProduct.edges[6].node.variants[0].price}</Price>
 
                 {/* buttons section */}
-                <AddToCartButton
+                {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[6].node)
                   }}
-                />
+                /> */}
 
                 <Link
                   to={`/store/product/${data.allShopifyProduct.edges[6].node.handle}/`}
@@ -187,10 +188,11 @@ const HomeShop = () => {
                   <ViewDetailsButton />
                 </Link>
               </ContentWrap>
+              </Link>
             </Card>
             {/* card 3 -------------------------------------------- */}
             <Card>
-          
+            <Link to={`/store/product/${data.allShopifyProduct.edges[2].node.handle}/`}>
               <ContentWrap>
                 <Image
                   fluid={
@@ -205,11 +207,11 @@ const HomeShop = () => {
                 <Price>${data.allShopifyProduct.edges[2].node.variants[0].price}</Price>
 
                 {/* buttons section */}
-                <AddToCartButton
+                {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[2].node)
                   }}
-                />
+                /> */}
 
                 <Link
                   to={`/store/product/${data.allShopifyProduct.edges[2].node.handle}/`}
@@ -217,10 +219,11 @@ const HomeShop = () => {
                   <ViewDetailsButton />
                 </Link>
               </ContentWrap>
+              </Link>
             </Card>
             {/* card 4 ------------------------------------------- */}
             <Card>
-             
+            <Link to={`/store/product/${data.allShopifyProduct.edges[4].node.handle}/`}>
               <ContentWrap>
              
                   <Image
@@ -236,11 +239,11 @@ const HomeShop = () => {
                 <Price>${data.allShopifyProduct.edges[4].node.variants[0].price}</Price>
 
                 {/* buttons section */}
-                <AddToCartButton
+                {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[4].node)
                   }}
-                />
+                /> */}
 
                 <Link
                   to={`/store/product/${data.allShopifyProduct.edges[4].node.handle}/`}
@@ -248,11 +251,13 @@ const HomeShop = () => {
                   <ViewDetailsButton />
                 </Link>
               </ContentWrap>
+              </Link>
             </Card>
             {/* card 5 --------------------------------------------- */}
             <Card>
-          
+            <Link to={`/store/product/${data.allShopifyProduct.edges[5].node.handle}/`}>
               <ContentWrap>
+              
                 <Image
                   fluid={
                     data.allShopifyProduct.edges[5].node.images[0].localFile
@@ -265,11 +270,11 @@ const HomeShop = () => {
                 <Price>${data.allShopifyProduct.edges[5].node.variants[0].price}</Price>
 
                 {/* buttons section */}
-                <AddToCartButton
+                {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[5].node)
                   }}
-                />
+                /> */}
 
                 <Link
                   to={`/store/product/${data.allShopifyProduct.edges[5].node.handle}/`}
@@ -277,6 +282,7 @@ const HomeShop = () => {
                   <ViewDetailsButton />
                 </Link>
               </ContentWrap>
+              </Link>
             </Card>
           </ItemsCarousel>
         </div>
