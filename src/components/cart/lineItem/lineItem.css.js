@@ -21,11 +21,16 @@ font-family: ${cssVars.Objktv};
 
 export const RemoveButton = styled.button`
 color: red;
+position: absolute;
+top: 0;
+right: 0;
 
 `
 export const Wrapper = styled.div`
-max-width: 1000px;
-margin: 50px;
+width: 650px;
+background-color: rgba(255, 255, 255, 0.7);
+padding: 30px 50px;
+margin: 0 auto;
 @media (max-width: 1101px) {
     max-width: none;
     width: 700px;
@@ -52,21 +57,29 @@ margin: 50px;
 // }
 
 `
-export const ContentWrap = styled.div`
+export const ContentRow1 = styled.div`
 width: 200px;
 background: white;
 margin: 0 auto;
 padding-top: 15px;
 @media (max-width: 400px) {
-    width: 17s0px;
+    width: 170px;
+}
+`
+
+export const ContentRow2 = styled.div`
+width: 200px;
+background: white;
+margin: 0 auto;
+padding-top: 15px;
+@media (max-width: 400px) {
+    width: 170px;
 }
 `
 
 export const Image = styled.img`
-height: 230px;
+height: 180px;
 overflow: hidden;
-
-
 `
 
 
@@ -94,9 +107,13 @@ right: 19;
 
 
 export const Card = styled.div`
-height: 450px;
-width: 300px;
+height: 200px;
+margin: 0 auto;
+width: 550px;
+position: relative;
 background: #FFF;
+display: flex;
+flex-direction: row;
 @media (max-width: 751px) {
     margin: 0 auto;
 }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext, useCallback } from "react"
+// import PropTypes from "prop-types"
 import styled from "styled-components"
+// import Img from "gatsby-image"
 import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
@@ -119,6 +121,8 @@ const ProductForm = ({ product }) => {
             type="number"
             name="quantity"
             id="quantitySelect"
+            min="1"
+            // step="1"
           />
         </StyledFormGroup>
         {product.variants && product.variants.length > 1 && (
@@ -148,6 +152,7 @@ const ProductForm = ({ product }) => {
         <AddToCartButton
           handleAddToCart={handleAddToCart}
           disabled={!available || adding}
+          id={product.shopifyId}
         />
       </ButtonContainer>
     </StyledContainer>
