@@ -121,7 +121,7 @@ const HomeShop = () => {
                 return 1
               }
             })()}
-            gutter={20}
+            gutter={30}
             infiniteLoop={true}
             leftChevron={<ButtonLeft>{"<"}</ButtonLeft>}
             rightChevron={<ButtonRight>{">"}</ButtonRight>}

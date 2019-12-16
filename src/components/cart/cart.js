@@ -1,16 +1,17 @@
 import React, { useContext } from "react"
 import StoreContext from "../../context/globalcontext"
 import LineItem from "./lineItem"
-import {Button} from "./cart.css"
+import {Button, Wrapper, ItemWrap, CheckoutWrap} from "./cart.css"
 
-const Cart = () => {
+const Cart = (props) => {
   const {
     store: { checkout },
   } = useContext(StoreContext)
+  
 
   const handleCheckout = () => {
     window.open(checkout.webUrl)
-    // console.log(store)
+    console.log(props)
   }
 
   const line_items = checkout.lineItems.map(line_item => {
@@ -18,8 +19,11 @@ const Cart = () => {
   })
 
   return (
-    <div>
+    <Wrapper>
+      <ItemWrap>
       {line_items}
+      </ItemWrap>
+      <CheckoutWrap>
       <h2>Subtotal</h2>
       <p>$ {checkout.subtotalPrice}</p>
       <br />
@@ -30,7 +34,8 @@ const Cart = () => {
       <p>$ {checkout.totalPrice}</p>
       <br />
       <Button onClick={handleCheckout}>Check out</Button>
-    </div>
+      </CheckoutWrap>
+    </Wrapper>
   )
 }
 

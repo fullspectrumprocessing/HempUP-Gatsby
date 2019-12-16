@@ -59,23 +59,29 @@ overflow: hidden;
 
 export const ButtonLeft= styled.div`
 padding: 0px;
-color: pink;
+color: black;
 position: absolute;
 top: 45%;
 left: 19;
 @media (max-width: 400px) {
    left: 30px;
 }
+:hover {
+    color: ${cssVars.ttnGrdntDrkGrn};
+}
 `
 
 export const ButtonRight= styled.div`
 padding: 0px;
-color: pink;
+color: black;
 position: absolute;
 top: 45%;
 right: 19;
 @media (max-width: 400px) {
     right: 30px;
+}
+:hover {
+    color: ${cssVars.ttnGrdntDrkGrn};
 }
 `
 
