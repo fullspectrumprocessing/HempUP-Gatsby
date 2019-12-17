@@ -17,3 +17,9 @@
 // exports.wrapRootElement = ({ element }) => {
 //   return <GlobalContextProvider>{element}</GlobalContextProvider>
 // }
+const React = require('react');
+const ContextProvider = require('./src/provider/ContextProvider').default;
+
+exports.wrapRootElement = ({ element }) => {
+  return <ContextProvider>{element}</ContextProvider>;
+};
