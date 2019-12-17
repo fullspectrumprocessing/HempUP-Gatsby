@@ -102,13 +102,6 @@ const ProductForm = ({ product }) => {
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
 
-  // const componentDidUpdate = (prevState, prevproduct) => {
-  // const newSelection = (prevState.variant.title !== this.state.variant.title)
-  //
-  // if(newSelection){
-  //   console.log(this.state.variant)
-  // }
-  // }
 
   return (
     <StyledContainer>
@@ -152,7 +145,7 @@ const ProductForm = ({ product }) => {
         <AddToCartButton
           handleAddToCart={handleAddToCart}
           disabled={!available || adding}
-          id={product.shopifyId}
+         
         />
       </ButtonContainer>
     </StyledContainer>

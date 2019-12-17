@@ -139,8 +139,8 @@ const Footer = () => {
           </NavWrap>
 
           <SubWrapper>
-            <H3>Sign Up</H3>
-            <P>Sign up to receive our monthly newsletter</P>
+            <H3>SIGN UP</H3>
+            <P>Sign up for latest offers</P>
             <Form
               onSubmit={Subscribe}
               data-netlify-honeypot="bot-field"

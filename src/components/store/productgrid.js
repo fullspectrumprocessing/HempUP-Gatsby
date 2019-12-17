@@ -18,7 +18,7 @@ const ProductGrid = styled.ul`
 `
 const StoreHeader = styled.div`
   width: 100%;
-  margin-top: 41px;
+  margin-top: 80px;
   height: 100px;
   background-image: ${cssVars.grdntGreen};
   align-self: flex-start;
@@ -26,7 +26,8 @@ const StoreHeader = styled.div`
   padding-top: 10px;
   font-size: 40px;
 `
-export default ({ products }) => {
+export default (props) => {
+  const {products} = props
   const fadeNSlide = (component, delay = 0) => {
     return (
       <Fade delay={delay}>
@@ -37,9 +38,11 @@ export default ({ products }) => {
     )
   }
   return (
+   
     <>
+     {console.log(props, "products")}
       <StoreHeader>
-        <StoreTitle>Store</StoreTitle>
+        <StoreTitle>{props.page ? props.page : "All Items"}</StoreTitle>
       </StoreHeader>
       <ProductGrid>
         {products.map((product, inx) => (
