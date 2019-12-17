@@ -59,9 +59,9 @@ const ProducTypePage = (props) => {
 
       <StyledContainer>
         <PageHeader>
-          {data.allShopifyProduct.edges[0].node.productType}
+          {/* {data.allShopifyProduct.edges[0].node.productType} */}
         </PageHeader>
-        <ProductGrid products={data.allShopifyProduct.edges} />
+        <ProductGrid products={data.allShopifyProduct.edges} page={data.allShopifyProduct.edges[0].node.productType}/>
       </StyledContainer>
     </Layout>
   )

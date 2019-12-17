@@ -20,7 +20,7 @@ font-family: ${cssVars.Objktv};
 `
 
 export const RemoveButton = styled.button`
-color: red;
+color: ${cssVars.txtBrwn};
 position: absolute;
 top: 0;
 right: 0;

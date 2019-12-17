@@ -24,13 +24,14 @@ const LineItem = (props ) => {
   const { line_item } = props
 
     //!quantity handlinh hook
-    const [quantityCart, setQuantityCart] = useState(line_item.quantity ? line_item.quantity : quantityCart)
+    // const [quantityChange, setQuantityChange] = useState(false)
+    // const [quantityCart, setQuantityCart] = useState(line_item.quantity ? line_item.quantity : quantityCart)
 
-     //!variant handling hook
-  // const [variant, setVariant] = useState({ ...initialVariant })
+  
 
   const {
     addVariantToCart,
+    updateLineItem,
     removeLineItem,
     store: { client, checkout, adding },
   } = useContext(StoreContext)
@@ -56,43 +57,58 @@ const LineItem = (props ) => {
   }
 
   // added------------------------------------
-  console.log(client)
-  console.log(line_item)
+  // console.log(client)
+  // console.log(line_item)
+
+    // updates modal state toggle to true
+    // const updateQuantity = () => {
+    //   setQuantityChange(true)
+    // }
 
    //! this function handles the change in quantity via the number selector
-   const handleQuantityChange = evt => {
-    const isDigit = evt.target.value.match(/\d/g, "") && evt.target.value < 21 //number
-    isDigit && setQuantityCart(evt.target.value)
-    console.log(line_item, "line_item")
-    // return quantityCart
-    addVariantToCart(line_item.variant.id, quantityCart)
-  }
+  //  const handleQuantityChange = evt => {
+  //   const isDigit = evt.target.value.match(/\d/g, "") && evt.target.value < 21 //number
+  //   isDigit && setQuantityCart(evt.target.value)
+    
+
+  //   updateQuantity()
+  //   console.log(quantityChange, "quantity change")
+
+  //   console.log(quantityCart, "quantity cart")
+  // }
 
     //!Handling product variant availability
   //   const productVariant =
-  //   client.product.helpers.variantForOptions(line_item, line_item.variant) || line_item.variant
+  //  line_item.variant
   // const [available, setAvailable] = useState(productVariant.availableForSale)
 
-  const checkAvailability = useCallback(
-    productId => {
-      client.product.fetch(productId).then(() => {
-        // this checks the currently selected variant for availability
-        // const result = line_item.variants.filter(
-          // console.log(client)
-          // variant => line_item.variant.id === productVariant.shopifyId
-        // )
-        // setAvailable(result[0].availableForSale)
-      })
-    },
-    // [client.product,  productVariant.shopifyId, line_item.variants]
-  )
+  // const checkAvailability = useCallback(
+  //   productId => {
+  //     client.product.fetch(productId).then(() => {
+  //       // this checks the currently selected variant for availability
+  //       const result = line_item.variant.id
+        
+  //       setAvailable(result.availableForSale)
+  //     })
+  //   },
+  //   [client.product,  line_item.variant.id, line_item.variants]
+  // )
 
-    // ! checking for product availability on mount
-    // useEffect(() => {
-    //   console.log(line_item)
-    //   checkAvailability(line_item.id)
-    // }, [ checkAvailability, line_item.id])
   
+    // useEffect(() => {
+    //   if (quantityChange === true) {
+    //     // if true run handle show function to open modal
+    //    console.log(quantityCart, "quantity in effenct")
+    //    checkAvailability(line_item.variant.id)
+    //   //  updateLineItem(client, checkout.id, line_item.variant.id, quantityCart)
+    //    addVariantToCart(line_item.variant.id, quantityCart,  console.log(line_item, "quantity cart"))
+    //    console.log(line_item, "quantity cart")
+       
+    //     // set state  back to false
+    //     setQuantityChange(false)
+
+    //   }
+    // })
 
   return (
     <Wrapper>
@@ -108,7 +124,7 @@ const LineItem = (props ) => {
           </Title>
           {/* <Price>{selectedOptions}</Price> */}
           <Price>${line_item.variant.price}</Price>
-          <Input
+          {/* <Input
             defaultValue={quantityCart}
             onChange={handleQuantityChange}
             // disabled={!available || adding}
@@ -117,9 +133,9 @@ const LineItem = (props ) => {
             id="quantitySelect"
             min="1"
             step="1"
-          />
-
-          {/* {line_item.quantity} */}
+          /> */}
+        <Title>Quantity: {line_item.quantity}</Title>
+          
           <br></br>
           <br></br>
           <RemoveButton onClick={handleRemove}>X</RemoveButton>

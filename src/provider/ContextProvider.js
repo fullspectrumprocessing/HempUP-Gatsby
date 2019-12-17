@@ -28,12 +28,19 @@ const ContextProvider = ({ children }) => {
         : null
 
       const setCheckoutInState = checkout => {
+
+     
+
         if (isBrowser) {
           localStorage.setItem('shopify_checkout_id', checkout.id)
         }
 
+     
+
         updateStore(prevState => {
-          return { ...prevState, checkout }
+          return { ...prevState,
+           
+            checkout }
         })
       }
 
@@ -69,10 +76,14 @@ const ContextProvider = ({ children }) => {
             console.error('Both a size and quantity are required.')
             return
           }
+     
 
           updateStore(prevState => {
+            console.log(prevState, "prev sate")
             return { ...prevState, adding: true }
           })
+
+
 
           const { checkout, client } = store
 
