@@ -34,10 +34,11 @@ const ProductHeader = styled.div`
 
   }
 `
-const StyledContainer = styled(Container)`
+const StyledContainer = styled.div`
   /* background: rgba(255,255,255, 0.7); */
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+ margin-left: 0px !important;
+ margin-right: 0px !important;
+ width: 100% !important;
 
   @media only screen and (max-width: 576px) {
     margin-bottom: 50px;

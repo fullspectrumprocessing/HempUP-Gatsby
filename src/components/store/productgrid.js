@@ -10,7 +10,7 @@ const StoreTitle = styled.h1`
   
   color: ghostwhite;
 `
-const ProductGrid = styled.ul`
+export const ProductGrid = styled.ul`
   margin: 30px auto;
   padding-top: 20px;
   padding-inline-start: 0;
