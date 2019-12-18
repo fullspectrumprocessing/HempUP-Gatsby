@@ -109,7 +109,7 @@ const ProductForm = ({ product }) => {
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>
           <Input
-            value={quantity}
+            defaultValue={quantity}
             onChange={handleQuantityChange}
             type="number"
             name="quantity"

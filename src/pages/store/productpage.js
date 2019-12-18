@@ -9,6 +9,7 @@ import cssVars from "../../theme/_variables"
 
 const ProductHeader = styled.div`
   font-family: objektiv-mk1, sans-serif;
+  padding: 20px;
   text-align: center;
   font-size: 2em;
   color: ${cssVars.txtGrn}
@@ -39,7 +40,10 @@ const ProductDescription = styled.div`
 `
 const StyledContainer = styled(Container)`
   background: rgba(255, 255, 255, 0.7);
+  padding-top: 20px;
+  margin-top: 100px;
   margin-bottom: 50px;
+  width: 100%;
   padding-bottom: 50px;
 `
 const ProductPage = ({ data }) => {

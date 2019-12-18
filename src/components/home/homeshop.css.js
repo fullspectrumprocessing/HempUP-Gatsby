@@ -100,7 +100,7 @@ width: 270px;
 `
 export const Title = styled.h3`
 font-size: 16px;
-height: 45px;
+height: 48px;
 color: grey;
 font-family: ${cssVars.Objktv};
 padding-bottom: 5px;
