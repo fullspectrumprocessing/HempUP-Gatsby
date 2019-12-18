@@ -6,6 +6,8 @@ import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
 import StoreContext from "../../context/globalcontext"
+import { GlobalDispatchContext } from "../../provider/ContextProvider"
+import { GlobalStateContext } from "../../provider/ContextProvider"
 
 const StyledContainer = styled(Container)`
   width: 20%;
@@ -30,6 +32,10 @@ const ButtonContainer = styled.div`
 `
 
 const ProductForm = ({ product }) => {
+
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
+
   const {
     variants,
     variants: [initialVariant],
@@ -44,7 +50,7 @@ const ProductForm = ({ product }) => {
   //!Initializing context
   const {
     addVariantToCart,
-    store: { client, adding },
+    store: { client, adding, checkout },
   } = useContext(StoreContext)
 
   //!Handling variant changes
@@ -77,6 +83,11 @@ const ProductForm = ({ product }) => {
     console.log("sel variant", productVariant.shopifyId)
     console.log("sel quantity", quantity)
     addVariantToCart(productVariant.shopifyId, quantity)
+    console.log(checkout, "checkout")
+    dispatch({type: "SET_CART", isCart: true })
+    dispatch({ type: "SET_NUM", numInCart: state.numInCart += parseInt(quantity) })
+    dispatch({ type: "SET_FRIEND", bestFriends: "dog" })
+console.log(state.bestFriends)
   }
 
   //!Handling product variant availability
@@ -105,6 +116,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <StyledContainer>
+      {console.log(state, "STATE@!@")}
       <Row>
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>
