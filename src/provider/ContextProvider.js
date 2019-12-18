@@ -9,8 +9,10 @@ export const GlobalDispatchContext = React.createContext()
 
 // inital state
 const initialState = {
-  isCart: false,
+  
   numInCart: 0,
+  isCart: false,
+  bestFriends: "cat"
 }
 
 // reducer function takes in state and action and updates global state
@@ -18,6 +20,7 @@ function reducer(state, action) {
   // if action type is SET_PAGE , set state to action.page
 
   if (action.type === "SET_CART") {
+  
     return {
       ...state,
       isCart: action.isCart,
@@ -27,7 +30,12 @@ function reducer(state, action) {
       ...state,
       numInCart: action.numInCart,
     }
-  } else {
+  } else if (action.type === "SET_FRIEND") {
+    return {
+      ...state,
+      bestFriends: action.bestFriends,
+    }
+  }else {
     throw new Error("bad action type")
   }
 }

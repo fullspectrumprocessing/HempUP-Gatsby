@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback } from "react"
+import React, { useContext, useEffect, useState, useCallback} from "react"
 import {  Input } from "reactstrap"
 import StoreContext from "../../../context/globalcontext"
 import {
@@ -11,10 +11,14 @@ import {
   Image,
   RemoveButton,
 } from "./lineItem.css"
+import { GlobalDispatchContext } from "../../../provider/ContextProvider"
+import { GlobalStateContext } from "../../../provider/ContextProvider"
+import Cart from "../cart"
 
 const LineItem = (props ) => {
 
-
+const dispatch = useContext(GlobalDispatchContext);
+const state = useContext(GlobalStateContext)
 
 
 
@@ -36,7 +40,9 @@ const LineItem = (props ) => {
     store: { client, checkout, adding },
   } = useContext(StoreContext)
 
+const checkState = () => {
 
+}
 
   const variantImage = line_item.variant.image ? (
     <Image
@@ -53,8 +59,19 @@ const LineItem = (props ) => {
     : null
 
   const handleRemove = () => {
-    removeLineItem(client, checkout.id, line_item.id)
+    removeLineItem(client, checkout.id, line_item.id);
+    console.log(line_item, "lineItem---")
+    console.log(checkout, "CHECKOUT")
+
+    dispatch({ type: "SET_NUM", numInCart: state.numInCart -= parseInt(line_item.quantity) })
+
+  console.log(state, "STATE!!")
+
+   
+    // checkState()
   }
+
+ 
 
   // added------------------------------------
   // console.log(client)
@@ -112,6 +129,7 @@ const LineItem = (props ) => {
 
   return (
     <Wrapper>
+      {console.log(state, "line_state!!!")}
       <Card>
         <ContentRow1>{variantImage}</ContentRow1>
         <ContentRow2>
