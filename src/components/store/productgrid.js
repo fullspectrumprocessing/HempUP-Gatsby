@@ -15,6 +15,24 @@ const ProductGrid = styled.ul`
   padding-top: 20px;
   padding-inline-start: 0;
   width: 70%;
+  @media (max-width: 1281px) {
+    width: 90%;
+  }
+  @media (max-width: 999px) {
+    width: 100%;
+  }
+  @media (max-width: 899px) {
+    width: 80%;
+  }
+  @media (max-width: 659px) {
+    width: 100%;
+  }
+  @media (max-width: 593px) {
+    width: 80%;
+  }
+  @media (max-width: 377px) {
+    width: 95%;
+  }
 `
 const StoreHeader = styled.div`
   width: 100%;

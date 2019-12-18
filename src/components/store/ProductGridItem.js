@@ -19,7 +19,7 @@ const GridItem = styled.li`
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
 
-  @media only screen and (min-width: 500px) {
+  @media only screen and (min-width: 593px) {
     width: calc(50% - 20px);
   }
   @media only screen and (min-width: 900px) {
