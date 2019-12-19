@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useState, useContext } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
 import GlobalStyle from "../../theme/globalStyle"
 import cssVars from "../../theme/_variables.js"
+import { GlobalDispatchContext } from "../../provider/ContextProvider"
+import { GlobalStateContext } from "../../provider/ContextProvider"
 
 const DesktopNavButtonContainer = styled.div`
   display: inline-flex;
@@ -26,45 +28,56 @@ const StyledLink = styled(Link)`
 
 `
 
-class DesktopNavButton extends React.Component {
+const DesktopNavButton = (props) => {
 
-  state = {
+  const dispatch = useContext(GlobalDispatchContext)
+  const cart = useContext(GlobalStateContext)
+
+  const [state, setState] = useState({
     menuSelected: false,
+  })
+
+  // getSlug(slug){
+  //   return slug
+  // }
+
+  const handleMouseOver = (evt) => {
+    setState({menuSelected: true})
   }
 
-  getSlug(slug){
-    return slug
+  const handleMouseOut = (evt) => {
+    setState({menuSelected: false})
   }
 
-  handleMouseOver = (evt) => {
-    this.setState({menuSelected: true})
-  }
+  // const check = () => {
+  //  if (cart.numInCart === 0) {
+  //    console.log(cart.numInCart, "IN HRERERERER")
+  //    dispatch({ type: "SET_NUM", numInCart: 0 })
 
-  handleMouseOut = (evt) => {
-    this.setState({menuSelected: false})
-  }
+  //  }
+  // }
 
 
-  render() {
 
     return(
       <DesktopNavButtonContainer>
           <GlobalStyle />
           <StyledLink
-            to={this.props.to}
-            highlighted={( this.state.menuSelected) ? 'true' : ''}
+            // onClick={check}
+            to={props.to}
+            highlighted={( state.menuSelected) ? 'true' : ''}
             activeStyle={{
               color:"white",
               background: cssVars.grdntGreen,
             }}
             partiallyActive={false}
-            onMouseOver={this.handleMouseOver}
-            onMouseOut={this.handleMouseOut}>
-              {this.props.children}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}>
+              {props.children}
           </StyledLink>
       </DesktopNavButtonContainer>
     )
-  }
+  
 }
 
 DesktopNavButton.propTypes = {

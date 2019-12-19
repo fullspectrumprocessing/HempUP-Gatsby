@@ -7,6 +7,7 @@ export const H2 = styled.h2`
 margin-top: 30px;
 font-weight: 700 !important;
 font-size: 30px;
+padding-top: 20px;
 font-family: ${cssVars.Objktv};
 
 `
@@ -16,6 +17,7 @@ margin: 50px;
 @media (max-width: 1101px) {
     max-width: none;
     width: 700px;
+    margin: 0 auto;
 }
 
 @media (max-width: 751px) {

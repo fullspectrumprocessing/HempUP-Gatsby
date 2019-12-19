@@ -5,8 +5,6 @@ export const Wrapper = styled.div`
 display: flex;
 width: 100%;
 flex-direction: row;
-
-
 `
 
 export const ItemWrap = styled.div`
@@ -15,6 +13,19 @@ margin-top: 80px;
 width: 70%;
 flex-direction: column;
 margin-left: 0;
+`
+
+export const Empty = styled.h3`
+display: flex;
+margin-top: 80px;
+width: 70%;
+flex-direction: column;
+text-align: center;
+margin: 0 auto;
+margin-top: 80px;
+font-size: 80px;
+color: ${cssVars.txtBrwn};
+
 `
 
 export const CheckoutWrap = styled.div`

@@ -80,11 +80,12 @@ const ProductForm = ({ product }) => {
   // TODO: Create Store Context for shopping cart
   const handleAddToCart = () => {
     console.log("TODO: create storecontext")
-    console.log("sel variant", productVariant.shopifyId)
-    console.log("sel quantity", quantity)
+    // console.log("sel variant", productVariant.shopifyId)
+    // console.log("sel quantity", quantity)
     addVariantToCart(productVariant.shopifyId, quantity)
-    console.log(checkout, "checkout")
-    dispatch({type: "SET_CART", isCart: true })
+    // console.log(checkout, "checkout")
+    // dispatch({type: "SET_CART", isCart: true })
+ 
     dispatch({ type: "SET_NUM", numInCart: state.numInCart += parseInt(quantity) })
     dispatch({ type: "SET_FRIEND", bestFriends: "dog" })
 console.log(state.bestFriends)

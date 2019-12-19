@@ -31,17 +31,18 @@ const CartDiv = styled.div`
  position: relative;
 `
 
-export default () => {
+export default ({props}) => {
 
   const state = useContext(GlobalStateContext);
   return (
 
 
     <ShoppingBag>
+      {console.log(sessionStorage, "storage")}
       <Link to="/store/cart/">
         <CartDiv>
         <BagSvg src={ShopBag} />
-        {/* <Item>{state.numInCart}</Item> */}
+  {state.numInCart > 0 ?<Item>{state.numInCart}</Item> : null}
         </CartDiv>
       </Link>
     </ShoppingBag>
