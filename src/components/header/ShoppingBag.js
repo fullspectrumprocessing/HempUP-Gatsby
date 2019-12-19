@@ -29,7 +29,6 @@ const CartDiv = styled.div`
  width: 80px;
  height: 50px;
  position: relative;
-//  color: blue;
 `
 
 export default ({props}) => {
@@ -39,7 +38,7 @@ export default ({props}) => {
 
 
     <ShoppingBag>
-    
+      {console.log(sessionStorage, "storage")}
       <Link to="/store/cart/">
         <CartDiv>
         <BagSvg src={ShopBag} />
