@@ -18,7 +18,8 @@ import Cart from "../cart"
 const LineItem = (props ) => {
 
 const dispatch = useContext(GlobalDispatchContext);
-const state = useContext(GlobalStateContext)
+const state = useContext(GlobalStateContext);
+
 
 
 
@@ -58,12 +59,18 @@ const checkState = () => {
       )
     : null
 
+  const callDispatch = () => {
+    dispatch({ type: "SET_CART", isCart: true })
+  }
+
   const handleRemove = () => {
     removeLineItem(client, checkout.id, line_item.id);
     console.log(line_item, "lineItem---")
     console.log(checkout, "CHECKOUT")
 
     dispatch({ type: "SET_NUM", numInCart: state.numInCart -= parseInt(line_item.quantity) })
+  
+    callDispatch()
 
   console.log(state, "STATE!!")
 
@@ -126,6 +133,11 @@ const checkState = () => {
 
     //   }
     // })
+
+        useEffect(() => {
+          console.log(state, "STATE IN EFFECT")
+      
+    },[])
 
   return (
     <Wrapper>

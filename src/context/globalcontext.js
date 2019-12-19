@@ -3,7 +3,7 @@ import React from 'react'
 
 const StoreContext = React.createContext()
 
-export const GlobalDispatchContext = React.createContext()
+// export const GlobalDispatchContext = React.createContext()
 
 export default StoreContext
 

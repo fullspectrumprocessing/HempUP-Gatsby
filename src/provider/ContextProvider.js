@@ -9,10 +9,10 @@ export const GlobalDispatchContext = React.createContext()
 
 // inital state
 const initialState = {
-  
-  numInCart: 0,
   isCart: false,
-  bestFriends: "cat"
+  bestFriends: "cat",
+  numInCart: 0,
+
 }
 
 // reducer function takes in state and action and updates global state
@@ -122,7 +122,7 @@ const ContextProvider = ({ children }) => {
 
   return (
     <GlobalStateContext.Provider value={state}>
-      <GlobalDispatchContext.Provider value={dispatch}>
+       <GlobalDispatchContext.Provider value={dispatch}>
         <Context.Provider
           value={{
             store,
@@ -176,9 +176,11 @@ const ContextProvider = ({ children }) => {
             },
           }}
         >
+         
           {children}
+         
         </Context.Provider>
-      </GlobalDispatchContext.Provider>
+        </GlobalDispatchContext.Provider>
     </GlobalStateContext.Provider>
   )
 }

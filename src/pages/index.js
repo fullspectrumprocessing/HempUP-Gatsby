@@ -12,10 +12,12 @@ import cssVars from "../theme/_variables"
 import HomeShop from "../components/home/homeshop"
 
 const WeAreCBDText = styled.div`
-  text-align: left;
+  text-align: center;
   display: flex;
+ width: 100%;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
   margin-bottom: 50px;
 
   h1 {
@@ -36,7 +38,9 @@ const WeAreCBDText = styled.div`
   }
 
   @media (min-width: 796px) {
+   text-align: left;
     margin-top: 40px;
+    width: 570px;
     h1 {
       line-height: 90px;
     }
@@ -68,10 +72,13 @@ const LandingMessageDiv = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   margin-top: 60px;
+  margin-bottom: 50px;
 
   @media (min-width: 796px) {
     margin: 60px 140px 0 140px;
     border-radius: 5px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
   @media (max-width: 400px) {
     margin: 60px 0px 0 0px;
@@ -79,13 +86,19 @@ const LandingMessageDiv = styled.div`
   }
 `
 const LandingMessageP = styled.p`
-  margin: 20px 35px 20px 35px;
+  // margin: 20px 35px 20px 35px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   line-height: 2;
-  color: rgba(152, 121, 91, 1);
+  // background-color: rgba(255, 255, 255, 0.5);
+  // color: rgba(152, 121, 91, 1);
+  color: ${cssVars.txtBrwn};
   font-family: lato, sans-serif;
   font-size: 20px;
+  // font-weight: 600;
   max-width: 700px;
-  padding-top: 20px;
+  padding: 20px;
   @media (min-width: 796px) {
     font-size: 16px;
   }
@@ -99,6 +112,7 @@ const ExploreButton = styled.button`
   height: 60px;
   border: none;
   border-radius: 17px;
+  margin: 0 auto;
   background: radial-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85));
   color: ${cssVars.txtLghtGrn};
   font-family: ${cssVars.Objktv};
@@ -136,7 +150,22 @@ const HomeProductWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `
+const Wrapper = styled.div`
+ height: 100%;
+ width: 100%;
+ position: relative;
 
+`
+const Overlay = styled.div`
+ 
+ width: 100%;
+ min-height: 1175px;
+ background-color: rgba(255, 255, 255, 0.35);
+ position: absolute; 
+ top: 0;
+ bottom: 0;
+ z-index: -20;
+`
 const Landing = () => {
   const fadeNSlide = (component, delay = 0) => {
     return (
@@ -150,6 +179,9 @@ const Landing = () => {
 
   return (
     <Layout>
+      
+      <Wrapper>
+      <Overlay></Overlay>
       <SEO
         title="Hemp Up - Landing Page"
         keywords={["wellness", "CBD", "herbal", "hemp"]}
@@ -175,15 +207,14 @@ const Landing = () => {
       )}
 
       <LandingMessageP>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Habitant morbi
-        tristique senectus et netus et.
+      HempUp is the best source for thoughtfully formulated CBD products. Our mission is to provide the highest quality CBD on the market by following unparalleled industry standards. We are dedicated to bringing wellness into the lives of anyone who uses our products.
       </LandingMessageP>
 
       <LandingMessageDiv>
         <HomeShop />
       </LandingMessageDiv>
       <GlobalStyle />
+      </Wrapper>
     </Layout>
   )
 }

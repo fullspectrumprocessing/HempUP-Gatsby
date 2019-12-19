@@ -24,13 +24,15 @@ const Main = styled.main`
   align-items: center;
 `
 
-class Layout extends React.Component {
-  render() {
-    const { children } = this.props
+const Layout = ({ children}) => {
+  
+ 
 
     return (
       <>
-        <ContextProvider>
+      {/* {console.log(props)} */}
+      {console.log(children, "DATA")}
+        {/* <ContextProvider> */}
           <GlobalStyle />
           <StyledBGImage>
             <Overlay></Overlay>
@@ -39,10 +41,10 @@ class Layout extends React.Component {
           <Main>{children}</Main>
           <Footer />
           <Header />
-        </ContextProvider>
+        {/* </ContextProvider> */}
       </>
     )
-  }
+  
 }
 
 Layout.propTypes = {

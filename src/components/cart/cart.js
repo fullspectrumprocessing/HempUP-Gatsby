@@ -1,7 +1,7 @@
-import React, { useContext, useEffect  } from "react"
+import React, { useContext, useEffect, useCallback,  useState, useRef } from "react"
 import StoreContext from "../../context/globalcontext"
 import LineItem from "./lineItem"
-import {Button, Wrapper, ItemWrap, CheckoutWrap} from "./cart.css"
+import {Button, Wrapper, ItemWrap, CheckoutWrap, Empty} from "./cart.css"
 import { GlobalDispatchContext } from "../../provider/ContextProvider"
 import { GlobalStateContext } from "../../provider/ContextProvider"
 
@@ -9,6 +9,11 @@ const Cart = (props) => {
 
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
+  const [totalCart, setTotalCart] = useState();
+  const getSearchResults = () => {
+    console.log(state.numInCart, "HERE I AM")
+  }
+
 
   const {
     store: { checkout },
@@ -24,18 +29,36 @@ const Cart = (props) => {
     return <LineItem key={line_item.id.toString()} line_item={line_item} />
   })
 
-  // useEffect(() => {
-//     if (checkout.paymentDue === "0.00") {
-//  console.log(state)
-//       dispatch({type: "SET_CART", isCart: false }, {type: "SET_NUM", numInCart: 0})
-//       console.log(state, "STATE IN EFFECT")
-//     }
-  // })
+
+  useEffect(() => {
+    let array = []
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    console.log(checkout)
+    for (let i = 0; i < checkout.lineItems.length; i++) {
+        array.push(checkout.lineItems[i].quantity)
+        console.log(array,"array")
+    }
+     let total = array.reduce(
+      ( accumulator, currentValue ) => accumulator + currentValue,
+      0
+    )
+ 
+    console.log(totalCart)
+ 
+    dispatch({ type: "SET_NUM", numInCart: total })
+  
+    console.log(total, "final")
+
+getSearchResults()
+    
+  }, [checkout.lineItems.length])
 
   return (
     <Wrapper>
-      <ItemWrap>
-      {line_items}
+       <ItemWrap>
+      {checkout.subtotalPrice > 0 ?   {line_items} : <Empty>Your Cart is Empty</Empty>}
+     
+    
       </ItemWrap>
       <CheckoutWrap>
       <h2>Subtotal</h2>
