@@ -29,6 +29,7 @@ const CartDiv = styled.div`
  width: 80px;
  height: 50px;
  position: relative;
+//  color: blue;
 `
 
 export default ({props}) => {
