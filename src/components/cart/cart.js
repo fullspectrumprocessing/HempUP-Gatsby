@@ -56,7 +56,7 @@ const Cart = (props) => {
   return (
     <Wrapper>
        <ItemWrap>
-      {checkout.subtotalPrice > 0 ?   {line_items} : <Empty>Your Cart is Empty</Empty>}
+      {checkout.subtotalPrice > 0 ?   line_items : <Empty>Your Cart is Empty</Empty>}
      
     
       </ItemWrap>

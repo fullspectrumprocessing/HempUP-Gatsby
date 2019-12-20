@@ -38,7 +38,7 @@ export default ({props}) => {
 
 
     <ShoppingBag>
-      {console.log(sessionStorage, "storage")}
+   
       <Link to="/store/cart/">
         <CartDiv>
         <BagSvg src={ShopBag} />
