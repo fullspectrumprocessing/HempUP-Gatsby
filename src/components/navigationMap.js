@@ -2,7 +2,7 @@
 
 const navigationMap = {
   "/": [],
-  store: ["edibles", "pet", "to go", "drink", "vape", "pills"],
+  // store: ["pet", "isolate",  "drink", "vitamins",],
   about: [], //["who we are", "why us", "follow", "contact us"],
   // news: [],
   FAQ: []

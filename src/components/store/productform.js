@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useCallback } from "react"
 // import PropTypes from "prop-types"
 import styled from "styled-components"
 // import Img from "gatsby-image"
-import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap"
+import { Container, Row, FormGroup, Label, Input } from "reactstrap"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
 import StoreContext from "../../context/globalcontext"
@@ -64,7 +64,7 @@ const ProductForm = ({ product }) => {
   const handleQuantityChange = evt => {
     const isDigit = evt.target.value.match(/\d/g, "") && evt.target.value < 21 //number
     isDigit && setQuantity(evt.target.value)
-    console.log(quantity, "state quantity")
+    
   }
 
   //! getting product data based on it title
@@ -79,16 +79,13 @@ const ProductForm = ({ product }) => {
   //! this handles the add to cart submission
   // TODO: Create Store Context for shopping cart
   const handleAddToCart = () => {
-    console.log("TODO: create storecontext")
-    // console.log("sel variant", productVariant.shopifyId)
-    // console.log("sel quantity", quantity)
+ 
     addVariantToCart(productVariant.shopifyId, quantity)
-   console.log(checkout)
-    // dispatch({type: "SET_CART", isCart: true })
+  
  
     dispatch({ type: "SET_NUM", numInCart: state.numInCart += parseInt(quantity) })
     dispatch({ type: "SET_FRIEND", bestFriends: "dog" })
-console.log(state.bestFriends)
+
   }
 
   //!Handling product variant availability
@@ -117,7 +114,6 @@ console.log(state.bestFriends)
 
   return (
     <StyledContainer>
-      {console.log(state, "STATE@!@")}
       <Row>
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>

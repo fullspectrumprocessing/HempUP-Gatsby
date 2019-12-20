@@ -5,7 +5,7 @@ import { LogoImage } from "./logoimage"
 
 const HempUpLogo = styled.div`
   z-index: 2;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
 `
 
 export default () => {

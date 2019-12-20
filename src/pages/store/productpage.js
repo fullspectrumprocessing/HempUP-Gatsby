@@ -29,7 +29,8 @@ const ProductImage = styled(Img)`
     width: calc(50% - 20px);
   }
 `
-const ProductDescription = styled.div`
+const ProductDescription = styled.text`
+white-space: pre-wrap;
   min-width: 200px;
   width: 80%;
   font-family: lato, sans-serif;
@@ -48,6 +49,8 @@ const StyledContainer = styled(Container)`
 `
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
+
+  // let newText = product.description.split ('\n').map ((item, i) => <product.description key={i}>{item}</product.description>);
   // console.log("ProductPage", product)
   return (
     <Layout>
@@ -62,7 +65,14 @@ const ProductPage = ({ data }) => {
           </Col>
           <Col sm>
             <ProductForm variants={product.variants || []} product={product} />
-            <ProductDescription>{product.description}</ProductDescription>
+          
+           <ProductDescription > {product.description.split('\n').map((item, key) => {
+  return <span  key={key}>{item}<br/></span>
+
+})}</ProductDescription>
+
+    
+            {console.log(product, "descrtipion")}
           </Col>
         </Row>
       </StyledContainer>

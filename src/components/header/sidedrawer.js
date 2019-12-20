@@ -96,6 +96,9 @@ const SideDrawer = props => {
       <Parallax pages={1.5}>
         <FlexWrapper>
           <>
+          <Li>
+              <NavTitleLink to="/">home</NavTitleLink>
+            </Li>
             <Li>
               <NavTitle onClick={props.expandStoreList}>store</NavTitle>
             </Li>
@@ -106,31 +109,28 @@ const SideDrawer = props => {
                     <StyledLink to="/store">All Products</StyledLink>
                   </Li>
                   <Li>
-                    <StyledLink to="/store">Drink</StyledLink>
+                    <StyledLink to="/store/category/Drink">Drink</StyledLink>
                   </Li>
                   <Li>
-                    <StyledLink to="/store">Edibles</StyledLink>
+                    <StyledLink to="/store/category/Isolate">Isolate</StyledLink>
                   </Li>
                   <Li>
-                    <StyledLink to="/store">Pet</StyledLink>
+                    <StyledLink to="/store/category/Pet">Pet</StyledLink>
                   </Li>
+                 
+               
                   <Li>
-                    <StyledLink to="/store">To-Go</StyledLink>
-                  </Li>
-                  <Li>
-                    <StyledLink to="/store">Vape</StyledLink>
-                  </Li>
-                  <Li>
-                    <StyledLink to="/store">Pills</StyledLink>
+                    <StyledLink to="/store/category/Vitamins">Vitamins</StyledLink>
                   </Li>
                 </Ul>
               </ExpandedMenuDiv>
             )}
 
             <Li>
-              <NavTitle onClick={props.expandAboutList}>about us</NavTitle>
+              {/* <NavTitle onClick={props.expandAboutList}>about us</NavTitle> */}
+              <NavTitleLink to="/about">about</NavTitleLink>
             </Li>
-            {!!props.expandedAbout && (
+            {/* {!!props.expandedAbout && (
               <ExpandedMenuDiv>
                 <Ul>
                   <Li> Who We Are?</Li>
@@ -139,11 +139,11 @@ const SideDrawer = props => {
                   <Li> Join Us</Li>
                 </Ul>
               </ExpandedMenuDiv>
-            )}
-            <Li>
+            )} */}
+            {/* <Li>
               <NavTitle onClick={props.expandNewsList}>news</NavTitle>
-            </Li>
-            {!!props.expandedNews && (
+            </Li> */}
+            {/* {!!props.expandedNews && (
               <ExpandedMenuDiv>
                 <Ul>
                   <Li>News</Li>
@@ -152,9 +152,9 @@ const SideDrawer = props => {
 
                 </Ul>
               </ExpandedMenuDiv>
-            )}
+            )} */}
             <Li>
-              <NavTitleLink to="/whatiscbd">what is cbd?</NavTitleLink>
+              <NavTitleLink to="/FAQ">FAQ</NavTitleLink>
             </Li>
             <Li>
               <NavTitleLink to="/contactus">contact us</NavTitleLink>

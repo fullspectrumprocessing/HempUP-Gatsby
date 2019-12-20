@@ -160,6 +160,7 @@ useEffect(() => {
         <GridTitle className="title">{product.node.title}</GridTitle>
         <GridPrice>{min === max ? min : min + " - " + max}</GridPrice>
         <GridDescription>{product.node.description}</GridDescription>
+        {console.log(product.node.description, "DESCRTIP")}
 {/* 
         <AddToCartButton
 
