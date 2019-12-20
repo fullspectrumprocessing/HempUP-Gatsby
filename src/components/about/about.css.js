@@ -22,6 +22,14 @@ export const WhatIsCbd = styled.div`
   margin: 10px;
   display: flex;
   justify-content: center;
+  @media (max-width: 934px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `
 
 export const WhatIsTitle = styled.h2`
@@ -31,6 +39,18 @@ export const WhatIsTitle = styled.h2`
   font-style: normal;
   margin-left: 50px;
   text-shadow: 1px 1px 10px #ffffff80;
+  @media (max-width: 934px) {
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 75px;
+    margin-top: 100px;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+  }
 `
 
 export const WhatIsTextWrap = styled.div`
@@ -46,6 +66,10 @@ export const WhatIsTextWrap = styled.div`
   &:hover {
     box-shadow: 1px 1px 15px ${cssVars.txtGrn};
   }
+  @media (max-width: 934px) {
+text-align: left;
+  }
+
 `
 
 export const WhatImgDiv = styled.div`
@@ -69,6 +93,14 @@ export const WhoWeAre = styled.div`
   align-self: flex-end;
   display: flex;
   justify-content: center;
+    @media (max-width: 934px) {
+      width: 80%;
+      margin: 0 auto;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+}
 `
 export const WhoWeAreTitle = styled.h2`
   font-size: 40px;
@@ -78,6 +110,18 @@ export const WhoWeAreTitle = styled.h2`
   align-self: flex-end;
   margin-right: 70px;
   text-shadow: 1px 1px 10px #ffffff80;
+  @media (max-width: 934px) {
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 75px;
+    margin-top: 100px;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+}
 `
 export const WhoTextWrap = styled.div`
   text-align: center;
@@ -115,6 +159,14 @@ export const WhyUs = styled.div`
   align-self: flex-start;
   display: flex;
   justify-content: center;
+  @media (max-width: 934px) {
+    width: 80%;
+    margin: 0 auto;
+}
+@media (max-width: 750px) {
+  width: 100%;
+  margin: 0 auto;
+}
 `
 export const WhyUsTitle = styled.h2`
   font-size: 40px;
@@ -124,6 +176,18 @@ export const WhyUsTitle = styled.h2`
   align-self: flex-start;
   margin-left: 50px;
   text-shadow: 1px 1px 10px #ffffff80;
+  @media (max-width: 934px) {
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 75px;
+    margin-top: 100px;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+  }
 `
 
 export const WhyTextWrap = styled.div`
