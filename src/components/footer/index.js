@@ -106,7 +106,7 @@ const Footer = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "hempUpLogo.png" }) {
+      logo: file(relativePath: { eq: "hempUP_final_transparent.png" }) {
         childImageSharp {
           fluid(maxWidth: 500, quality: 100) {
             ...GatsbyImageSharpFluid

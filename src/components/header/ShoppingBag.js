@@ -13,6 +13,8 @@ const ShoppingBag = styled.div`
 const BagSvg = styled.img`
   width: 31px;
   height: 41px;
+  position: relative;
+  top: 10px;
 `
 const Item = styled.div`
   width: 25px;
@@ -20,7 +22,7 @@ const Item = styled.div`
   background: ${cssVars.grdntGreen};
   position: absolute;
   color: white;
-  top: 0;
+  top: 10px;
   left: 15px;
   text-align: center;
   border-radius: 50%;
