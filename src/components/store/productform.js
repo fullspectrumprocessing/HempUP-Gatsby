@@ -83,7 +83,7 @@ const ProductForm = ({ product }) => {
     // console.log("sel variant", productVariant.shopifyId)
     // console.log("sel quantity", quantity)
     addVariantToCart(productVariant.shopifyId, quantity)
-    // console.log(checkout, "checkout")
+   console.log(checkout)
     // dispatch({type: "SET_CART", isCart: true })
  
     dispatch({ type: "SET_NUM", numInCart: state.numInCart += parseInt(quantity) })
