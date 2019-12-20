@@ -10,7 +10,7 @@ export const GlobalDispatchContext = React.createContext()
 // inital state
 const initialState = {
   isCart: false,
-  bestFriends: "cat",
+  bestFriends: {},
   numInCart: 0,
 
 }
@@ -40,21 +40,7 @@ function reducer(state, action) {
   }
 }
 
-// // global context provider that we use in other components to acess state and dispatch
-// const GlobalContextProvider = ({ children }) => {
-//   // make const state and dispatch
-//   const [state, dispatch] = React.useReducer(reducer, initialState)
-//   return (
-//     // wrap providers around children and set values to state and dispatch
-//     <GlobalStateContext.Provider value={state}>
-//       <GlobalDispatchContext.Provider value={dispatch}>
-//         {children}
-//       </GlobalDispatchContext.Provider>
-//     </GlobalStateContext.Provider>
-//   )
-// }
 
-// //////////////////////////////////////////////
 
 const client = Client.buildClient({
   storefrontAccessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,

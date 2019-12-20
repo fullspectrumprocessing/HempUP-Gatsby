@@ -30,28 +30,28 @@ const Cart = (props) => {
   })
 
 
-//   useEffect(() => {
-//     let array = []
-//     const reducer = (accumulator, currentValue) => accumulator + currentValue;
-//     console.log(checkout)
-//     for (let i = 0; i < checkout.lineItems.length; i++) {
-//         array.push(checkout.lineItems[i].quantity)
-//         console.log(array,"array")
-//     }
-//      let total = array.reduce(
-//       ( accumulator, currentValue ) => accumulator + currentValue,
-//       0
-//     )
+  useEffect(() => {
+    let array = []
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    console.log(checkout)
+    for (let i = 0; i < checkout.lineItems.length; i++) {
+        array.push(checkout.lineItems[i].quantity)
+        console.log(array,"array")
+    }
+     let total = array.reduce(
+      ( accumulator, currentValue ) => accumulator + currentValue,
+      0
+    )
  
-//     console.log(totalCart)
+    console.log(totalCart)
  
-//     dispatch({ type: "SET_NUM", numInCart: total })
+    dispatch({ type: "SET_NUM", numInCart: total })
   
-//     console.log(total, "final")
+    console.log(total, "final")
 
-// getSearchResults()
+getSearchResults()
     
-//   }, [checkout.lineItems.length])
+  }, [checkout.lineItems.length])
 
   return (
     <Wrapper>
