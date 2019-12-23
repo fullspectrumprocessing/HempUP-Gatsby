@@ -108,12 +108,17 @@ const ProductForm = ({ product }) => {
 
   // ! checking for product availability on mount
   useEffect(() => {
+
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
 
 
   return (
     <StyledContainer>
+      { console.log(initialVariant, "inital variant")}
+      { console.log(productVariant, "product variant")}
+      { console.log(variant, "variant")}
+      { console.log(variants, "variants")}
       <Row>
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>

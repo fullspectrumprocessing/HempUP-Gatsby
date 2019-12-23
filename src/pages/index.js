@@ -14,7 +14,7 @@ import HomeShop from "../components/home/homeshop"
 const WeAreCBDText = styled.div`
   text-align: center;
   display: flex;
- width: 100%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
@@ -68,7 +68,6 @@ const CBDTextLower = styled.div`
   }
 `
 const LandingMessageDiv = styled.div`
-  /* width: 100vw; */
   background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   margin-top: 60px;
@@ -165,6 +164,9 @@ const Overlay = styled.div`
  top: 0;
  bottom: 0;
  z-index: -20;
+ @media (max-width: 1100px) {
+min-height: 1000px;
+}
 `
 const Landing = () => {
   const fadeNSlide = (component, delay = 0) => {

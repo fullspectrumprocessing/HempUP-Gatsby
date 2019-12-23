@@ -13,7 +13,9 @@ TODO: AddToCartButton recieves:
 */
 
 const AddToCartButton = styled.button`
-  width: 150px;
+  // width: 150px;
+  // width: 75px;
+  display: inline-block;
   height: 40px;
   border-radius: 12px;
   background-color: rgba(76, 116, 72, 1);
@@ -23,7 +25,11 @@ const AddToCartButton = styled.button`
 
 
   @media only screen and (min-width: 800px) {
-    width: 170px;
+    // width: 170px;
+    // width: 100px;
+    // height: 50px;
+    // display: inline-block;
+    // margin-top: 0;
   }
 `
 
