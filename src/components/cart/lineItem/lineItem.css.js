@@ -14,6 +14,7 @@ color: ${cssVars.txtBrwn};
 position: absolute;
 top: 0;
 right: 0;
+border: none;
 `
 export const Wrapper = styled.div`
 width: 650px;
@@ -45,7 +46,6 @@ margin: 0 auto;
 padding-top: 15px;
 @media (max-width: 400px) {
     width: 170px;
-  
 }
 `
 export const ContentRow2 = styled.div`
@@ -54,8 +54,9 @@ background: white;
 margin: 0 auto;
 padding-top: 15px;
 @media (max-width: 400px) {
+    padding-top: 25px;
     width: 170px;
-   
+    text-align: center;
 }
 `
 export const Image = styled.img`
@@ -96,7 +97,6 @@ flex-direction: row;
 }
 @media (max-width: 400px) {
 width: 100%;
-
 height: auto;
 }
 `
@@ -107,7 +107,7 @@ color: grey;
 font-family: ${cssVars.Objktv};
 padding-bottom: 5px;
 @media (max-width: 400px) {
-    width: 65px;
+    width: 100%;
     height: auto;
     }
 `
@@ -115,7 +115,7 @@ export const Price = styled.h3`
 font-size: 18px;
 color: ${cssVars.txtBrwn};
 @media (max-width: 400px) {
-    // width: 65px;
+    text-align: center;
     height: auto;
     }
 `
