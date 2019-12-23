@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useCallback,  useState, useRef } from "react"
 import StoreContext from "../../context/globalcontext"
 import LineItem from "./lineItem"
-import {Button, Wrapper, ItemWrap, CheckoutWrap, Empty} from "./cart.css"
+import {Button, Wrapper, ItemWrap, CheckoutWrap, Empty, P, H2} from "./cart.css"
 import { GlobalDispatchContext } from "../../provider/ContextProvider"
 import { GlobalStateContext } from "../../provider/ContextProvider"
 
@@ -61,14 +61,14 @@ getSearchResults()
     
       </ItemWrap>
       <CheckoutWrap>
-      <h2>Subtotal</h2>
+      {/* <h2>Subtotal</h2>
       <p>$ {checkout.subtotalPrice}</p>
-      <br />
+      <br /> */}
       {/* <h2>Taxes</h2>
       <p>$ {checkout.totalTax}</p>
       <br /> */}
-      <h2>Total</h2>
-      <p>$ {checkout.totalPrice}</p>
+      <H2>Total</H2>
+      <P>$ {checkout.totalPrice}</P>
       <br />
       <Button onClick={handleCheckout}>Check out</Button>
       </CheckoutWrap>
