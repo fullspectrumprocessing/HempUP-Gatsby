@@ -17,6 +17,7 @@ import {
   ShopButton,
   Animate,
   H3,
+  Wrapper,
   AnimateShop,
   WhyImgDiv,
   WhatImgDiv,
@@ -65,7 +66,7 @@ const AboutUsComp = () => {
   }
   return (
     <>
-      <div
+      <Wrapper
         style={{
           display: "flex",
           flexDirection: "column",
@@ -143,7 +144,7 @@ const AboutUsComp = () => {
             </Card>
           </Link>
         </ContactUs>
-      </div>
+      </Wrapper>
     </>
   )
 }
