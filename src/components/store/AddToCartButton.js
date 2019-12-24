@@ -22,6 +22,10 @@ const AddToCartButton = styled.button`
   background-image: radial-gradient( circle, rgba(76, 116, 72, 0.6), 50%, rgba(76, 116, 72, 0.9));
   border: none;
   margin:8px 4px 0px 4px;
+  &:hover {
+    background-color: white;
+    // border: 1px solid rgba(76, 116, 72, 1);
+  }
 
 
   @media only screen and (min-width: 800px) {

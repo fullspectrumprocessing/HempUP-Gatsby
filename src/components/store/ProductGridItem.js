@@ -24,6 +24,12 @@ const GridItem = styled.li`
   color: #444;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
+  :hover {
+    margin-top: -15px;
+    margin-bottom: 10px;
+    box-shadow: 1px 5px 20px #303030;
+    -webkit-transition: all 0.6s cubic-bezier(0.24, 2, 0.3, 1);
+    }
 
   @media only screen and (min-width: 593px) {
     width: calc(50% - 20px);
@@ -67,7 +73,7 @@ const InputStyled = styled(Input)`
 width: 50px !important;
 height: 44px !important;
 padding: 5px !important;
-
+padding-left: 10px !important;
 margin-top: 12px !important;
 display: inline-block !important;
 `
@@ -84,11 +90,12 @@ height: 70px;
     const dispatch = useContext(GlobalDispatchContext)
     const state = useContext(GlobalStateContext)
   
-  // const prod = data.shopifyProduct
+
 
   let max = 0
   let min = 0
-// ADD TO CART ATTEMPT -----------------------------------------------------------
+
+// ADD TO CART  -----------------------------------------------------------
 
 
   const initialItem = product.node.variants[0]
@@ -154,9 +161,9 @@ height: 70px;
  
   // ------------------------------------------------
   
-useEffect(() => {
-  console.log(product, "produce")
-}, [])
+// useEffect(() => {
+//   console.log(product, "produce")
+// }, [])
 
 
   if (product && product.node) {
@@ -173,9 +180,10 @@ useEffect(() => {
           <GridImg
             fluid={product.node.images[0].localFile.childImageSharp.fluid}
           />
-           </Link>
+       
      
         <GridTitle className="title">{product.node.title}</GridTitle>
+        </Link>
         <GridPrice>{min === max ? min : min + " - " + max}</GridPrice>
         <GridDescription>{product.node.description}</GridDescription>
         {console.log(product.node.description, "DESCRTIP")}
