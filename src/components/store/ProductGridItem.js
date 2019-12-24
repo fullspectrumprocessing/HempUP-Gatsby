@@ -7,6 +7,12 @@ import AddToCartButton from "../../components/store/AddToCartButton"
 import ViewDetailsButton from "../../components/store/ViewDetailsButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
 import StoreContext from "../../context/globalcontext"
+import ProductForm from "./productform"
+import { GlobalDispatchContext } from "../../provider/ContextProvider"
+import { GlobalStateContext } from "../../provider/ContextProvider"
+import {  Input } from "reactstrap"
+
+
 
 const GridItem = styled.li`
   display: inline-block;
@@ -18,6 +24,12 @@ const GridItem = styled.li`
   color: #444;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
+  :hover {
+    margin-top: -15px;
+    margin-bottom: 10px;
+    box-shadow: 1px 5px 20px #303030;
+    -webkit-transition: all 0.6s cubic-bezier(0.24, 2, 0.3, 1);
+    }
 
   @media only screen and (min-width: 593px) {
     width: calc(50% - 20px);
@@ -57,90 +69,101 @@ const GridImg = styled(Img)`
   pointer-events: none;
 `
 
-// const handleAddToCart = node => {
-//   console.log("TODO: ProductGridItem handleAddToCart", node)
-// }
+const InputStyled = styled(Input)`
+width: 50px !important;
+height: 44px !important;
+padding: 5px !important;
+padding-left: 10px !important;
+margin-top: 12px !important;
+display: inline-block !important;
+`
+const Span = styled.div`
+height: 70px;
+`
+
+
 
 
 // export default ({ product }) => {
   const ProductGridItem = ({product}) => {
 
+    const dispatch = useContext(GlobalDispatchContext)
+    const state = useContext(GlobalStateContext)
   
+
 
   let max = 0
   let min = 0
 
-  // const {
-  //   variants,
-  //   variants: [initialVariant],
-  // } = product
+// ADD TO CART  -----------------------------------------------------------
 
-    //!variant handling hook
-    // const [variant, setVariant] = useState({ ...initialVariant })
 
-     //!quantity handlinh hook
-  // const [quantity, setQuantity] = useState(1)
+  const initialItem = product.node.variants[0]
 
-    //!Initializing context
-    // const {
-    //   addVariantToCart,
-    //   store: { client, adding },
-    // } = useContext(StoreContext)
   
 
-      //!Handling variant changes
-  // const handleVarietyChange = evt => {
-  //   setVariant({
-  //     ...getVariantDataFromTitle(evt.target.value),
-  //   })
-  // }
+      //!variant handling hook
+  const [varient, setVarient] = useState( initialItem )
 
-    //! getting product data based on it title
-    // const getVariantDataFromTitle = title => {
-    //   for (let i = 0; i < product.variants.length; i++) {
-    //     if (product.variants[i].title === title) {
-    //       return product.variants[i]
-    //     }
-    //   }
-    // }
+     //!quantity handlinh hook
+  const [quantity, setQuantity] = useState(1)
+
+    //!Initializing context
+    const {
+      addVariantToCart,
+      store: { client, adding },
+    } = useContext(StoreContext)
+  
+
+
+  //! this function handles the change in quantity via the number selector
+  const handleQuantityChange = evt => {
+    const isDigit = evt.target.value.match(/\d/g, "") && evt.target.value < 21 //number
+    isDigit && setQuantity(evt.target.value)
+    
+  }
+
+
 
       //! this handles the add to cart submission
   // TODO: Create Store Context for shopping cart
   const handleAddToCart = () => {
-    console.log("TODO: create storecontext")
-    // console.log("sel variant", productVariant.shopifyId)
-    // console.log("sel quantity", quantity)
-    // checkAvailability(product.shopifyId)
-    // addVariantToCart(productVariant.shopifyId, quantity)
+
+    addVariantToCart(productVariant.shopifyId, quantity)
+
+    checkAvailability(product.shopifyId)
+    dispatch({ type: "SET_NUM", numInCart: state.numInCart += parseInt(quantity) })
+    dispatch({ type: "SET_FRIEND", bestFriends: "dog" })
+
   }
 
   //!Handling product variant availability
-  // const productVariant =
-  //   client.product.helpers.variantForOptions(product, variant) || variant
-  // const [available, setAvailable] = useState(productVariant.availableForSale)
-
-  // const checkAvailability = useCallback(
-  //   productId => {
-  //     client.product.fetch(productId).then(() => {
-  //       // this checks the currently selected variant for availability
-  //       const result = variants.filter(
-  //         variant => variant.shopifyId === productVariant.shopifyId
-  //       )
-  //       setAvailable(result[0].availableForSale)
-  //     })
-  //   },
-  //   [client.product, productVariant.shopifyId, variants]
-  // )
-
-  // ! checking for product availability on mount
-  // useEffect(() => {
-    
-  //   checkAvailability(product.shopifyId)
-  // }, [productVariant, checkAvailability, product.shopifyId])
+  // const vari = product.variant
+  const productVariant =
+    varient
+    const [available, setAvailable] = useState(productVariant.availableForSale)
   
-useEffect(() => {
-  console.log(product)
-}, [])
+  const checkAvailability = useCallback(
+    productId => {
+      client.product.fetch(productId).then(() => {
+        // this checks the currently selected variant for availability
+        const result = product.variants.filter(
+          variant => varient.shopifyId === productVariant.shopifyId
+        )
+        setAvailable(result[0].availableForSale)
+      })
+    },
+    [client.product, productVariant.shopifyId, product.variants]
+  )
+
+
+
+ 
+  // ------------------------------------------------
+  
+// useEffect(() => {
+//   console.log(product, "produce")
+// }, [])
 
 
   if (product && product.node) {
@@ -152,30 +175,44 @@ useEffect(() => {
     product &&
     product.node && (
       <GridItem>
+
         <Link to={`/store/product/${product.node.handle}/`}>
           <GridImg
             fluid={product.node.images[0].localFile.childImageSharp.fluid}
           />
+       
      
         <GridTitle className="title">{product.node.title}</GridTitle>
+        </Link>
         <GridPrice>{min === max ? min : min + " - " + max}</GridPrice>
         <GridDescription>{product.node.description}</GridDescription>
         {console.log(product.node.description, "DESCRTIP")}
-{/* 
+<Span>
+        <InputStyled 
+            defaultValue={quantity}
+            onChange={handleQuantityChange}
+            type="number"
+            name="quantity"
+            id="quantitySelect"
+            min="1"
+            // step="1"
+          />
+
         <AddToCartButton
 
-          // handleAddToCart={() => {
-          //   handleAddToCart(product.node)
-          // }}
-          // handleAddToCart={handleAddToCart}
-          // disabled={!available || adding}
-        /> */}
+          handleAddToCart={() => {
+            handleAddToCart(product.node)
+          }}
+          handleAddToCart={handleAddToCart}
+          disabled={!available || adding}
+        />
+       
+       </Span>
 
-
-        <Link to={`/store/product/${product.node.handle}/`}>
+        {/* <Link to={`/store/product/${product.node.handle}/`}>
           <ViewDetailsButton />
-        </Link>
-        </Link>
+        </Link> */}
+       
       </GridItem>
     )
   )

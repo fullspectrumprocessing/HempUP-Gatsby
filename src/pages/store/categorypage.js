@@ -78,6 +78,22 @@ allShopifyProduct(filter: {productType: {eq: $productType}}) {
       id
       productType
       createdAt
+      options {
+        id
+        name
+        values
+      }
+      variants {
+        id
+        title
+        price
+        availableForSale
+        shopifyId
+        selectedOptions {
+          name
+          value
+        }
+      }
       images {
         id
         localFile {

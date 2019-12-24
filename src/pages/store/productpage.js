@@ -54,6 +54,7 @@ const ProductPage = ({ data }) => {
   // console.log("ProductPage", product)
   return (
     <Layout>
+      {console.log(data, "DATA PAGE")}
       <StyledContainer>
         <ProductHeader>{product.title}</ProductHeader>
 

@@ -35,10 +35,6 @@ margin: 50px;
     width: 100%;
 }
 
-// @media (max-width: 300px) {
-//     width: 250px;
-// }
-
 `
 export const ContentWrap = styled.div`
 width: 200px;
@@ -46,7 +42,6 @@ background: white;
 margin: 0 auto;
 padding-top: 15px;
 @media (max-width: 400px) {
-    // width: 17s0px;
     height: 100%;
     width: 100%;
 }
