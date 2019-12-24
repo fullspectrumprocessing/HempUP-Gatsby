@@ -10,7 +10,7 @@ import { GlobalDispatchContext } from "../../provider/ContextProvider"
 import { GlobalStateContext } from "../../provider/ContextProvider"
 
 const StyledContainer = styled(Container)`
-  width: 20%;
+  width: 300px;
   margin: 10px auto;
   font-family: "lato";
   color: #444;
@@ -29,6 +29,11 @@ const Price = styled.div`
 const ButtonContainer = styled.div`
   margin: 0 auto;
   text-align: center;
+`
+
+const StyledInput = styled(Input)`
+width: 70px !important;
+margin: 0 auto;
 `
 
 const ProductForm = ({ product }) => {
@@ -119,13 +124,14 @@ const ProductForm = ({ product }) => {
       <Row>
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>
-          <Input
+          <StyledInput
             defaultValue={quantity}
             onChange={handleQuantityChange}
             type="number"
             name="quantity"
             id="quantitySelect"
             min="1"
+           
             // step="1"
           />
         </StyledFormGroup>

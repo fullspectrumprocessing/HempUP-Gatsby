@@ -61,7 +61,6 @@ const UpperSection = styled.section`
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 40px;
-
   @media (min-width: 796px) {
     flex-direction: row;
     font-size: 15px;
@@ -77,7 +76,9 @@ const LowerSection = styled.section`
   text-align: center;
 `
 const Footer = () => {
-  const [email, setEmail] = useState("")
+  const [info, setInfo] = useState({
+    email: ""
+  })
 
   function encode(data) {
     return Object.keys(data)
@@ -87,15 +88,15 @@ const Footer = () => {
   function Subscribe(e) {
     e.preventDefault()
 
-    if (email) {
-      console.log(email, "this is state")
+    if (info) {
+      console.log(info, "this is state")
       //if state is populated send data to netlefy
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": "subscribe",
-          ...email,
+          ...info,
         }),
       })
         // then go to thank you page
@@ -156,8 +157,8 @@ const Footer = () => {
                 name="email"
                 type="email"
                 placeholder="Your Email Address"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
+                value={info}
+                onChange={e => setInfo({email: e.target.value})}
               />
               <Submit type="submit">Sign Up</Submit>
             </Form>
