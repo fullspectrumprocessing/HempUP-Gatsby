@@ -2,6 +2,14 @@ import styled from "styled-components"
 import cssVars from "../../theme/_variables.js"
 import { animated } from "react-spring"
 
+export const Wrapper = styled.div`
+  @media (max-width: 600px) {
+    margin: 0px;
+    width: 100%;
+    padding: 0px !important;
+  }
+`
+
 export const H3 = styled.h3`
   font-size: 40px;
   color: ghostwhite;
@@ -51,6 +59,9 @@ export const WhatIsTitle = styled.h2`
     text-align: center;
     margin-top: 100px;
   }
+  @media (max-width: 600px) {
+    margin-top: 50px;
+  }
 `
 
 export const WhatIsTextWrap = styled.div`
@@ -67,9 +78,8 @@ export const WhatIsTextWrap = styled.div`
     box-shadow: 1px 1px 15px ${cssVars.txtGrn};
   }
   @media (max-width: 934px) {
-text-align: left;
+    text-align: left;
   }
-
 `
 
 export const WhatImgDiv = styled.div`
@@ -93,14 +103,14 @@ export const WhoWeAre = styled.div`
   align-self: flex-end;
   display: flex;
   justify-content: center;
-    @media (max-width: 934px) {
-      width: 80%;
-      margin: 0 auto;
+  @media (max-width: 934px) {
+    width: 80%;
+    margin: 0 auto;
   }
   @media (max-width: 750px) {
     width: 100%;
     margin: 0 auto;
-}
+  }
 `
 export const WhoWeAreTitle = styled.h2`
   font-size: 40px;
@@ -121,7 +131,10 @@ export const WhoWeAreTitle = styled.h2`
     margin: 0 auto;
     text-align: center;
     margin-top: 100px;
-}
+  }
+  @media (max-width: 600px) {
+    margin-top: 50px;
+  }
 `
 export const WhoTextWrap = styled.div`
   text-align: center;
@@ -162,11 +175,11 @@ export const WhyUs = styled.div`
   @media (max-width: 934px) {
     width: 80%;
     margin: 0 auto;
-}
-@media (max-width: 750px) {
-  width: 100%;
-  margin: 0 auto;
-}
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `
 export const WhyUsTitle = styled.h2`
   font-size: 40px;
@@ -187,6 +200,9 @@ export const WhyUsTitle = styled.h2`
     margin: 0 auto;
     margin-top: 100px;
     text-align: center;
+  }
+  @media (max-width: 600px) {
+    margin-top: 50px;
   }
 `
 
@@ -218,6 +234,10 @@ export const ContactUs = styled.div`
   display: flex;
   justify-content: space-around;
   height: 200px;
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+    height: auto;
+  }
 `
 //! COntact Us comps
 

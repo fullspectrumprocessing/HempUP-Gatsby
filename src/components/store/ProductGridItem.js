@@ -63,7 +63,7 @@ const GridDescription = styled.div`
 
 const GridImg = styled(Img)`
   width: calc(100% - 40px);
-  border: solid 1px grey;
+  // border: solid 1px grey;
   margin: 20px 20px 1.45rem 20px;
   padding: 0;
   pointer-events: none;

@@ -24,7 +24,6 @@ const AddToCartButton = styled.button`
   margin:8px 4px 0px 4px;
   &:hover {
     background-color: white;
-    // border: 1px solid rgba(76, 116, 72, 1);
   }
 
 
@@ -42,6 +41,7 @@ const Text = styled.span`
   font-family: 'objektiv-mk1', 'sans-serif';
   font-size: 16px;
   letter-spacing: 2px;
+  padding: 7px;
 `
 
 export default (props) => (

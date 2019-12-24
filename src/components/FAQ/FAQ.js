@@ -20,13 +20,7 @@ const PrivacyMain = () => {
     show4: "+",
     show5: "+",
     show6: "+",
-    show7: "+",
-    show8: "+",
-    show9: "+",
-    show10: "+",
-    show11: "+",
-    show12: "+",
-    show13: "+",
+   
   })
   return (
     <>
