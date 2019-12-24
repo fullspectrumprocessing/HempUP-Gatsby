@@ -153,7 +153,7 @@ const Footer = () => {
               <input type="hidden" name="form-name" value="subscribe" />
               {/* <label>Email Address:</label> */}
               <Input
-                name="Email"
+                name="email"
                 type="email"
                 placeholder="Your Email Address"
                 value={email}

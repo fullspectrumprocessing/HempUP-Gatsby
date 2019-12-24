@@ -32,7 +32,7 @@ const ButtonContainer = styled.div`
 `
 
 const ProductForm = ({ product }) => {
-
+//  set up global state and dispatch
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
 
@@ -115,10 +115,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <StyledContainer>
-      { console.log(initialVariant, "inital variant")}
-      { console.log(productVariant, "product variant")}
-      { console.log(variant, "variant")}
-      { console.log(variants, "variants")}
+   
       <Row>
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>
