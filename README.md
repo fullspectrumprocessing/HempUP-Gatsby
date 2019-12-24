@@ -29,8 +29,8 @@
   - 404 page <em>Make the 404 page pretty unique; look for examples</em>
 
 - Age Restriction Modal
-  - Use local storage or state to handle a token that verifies the user is of age
-  - Reactmodal
+  <!-- - Use local storage or state to handle a token that verifies the user is of age
+  - Reactmodal -->
 - <del>Google Analytics</del>
   - Config GA
 
