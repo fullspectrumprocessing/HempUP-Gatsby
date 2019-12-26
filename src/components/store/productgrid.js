@@ -35,7 +35,7 @@ export const ProductGrid = styled.ul`
 `
 const StoreHeader = styled.div`
   width: 100%;
-  margin-top: 40px;
+  margin-top: 41px;
   height: 100px;
   background-image: ${cssVars.grdntGreen};
   align-self: flex-start;
