@@ -66,14 +66,7 @@ const AboutUsComp = () => {
   }
   return (
     <>
-      <Wrapper
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          padding: "25px 100px 25px 100px",
-        }}
-      >
+      <Wrapper>
         <WhatRow>
           <WhatIsTitle>What Is CBD</WhatIsTitle>
           <WhatIsCbd>

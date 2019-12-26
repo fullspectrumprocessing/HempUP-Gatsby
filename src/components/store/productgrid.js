@@ -7,7 +7,6 @@ import Slide from "react-reveal/Slide"
 const StoreTitle = styled.h1`
   font-size: 60px;
   font-family: lato, sans serif;
-  
   color: ghostwhite;
 `
 export const ProductGrid = styled.ul`
@@ -36,7 +35,7 @@ export const ProductGrid = styled.ul`
 `
 const StoreHeader = styled.div`
   width: 100%;
-  margin-top: 80px;
+  margin-top: 41px;
   height: 100px;
   background-image: ${cssVars.grdntGreen};
   align-self: flex-start;
@@ -56,7 +55,6 @@ export default (props) => {
     )
   }
   return (
-   
     <>
      {console.log(props, "products")}
       <StoreHeader>

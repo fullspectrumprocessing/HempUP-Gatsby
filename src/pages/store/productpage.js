@@ -30,7 +30,7 @@ const ProductImage = styled(Img)`
   }
 `
 const ProductDescription = styled.text`
-white-space: pre-wrap;
+  white-space: pre-wrap;
   min-width: 200px;
   width: 80%;
   font-family: lato, sans-serif;
@@ -66,13 +66,19 @@ const ProductPage = ({ data }) => {
           </Col>
           <Col sm>
             <ProductForm variants={product.variants || []} product={product} />
-          
-           <ProductDescription > {product.description.split('\n').map((item, key) => {
-  return <span  key={key}>{item}<br/></span>
 
-})}</ProductDescription>
+            <ProductDescription>
+              {" "}
+              {product.description.split("\n").map((item, key) => {
+                return (
+                  <span key={key}>
+                    {item}
+                    <br />
+                  </span>
+                )
+              })}
+            </ProductDescription>
 
-    
             {console.log(product, "descrtipion")}
           </Col>
         </Row>

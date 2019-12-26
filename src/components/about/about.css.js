@@ -3,6 +3,10 @@ import cssVars from "../../theme/_variables.js"
 import { animated } from "react-spring"
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 25px 100px 25px 100px;
   @media (max-width: 600px) {
     margin: 0px;
     width: 100%;
@@ -68,7 +72,7 @@ export const WhatIsTextWrap = styled.div`
   text-align: center;
   width: 95%;
   margin: 20px 0px 20px 0px;
-  background: ${cssVars.whiteGlow};
+  background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
   color: ${cssVars.txtBrwnDrk};
@@ -140,7 +144,7 @@ export const WhoTextWrap = styled.div`
   text-align: center;
   width: 95%;
   margin: 20px 0px 20px 0px;
-  background: ${cssVars.whiteGlow};
+  background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
   color: ${cssVars.txtBrwnDrk};
@@ -210,7 +214,7 @@ export const WhyTextWrap = styled.div`
   text-align: center;
   width: 95%;
   margin: 20px 0px 20px 0px;
-  background: ${cssVars.whiteGlow};
+  background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
   color: ${cssVars.txtBrwnDrk};
