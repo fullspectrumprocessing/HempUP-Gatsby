@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import Slide from "react-reveal/Slide"
 import Fade from "react-reveal/Fade"
 import GlobalStyle from "../theme/globalStyle"
-
 import "bootstrap/dist/css/bootstrap.min.css"
 import cssVars from "../theme/_variables"
 import HomeShop from "../components/home/homeshop"
@@ -22,17 +21,17 @@ const WeAreCBDText = styled.div`
 
   h1 {
     margin: 0;
-    font-size: 95px;
+    font-size: 100px;
   }
 
   h2 {
-    font-size: 69px;
+    font-size: 90px;
     font-weight: ${cssVars.fw_4};
     margin: 0;
   }
 
   h3 {
-    font-size: 53px;
+    font-size: 70px;
     font-weight: 400;
     margin: 0;
   }
@@ -61,7 +60,6 @@ const CBDTextUpper = styled.div`
 const CBDTextLower = styled.div`
   display: flex;
   flex-direction: column;
-
   @media (min-width: 796px) {
     flex-direction: row;
     align-items: bottom;
@@ -71,9 +69,9 @@ const LandingMessageDiv = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   margin-top: 60px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 
-  @media (min-width: 796px) {
+  @media (max-width: 796px) {
     margin: 60px 140px 0 140px;
     border-radius: 5px;
     max-width: 1100px;
@@ -85,21 +83,24 @@ const LandingMessageDiv = styled.div`
   }
 `
 const LandingMessageP = styled.p`
-  // margin: 20px 35px 20px 35px;
+text-align: center;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 30px;
   line-height: 2;
-  // background-color: rgba(255, 255, 255, 0.5);
-  // color: rgba(152, 121, 91, 1);
   color: ${cssVars.txtBrwn};
   font-family: lato, sans-serif;
   font-size: 20px;
-  // font-weight: 600;
-  max-width: 700px;
+  max-width: 70%;
   padding: 20px;
-  @media (min-width: 796px) {
+  background: ${cssVars.bckgrndBeige};
+  border-radius: 10px;
+  text-shadow: ${cssVars.pshadow};
+  @media (max-width: 796px) {
     font-size: 16px;
+  }
+  &:hover {
+    box-shadow: 1px 1px 5px #573f27;
   }
 `
 
@@ -107,18 +108,18 @@ const ExploreButton = styled.button`
   display: flex;
   align-content: center;
   justify-content: space-around;
-  width: 240px;
+  border-radius: 5px;
+  width: 400px;
   height: 60px;
+  font-size: 22px;
+  letter-spacing: 3px;
   border: none;
-  border-radius: 17px;
   margin: 0 auto;
   background: radial-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85));
   color: ${cssVars.txtLghtGrn};
   font-family: ${cssVars.Objktv};
-  font-size: 18px;
   font-weight: 300;
   font-style: normal;
-  letter-spacing: 1px;
   text-decoration: none;
   cursor: pointer;
   a {
@@ -131,8 +132,7 @@ const ExploreButton = styled.button`
       rgba(74, 140, 67, 0.85)
     );
   }
-
-  @media (min-width: 796px) {
+  @media (max-width: 796px) {
     border-radius: 5px;
     width: 400px;
     height: 60px;
@@ -149,11 +149,13 @@ const HomeProductWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `
-const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  position: relative;
-`
+
+//! Does ths have a special purpose ???
+// const Wrapper = styled.div`
+//   height: 100%;
+//   width: 100%;
+//   position: relative;
+// `
 
 //!  Layout alreadyt has an overlay so this is redundant
 
@@ -166,9 +168,15 @@ const Wrapper = styled.div`
 //  bottom: 0;
 //  z-index: -20;
 //  @media (max-width: 1100px) {
-// min-height: 1000px;
-// }
+//    min-height: 1000px;
+//  }
 // `
+
+const HeroWrap = styled.div`
+  margin: 80px 0px;
+  padding: 80px 0px;
+`
+
 const Landing = () => {
   const fadeNSlide = (component, delay = 0) => {
     return (
@@ -182,13 +190,13 @@ const Landing = () => {
 
   return (
     <Layout>
-      <Wrapper>
-        {/* <Overlay></Overlay> */}
-        <SEO
-          title="Hemp Up - Landing Page"
-          keywords={["wellness", "CBD", "herbal", "hemp"]}
-        />
-
+      {/* <Wrapper> */}
+      {/* <Overlay></Overlay> */}
+      <SEO
+        title="Hemp Up - Landing Page"
+        keywords={["wellness", "CBD", "herbal", "hemp"]}
+      />
+      <HeroWrap>
         <WeAreCBDText>
           <CBDTextUpper>{fadeNSlide(<h3>we are</h3>)}</CBDTextUpper>
           <CBDTextLower>
@@ -204,22 +212,25 @@ const Landing = () => {
               <ExploreButtonArrow> > </ExploreButtonArrow>
             </ExploreButton>
           </Link>,
-
           1500
         )}
 
-        <LandingMessageP>
-          HempUp is the best source for thoughtfully formulated CBD products.
-          Our mission is to provide the highest quality CBD on the market by
-          following unparalleled industry standards. We are dedicated to
-          bringing wellness into the lives of anyone who uses our products.
-        </LandingMessageP>
+        {fadeNSlide(
+          <LandingMessageP>
+            HempUp is the best source for thoughtfully formulated CBD products.
+            Our mission is to provide the highest quality CBD on the market by
+            following unparalleled industry standards. We are dedicated to
+            bringing wellness into the lives of anyone who uses our products.
+          </LandingMessageP>,
+          2000
+        )}
+      </HeroWrap>
 
-        <LandingMessageDiv>
-          <HomeShop />
-        </LandingMessageDiv>
-        <GlobalStyle />
-      </Wrapper>
+      <LandingMessageDiv>
+        <HomeShop />
+      </LandingMessageDiv>
+      <GlobalStyle />
+      {/* </Wrapper> */}
     </Layout>
   )
 }

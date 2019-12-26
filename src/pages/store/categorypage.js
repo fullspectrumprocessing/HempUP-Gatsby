@@ -57,7 +57,6 @@ const ProducTypePage = (props) => {
         title="Hemp Up Product Types"
         keywords={[`CBD`, `hemp`, `pet`, `edibles`, `tinctures`, `oil`]}
       />
-
       <StyledContainer>
         <PageHeader>
           {/* {data.allShopifyProduct.edges[0].node.productType} */}

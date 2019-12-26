@@ -7,6 +7,7 @@
 - <strong>Format description comming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
 
 <!-- - Brand Statement -->
+
 - Shopping Cart
   <!-- - use local storage in conjunction with global state/store to hold items for users
   - Global Context Provider -->
@@ -26,6 +27,7 @@
   - Privacy Policy
   - SHOPPING CART
   - <del> Contact Page and Form </del> -->
+
   - 404 page <em>Make the 404 page pretty unique; look for examples</em>
 
 - Age Restriction Modal
@@ -41,6 +43,7 @@
 - Social Media Links and SM acct creation
 - Facebook API Implementation
 - Get internal IP Address from HempUp team in Colorado
+- Customer incentive <em>"Free Shipping on orders over \$100</em>
 
 ### Things To Think About
 
