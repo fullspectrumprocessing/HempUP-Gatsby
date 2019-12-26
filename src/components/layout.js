@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useContext, useEffect} from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import GlobalStyle from "../theme/globalStyle"
@@ -6,7 +6,9 @@ import "../styles/layout.scss"
 import StyledBGImage from "./bgimage"
 import Header from "./header/"
 import Footer from "./footer/"
-import ContextProvider from "../provider/ContextProvider"
+import StoreContext from "../context/globalcontext"
+import { GlobalDispatchContext } from "../provider/ContextProvider"
+import { GlobalStateContext } from "../provider/ContextProvider"
 const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
@@ -24,13 +26,43 @@ const Main = styled.main`
   align-items: center;
 `
 
-class Layout extends React.Component {
-  render() {
-    const { children } = this.props
+const Layout = ({ children}) => {
 
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
+
+    //!Initializing context
+    const {
+    
+      store: { client, adding, checkout },
+    } = useContext(StoreContext)
+ 
+ 
+  useEffect(() => {
+    let array = []
+    // const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    console.log(checkout)
+    for (let i = 0; i < checkout.lineItems.length; i++) {
+        array.push(checkout.lineItems[i].quantity)
+        console.log(array,"array")
+    }
+     let total = array.reduce(
+      ( accumulator, currentValue ) => accumulator + currentValue,
+      0
+    )
+ 
+ 
+    dispatch({ type: "SET_NUM", numInCart: total })
+  
+    console.log(total, "final")
+
+
+    
+  }, [checkout.lineItems.length])
     return (
       <>
-        <ContextProvider>
+ 
+        {/* <ContextProvider> */}
           <GlobalStyle />
           <StyledBGImage>
             <Overlay></Overlay>
@@ -39,10 +71,10 @@ class Layout extends React.Component {
           <Main>{children}</Main>
           <Footer />
           <Header />
-        </ContextProvider>
+        {/* </ContextProvider> */}
       </>
     )
-  }
+  
 }
 
 Layout.propTypes = {

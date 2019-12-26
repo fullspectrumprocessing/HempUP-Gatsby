@@ -9,6 +9,7 @@ import cssVars from "../../theme/_variables"
 
 const ProductHeader = styled.div`
   font-family: objektiv-mk1, sans-serif;
+  padding: 20px;
   text-align: center;
   font-size: 2em;
   color: ${cssVars.txtGrn}
@@ -28,7 +29,8 @@ const ProductImage = styled(Img)`
     width: calc(50% - 20px);
   }
 `
-const ProductDescription = styled.div`
+const ProductDescription = styled.text`
+white-space: pre-wrap;
   min-width: 200px;
   width: 80%;
   font-family: lato, sans-serif;
@@ -39,14 +41,20 @@ const ProductDescription = styled.div`
 `
 const StyledContainer = styled(Container)`
   background: rgba(255, 255, 255, 0.7);
+  padding-top: 20px;
+  margin-top: 100px;
   margin-bottom: 50px;
+  width: 100%;
   padding-bottom: 50px;
 `
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
+
+  // let newText = product.description.split ('\n').map ((item, i) => <product.description key={i}>{item}</product.description>);
   // console.log("ProductPage", product)
   return (
     <Layout>
+      {console.log(data, "DATA PAGE")}
       <StyledContainer>
         <ProductHeader>{product.title}</ProductHeader>
 
@@ -58,7 +66,14 @@ const ProductPage = ({ data }) => {
           </Col>
           <Col sm>
             <ProductForm variants={product.variants || []} product={product} />
-            <ProductDescription>{product.description}</ProductDescription>
+          
+           <ProductDescription > {product.description.split('\n').map((item, key) => {
+  return <span  key={key}>{item}<br/></span>
+
+})}</ProductDescription>
+
+    
+            {console.log(product, "descrtipion")}
           </Col>
         </Row>
       </StyledContainer>

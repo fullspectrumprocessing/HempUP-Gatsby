@@ -16,7 +16,6 @@ export const Foot = styled.footer`
   @media (max-width: 800px) {
     justify-content: left;
   }
-  // align-items: baseline;
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
@@ -31,9 +30,6 @@ export const UL = styled.ul`
   margin: 0 auto;
   padding-left: 80px;
 
-  // display: flex;
-  // width: 25%;
-  // flex-direction: column;
   @media (max-width: 600px) {
    width: 90%;
     align-items: center;
@@ -48,7 +44,6 @@ export const NavWrap = styled.div`
   height: 375px;
   margin-top: 40px;
   flex-direction: column;
-  
   @media (max-width: 600px) {
     width: 80%;
     height: auto;
@@ -186,13 +181,6 @@ export const SubWrapper = styled.div`
     padding-left: 30px;
     margin-left: 18px;
   }
-  // @media (max-width: 400px) {
-  //   width: 80%;
-  //   text-align: left;
-  //   align-items: left;
-  //   padding-left: 30px;
-  //   margin-left: 18px;
-  // }
 `
 export const Form = styled.form`
   color: green;

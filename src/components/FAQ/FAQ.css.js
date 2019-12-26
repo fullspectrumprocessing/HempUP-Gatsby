@@ -17,6 +17,7 @@ export const P = styled.p`
 
 export const ToggleWrap = styled.div`
   width: 100%;
+  position: relative;
   height: auto;
   display: inline-block;
   background: rgba(6, 12, 7, 0.35);
@@ -26,8 +27,13 @@ export const ToggleWrap = styled.div`
   margin-bottom: 40px;
   padding: 35px;
   @media (max-width: 920px) {
-   width: 80%;
+   width: 100%;
+   margin: 0 auto;
+   margin-bottom: 40px;
   }
+  @media (max-width: 870px) {
+   padding-left: 45px;
+   }
 `
 
 export const Symbol = styled.span`
@@ -41,6 +47,11 @@ export const Symbol = styled.span`
   font-family: Hind, sans-serif;
   border: 2px solid white;
   border-radius: 50%;
+  @media (max-width: 870px) {
+   position: absolute;
+   left: 10px;
+   top: 42px;
+  }
 `
 export const DivWrap = styled.div`
   height: 100%;
@@ -51,16 +62,20 @@ export const DivWrap = styled.div`
   padding: 30px 40px 100px 40px;
   margin-bottom: 100px;
   margin-top: 50px;
+  @media (max-width: 1444px) {
+    width: 75%;
+    margin: 0 auto;
+  }
   @media (max-width: 920px) {
     height: auto;
   }
   @media (max-width: 500px) {
     padding: 20px;
   }
-  @media (max-width: 1444px) {
-    width: 75%;
-    margin: 0 auto;
-  }
+  @media (max-width: 600px) {
+    width: 100%;
+    }
+
 `
 
 export const H3 = styled.h3`

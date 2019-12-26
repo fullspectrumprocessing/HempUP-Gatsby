@@ -34,10 +34,11 @@ const ProductHeader = styled.div`
 
   }
 `
-const StyledContainer = styled(Container)`
+const StyledContainer = styled.div`
   /* background: rgba(255,255,255, 0.7); */
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+ margin-left: 0px !important;
+ margin-right: 0px !important;
+ width: 100% !important;
 
   @media only screen and (max-width: 576px) {
     margin-bottom: 50px;
@@ -59,9 +60,9 @@ const ProducTypePage = (props) => {
 
       <StyledContainer>
         <PageHeader>
-          {data.allShopifyProduct.edges[0].node.productType}
+          {/* {data.allShopifyProduct.edges[0].node.productType} */}
         </PageHeader>
-        <ProductGrid products={data.allShopifyProduct.edges} />
+        <ProductGrid products={data.allShopifyProduct.edges} page={data.allShopifyProduct.edges[0].node.productType}/>
       </StyledContainer>
     </Layout>
   )
@@ -77,6 +78,22 @@ allShopifyProduct(filter: {productType: {eq: $productType}}) {
       id
       productType
       createdAt
+      options {
+        id
+        name
+        values
+      }
+      variants {
+        id
+        title
+        price
+        availableForSale
+        shopifyId
+        selectedOptions {
+          name
+          value
+        }
+      }
       images {
         id
         localFile {

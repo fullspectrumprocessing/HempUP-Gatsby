@@ -2,31 +2,35 @@
 
 ### Need to dorp all pages from the header using padding and/or margins compare about opage and store page with other pages
 
-- Brand Statement
+- <strong>Input change function on cart page working (change quantity on cart page) with updating total price correctly. (started working on this, not functioning correctly, commented out code)</strong>
+
+- <strong>Format description comming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
+
+<!-- - Brand Statement -->
 - Shopping Cart
-  - use local storage in conjunction with global state/store to hold items for users
-  - Global Context Provider
+  <!-- - use local storage in conjunction with global state/store to hold items for users
+  - Global Context Provider -->
   - Create LogIn capabilities (Shopify, Google, or Netlify)
 - Better Styling
-  - Smaller buttons under products
+  <!-- - Smaller buttons under products -->
 - Shopify checkout
-  - Set up the embedded Shopify Shopping CArt
+  <!-- - Set up the embedded Shopify Shopping CArt
   - <del>Add new products to HempUp Test shopify products acct.</del>
   - <del>Need SKUs for products</del>
   - <del>Need pricing for products</del>
   - Need Relevant Tags for the products
-- <strong>Pages and Routes</strong>
+- <strong>Pages and Routes</strong> -->
 
-  - <del>What is CBD?</del>
+  <!-- - <del>What is CBD?</del>
   - Terms & Conditions
   - Privacy Policy
   - SHOPPING CART
-  - <del> Contact Page and Form </del>
+  - <del> Contact Page and Form </del> -->
   - 404 page <em>Make the 404 page pretty unique; look for examples</em>
 
 - Age Restriction Modal
-  - Use local storage or state to handle a token that verifies the user is of age
-  - Reactmodal
+  <!-- - Use local storage or state to handle a token that verifies the user is of age
+  - Reactmodal -->
 - <del>Google Analytics</del>
   - Config GA
 

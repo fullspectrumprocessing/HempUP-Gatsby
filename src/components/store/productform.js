@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useContext, useCallback } from "react"
+// import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap"
+// import Img from "gatsby-image"
+import { Container, Row, FormGroup, Label, Input } from "reactstrap"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
 import StoreContext from "../../context/globalcontext"
+import { GlobalDispatchContext } from "../../provider/ContextProvider"
+import { GlobalStateContext } from "../../provider/ContextProvider"
 
 const StyledContainer = styled(Container)`
-  width: 20%;
+  width: 300px;
   margin: 10px auto;
   font-family: "lato";
   color: #444;
@@ -27,7 +31,16 @@ const ButtonContainer = styled.div`
   text-align: center;
 `
 
+const StyledInput = styled(Input)`
+width: 70px !important;
+margin: 0 auto;
+`
+
 const ProductForm = ({ product }) => {
+//  set up global state and dispatch
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
+
   const {
     variants,
     variants: [initialVariant],
@@ -42,7 +55,7 @@ const ProductForm = ({ product }) => {
   //!Initializing context
   const {
     addVariantToCart,
-    store: { client, adding },
+    store: { client, adding, checkout },
   } = useContext(StoreContext)
 
   //!Handling variant changes
@@ -56,7 +69,7 @@ const ProductForm = ({ product }) => {
   const handleQuantityChange = evt => {
     const isDigit = evt.target.value.match(/\d/g, "") && evt.target.value < 21 //number
     isDigit && setQuantity(evt.target.value)
-    console.log(quantity, "state quantity")
+    
   }
 
   //! getting product data based on it title
@@ -71,10 +84,13 @@ const ProductForm = ({ product }) => {
   //! this handles the add to cart submission
   // TODO: Create Store Context for shopping cart
   const handleAddToCart = () => {
-    console.log("TODO: create storecontext")
-    console.log("sel variant", productVariant.shopifyId)
-    console.log("sel quantity", quantity)
+ 
     addVariantToCart(productVariant.shopifyId, quantity)
+  
+ 
+    dispatch({ type: "SET_NUM", numInCart: state.numInCart += parseInt(quantity) })
+    dispatch({ type: "SET_FRIEND", bestFriends: "dog" })
+
   }
 
   //!Handling product variant availability
@@ -97,28 +113,26 @@ const ProductForm = ({ product }) => {
 
   // ! checking for product availability on mount
   useEffect(() => {
+
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
 
-  // const componentDidUpdate = (prevState, prevproduct) => {
-  // const newSelection = (prevState.variant.title !== this.state.variant.title)
-  //
-  // if(newSelection){
-  //   console.log(this.state.variant)
-  // }
-  // }
 
   return (
     <StyledContainer>
+   
       <Row>
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>
-          <Input
-            value={quantity}
+          <StyledInput
+            defaultValue={quantity}
             onChange={handleQuantityChange}
             type="number"
             name="quantity"
             id="quantitySelect"
+            min="1"
+           
+            // step="1"
           />
         </StyledFormGroup>
         {product.variants && product.variants.length > 1 && (
@@ -148,6 +162,7 @@ const ProductForm = ({ product }) => {
         <AddToCartButton
           handleAddToCart={handleAddToCart}
           disabled={!available || adding}
+         
         />
       </ButtonContainer>
     </StyledContainer>

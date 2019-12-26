@@ -6,19 +6,10 @@ import React, { useReducer } from "react"
 import {
   FormInput,
   FormTextArea,
-  StyledLabel,
   ApplyWrapper,
-  OverlayLanding,
   H1,
   StyledButton,
-  Select,
-  Option,
   Container,
-  AdressWrapper,
-  H2,
-  TextWrap,
-  P1,
-  A,
   RowWrap,
 } from "./contact.css"
 // import ContactBG from "./ContactBG"
@@ -54,18 +45,14 @@ const Contact = props => {
         }),
       })
         // then go to thank you page
-        .then(() => navigate("/thank-you-contact"))
+        .then(() => navigate("/thankyou"))
         .catch(error => alert(error))
     }
   }
 
   return (
     <>
-      {/* <ContactBG>
-        <OverlayLanding></OverlayLanding>
-      </ContactBG> */}
-
-
+  
 
       <Container>
         <RowWrap>

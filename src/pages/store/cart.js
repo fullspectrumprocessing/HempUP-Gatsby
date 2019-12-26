@@ -3,20 +3,19 @@ import Layout from '../../components/layout'
 import Cart from '../../components/cart/cart'
 
 
-class CartPage extends React.Component {
+const CartPage = (props) => { 
 
-    render() {
+ 
         return(
             <>
             <Layout>
 
-            <h1>Shoppin Cart</h1>
-            <p>This is your Chopin Cart!!</p>
+           
             <Cart />
             </Layout>
             </>
         )
-    }
+   
 }
 
 export default CartPage
