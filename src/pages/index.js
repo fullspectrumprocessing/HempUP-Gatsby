@@ -38,7 +38,7 @@ const WeAreCBDText = styled.div`
   }
 
   @media (min-width: 796px) {
-   text-align: left;
+    text-align: left;
     margin-top: 40px;
     width: 570px;
     h1 {
@@ -150,24 +150,25 @@ const HomeProductWrapper = styled.div`
   justify-content: space-around;
 `
 const Wrapper = styled.div`
- height: 100%;
- width: 100%;
- position: relative;
+  height: 100%;
+  width: 100%;
+  position: relative;
+`
 
-`
-const Overlay = styled.div`
- 
- width: 100%;
- min-height: 1175px;
- background-color: rgba(255, 255, 255, 0.35);
- position: absolute; 
- top: 0;
- bottom: 0;
- z-index: -20;
- @media (max-width: 1100px) {
-min-height: 1000px;
-}
-`
+//!  Layout alreadyt has an overlay so this is redundant
+
+// const Overlay = styled.div`
+//  width: 100%;
+//  min-height: 1175px;
+//  background-color: rgba(255, 255, 255, 0.35);
+//  position: absolute;
+//  top: 0;
+//  bottom: 0;
+//  z-index: -20;
+//  @media (max-width: 1100px) {
+// min-height: 1000px;
+// }
+// `
 const Landing = () => {
   const fadeNSlide = (component, delay = 0) => {
     return (
@@ -181,41 +182,43 @@ const Landing = () => {
 
   return (
     <Layout>
-      
       <Wrapper>
-      <Overlay></Overlay>
-      <SEO
-        title="Hemp Up - Landing Page"
-        keywords={["wellness", "CBD", "herbal", "hemp"]}
-      />
+        {/* <Overlay></Overlay> */}
+        <SEO
+          title="Hemp Up - Landing Page"
+          keywords={["wellness", "CBD", "herbal", "hemp"]}
+        />
 
-      <WeAreCBDText>
-        <CBDTextUpper>{fadeNSlide(<h3>we are</h3>)}</CBDTextUpper>
-        <CBDTextLower>
-          {fadeNSlide(<h1>CBD</h1>, 500)}
-          {fadeNSlide(<h2>wellness</h2>, 1000)}
-        </CBDTextLower>
-      </WeAreCBDText>
+        <WeAreCBDText>
+          <CBDTextUpper>{fadeNSlide(<h3>we are</h3>)}</CBDTextUpper>
+          <CBDTextLower>
+            {fadeNSlide(<h1>CBD</h1>, 500)}
+            {fadeNSlide(<h2>wellness</h2>, 1000)}
+          </CBDTextLower>
+        </WeAreCBDText>
 
-      {fadeNSlide(
-        <Link to="/store/">
-          <ExploreButton>
-            <div> explore our line </div>
-            <ExploreButtonArrow> > </ExploreButtonArrow>
-          </ExploreButton>
-        </Link>,
+        {fadeNSlide(
+          <Link to="/store/">
+            <ExploreButton>
+              <div> explore our line </div>
+              <ExploreButtonArrow> > </ExploreButtonArrow>
+            </ExploreButton>
+          </Link>,
 
-        1500
-      )}
+          1500
+        )}
 
-      <LandingMessageP>
-      HempUp is the best source for thoughtfully formulated CBD products. Our mission is to provide the highest quality CBD on the market by following unparalleled industry standards. We are dedicated to bringing wellness into the lives of anyone who uses our products.
-      </LandingMessageP>
+        <LandingMessageP>
+          HempUp is the best source for thoughtfully formulated CBD products.
+          Our mission is to provide the highest quality CBD on the market by
+          following unparalleled industry standards. We are dedicated to
+          bringing wellness into the lives of anyone who uses our products.
+        </LandingMessageP>
 
-      <LandingMessageDiv>
-        <HomeShop />
-      </LandingMessageDiv>
-      <GlobalStyle />
+        <LandingMessageDiv>
+          <HomeShop />
+        </LandingMessageDiv>
+        <GlobalStyle />
       </Wrapper>
     </Layout>
   )
