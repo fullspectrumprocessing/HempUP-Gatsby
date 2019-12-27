@@ -1,6 +1,6 @@
 # TO-DOs
 
-### Need to dorp all pages from the header using padding and/or margins compare about opage and store page with other pages
+### MOBILE RESPONSIVENESS!!!!!
 
 - <strong>Input change function on cart page working (change quantity on cart page) with updating total price correctly. (started working on this, not functioning correctly, commented out code)</strong>
 
@@ -21,8 +21,8 @@
   - Instagram
   - Facebook
   - Twitter
-  - Youtube ?? 
-  - Pinterest ?? 
+  - Youtube ??
+  - Pinterest ??
     <!-- - use local storage in conjunction with global state/store to hold items for users
   - Global Context Provider -->
     <!-- - Smaller buttons under products -->

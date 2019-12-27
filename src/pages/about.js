@@ -6,6 +6,7 @@ import Slide from "react-reveal/Slide"
 import Fade from "react-reveal/Fade"
 import SEO from "../components/seo"
 import cssVars from "../theme/_variables"
+
 const AboutTitle = styled.h1`
   font-size: 60px;
   font-family: lato, sans serif;

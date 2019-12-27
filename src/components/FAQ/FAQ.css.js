@@ -6,7 +6,8 @@ export const Wrapper1 = styled.div`
   width: 100%;
   color: ${cssVars.txtLghtGrn};
   font-size: 20px;
-  font-family: ${cssVars.LATO} @media (max-width: 920px) {
+  font-family: ${cssVars.LATO};
+  @media (max-width: 920px) {
     min-height: 500px;
   }
 `
@@ -18,45 +19,45 @@ export const P = styled.p`
 export const ToggleWrap = styled.div`
   width: 100%;
   position: relative;
-  height: auto;
-  display: inline-block;
-  background: rgba(6, 12, 7, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: Hind sans-serif;
-  //   border-bottom: 1px solid white;
   border-radius: 50px;
-  margin-bottom: 40px;
-  padding: 35px;
+  justify-content: space-around;
   @media (max-width: 920px) {
-   width: 100%;
-   margin: 0 auto;
-   margin-bottom: 40px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
   }
   @media (max-width: 870px) {
-   padding-left: 45px;
-   }
+    padding-left: 45px;
+  }
 `
 
-export const Symbol = styled.span`
+export const Symbol = styled.div`
   height: 25px;
   width: 25px;
   color: white;
   text-align: center;
   font-size: 15px;
-  display: inline-block;
   font-weight: 700;
   font-family: Hind, sans-serif;
   border: 2px solid white;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (max-width: 870px) {
-   position: absolute;
-   left: 10px;
-   top: 42px;
+    position: absolute;
+    left: 10px;
+    top: 42px;
   }
 `
+
 export const DivWrap = styled.div`
   height: 100%;
   width: 1000px;
-  //   background: rgba(1, 12, 7, 0.3);
   margin: 0 auto;
   border-radius: 5px;
   padding: 30px 40px 100px 40px;
@@ -74,15 +75,12 @@ export const DivWrap = styled.div`
   }
   @media (max-width: 600px) {
     width: 100%;
-    }
-
+  }
 `
 
 export const H3 = styled.h3`
-  width: 95%;
   font-size: 30px;
   font-weight: 400;
-  display: inline-block;
   font-family: ${cssVars.Objktv};
 `
 

@@ -15,7 +15,7 @@ const navigationFooterLinks = {
   "About Us": "/about",
   "Store": "/store",
   // News: "/news",
-  "FAQ": "/FAQ",
+  "FAQs": "/FAQ",
   "Privacy Policy": "/privacypolicy",
   "Terms and Conditions": "/termsandconditions",
 }

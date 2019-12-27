@@ -49,7 +49,7 @@ export default props => {
   const fadeNSlide = (component, delay = 0) => {
     return (
       <Fade delay={delay}>
-        <Slide bottom cascade delay={delay}>
+        <Slide top cascade delay={delay}>
           {component}
         </Slide>
       </Fade>
@@ -62,7 +62,7 @@ export default props => {
         <StoreHeader>
           <StoreTitle>{props.page ? props.page : "All Items"}</StoreTitle>
         </StoreHeader>,
-        1000
+        500
       )}
       <ProductGrid>
         {products.map((product, inx) => (
