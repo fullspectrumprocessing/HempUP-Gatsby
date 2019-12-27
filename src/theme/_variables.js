@@ -5,6 +5,7 @@ const cssVars = {
   fs_n: "normal",
   fw_4: 400,
   LATO: "lato, sans-serif",
+  Hind: "Hind, monospace",
   grdntPink: "rgba(255, 238, 238, 0.7)",
   grdntGreen:
     "radial-gradient(ellipse at 60% 0%, rgba(54,120,47,0.63),rgba(76, 116, 72, 1) )",

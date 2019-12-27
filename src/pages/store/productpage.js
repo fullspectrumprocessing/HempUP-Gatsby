@@ -57,7 +57,6 @@ const ProductPage = ({ data }) => {
       {console.log(data, "DATA PAGE")}
       <StyledContainer>
         <ProductHeader>{product.title}</ProductHeader>
-
         <Row>
           <Col sm>
             <ProductImage
@@ -66,7 +65,6 @@ const ProductPage = ({ data }) => {
           </Col>
           <Col sm>
             <ProductForm variants={product.variants || []} product={product} />
-
             <ProductDescription>
               {" "}
               {product.description.split("\n").map((item, key) => {
@@ -78,7 +76,6 @@ const ProductPage = ({ data }) => {
                 )
               })}
             </ProductDescription>
-
             {console.log(product, "descrtipion")}
           </Col>
         </Row>
