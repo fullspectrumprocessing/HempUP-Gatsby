@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import cssVars from "../../theme/_variables"
 
-
 export const Foot = styled.footer`
   display: flex;
   height: 375px;
@@ -31,7 +30,7 @@ export const UL = styled.ul`
   padding-left: 80px;
 
   @media (max-width: 600px) {
-   width: 90%;
+    width: 90%;
     align-items: center;
     margin: 0 auto;
     padding: 30px 30px 0px 30px;
@@ -48,23 +47,6 @@ export const NavWrap = styled.div`
     width: 80%;
     height: auto;
   }
-
-`
-
-export const ContactWrap = styled.div`
-  display: flex;
-  height: 375px;
-  width: 33.3%;
-  margin-top: 40px;
-  flex-direction: column;
-  @media (max-width: 600px) {
-    width: 80%;
-    align-items: center;
-    height: auto;
-    margin-top: 0px;
-    padding-top: 0px;
-  }
-
 `
 export const LI = styled.li`
   padding: 5px;
@@ -112,19 +94,19 @@ export const LogoWrap = styled.div`
   display: flex;
   flex-direction: column;
   //nesting
-.gatsby-image-wrapper {
-      width: 200px;
-}
-@media (min-width: 1300px) {
-  align-items: center;
-}
+  .gatsby-image-wrapper {
+    width: 200px;
+  }
+  @media (min-width: 1300px) {
+    align-items: center;
+  }
   @media (max-width: 900px) {
     width: 20%;
     height: 350px;
-   justify-content: left;
+    justify-content: left;
     .gatsby-image-wrapper {
       width: 150px;
-}
+    }
   }
   @media (max-width: 600px) {
     width: 80%;
@@ -161,12 +143,12 @@ export const A = styled(OutboundLink)`
 export const P = styled.p`
   color: green;
   width: 250px;
-  color:#777;
+  color: #777;
   // font-family: Montserrat, sans-serif;
   font-size: 16px;
   padding: 5px;
   @media (max-width: 400px) {
-width: 200px;
+    width: 200px;
   }
 `
 export const SubWrapper = styled.div`
@@ -208,21 +190,21 @@ export const Submit = styled.button`
   height: 35px;
   margin: 10px;
   &:hover {
-    background: ${cssVars.ttnGrdntDrkGrn}
+    background: ${cssVars.ttnGrdntDrkGrn};
   }
   @media (max-width: 1300px) {
- height: auto;
- display: block;
- margin: 10px;
+    height: auto;
+    display: block;
+    margin: 10px;
   }
   @media (max-width: 750px) {
-  height: auto;
+    height: auto;
     width: 80%;
   }
   @media (max-width: 600px) {
- margin: 10px 0px;
+    margin: 10px 0px;
     justify-content: left;
-    }
+  }
 `
 export const Div = styled.div`
   width: 100%;
@@ -233,7 +215,6 @@ export const Div = styled.div`
   }
 `
 export const FooterLink = styled(OutboundLink)`
-
   &:hover {
     text-shadow: 1px 1px 10px black;
   }

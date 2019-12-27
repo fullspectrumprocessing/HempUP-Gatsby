@@ -17,7 +17,6 @@ import {
   Input,
   Submit,
   NavWrap,
-  ContactWrap,
 } from "./footer.css"
 import Img from "gatsby-image"
 import cssVars from "../../theme/_variables"
@@ -74,10 +73,12 @@ const LowerSection = styled.section`
   width: 50%;
   align-self: center;
   text-align: center;
+  padding: 0px 0px 50px 0px;
+  line-height: 2;
 `
 const Footer = () => {
   const [info, setInfo] = useState({
-    email: ""
+    email: "",
   })
 
   function encode(data) {
@@ -158,7 +159,7 @@ const Footer = () => {
                 type="email"
                 placeholder="Your Email Address"
                 value={info.email}
-                onChange={e => setInfo({email: e.target.value})}
+                onChange={e => setInfo({ email: e.target.value })}
               />
               <Submit type="submit">Sign Up</Submit>
             </Form>
@@ -167,7 +168,7 @@ const Footer = () => {
       </UpperSection>
 
       <LowerSection>
-        <div style={{ fontSize: "10px" }}>
+        <div style={{ fontSize: "12px" }}>
           **This product is not for use by or sale to persons under the age of
           18. This product should be used only as directed on the label. It
           should not be used if you are pregnant or nursing. Consult with a
@@ -178,22 +179,12 @@ const Footer = () => {
           Administration. This product is not intended to diagnose, treat, cure
           or prevent any disease. Results from products may vary.**
         </div>
-        <div style={{ fontSize: "10px" }}>
+        <div style={{ fontSize: "12px" }}>
           © {new Date().getFullYear()} Hemp Up
         </div>
       </LowerSection>
     </StyledFooter>
-
-
   )
-}
-
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  siteTitle: "",
 }
 
 export default Footer

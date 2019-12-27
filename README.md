@@ -9,32 +9,35 @@
 <!-- - Brand Statement -->
 
 - Shopping Cart
-  <!-- - use local storage in conjunction with global state/store to hold items for users
-  - Global Context Provider -->
   - Create LogIn capabilities (Shopify, Google, or Netlify)
 - Better Styling
-  <!-- - Smaller buttons under products -->
 - Shopify checkout
-  <!-- - Set up the embedded Shopify Shopping CArt
+- <strong>Pages and Routes</strong> -->
+  - 404 page <em>Make the 404 page pretty unique; look for examples</em>
+- Age Restriction Modal
+- <del>Google Analytics</del>
+  - Config GA
+- Social Media Accts
+  - Instagram
+  - Facebook
+  - Twitter
+  - Youtube ?? 
+  - Pinterest ?? 
+    <!-- - use local storage in conjunction with global state/store to hold items for users
+  - Global Context Provider -->
+    <!-- - Smaller buttons under products -->
+    <!-- - Set up the embedded Shopify Shopping CArt
   - <del>Add new products to HempUp Test shopify products acct.</del>
   - <del>Need SKUs for products</del>
   - <del>Need pricing for products</del>
   - Need Relevant Tags for the products
-- <strong>Pages and Routes</strong> -->
-
-  <!-- - <del>What is CBD?</del>
+    <!-- - <del>What is CBD?</del>
   - Terms & Conditions
   - Privacy Policy
   - SHOPPING CART
   - <del> Contact Page and Form </del> -->
-
-  - 404 page <em>Make the 404 page pretty unique; look for examples</em>
-
-- Age Restriction Modal
-  <!-- - Use local storage or state to handle a token that verifies the user is of age
+    <!-- - Use local storage or state to handle a token that verifies the user is of age
   - Reactmodal -->
-- <del>Google Analytics</del>
-  - Config GA
 
 ## Future Implementaion
 
