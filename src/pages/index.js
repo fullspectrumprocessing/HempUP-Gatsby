@@ -18,23 +18,37 @@ const WeAreCBDText = styled.div`
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 50px;
+  h1 {
+    margin: 0;
+    font-size: 70px;
+  }
 
+  h2 {
+    font-size: 60px;
+    font-weight: ${cssVars.fw_4};
+    margin: 0;
+  }
+  h3 {
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+  }
+  @media (min-width: 796px) {
   h1 {
     margin: 0;
     font-size: 100px;
   }
-
   h2 {
     font-size: 90px;
     font-weight: ${cssVars.fw_4};
     margin: 0;
   }
-
   h3 {
     font-size: 70px;
     font-weight: 400;
     margin: 0;
   }
+}
   @media (min-width: 796px) {
     text-align: left;
     margin-top: 40px;
@@ -49,6 +63,7 @@ const WeAreCBDText = styled.div`
       margin-left: 20px;
     }
   }
+  
 `
 const CBDTextUpper = styled.div`
   @media (min-width: 796px) {
@@ -62,19 +77,17 @@ const CBDTextLower = styled.div`
     flex-direction: row;
     align-items: bottom;
   }
+  @media (max-width: 600px) {
+   font-size: 20px !important;
+      }
 `
 const LandingMessageDiv = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   margin-top: 60px;
-<<<<<<< HEAD
-  margin-bottom: 50px;
-  @media (min-width: 796px) {
-=======
   margin-bottom: 60px;
 
   @media (max-width: 796px) {
->>>>>>> master
     margin: 60px 140px 0 140px;
     border-radius: 5px;
     max-width: 1100px;
@@ -86,10 +99,7 @@ const LandingMessageDiv = styled.div`
   }
 `
 const LandingMessageP = styled.p`
-<<<<<<< HEAD
-=======
 text-align: center;
->>>>>>> master
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -97,11 +107,7 @@ text-align: center;
   color: ${cssVars.txtBrwn};
   font-family: lato, sans-serif;
   font-size: 20px;
-<<<<<<< HEAD
-  max-width: 700px;
-=======
   max-width: 70%;
->>>>>>> master
   padding: 20px;
   background: ${cssVars.bckgrndBeige};
   border-radius: 10px;
@@ -148,6 +154,11 @@ const ExploreButton = styled.button`
     font-size: 22px;
     letter-spacing: 3px;
   }
+  @media (max-width: 600px) {
+width: 70%;
+height: auto;
+padding: 20px;
+  }
 `
 const ExploreButtonArrow = styled.div`
   font-family: ${cssVars.LATO};
@@ -156,32 +167,13 @@ const HomeProductWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `
-<<<<<<< HEAD
-const Wrapper = styled.div`
- height: 100%;
- width: 100%;
- position: relative;
-`
-const Overlay = styled.div`
- width: 100%;
- min-height: 1175px;
- background-color: rgba(255, 255, 255, 0.3);
- position: absolute; 
- top: 0;
- bottom: 0;
- z-index: -20;
- @media (max-width: 1100px) {
-min-height: 1000px;
-}
-`
-=======
 
 //! Does ths have a special purpose ???
-// const Wrapper = styled.div`
-//   height: 100%;
-//   width: 100%;
-//   position: relative;
-// `
+const Wrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+`
 
 //!  Layout alreadyt has an overlay so this is redundant
 
@@ -201,9 +193,12 @@ min-height: 1000px;
 const HeroWrap = styled.div`
   margin: 80px 0px;
   padding: 80px 0px;
+  @media (max-width: 600px) {
+    margin: 0px;
+    padding: 30px 0px 0px 0px;
+      }          
 `
 
->>>>>>> master
 const Landing = () => {
   const fadeNSlide = (component, delay = 0) => {
     return (
@@ -217,7 +212,7 @@ const Landing = () => {
 
   return (
     <Layout>
-      {/* <Wrapper> */}
+      <Wrapper>
       {/* <Overlay></Overlay> */}
       <SEO
         title="Hemp Up - Landing Page"
@@ -257,7 +252,7 @@ const Landing = () => {
         <HomeShop />
       </LandingMessageDiv>
       <GlobalStyle />
-      {/* </Wrapper> */}
+      </Wrapper>
     </Layout>
   )
 }

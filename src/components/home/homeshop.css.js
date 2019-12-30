@@ -12,7 +12,8 @@ font-family: ${cssVars.Objktv};
 `
 export const Wrapper = styled.div`
 max-width: 1000px;
-margin: 50px;
+// margin: 50px;
+margin: 0 auto;
 @media (max-width: 1101px) {
     max-width: none;
     width: 700px;

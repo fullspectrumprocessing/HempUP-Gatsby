@@ -58,11 +58,6 @@ export default props => {
   }
   return (
     <>
-<<<<<<< HEAD
-      <StoreHeader>
-        <StoreTitle>{props.page ? props.page : "All Items"}</StoreTitle>
-      </StoreHeader>
-=======
       {console.log(props, "products")}
       {fadeNSlide(
         <StoreHeader>
@@ -70,7 +65,6 @@ export default props => {
         </StoreHeader>,
         500
       )}
->>>>>>> master
       <ProductGrid>
         {products.map((product, inx) => (
           <ProductGridItem product={product} key={inx} />
