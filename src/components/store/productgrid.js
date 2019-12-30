@@ -9,6 +9,7 @@ const StoreTitle = styled.h1`
   font-size: 60px;
   font-family: lato, sans serif;
   color: ghostwhite;
+  width: 100vw;
 `
 export const ProductGrid = styled.ul`
   margin: 30px auto;
@@ -44,23 +45,32 @@ const StoreHeader = styled.div`
   padding-top: 10px;
   font-size: 40px;
 `
-export default (props) => {
-  const {products} = props
+export default props => {
+  const { products } = props
   const fadeNSlide = (component, delay = 0) => {
     return (
       <Fade delay={delay}>
-        <Slide bottom cascade delay={delay}>
+        <Slide top cascade delay={delay}>
           {component}
         </Slide>
       </Fade>
     )
   }
   return (
-   
     <>
+<<<<<<< HEAD
       <StoreHeader>
         <StoreTitle>{props.page ? props.page : "All Items"}</StoreTitle>
       </StoreHeader>
+=======
+      {console.log(props, "products")}
+      {fadeNSlide(
+        <StoreHeader>
+          <StoreTitle>{props.page ? props.page : "All Items"}</StoreTitle>
+        </StoreHeader>,
+        500
+      )}
+>>>>>>> master
       <ProductGrid>
         {products.map((product, inx) => (
           <ProductGridItem product={product} key={inx} />

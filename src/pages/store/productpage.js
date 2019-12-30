@@ -29,8 +29,13 @@ const ProductImage = styled(Img)`
     width: calc(50% - 20px);
   }
 `
+<<<<<<< HEAD
 const ProductDescription = styled.div`
 white-space: pre-wrap;
+=======
+const ProductDescription = styled.text`
+  white-space: pre-wrap;
+>>>>>>> master
   min-width: 200px;
   width: 80%;
   font-family: lato, sans-serif;
@@ -55,7 +60,6 @@ const ProductPage = ({ data }) => {
     <Layout>
       <StyledContainer>
         <ProductHeader>{product.title}</ProductHeader>
-
         <Row>
           <Col sm>
             <ProductImage
@@ -64,12 +68,27 @@ const ProductPage = ({ data }) => {
           </Col>
           <Col sm>
             <ProductForm variants={product.variants || []} product={product} />
+<<<<<<< HEAD
           
            <ProductDescription > {product.description.split('\n').map((item, key) => {
   return <span  key={key}>{item}<br/></span>
 
 })}</ProductDescription>
 
+=======
+            <ProductDescription>
+              {" "}
+              {product.description.split("\n").map((item, key) => {
+                return (
+                  <span key={key}>
+                    {item}
+                    <br />
+                  </span>
+                )
+              })}
+            </ProductDescription>
+            {console.log(product, "descrtipion")}
+>>>>>>> master
           </Col>
         </Row>
       </StyledContainer>
