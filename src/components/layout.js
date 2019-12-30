@@ -41,10 +41,8 @@ const Layout = ({ children}) => {
   useEffect(() => {
     let array = []
     // const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    console.log(checkout)
     for (let i = 0; i < checkout.lineItems.length; i++) {
         array.push(checkout.lineItems[i].quantity)
-        console.log(array,"array")
     }
      let total = array.reduce(
       ( accumulator, currentValue ) => accumulator + currentValue,
@@ -53,10 +51,6 @@ const Layout = ({ children}) => {
  
  
     dispatch({ type: "SET_NUM", numInCart: total })
-  
-    console.log(total, "final")
-
-
     
   }, [checkout.lineItems.length])
     return (
