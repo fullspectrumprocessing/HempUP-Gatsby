@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
  position: relative;
  margin-bottom: -72px;
  
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     // text-align: center;
   }
 `
@@ -36,7 +36,7 @@ export const StyledTitle = styled.div`
 export const Title = styled.span`
 font-weight: 700;
 display: block;
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     padding: 0px 10px;   
 }
 `
@@ -46,7 +46,7 @@ export const H2 = styled.h2`
 font-weight: 700 !important;
 font-size: 30px;
 font-family: ${cssVars.Objktv};
-@media (max-width: 600px) {
+@media (max-width: 800px) {
        padding: 20px;
        font-size: 20px;    
 }
@@ -75,7 +75,7 @@ export const H3 = styled.address`
   font-size: 20px;
   display: inherit;
   font-weight: 200;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     padding: 25px;   
 }
 `
@@ -103,7 +103,7 @@ export const StyledDiv = styled.section`
   justify-content: center;
   margin: 0 auto;
   margin-top: 25px;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 100%;
   }
 `

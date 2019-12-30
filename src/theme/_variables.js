@@ -22,6 +22,7 @@ const cssVars = {
   bckgrndBeige: "#E9DECE60",
   h1shadow: "1px 2px 5px #573f27",
   pshadow: "1px 1px 3px #E0B487",
+  btnShadow: "1px 2px 5px #573f27"
 }
 
 export default cssVars

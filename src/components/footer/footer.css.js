@@ -15,7 +15,7 @@ export const Foot = styled.footer`
   @media (max-width: 800px) {
     justify-content: left;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-direction: column;
     align-items: center;
     justify-items: center;
@@ -29,7 +29,7 @@ export const UL = styled.ul`
   width: 320px;
   margin: 0 auto;
   padding-left: 80px;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -45,7 +45,7 @@ export const NavWrap = styled.div`
   height: 375px;
   margin-top: 40px;
   flex-direction: column;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 80%;
     height: auto;
     text-align: center;
@@ -111,7 +111,7 @@ export const LogoWrap = styled.div`
       width: 150px;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 80%;
     align-items: center;
     display: none;
@@ -123,7 +123,7 @@ export const H3 = styled.h3`
   color: green;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     font-size: 20px;
   }
   @media (min-width: 1300px) {
@@ -157,7 +157,7 @@ export const SubWrapper = styled.div`
   flex-direction: column;
   width: 30%;
   margin-top: 40px;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 80%;
     align-items: center;
     // text-align: left;
@@ -177,7 +177,7 @@ export const Form = styled.form`
   @media (max-width: 750px) {
     flex-wrap: wrap;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     justify-content: center;
   }
 `
@@ -202,7 +202,7 @@ export const Submit = styled.button`
     height: auto;
     width: 80%;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     margin: 10px 0px;
   }
 `
@@ -267,7 +267,7 @@ export const LowerSection = styled.section`
   text-align: center;
   padding: 0px 0px 50px 0px;
   line-height: 2;
-  @media (max-width: 600px){
+  @media (max-width: 800px){
     width: 90%;
   }
 `

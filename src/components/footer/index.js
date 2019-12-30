@@ -1,7 +1,4 @@
 import React, { useState } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { Link } from "gatsby"
 import { graphql, useStaticQuery, navigate } from "gatsby"
 import {
   Foot,
@@ -9,7 +6,6 @@ import {
   SubWrapper,
   LogoWrap,
   H3,
-  A,
   LI,
   P,
   Form,
@@ -23,7 +19,6 @@ import {
   FooterLink,
 } from "./footer.css"
 import Img from "gatsby-image"
-import cssVars from "../../theme/_variables"
 import { navigationFooterLinks } from "../navigationMap"
 
 const Footer = () => {
@@ -77,7 +72,7 @@ const Footer = () => {
 
           <NavWrap>
             <UL>
-            <H3>MENU</H3>
+              <H3>MENU</H3>
               {Object.keys(navigationFooterLinks).map((item, inx) => {
                 return (
                   <LI>

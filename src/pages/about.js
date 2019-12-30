@@ -16,7 +16,6 @@ const AboutTitle = styled.h1`
 const AboutHeader = styled.div`
   width: 100%;
   margin: 0 auto;
-  height: 100px;
   background-image: ${cssVars.grdntGreen};
   align-self: flex-start;
   text-align: center;
