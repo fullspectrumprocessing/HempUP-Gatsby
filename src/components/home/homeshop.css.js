@@ -23,7 +23,7 @@ margin: 0 auto;
     max-width: none;
     width: 500px;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     margin: 0 auto;
 }
 @media (max-width: 500px) {
@@ -48,8 +48,6 @@ export const Image = styled(Img)`
 height: 230px;
 overflow: hidden;
 `
-
-
 export const ButtonLeft= styled.div`
 padding: 0px;
 color: black;
@@ -63,7 +61,6 @@ left: 19;
     color: ${cssVars.ttnGrdntDrkGrn};
 }
 `
-
 export const ButtonRight= styled.div`
 padding: 0px;
 color: black;
@@ -77,8 +74,6 @@ right: 19;
     color: ${cssVars.ttnGrdntDrkGrn};
 }
 `
-
-
 export const Card = styled.div`
 height: 450px;
 width: 300px;
