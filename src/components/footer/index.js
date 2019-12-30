@@ -6,7 +6,6 @@ import { graphql, useStaticQuery, navigate } from "gatsby"
 import {
   Foot,
   UL,
-  // StyledLink,
   SubWrapper,
   LogoWrap,
   H3,
@@ -17,65 +16,16 @@ import {
   Input,
   Submit,
   NavWrap,
+  StyledFooter,
+  StyledLink,
+  UpperSection,
+  LowerSection,
+  FooterLink,
 } from "./footer.css"
 import Img from "gatsby-image"
 import cssVars from "../../theme/_variables"
 import { navigationFooterLinks } from "../navigationMap"
 
-const StyledFooter = styled.footer`
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(rgba(255,255,255, 0.4), rgba(255,255,255, 0.95));
-  z-index: 100;
-  /* width: 100vw; */
-  padding: 1rem ;
-  margin-top: 40px;
-  padding: 10px 10px 0 10px;
-  text-align: left;
-  /* color: ${cssVars.txtBrwn}; */
-  color:#777;
-  font-family: ${cssVars.LATO}
-`
-const StyledLink = styled(Link)`
-  /* color: ${cssVars.txtBrwn}; */
-  color:#777;
-  margin: 5px 0px;
-  margin-left: 0px !important;
-  padding: 0px;
-  font-size: 16px;
-  text-decoration: none;
-  :hover {
-      color:${cssVars.txtGrn} !important;
-  }
-  @media (min-width: 796px) {
-    flex-direction: column;
-    font-size: 14px;
-    margin: 5px 15px;
-  }
-`
-const UpperSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 40px;
-  @media (min-width: 796px) {
-    flex-direction: row;
-    font-size: 15px;
-  }
-`
-const LowerSection = styled.section`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  font-size: 8px;
-  width: 50%;
-  align-self: center;
-  text-align: center;
-  padding: 0px 0px 50px 0px;
-  line-height: 2;
-`
 const Footer = () => {
   const [info, setInfo] = useState({
     email: "",
@@ -127,7 +77,7 @@ const Footer = () => {
 
           <NavWrap>
             <UL>
-              <H3>MENU</H3>
+            <H3>MENU</H3>
               {Object.keys(navigationFooterLinks).map((item, inx) => {
                 return (
                   <LI>
@@ -169,18 +119,40 @@ const Footer = () => {
 
       <LowerSection>
         <div style={{ fontSize: "12px" }}>
-          **This product is not for use by or sale to persons under the age of
-          18. This product should be used only as directed on the label. It
-          should not be used if you are pregnant or nursing. Consult with a
-          physician before use if you have a serious medical condition or use
-          prescription medications. A Doctor’s advice should be sought before
-          using this and any supplemental dietary product. The statements
-          regarding these products have not been evaluated by the Food and Drug
-          Administration. This product is not intended to diagnose, treat, cure
-          or prevent any disease. Results from products may vary.**
+          <em>
+            This product is not for use by or sale to persons under the age of
+            18. This product should be used only as directed on the label. It
+            should not be used if you are pregnant or nursing. Consult with a
+            physician before use if you have a serious medical condition or use
+            prescription medications. A Doctor’s advice should be sought before
+            using this and any supplemental dietary product. The statements
+            regarding these products have not been evaluated by the Food and
+            Drug Administration. This product is not intended to diagnose,
+            treat, cure or prevent any disease. Results from products may vary.
+          </em>
+        </div>
+        <div style={{ fontSize: "12px", color: "green", paddingTop: "10px" }}>
+          © {new Date().getFullYear()} Hemp Up
         </div>
         <div style={{ fontSize: "12px" }}>
-          © {new Date().getFullYear()} Hemp Up
+          Built with{" "}
+          <FooterLink
+            href="https://www.gatsbyjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gatsby
+          </FooterLink>
+          {` `}
+          by
+          {` `}
+          <FooterLink
+            href="http://fullspectrumprocessing.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Full Spectrum Processing
+          </FooterLink>
         </div>
       </LowerSection>
     </StyledFooter>

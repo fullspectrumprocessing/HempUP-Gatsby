@@ -20,6 +20,7 @@ export const Foot = styled.footer`
     align-items: center;
     justify-items: center;
     height: auto;
+    padding: 0px;
   }
 `
 
@@ -28,12 +29,13 @@ export const UL = styled.ul`
   width: 320px;
   margin: 0 auto;
   padding-left: 80px;
-
   @media (max-width: 600px) {
-    width: 90%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
     align-items: center;
-    margin: 0 auto;
-    padding: 30px 30px 0px 30px;
+    padding: 0px;
+    text-align: center;
   }
 `
 
@@ -46,6 +48,7 @@ export const NavWrap = styled.div`
   @media (max-width: 600px) {
     width: 80%;
     height: auto;
+    text-align: center;
   }
 `
 export const LI = styled.li`
@@ -55,21 +58,21 @@ export const LI = styled.li`
   width: 90%;
 `
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  padding: 0;
-  margin: 0;
-  color: green;
-  &:hover {
-    color: yellow;
-  }
-  @media (min-width: 1300px) {
-    font-size: 20px;
-    height: auto;
-  }
-`
+// export const StyledLink = styled(Link)`
+//   text-decoration: none;
+//   font-family: Montserrat, sans-serif;
+//   font-size: 14px;
+//   padding: 0;
+//   margin: 0;
+//   color: green;
+//   &:hover {
+//     color: yellow;
+//   }
+//   @media (min-width: 1300px) {
+//     font-size: 20px;
+//     height: auto;
+//   }
+// `
 export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -141,14 +144,12 @@ export const A = styled(OutboundLink)`
   }
 `
 export const P = styled.p`
-  color: green;
   width: 250px;
   color: #777;
-  // font-family: Montserrat, sans-serif;
   font-size: 16px;
   padding: 5px;
   @media (max-width: 400px) {
-    width: 200px;
+    width: initial;
   }
 `
 export const SubWrapper = styled.div`
@@ -158,10 +159,11 @@ export const SubWrapper = styled.div`
   margin-top: 40px;
   @media (max-width: 600px) {
     width: 80%;
-    text-align: left;
-    align-items: left;
-    padding-left: 30px;
-    margin-left: 18px;
+    align-items: center;
+    // text-align: left;
+    // align-items: left;
+    // padding-left: 30px;
+    // margin-left: 18px;
   }
 `
 export const Form = styled.form`
@@ -176,7 +178,7 @@ export const Form = styled.form`
     flex-wrap: wrap;
   }
   @media (max-width: 600px) {
-    justify-content: left;
+    justify-content: center;
   }
 `
 export const Input = styled.input`
@@ -194,7 +196,6 @@ export const Submit = styled.button`
   }
   @media (max-width: 1300px) {
     height: auto;
-    display: block;
     margin: 10px;
   }
   @media (max-width: 750px) {
@@ -203,7 +204,6 @@ export const Submit = styled.button`
   }
   @media (max-width: 600px) {
     margin: 10px 0px;
-    justify-content: left;
   }
 `
 export const Div = styled.div`
@@ -214,8 +214,66 @@ export const Div = styled.div`
     text-align: center;
   }
 `
+export const StyledFooter = styled.footer`
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(255,255,255, 0.4), rgba(255,255,255, 0.95));
+  z-index: 100;
+  /* width: 100vw; */
+  padding: 1rem ;
+  margin-top: 40px;
+  padding: 10px 10px 0 10px;
+  text-align: left;
+  /* color: ${cssVars.txtBrwn}; */
+  color:#777;
+  font-family: ${cssVars.LATO}
+`
+export const StyledLink = styled(Link)`
+  /* color: ${cssVars.txtBrwn}; */
+  color:#777;
+  margin: 5px 0px;
+  margin-left: 0px !important;
+  padding: 0px;
+  font-size: 16px;
+  text-decoration: none;
+  :hover {
+      color:${cssVars.txtGrn} !important;
+  }
+  @media (min-width: 796px) {
+    flex-direction: column;
+    font-size: 14px;
+    margin: 5px 15px;
+  }
+`
+export const UpperSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  @media (min-width: 796px) {
+    flex-direction: row;
+    font-size: 15px;
+  }
+`
+export const LowerSection = styled.section`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 8px;
+  width:50%;
+  align-self: center;
+  text-align: center;
+  padding: 0px 0px 50px 0px;
+  line-height: 2;
+  @media (max-width: 600px){
+    width: 90%;
+  }
+`
 export const FooterLink = styled(OutboundLink)`
+  color: ${cssVars.txtGrn};
   &:hover {
-    text-shadow: 1px 1px 10px black;
+    text-shadow: 1px 1px 10px ${cssVars.txtBrwn};
   }
 `
