@@ -8,6 +8,15 @@
 
 ### <strong>Format description comming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
 
+
+### Cart edits
+- Delete button
+- Title Styling 
+- Shadows 
+- Animations 
+- A little more mobiel friendly 
+
+
 <!-- - Brand Statement -->
 
 - Shopping Cart
