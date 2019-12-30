@@ -4,6 +4,7 @@ import ProductGridItem from "./ProductGridItem"
 import cssVars from "../../theme/_variables"
 import Fade from "react-reveal/Fade"
 import Slide from "react-reveal/Slide"
+
 const StoreTitle = styled.h1`
   font-size: 60px;
   font-family: lato, sans serif;

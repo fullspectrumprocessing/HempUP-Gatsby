@@ -18,24 +18,37 @@ const WeAreCBDText = styled.div`
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 50px;
+  h1 {
+    margin: 0;
+    font-size: 70px;
+  }
 
+  h2 {
+    font-size: 60px;
+    font-weight: ${cssVars.fw_4};
+    margin: 0;
+  }
+  h3 {
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+  }
+  @media (min-width: 796px) {
   h1 {
     margin: 0;
     font-size: 100px;
   }
-
   h2 {
     font-size: 90px;
     font-weight: ${cssVars.fw_4};
     margin: 0;
   }
-
   h3 {
     font-size: 70px;
     font-weight: 400;
     margin: 0;
   }
-
+}
   @media (min-width: 796px) {
     text-align: left;
     margin-top: 40px;
@@ -50,8 +63,8 @@ const WeAreCBDText = styled.div`
       margin-left: 20px;
     }
   }
+  
 `
-
 const CBDTextUpper = styled.div`
   @media (min-width: 796px) {
     margin-bottom: 10px;
@@ -64,6 +77,9 @@ const CBDTextLower = styled.div`
     flex-direction: row;
     align-items: bottom;
   }
+  @media (max-width: 600px) {
+   font-size: 20px !important;
+      }
 `
 const LandingMessageDiv = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
@@ -103,7 +119,6 @@ text-align: center;
     box-shadow: 1px 1px 5px #573f27;
   }
 `
-
 const ExploreButton = styled.button`
   display: flex;
   align-content: center;
@@ -139,23 +154,26 @@ const ExploreButton = styled.button`
     font-size: 22px;
     letter-spacing: 3px;
   }
+  @media (max-width: 600px) {
+width: 70%;
+height: auto;
+padding: 20px;
+  }
 `
-
 const ExploreButtonArrow = styled.div`
   font-family: ${cssVars.LATO};
 `
-
 const HomeProductWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `
 
 //! Does ths have a special purpose ???
-// const Wrapper = styled.div`
-//   height: 100%;
-//   width: 100%;
-//   position: relative;
-// `
+const Wrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+`
 
 //!  Layout alreadyt has an overlay so this is redundant
 
@@ -175,6 +193,10 @@ const HomeProductWrapper = styled.div`
 const HeroWrap = styled.div`
   margin: 80px 0px;
   padding: 80px 0px;
+  @media (max-width: 600px) {
+    margin: 0px;
+    padding: 30px 0px 0px 0px;
+      }          
 `
 
 const Landing = () => {
@@ -190,7 +212,7 @@ const Landing = () => {
 
   return (
     <Layout>
-      {/* <Wrapper> */}
+      <Wrapper>
       {/* <Overlay></Overlay> */}
       <SEO
         title="Hemp Up - Landing Page"
@@ -230,7 +252,7 @@ const Landing = () => {
         <HomeShop />
       </LandingMessageDiv>
       <GlobalStyle />
-      {/* </Wrapper> */}
+      </Wrapper>
     </Layout>
   )
 }

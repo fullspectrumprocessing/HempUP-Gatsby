@@ -18,6 +18,17 @@ const FaqTitle = styled.h1`
   font-family: lato, sans serif;
   margin: 20px;
   color: ghostwhite;
+  @media (max-width: 900px) {
+    font-size: 50px;
+  }
+  @media (max-width: 700px) {
+    font-size: 35px;
+    padding-top: 15px;
+  }
+  @media (max-width: 500px) {
+    font-size: 30fpx;
+    padding-top: 15px;
+  }
 `
 const Shell = styled.div`
   width: 100%;
@@ -31,8 +42,9 @@ const Shell = styled.div`
   margin-bottom: 15px;
   padding: 20px 15px 20px 15px;
   justify-content: space-around;
-  &:hover {
-    background-image: ${cssVars.grdntGreen};
+  // :hover {
+  //   // background-image: ${cssVars.grdntGreen};
+  //   background-color: ${cssVars.navBarGreenGradient};
   }
 `
 const Shell2 = styled.div`
@@ -71,15 +83,19 @@ const PrivacyMain = () => {
         <DivWrap>
           {/* Section 1 */}
           <Shell>
-            <ToggleWrap>
-              <Shell2>
-                <H3>What is CBD?</H3>
-                <Symbol
-                  onClick={() => {
+            <ToggleWrap  onClick={() => {
                     toggle.show1 === "-"
                       ? setToggle({ ...toggle, show1: "+" })
                       : setToggle({ ...toggle, show1: "-" })
-                  }}
+                  }}>
+              <Shell2>
+                <H3>What is CBD?</H3>
+                <Symbol
+                  // onClick={() => {
+                  //   toggle.show1 === "-"
+                  //     ? setToggle({ ...toggle, show1: "+" })
+                  //     : setToggle({ ...toggle, show1: "-" })
+                  // }}
                 >
                   {toggle.show1}
                 </Symbol>
@@ -103,7 +119,11 @@ const PrivacyMain = () => {
 
           {/* Section 2 */}
           <Shell>
-            <ToggleWrap>
+            <ToggleWrap onClick={() => {
+                    toggle.show2 === "-"
+                      ? setToggle({ ...toggle, show2: "+" })
+                      : setToggle({ ...toggle, show2: "-" })
+                  }}>
               <Shell2>
                 <H3>Is CBD legal?</H3>
                 <Symbol
@@ -139,7 +159,11 @@ const PrivacyMain = () => {
 
           {/* Section 3 */}
           <Shell>
-            <ToggleWrap>
+            <ToggleWrap onClick={() => {
+                    toggle.show3 === "-"
+                      ? setToggle({ ...toggle, show3: "+" })
+                      : setToggle({ ...toggle, show3: "-" })
+                  }}>
               <Shell2>
                 <H3>Will CBD get me high?</H3>
                 <Symbol
@@ -171,7 +195,11 @@ const PrivacyMain = () => {
 
           {/* Section 4 */}
           <Shell>
-            <ToggleWrap>
+            <ToggleWrap onClick={() => {
+                    toggle.show4 === "-"
+                      ? setToggle({ ...toggle, show4: "+" })
+                      : setToggle({ ...toggle, show4: "-" })
+                  }}>
               <Shell2>
                 <H3>How is hemp different from marijuana?</H3>
                 <Symbol
@@ -205,7 +233,11 @@ const PrivacyMain = () => {
 
           {/* Section 5 */}
           <Shell>
-            <ToggleWrap>
+            <ToggleWrap onClick={() => {
+                    toggle.show5 === "-"
+                      ? setToggle({ ...toggle, show5: "+" })
+                      : setToggle({ ...toggle, show5: "-" })
+                  }}>
               <Shell2>
                 <H3>Does HempUp CBD need to be refrigerated?</H3>
                 <Symbol

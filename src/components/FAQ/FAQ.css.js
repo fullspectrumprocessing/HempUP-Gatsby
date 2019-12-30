@@ -11,11 +11,11 @@ export const Wrapper1 = styled.div`
     min-height: 500px;
   }
 `
-
 export const P = styled.p`
   padding: 20px;
+  text-align: left;
+  width: 100wv;
 `
-
 export const ToggleWrap = styled.div`
   width: 100%;
   position: relative;
@@ -33,8 +33,8 @@ export const ToggleWrap = styled.div`
   @media (max-width: 870px) {
     padding-left: 45px;
   }
+  
 `
-
 export const Symbol = styled.div`
   height: 25px;
   width: 25px;
@@ -54,7 +54,6 @@ export const Symbol = styled.div`
     top: 42px;
   }
 `
-
 export const DivWrap = styled.div`
   height: 100%;
   width: 1000px;
@@ -77,13 +76,12 @@ export const DivWrap = styled.div`
     width: 100%;
   }
 `
-
 export const H3 = styled.h3`
   font-size: 30px;
   font-weight: 400;
   font-family: ${cssVars.Objktv};
 `
-
 export const Pdiv = styled.div`
   display: none;
+  width: 100%;
 `
