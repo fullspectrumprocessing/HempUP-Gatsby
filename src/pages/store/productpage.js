@@ -29,7 +29,7 @@ const ProductImage = styled(Img)`
     width: calc(50% - 20px);
   }
 `
-const ProductDescription = styled.text`
+const ProductDescription = styled.div`
 white-space: pre-wrap;
   min-width: 200px;
   width: 80%;
@@ -50,11 +50,9 @@ const StyledContainer = styled(Container)`
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
 
-  // let newText = product.description.split ('\n').map ((item, i) => <product.description key={i}>{item}</product.description>);
-  // console.log("ProductPage", product)
+
   return (
     <Layout>
-      {console.log(data, "DATA PAGE")}
       <StyledContainer>
         <ProductHeader>{product.title}</ProductHeader>
 
@@ -72,8 +70,6 @@ const ProductPage = ({ data }) => {
 
 })}</ProductDescription>
 
-    
-            {console.log(product, "descrtipion")}
           </Col>
         </Row>
       </StyledContainer>

@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import Slide from "react-reveal/Slide"
 import Fade from "react-reveal/Fade"
 import GlobalStyle from "../theme/globalStyle"
-
 import "bootstrap/dist/css/bootstrap.min.css"
 import cssVars from "../theme/_variables"
 import HomeShop from "../components/home/homeshop"
@@ -36,7 +35,6 @@ const WeAreCBDText = styled.div`
     font-weight: 400;
     margin: 0;
   }
-
   @media (min-width: 796px) {
    text-align: left;
     margin-top: 40px;
@@ -52,7 +50,6 @@ const WeAreCBDText = styled.div`
     }
   }
 `
-
 const CBDTextUpper = styled.div`
   @media (min-width: 796px) {
     margin-bottom: 10px;
@@ -72,7 +69,6 @@ const LandingMessageDiv = styled.div`
   text-align: center;
   margin-top: 60px;
   margin-bottom: 50px;
-
   @media (min-width: 796px) {
     margin: 60px 140px 0 140px;
     border-radius: 5px;
@@ -85,24 +81,19 @@ const LandingMessageDiv = styled.div`
   }
 `
 const LandingMessageP = styled.p`
-  // margin: 20px 35px 20px 35px;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 30px;
   line-height: 2;
-  // background-color: rgba(255, 255, 255, 0.5);
-  // color: rgba(152, 121, 91, 1);
   color: ${cssVars.txtBrwn};
   font-family: lato, sans-serif;
   font-size: 20px;
-  // font-weight: 600;
   max-width: 700px;
   padding: 20px;
   @media (min-width: 796px) {
     font-size: 16px;
   }
 `
-
 const ExploreButton = styled.button`
   display: flex;
   align-content: center;
@@ -140,11 +131,9 @@ const ExploreButton = styled.button`
     letter-spacing: 3px;
   }
 `
-
 const ExploreButtonArrow = styled.div`
   font-family: ${cssVars.LATO};
 `
-
 const HomeProductWrapper = styled.div`
   display: flex;
   justify-content: space-around;
@@ -153,13 +142,11 @@ const Wrapper = styled.div`
  height: 100%;
  width: 100%;
  position: relative;
-
 `
 const Overlay = styled.div`
- 
  width: 100%;
  min-height: 1175px;
- background-color: rgba(255, 255, 255, 0.35);
+ background-color: rgba(255, 255, 255, 0.3);
  position: absolute; 
  top: 0;
  bottom: 0;
