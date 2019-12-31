@@ -151,11 +151,10 @@ const LineItem = props => {
             step="1"
           /> */}
           <Title>Quantity: {line_item.quantity}</Title>
-
-          <br></br>
-          <br></br>
-          <RemoveButton onClick={handleRemove}>Delete</RemoveButton>
         </ContentRow2>
+        <div>
+          <RemoveButton onClick={handleRemove}>Delete</RemoveButton>
+        </div>
       </Card>
     </Wrapper>
   )
