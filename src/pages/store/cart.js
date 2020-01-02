@@ -7,13 +7,10 @@ import Fade from "react-reveal/Fade"
 import SEO from "../../components/seo"
 import cssVars from "../../theme/_variables"
 const CartTitle = styled.h1`
+  color: ghostwhite;
   font-size: 60px;
   font-family: lato, sans serif;
-  margin: 20px
-  color: ghostwhite;
-  // @media (max-width: 800px) {
-  //   // font-size: 30px;
-  // }
+  margin: 20px;
 `
 const CartHeader = styled.div`
   width: 100vw;
@@ -21,6 +18,8 @@ const CartHeader = styled.div`
   text-align: center;
   margin-top: 41px;
   align-self: flex-start;
+  display: flex;
+  justify-content: center;
 `
 
 const fadeNSlide = (component, delay = 0) => {

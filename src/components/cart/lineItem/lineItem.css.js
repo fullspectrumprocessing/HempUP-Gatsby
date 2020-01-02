@@ -10,10 +10,9 @@ export const H2 = styled.h2`
 
 export const RemoveButton = styled.button`
   color: ${cssVars.txtBrwn};
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 20px; 
+  height: 20%;
+  align-self: center;
+  width: 100px;
 `
 export const Wrapper = styled.div`
   width: 75%;
@@ -21,6 +20,7 @@ export const Wrapper = styled.div`
   padding: 30px 40px;
   margin: 0px 10px 10px 10px;
   display: flex;
+  justify-content: center;
   @media (max-width: 800px) {
     width: 100%;
     flex-direction: column;
@@ -48,8 +48,7 @@ export const ContentRow2 = styled.div`
     width: 170px;
     text-align: center;
   }
-  @media (max-width: 1050px){
-
+  @media (max-width: 1050px) {
   }
 `
 export const Image = styled.img`
@@ -78,8 +77,6 @@ export const ButtonRight = styled.div`
 `
 export const Card = styled.div`
   width: 85%;
-  margin: 0 auto;
-  position: relative;
   background: #fff;
   display: flex;
   flex-direction: row;
