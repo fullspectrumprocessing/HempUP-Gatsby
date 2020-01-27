@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState, useCallback} from "react"
-import {  Input } from "reactstrap"
+import React, { useContext, useEffect, useState, useCallback } from "react"
+import { Input } from "reactstrap"
 import StoreContext from "../../../context/globalcontext"
 import {
   Wrapper,
@@ -15,24 +15,15 @@ import { GlobalDispatchContext } from "../../../provider/ContextProvider"
 import { GlobalStateContext } from "../../../provider/ContextProvider"
 import Cart from "../cart"
 
-const LineItem = (props ) => {
-
-const dispatch = useContext(GlobalDispatchContext);
-const state = useContext(GlobalStateContext);
-
-
-
-
-
-
+const LineItem = props => {
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
 
   const { line_item } = props
 
-    //!quantity handlinh hook
-    // const [quantityChange, setQuantityChange] = useState(false)
-    // const [quantityCart, setQuantityCart] = useState(line_item.quantity ? line_item.quantity : quantityCart)
-
-  
+  //!quantity handlinh hook
+  // const [quantityChange, setQuantityChange] = useState(false)
+  // const [quantityCart, setQuantityCart] = useState(line_item.quantity ? line_item.quantity : quantityCart)
 
   const {
     addVariantToCart,
@@ -41,9 +32,7 @@ const state = useContext(GlobalStateContext);
     store: { client, checkout, adding },
   } = useContext(StoreContext)
 
-const checkState = () => {
-
-}
+  const checkState = () => {}
 
   const variantImage = line_item.variant.image ? (
     <Image
@@ -64,36 +53,35 @@ const checkState = () => {
   }
 
   const handleRemove = () => {
-    removeLineItem(client, checkout.id, line_item.id);
+    removeLineItem(client, checkout.id, line_item.id)
     console.log(line_item, "lineItem---")
     console.log(checkout, "CHECKOUT")
 
-    dispatch({ type: "SET_NUM", numInCart: state.numInCart -= parseInt(line_item.quantity) })
-  
+    dispatch({
+      type: "SET_NUM",
+      numInCart: (state.numInCart -= parseInt(line_item.quantity)),
+    })
+
     callDispatch()
 
-  console.log(state, "STATE!!")
+    console.log(state, "STATE!!")
 
-   
     // checkState()
   }
-
- 
 
   // added------------------------------------
   // console.log(client)
   // console.log(line_item)
 
-    // updates modal state toggle to true
-    // const updateQuantity = () => {
-    //   setQuantityChange(true)
-    // }
+  // updates modal state toggle to true
+  // const updateQuantity = () => {
+  //   setQuantityChange(true)
+  // }
 
-   //! this function handles the change in quantity via the number selector
+  //! this function handles the change in quantity via the number selector
   //  const handleQuantityChange = evt => {
   //   const isDigit = evt.target.value.match(/\d/g, "") && evt.target.value < 21 //number
   //   isDigit && setQuantityCart(evt.target.value)
-    
 
   //   updateQuantity()
   //   console.log(quantityChange, "quantity change")
@@ -101,7 +89,7 @@ const checkState = () => {
   //   console.log(quantityCart, "quantity cart")
   // }
 
-    //!Handling product variant availability
+  //!Handling product variant availability
   //   const productVariant =
   //  line_item.variant
   // const [available, setAvailable] = useState(productVariant.availableForSale)
@@ -111,33 +99,31 @@ const checkState = () => {
   //     client.product.fetch(productId).then(() => {
   //       // this checks the currently selected variant for availability
   //       const result = line_item.variant.id
-        
+
   //       setAvailable(result.availableForSale)
   //     })
   //   },
   //   [client.product,  line_item.variant.id, line_item.variants]
   // )
 
-  
-    // useEffect(() => {
-    //   if (quantityChange === true) {
-    //     // if true run handle show function to open modal
-    //    console.log(quantityCart, "quantity in effenct")
-    //    checkAvailability(line_item.variant.id)
-    //   //  updateLineItem(client, checkout.id, line_item.variant.id, quantityCart)
-    //    addVariantToCart(line_item.variant.id, quantityCart,  console.log(line_item, "quantity cart"))
-    //    console.log(line_item, "quantity cart")
-       
-    //     // set state  back to false
-    //     setQuantityChange(false)
+  // useEffect(() => {
+  //   if (quantityChange === true) {
+  //     // if true run handle show function to open modal
+  //    console.log(quantityCart, "quantity in effenct")
+  //    checkAvailability(line_item.variant.id)
+  //   //  updateLineItem(client, checkout.id, line_item.variant.id, quantityCart)
+  //    addVariantToCart(line_item.variant.id, quantityCart,  console.log(line_item, "quantity cart"))
+  //    console.log(line_item, "quantity cart")
 
-    //   }
-    // })
+  //     // set state  back to false
+  //     setQuantityChange(false)
 
-        useEffect(() => {
-          console.log(state, "STATE IN EFFECT")
-      
-    },[])
+  //   }
+  // })
+
+  useEffect(() => {
+    console.log(state, "STATE IN EFFECT")
+  }, [])
 
   return (
     <Wrapper>
@@ -164,12 +150,11 @@ const checkState = () => {
             min="1"
             step="1"
           /> */}
-        <Title>Quantity: {line_item.quantity}</Title>
-          
-          <br></br>
-          <br></br>
-          <RemoveButton onClick={handleRemove}>X</RemoveButton>
+          <Title>Quantity: {line_item.quantity}</Title>
         </ContentRow2>
+        <div>
+          <RemoveButton onClick={handleRemove}>X</RemoveButton>
+        </div>
       </Card>
     </Wrapper>
   )

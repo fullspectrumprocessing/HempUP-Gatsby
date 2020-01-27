@@ -63,24 +63,27 @@ const Cart = props => {
     getSearchResults()
   }, [checkout.lineItems.length])
 
+  const estimatedCost = (
+    parseFloat(checkout.totalPrice) +
+    parseFloat(checkout.totalPrice) * 0.08
+  ).toFixed(2)
+
   return (
     <Wrapper>
       <ItemWrap>
         {checkout.subtotalPrice > 0 ? (
           line_items
         ) : (
-          <Empty>Your Cart is Empty</Empty>
+          <Empty>Your Bag is Empty</Empty>
         )}
       </ItemWrap>
       <CheckoutWrap>
-        {/* <h2>Subtotal</h2>
-      <p>$ {checkout.subtotalPrice}</p>
-      <br /> */}
-        {/* <h2>Taxes</h2>
-      <p>$ {checkout.totalTax}</p>
-      <br /> */}
-        <H2>Total</H2>
+        <H2>Sub Total</H2>
         <P>$ {checkout.totalPrice}</P>
+        <H2>Estimated Total</H2>
+        <P>
+          $ {estimatedCost} <em>*tax</em>
+        </P>
         <br />
         <Button onClick={handleCheckout}>
           <Link to="/store/cart">Check out</Link>

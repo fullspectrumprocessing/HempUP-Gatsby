@@ -9,12 +9,13 @@ const navigationMap = {
 }
 
 const navigationFooterLinks = {
-  Home: "/",
+  "Home": "/",
   "Contact Us": "/contactus",
   // "Sign up for our Newsletter": "/subscribe",
-  "FAQ": "/FAQ",
   "About Us": "/about",
+  "Store": "/store",
   // News: "/news",
+  "FAQs": "/FAQ",
   "Privacy Policy": "/privacypolicy",
   "Terms and Conditions": "/termsandconditions",
 }

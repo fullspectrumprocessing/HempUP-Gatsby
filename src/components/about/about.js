@@ -33,7 +33,7 @@ const AboutUsComp = () => {
     1.1,
   ]
   const trans = (x, y, s) =>
-    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+    `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
   function Card({ children }) {
     const [props, set] = useSpring(() => ({
       xys: [0, 0, 0.75],
@@ -66,14 +66,7 @@ const AboutUsComp = () => {
   }
   return (
     <>
-      <Wrapper
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          padding: "25px 100px 25px 100px",
-        }}
-      >
+      <Wrapper>
         <WhatRow>
           <WhatIsTitle>What Is CBD</WhatIsTitle>
           <WhatIsCbd>

@@ -3,7 +3,11 @@ import cssVars from "../../theme/_variables.js"
 import { animated } from "react-spring"
 
 export const Wrapper = styled.div`
-  @media (max-width: 600px) {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 100px 100px 25px 100px;
+  @media (max-width: 800px) {
     margin: 0px;
     width: 100%;
     padding: 0px !important;
@@ -46,7 +50,7 @@ export const WhatIsTitle = styled.h2`
   font-family: ${cssVars.POSDI};
   font-style: normal;
   margin-left: 50px;
-  text-shadow: 1px 1px 10px #ffffff80;
+  text-shadow: 1px 1px 5px #396f6f80;
   @media (max-width: 934px) {
     width: 80%;
     margin: 0 auto;
@@ -59,7 +63,7 @@ export const WhatIsTitle = styled.h2`
     text-align: center;
     margin-top: 100px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     margin-top: 50px;
   }
 `
@@ -68,7 +72,7 @@ export const WhatIsTextWrap = styled.div`
   text-align: center;
   width: 95%;
   margin: 20px 0px 20px 0px;
-  background: ${cssVars.whiteGlow};
+  background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
   color: ${cssVars.txtBrwnDrk};
@@ -77,8 +81,8 @@ export const WhatIsTextWrap = styled.div`
   &:hover {
     box-shadow: 1px 1px 15px ${cssVars.txtGrn};
   }
-  @media (max-width: 934px) {
-    text-align: left;
+  @media (max-width: 800px) {
+    text-align: center;
   }
 `
 
@@ -119,7 +123,7 @@ export const WhoWeAreTitle = styled.h2`
   font-style: normal;
   align-self: flex-end;
   margin-right: 70px;
-  text-shadow: 1px 1px 10px #ffffff80;
+  text-shadow: 1px 1px 5px #396f6f80;
   @media (max-width: 934px) {
     width: 80%;
     margin: 0 auto;
@@ -132,7 +136,7 @@ export const WhoWeAreTitle = styled.h2`
     text-align: center;
     margin-top: 100px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     margin-top: 50px;
   }
 `
@@ -140,7 +144,7 @@ export const WhoTextWrap = styled.div`
   text-align: center;
   width: 95%;
   margin: 20px 0px 20px 0px;
-  background: ${cssVars.whiteGlow};
+  background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
   color: ${cssVars.txtBrwnDrk};
@@ -188,7 +192,7 @@ export const WhyUsTitle = styled.h2`
   font-style: normal;
   align-self: flex-start;
   margin-left: 50px;
-  text-shadow: 1px 1px 10px #ffffff80;
+  text-shadow: 1px 1px 5px #396f6f80;
   @media (max-width: 934px) {
     width: 80%;
     margin: 0 auto;
@@ -201,7 +205,7 @@ export const WhyUsTitle = styled.h2`
     margin-top: 100px;
     text-align: center;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     margin-top: 50px;
   }
 `
@@ -210,7 +214,7 @@ export const WhyTextWrap = styled.div`
   text-align: center;
   width: 95%;
   margin: 20px 0px 20px 0px;
-  background: ${cssVars.whiteGlow};
+  background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
   color: ${cssVars.txtBrwnDrk};
@@ -234,7 +238,7 @@ export const ContactUs = styled.div`
   display: flex;
   justify-content: space-around;
   height: 200px;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-wrap: wrap;
     height: auto;
   }

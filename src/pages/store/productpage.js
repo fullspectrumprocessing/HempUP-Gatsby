@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { Container, Row, Col } from "reactstrap"
+import { Container} from "reactstrap"
 import Img from "gatsby-image"
 import Layout from "../../components/layout"
 import ProductForm from "../../components/store/productform"
@@ -24,17 +24,29 @@ const ProductImage = styled(Img)`
   min-width: 250px;
   width: 100%;
   margin: 10px auto;
-  border: solid 1px grey;
+  border: solid 1px white;
+  border-radius: 2px;
   @media only screen and (max-width: 576px) {
     width: calc(50% - 20px);
   }
+  @media only screen and (max-width: 576px) {
+    min-width: 200px;
+    margin: 0 auto;
+  }
 `
 const ProductDescription = styled.text`
-white-space: pre-wrap;
+  white-space: pre-wrap;
   min-width: 200px;
   width: 80%;
-  font-family: lato, sans-serif;
+  font-family: objektiv-mk1, sans-serif;
+  font-size: 15px;
+  color: #707070;
+  font-weight: 400;
+  pointer-events: none;
+  height: 54px;
+  // padding: 20px 20px;
   margin: 0 auto;
+  margin-top: 15px;
   @media only screen and (max-width: 576px) {
     text-align: center;
   }
@@ -46,18 +58,38 @@ const StyledContainer = styled(Container)`
   margin-bottom: 50px;
   width: 100%;
   padding-bottom: 50px;
+  
+`
+
+const Row = styled.div`
+  display: flex;
+  @media only screen and (max-width: 1200px) {
+  flex-wrap: wrap;
+  }
+`
+const Col = styled.div`
+  width: 50%;
+  padding: 10px;
+  @media only screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+ 
+    }
+    @media only screen and (max-width: 400px) {
+  width: 100%;
+   
+      }
+  
 `
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
 
-  // let newText = product.description.split ('\n').map ((item, i) => <product.description key={i}>{item}</product.description>);
-  // console.log("ProductPage", product)
+
   return (
     <Layout>
-      {console.log(data, "DATA PAGE")}
       <StyledContainer>
         <ProductHeader>{product.title}</ProductHeader>
-
         <Row>
           <Col sm>
             <ProductImage
@@ -66,13 +98,18 @@ const ProductPage = ({ data }) => {
           </Col>
           <Col sm>
             <ProductForm variants={product.variants || []} product={product} />
-          
-           <ProductDescription > {product.description.split('\n').map((item, key) => {
-  return <span  key={key}>{item}<br/></span>
-
-})}</ProductDescription>
-
-    
+            <ProductDescription>
+              {" "}
+              {product.description.split('\\n').map((item, key) => {
+                return (
+                  <span key={key}>
+                    {item}
+                    <br />
+                  
+                  </span>
+                )
+              })}
+            </ProductDescription>
             {console.log(product, "descrtipion")}
           </Col>
         </Row>

@@ -159,7 +159,7 @@ export const StyledButton = styled.button`
 
 
 export const AdressWrapper = styled.div`
-  min-height: 600px;
+  min-height: 800px;
   color: white;
   display: flex;
   position: relative;

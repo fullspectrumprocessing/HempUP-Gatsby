@@ -6,6 +6,7 @@ import Slide from "react-reveal/Slide"
 import Fade from "react-reveal/Fade"
 import SEO from "../components/seo"
 import cssVars from "../theme/_variables"
+
 const AboutTitle = styled.h1`
   font-size: 60px;
   font-family: lato, sans serif;
@@ -15,7 +16,6 @@ const AboutTitle = styled.h1`
 const AboutHeader = styled.div`
   width: 100%;
   margin: 0 auto;
-  height: 100px;
   background-image: ${cssVars.grdntGreen};
   align-self: flex-start;
   text-align: center;
