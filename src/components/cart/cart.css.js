@@ -54,6 +54,7 @@ export const H2 = styled.h2`
   text-shadow: ${cssVars.pshadow};
   font-family: ${cssVars.LATO};
   text-decoration: underline;
+  font-size: 40px !important;
   @media (max-width: 1052px) {
     text-align: center;
   }
