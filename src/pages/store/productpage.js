@@ -24,16 +24,20 @@ const ProductImage = styled(Img)`
   min-width: 250px;
   width: 100%;
   margin: 10px auto;
-  border: solid 1px grey;
+  border: solid 1px white;
+  border-radius: 2px;
   @media only screen and (max-width: 576px) {
     width: calc(50% - 20px);
+  }
+  @media only screen and (max-width: 576px) {
+    min-width: 200px;
+    margin: 0 auto;
   }
 `
 const ProductDescription = styled.text`
   white-space: pre-wrap;
   min-width: 200px;
   width: 80%;
-  
   font-family: objektiv-mk1, sans-serif;
   font-size: 15px;
   color: #707070;
@@ -70,7 +74,13 @@ const Col = styled.div`
     flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
+ 
     }
+    @media only screen and (max-width: 400px) {
+  width: 100%;
+   
+      }
+  
 `
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
