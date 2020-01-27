@@ -12,7 +12,6 @@ font-family: ${cssVars.Objktv};
 `
 export const Wrapper = styled.div`
 max-width: 1000px;
-// margin: 50px;
 margin: 0 auto;
 @media (max-width: 1101px) {
     max-width: none;
@@ -42,8 +41,7 @@ padding-top: 15px;
 @media (max-width: 400px) {
     height: 100%;
     width: 100%;
-    padding-top: 0px;
-    
+    padding-top: 0px;  
 }
 `
 export const Image = styled(Img)`
@@ -91,7 +89,7 @@ height: 400px;
 export const Title = styled.h3`
 font-size: 16px;
 height: 60px;
-color: grey;
+color: black;
 font-family: ${cssVars.Objktv};
 padding-bottom: 5px;
 margin: 0 auto;
@@ -102,4 +100,5 @@ margin: 0 auto;
 export const Price = styled.h3`
 font-size: 18px;
 color: ${cssVars.txtBrwn};
+font-weight: 700;
 `
