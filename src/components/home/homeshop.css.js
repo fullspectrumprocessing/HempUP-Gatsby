@@ -42,6 +42,8 @@ padding-top: 15px;
 @media (max-width: 400px) {
     height: 100%;
     width: 100%;
+    padding-top: 0px;
+    
 }
 `
 export const Image = styled(Img)`
@@ -83,6 +85,7 @@ background: #FFF;
 }
 @media (max-width: 400px) {
 width: 80%;
+height: 400px;
 }
 `
 export const Title = styled.h3`
@@ -91,6 +94,7 @@ height: 60px;
 color: grey;
 font-family: ${cssVars.Objktv};
 padding-bottom: 5px;
+margin: 0 auto;
 @media (max-width: 4510px) {
     width: 90%;
     }

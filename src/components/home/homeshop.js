@@ -13,7 +13,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby"
 import ItemsCarousel from "react-items-carousel"
-import AddToCartButton from "../../components/store/AddToCartButton"
 import ViewDetailsButton from "../../components/store/ViewDetailsButton"
 
 const HomeShop = () => {
