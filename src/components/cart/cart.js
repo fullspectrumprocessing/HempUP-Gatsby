@@ -77,9 +77,9 @@ const Cart = props => {
         )}
       </ItemWrap>
       <CheckoutWrap>
-        <H2>Total</H2>
+        <H2>Sub Total</H2>
         <P>$ {checkout.totalPrice}</P>
-        <H2>Estimated Cost</H2>
+        <H2>Estimated Total</H2>
         <P>$ {estimatedCost} <em>*tax</em></P>
         <br />
         <Button onClick={handleCheckout}>Checkout</Button>

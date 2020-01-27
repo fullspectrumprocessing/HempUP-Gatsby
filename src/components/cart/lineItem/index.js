@@ -153,7 +153,7 @@ const LineItem = props => {
           <Title>Quantity: {line_item.quantity}</Title>
         </ContentRow2>
         <div>
-          <RemoveButton onClick={handleRemove}>Delete</RemoveButton>
+          <RemoveButton onClick={handleRemove}>X</RemoveButton>
         </div>
       </Card>
     </Wrapper>

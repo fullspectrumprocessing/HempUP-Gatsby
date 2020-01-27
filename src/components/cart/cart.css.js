@@ -80,6 +80,9 @@ export const CheckoutWrap = styled.div`
   &:hover {
     box-shadow: 1px 1px 10px white;
   }
+  @media (max-width: 500px) {
+    width: 250px;
+  }
 `
 
 export const Button = styled.div`
