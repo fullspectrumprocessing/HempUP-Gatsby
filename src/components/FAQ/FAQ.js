@@ -26,7 +26,7 @@ const FaqTitle = styled.h1`
     padding-top: 15px;
   }
   @media (max-width: 500px) {
-    font-size: 30fpx;
+    font-size: 25px;
     padding-top: 15px;
   }
 `
