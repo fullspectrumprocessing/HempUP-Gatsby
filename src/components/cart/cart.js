@@ -86,7 +86,7 @@ const Cart = props => {
         </P>
         <br />
         <Button onClick={handleCheckout}>
-          <Link to="/store/cart">Check out</Link>
+          <Link style={{"color": "white"}}to="/store/cart">Check out</Link>
         </Button>
       </CheckoutWrap>
     </Wrapper>
