@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import cssVars from "../../theme/_variables"
 import { Link } from "gatsby"
 
 export const Linkage = styled(Link)`
@@ -21,13 +21,17 @@ export const ModalWrapper = styled.div`
 `
 
 export const ModalBody = styled.div`
-  background-color: pink;
+background-image: radial-gradient(
+  rgba(192, 254, 254, 0.7) 0%,
+  rgba(255, 255, 256, 0.7) 60%
+);
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid white;
   width: 30%;
   height: fit-content;
-  color: white;
+  color: ${cssVars.txtGrn};
   margin-bottom: 20px;
+  border-radius: 5px;
   &:hover {
     box-shadow: 1px 2px 10px purple;
   }

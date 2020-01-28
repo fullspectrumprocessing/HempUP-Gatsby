@@ -88,7 +88,7 @@ export const CheckoutWrap = styled.div`
 
 export const Button = styled.div`
   background: ${cssVars.btnGrdntLghtGreen};
-  color: white;
+  color: white !important;
   font-size: 40px;
   padding: 15px;
   width: 90%;

@@ -36,7 +36,7 @@ const fadeNSlide = (component, delay = 0) => {
 }
 const CartPage = props => {
   const [openModal, setModal] = useState(false)
-  // const [openOpt, setOpt] = useState(false)
+
 
   useEffect(() => {
     const modalStatus = localStorage.getItem("modalStatus")
@@ -44,10 +44,7 @@ const CartPage = props => {
       setModal(true)
     }
 
-    // const optStatus = localStorage.getItem("optOut")
-    // if (optStatus !== "closed") {
-    //   setOpt(true)
-    // }
+
     console.log(openModal, ":modal status")
  
   }, [])
@@ -57,10 +54,7 @@ const CartPage = props => {
     localStorage.setItem("modalStatus", "closed")
     console.log(openModal, "modal status close buttn")
   }
-  // const closeOptOut = () => {
-  //   setOpt(false)
-  //   localStorage.setItem("optOut", "closed")
-  // }
+
   return (
     <>
       <Layout>
@@ -76,16 +70,7 @@ const CartPage = props => {
           toggle={closeModal}
         
         >
-          This site uses cookies to provide a great user expereience. By using
-          Fast Advance Funding, you accept our{" "}
-          <Linkage onClick={closeModal} to="/terms     ">
-            Terms and Conditions
-          </Linkage>{" "}
-          and our{" "}
-          <Linkage onClick={closeModal} to="/privacy">
-            Privacy Poilicy
-          </Linkage>
-          .
+        We are unable to process online payments right now, please check back with us shortly.
         </Modal>
         <Cart />
       </Layout>
