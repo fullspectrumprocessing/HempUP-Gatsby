@@ -33,7 +33,7 @@ background-image: radial-gradient(
   margin-bottom: 20px;
   border-radius: 5px;
   &:hover {
-    box-shadow: 1px 2px 10px purple;
+    box-shadow: 1px 2px 10px white;
   }
 `
 
