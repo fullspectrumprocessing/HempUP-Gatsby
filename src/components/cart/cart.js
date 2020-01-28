@@ -18,6 +18,7 @@ import {
 } from "./cart.css"
 import { GlobalDispatchContext } from "../../provider/ContextProvider"
 import { GlobalStateContext } from "../../provider/ContextProvider"
+import { Link } from "gatsby"
 
 const Cart = props => {
   const dispatch = useContext(GlobalDispatchContext)
@@ -32,7 +33,7 @@ const Cart = props => {
   } = useContext(StoreContext)
 
   const handleCheckout = () => {
-    window.open(checkout.webUrl)
+    // window.open(checkout.webUrl)
     console.log(props)
   }
 
@@ -80,9 +81,13 @@ const Cart = props => {
         <H2>Sub Total</H2>
         <P>$ {checkout.totalPrice}</P>
         <H2>Estimated Total</H2>
-        <P>$ {estimatedCost} <em>*tax</em></P>
+        <P>
+          $ {estimatedCost} <em>*tax</em>
+        </P>
         <br />
-        <Button onClick={handleCheckout}>Checkout</Button>
+        <Button onClick={handleCheckout}>
+          <Link to="/store/cart">Check out</Link>
+        </Button>
       </CheckoutWrap>
     </Wrapper>
   )

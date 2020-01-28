@@ -34,21 +34,21 @@ const WeAreCBDText = styled.div`
     margin: 0;
   }
   @media (min-width: 796px) {
-  h1 {
-    margin: 0;
-    font-size: 100px;
+    h1 {
+      margin: 0;
+      font-size: 100px;
+    }
+    h2 {
+      font-size: 90px;
+      font-weight: ${cssVars.fw_4};
+      margin: 0;
+    }
+    h3 {
+      font-size: 70px;
+      font-weight: 400;
+      margin: 0;
+    }
   }
-  h2 {
-    font-size: 90px;
-    font-weight: ${cssVars.fw_4};
-    margin: 0;
-  }
-  h3 {
-    font-size: 70px;
-    font-weight: 400;
-    margin: 0;
-  }
-}
   @media (min-width: 796px) {
     text-align: left;
     margin-top: 40px;
@@ -63,7 +63,6 @@ const WeAreCBDText = styled.div`
       margin-left: 20px;
     }
   }
-  
 `
 const CBDTextUpper = styled.div`
   @media (min-width: 796px) {
@@ -78,8 +77,8 @@ const CBDTextLower = styled.div`
     align-items: bottom;
   }
   @media (max-width: 600px) {
-   font-size: 20px !important;
-      }
+    font-size: 20px !important;
+  }
 `
 const LandingMessageDiv = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
@@ -99,7 +98,7 @@ const LandingMessageDiv = styled.div`
   }
 `
 const LandingMessageP = styled.p`
-text-align: center;
+  text-align: center;
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -155,9 +154,9 @@ const ExploreButton = styled.button`
     letter-spacing: 3px;
   }
   @media (max-width: 600px) {
-width: 70%;
-height: auto;
-padding: 20px;
+    width: 70%;
+    height: auto;
+    padding: 20px;
   }
 `
 const ExploreButtonArrow = styled.div`
@@ -196,7 +195,7 @@ const HeroWrap = styled.div`
   @media (max-width: 600px) {
     margin: 0px;
     padding: 30px 0px 0px 0px;
-      }          
+  }
 `
 
 const Landing = () => {
@@ -213,45 +212,46 @@ const Landing = () => {
   return (
     <Layout>
       <Wrapper>
-      {/* <Overlay></Overlay> */}
-      <SEO
-        title="Hemp Up - Landing Page"
-        keywords={["wellness", "CBD", "herbal", "hemp"]}
-      />
-      <HeroWrap>
-        <WeAreCBDText>
-          <CBDTextUpper>{fadeNSlide(<h3>we are</h3>)}</CBDTextUpper>
-          <CBDTextLower>
-            {fadeNSlide(<h1>CBD</h1>, 500)}
-            {fadeNSlide(<h2>wellness</h2>, 1000)}
-          </CBDTextLower>
-        </WeAreCBDText>
+        {/* <Overlay></Overlay> */}
+        <SEO
+          title="Hemp Up - Landing Page"
+          keywords={["wellness", "CBD", "herbal", "hemp"]}
+        />
+        <HeroWrap>
+          <WeAreCBDText>
+            <CBDTextUpper>{fadeNSlide(<h3>we are</h3>)}</CBDTextUpper>
+            <CBDTextLower>
+              {fadeNSlide(<h1>CBD</h1>, 500)}
+              {fadeNSlide(<h2>wellness</h2>, 1000)}
+            </CBDTextLower>
+          </WeAreCBDText>
 
-        {fadeNSlide(
-          <Link to="/store/">
-            <ExploreButton>
-              <div> explore our line </div>
-              <ExploreButtonArrow> > </ExploreButtonArrow>
-            </ExploreButton>
-          </Link>,
-          1500
-        )}
+          {fadeNSlide(
+            <Link to="/store/">
+              <ExploreButton>
+                <div> explore our line </div>
+                <ExploreButtonArrow> > </ExploreButtonArrow>
+              </ExploreButton>
+            </Link>,
+            1500
+          )}
 
-        {fadeNSlide(
-          <LandingMessageP>
-            HempUp is the best source for thoughtfully formulated CBD products.
-            Our mission is to provide the highest quality CBD on the market by
-            following unparalleled industry standards. We are dedicated to
-            bringing wellness into the lives of anyone who uses our products.
-          </LandingMessageP>,
-          2000
-        )}
-      </HeroWrap>
+          {fadeNSlide(
+            <LandingMessageP>
+              HempUp is the best source for thoughtfully formulated CBD
+              products. Our mission is to provide the highest quality CBD on the
+              market by following unparalleled industry standards. We are
+              dedicated to bringing wellness into the lives of anyone who uses
+              our products.
+            </LandingMessageP>,
+            2000
+          )}
+        </HeroWrap>
 
-      <LandingMessageDiv>
-        <HomeShop />
-      </LandingMessageDiv>
-      <GlobalStyle />
+        <LandingMessageDiv>
+          <HomeShop />
+        </LandingMessageDiv>
+        <GlobalStyle />
       </Wrapper>
     </Layout>
   )
