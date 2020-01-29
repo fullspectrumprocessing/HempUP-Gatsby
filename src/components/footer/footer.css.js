@@ -123,6 +123,25 @@ export const H3 = styled.h3`
   color: green;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
+  width: 320px;
+  padding-left: 80px;
+  margin: 0 auto;
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
+  @media (min-width: 1300px) {
+    font-size: 20px;
+    height: auto;
+  }
+`
+
+export const H3SignUp = styled.h3`
+  color: green;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  width: 320px;
+  // padding-left: 80px;
+  text-align: left;
   @media (max-width: 800px) {
     font-size: 20px;
   }
