@@ -43,7 +43,7 @@ export default ({props}) => {
    
       <Link to="/store/cart/">
         <CartDiv>
-        <BagSvg src={ShopBag} />
+        <BagSvg src={ShopBag}  alt="shoping cart icon"/>
   {state.numInCart > 0 ?<Item>{state.numInCart}</Item> : null}
         </CartDiv>
       </Link>

@@ -143,7 +143,7 @@ export const A = styled(OutboundLink)`
     height: auto;
   }
 `
-export const P = styled.p`
+export const P = styled.label`
   width: 250px;
   color: #777;
   font-size: 16px;
