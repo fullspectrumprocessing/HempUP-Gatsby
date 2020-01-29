@@ -21,7 +21,8 @@ const GlobalStyle = createGlobalStyle`
       font-style: ${cssVars.fs_n};
       font-size: 95px;
       color: ${cssVars.txtBrwn};
-      text-shadow: ${cssVars.h1shadow} ;
+      text-shadow: ${cssVars.h1shadow};
+      font-display: swap;
     }
 
     h2 {
@@ -31,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 69px;
       font-weight: ${cssVars.fw_4};
       margin: 0;
+      font-display: swap;
     }
 
     h3 {
@@ -40,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 400;
       font-style: ${cssVars.fs_n};
       margin: 0;
+      font-display: swap;
     }
 
 `
