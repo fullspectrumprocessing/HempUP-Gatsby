@@ -10,7 +10,7 @@ export const LogoImage = () => {
       ) {
         childImageSharp {
           fixed(width: 120, height: 70) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
