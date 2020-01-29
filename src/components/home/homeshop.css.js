@@ -100,6 +100,6 @@ margin: 0 auto;
 `
 export const Price = styled.h3`
 font-size: 18px;
-color: ${cssVars.txtBrwn};
+color: ${cssVars.txtGrn};
 font-weight: 00;
 `
