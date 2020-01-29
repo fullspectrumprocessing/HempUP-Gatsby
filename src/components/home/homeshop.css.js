@@ -8,6 +8,7 @@ margin-top: 30px;
 font-weight: 700 !important;
 font-size: 30px;
 padding-top: 20px;
+position: relative;
 font-family: ${cssVars.Objktv};
 `
 export const Wrapper = styled.div`
@@ -100,5 +101,5 @@ margin: 0 auto;
 export const Price = styled.h3`
 font-size: 18px;
 color: ${cssVars.txtBrwn};
-font-weight: 700;
+font-weight: 00;
 `
