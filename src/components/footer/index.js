@@ -56,7 +56,7 @@ const Footer = () => {
       logo: file(relativePath: { eq: "hempUP_final_transparent.png" }) {
         childImageSharp {
           fluid(maxWidth: 500, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
