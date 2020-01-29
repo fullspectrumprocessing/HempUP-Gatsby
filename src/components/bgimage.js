@@ -28,7 +28,7 @@ const BgImage = ({ className, children }) => (
         placeholderImage: file(relativePath: { eq: "landing_bg.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
@@ -68,14 +68,14 @@ const BgImage = ({ className, children }) => (
   />
 )
 
-const StyledWrap = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  overflow: hidden;
-  position: fixed;
+// const StyledWrap = styled.div`
+//   width: 100%;
+//   height: 100vh;
+//   display: flex;
+//   overflow: hidden;
+//   position: fixed;
 
-`
+// `
 const StyledBGImage = styled(BgImage)`
 position: fixed !important;
     top: 0;
