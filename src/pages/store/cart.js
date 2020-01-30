@@ -39,7 +39,7 @@ const CartPage = props => {
 
 
   useEffect(() => {
-    const modalStatus = localStorage.getItem("modalStatus")
+    const modalStatus = sessionStorage.getItem("modalStatus")
     if (modalStatus !== "closed") {
       setModal(true)
     }
@@ -51,7 +51,7 @@ const CartPage = props => {
 
   const closeModal = () => {
     setModal(false)
-    localStorage.setItem("modalStatus", "closed")
+    sessionStorage.setItem("modalStatus", "closed")
     console.log(openModal, "modal status close buttn")
   }
 

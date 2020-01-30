@@ -12,7 +12,8 @@ export const ModalWrapper = styled.div`
   align-items: flex-end;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  // padding-top: 100px;
+  margin-top: 120px;
   left: 0;
   top: 0;
   width: 100%;
