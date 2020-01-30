@@ -96,6 +96,7 @@ const SideDrawer = props => {
       <Parallax pages={1.5}>
         <FlexWrapper>
           <>
+          <Ul>
           <Li>
               <NavTitleLink to="/">home</NavTitleLink>
             </Li>
@@ -159,6 +160,7 @@ const SideDrawer = props => {
             <Li>
               <NavTitleLink to="/contactus">contact us</NavTitleLink>
             </Li>
+            </Ul>
           </>
         </FlexWrapper>
       </Parallax>

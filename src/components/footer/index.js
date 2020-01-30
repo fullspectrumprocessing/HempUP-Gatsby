@@ -17,6 +17,7 @@ import {
   UpperSection,
   LowerSection,
   FooterLink,
+  H3SignUp
 } from "./footer.css"
 import Img from "gatsby-image"
 import { navigationFooterLinks } from "../navigationMap"
@@ -71,8 +72,9 @@ const Footer = () => {
           </LogoWrap>
 
           <NavWrap>
+          <H3>MENU</H3>
             <UL>
-              <H3>MENU</H3>
+        
               {Object.keys(navigationFooterLinks).map((item, inx) => {
                 return (
                   <LI>
@@ -86,7 +88,7 @@ const Footer = () => {
           </NavWrap>
 
           <SubWrapper>
-            <H3>SIGN UP</H3>
+            <H3SignUp>SIGN UP</H3SignUp>
             <P>Sign up for latest offers</P>
             <Form
               onSubmit={Subscribe}
