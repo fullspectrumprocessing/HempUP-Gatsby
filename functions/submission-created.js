@@ -13,11 +13,15 @@ exports.handler = async event => {
         Authorization: `Token ${GATSBY_BUTTONWOOD_KEY}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify(email),
     })
-      .then(response => response.json())
+      .then(response => {
+        response.json()
+        console.log(response, "response")
+      })
       .then(data => {
-        console.log(`Submitted to Buttondown:\n ${data}`)
+        const datar = JSON.stringify(data)
+        console.log(`Submitted to Buttondown:\n ${datar}`)
       })
       .catch(error => ({ statusCode: 422, body: String(error) }))
   } else {
@@ -25,4 +29,3 @@ exports.handler = async event => {
     console.log("PAYLOAD", payload)
   }
 }
- 
