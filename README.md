@@ -8,14 +8,21 @@
 
 ### <strong>Format description comming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
 
+### Errors
+
+- Typekit Error: 
+  ```
+  GET https://use.typekit.net/fdo4rws.css net::ERR_FAILED
+  Failed to decode downloaded font: https://use.typekit.net/fdo4rws.css
+  ```
 
 ### Cart edits
-- Delete button
-- Title Styling 
-- Shadows 
-- Animations 
-- A little more mobiel friendly 
 
+- Delete button
+- Title Styling
+- Shadows
+- Animations
+- A little more mobiel friendly
 
 <!-- - Brand Statement -->
 
