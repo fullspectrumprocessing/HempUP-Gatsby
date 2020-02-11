@@ -15,6 +15,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://fullspectrumprocessing.us4.list-manage.com/subscribe/post?u=6548501c9103012c6ee746617&amp;id=5de09f95ed",
+      },
+    },
+    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: true,
@@ -105,10 +112,9 @@ module.exports = {
         display: `standalone`,
       },
     },
-    
+
     // !this (optional) plugin enables Progressive Web App + Offline functionality
     // !To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    
   ],
 }
