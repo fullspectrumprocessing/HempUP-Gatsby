@@ -11,14 +11,13 @@ exports.handler = async (event, context) => {
     return fetch("https://api.buttondown.email/v1/subscribers", {
       method: "POST",
       headers: {
-        "Authorization": `Token ${GATSBY_BUTTONWOOD_KEY}`,
+        Authorization: `Token ${GATSBY_BUTTONWOOD_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email }),
     })
       .then(response => {
         response.json()
-        console.log(response, "response")
       })
       .then(data => {
         console.log(`Data Submitted to Buttondown:\n ${data}`)
