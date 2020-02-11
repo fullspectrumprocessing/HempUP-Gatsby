@@ -6,7 +6,7 @@ exports.handler = async event => {
   const formName = JSON.parse(event.body).payload.form_name
   console.log(`Recieved a submission: ${email}`)
   console.log(`FORM NAME IS: ${formName}`)
-  if (formName === "subscribe") {
+  if (formName == "subscribe") {
     return fetch("https://api.buttondown.email/v1/subscribers", {
       method: "POST",
       headers: {
@@ -20,5 +20,9 @@ exports.handler = async event => {
         console.log(`Submitted to Buttondown:\n ${data}`)
       })
       .catch(error => ({ statusCode: 422, body: String(error) }))
+  } else {
+    console.log("IF STATEMENT NOT WOKRING")
+    console.log("PAYLOAD", payload)
   }
 }
+ 
