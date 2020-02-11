@@ -21,7 +21,6 @@ exports.handler = async (event, context) => {
         console.log(response, "response")
       })
       .then(data => {
-        let data = body.payload.data
         console.log(`Data Submitted to Buttondown:\n ${data}`)
       })
       .catch(error => ({ statusCode: 422, body: String(error) }))
