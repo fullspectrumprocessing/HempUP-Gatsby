@@ -1,6 +1,6 @@
 require("dotenv").config()
 const fetch = require("node-fetch")
-const { EMAIL_TOKEN } = process.env.GATSBY_BUTTONWOOD_KEY
+const { GATSBY_BUTTONWOOD_KEY } = process.env
 exports.handler = async event => {
   const email = JSON.parse(event.body).payload.email
   const formName = JSON.parse(event.body).payload.form_name
@@ -10,7 +10,7 @@ exports.handler = async event => {
     return fetch("https://api.buttondown.email/v1/subscribers", {
       method: "POST",
       headers: {
-        Authorization: `Token ${EMAIL_TOKEN}`,
+        Authorization: `Token ${GATSBY_BUTTONWOOD_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email }),
