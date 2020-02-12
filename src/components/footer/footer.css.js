@@ -240,12 +240,10 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
   background: linear-gradient(rgba(255,255,255, 0.4), rgba(255,255,255, 0.95));
   z-index: 100;
-  /* width: 100vw; */
   padding: 1rem ;
-  margin-top: 40px;
+  // margin-top: 40px;
   padding: 10px 10px 0 10px;
   text-align: left;
-  /* color: ${cssVars.txtBrwn}; */
   color:#777;
   font-family: ${cssVars.LATO}
 `

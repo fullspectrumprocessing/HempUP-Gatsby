@@ -52,7 +52,7 @@ const Footer = () => {
         }),
       })
         // then go to thank you page
-        .then(() => navigate("/"))
+        .then(() => navigate("/subscribe"))
         .catch(error => alert(error))
     }
   }

@@ -19,8 +19,8 @@ const cssVars = {
   btnGrdntLghtGreen: "rgba(54, 120, 47, 0.75)",
   ttnGrdntDrkGrn: "rgba(54, 120, 47, 0.85)",
   txtLghtGrn: "rgba(236, 255, 214, 1)",
-  bckgrndBeige: "#E9DECE60",
-  h1shadow: "1px 2px 5px #573f27",
+  bckgrndBeige: "#E9DECE80",
+  h1shadow: "1px 1px 5px #573f27",
   pshadow: "1px 1px 3px #E0B487",
   btnShadow: "1px 2px 5px #573f27"
 }
