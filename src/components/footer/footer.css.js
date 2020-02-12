@@ -27,8 +27,7 @@ export const Foot = styled.footer`
 export const UL = styled.ul`
   list-style-type: none;
   width: 320px;
-  margin: 0 auto;
-  padding-left: 80px;
+  text-align: center;
   @media (max-width: 800px) {
     display: flex;
     width: 100%;
@@ -45,7 +44,9 @@ export const NavWrap = styled.div`
   height: 375px;
   margin-top: 40px;
   flex-direction: column;
+  align-items: center;
   @media (max-width: 800px) {
+    align-items: center;
     width: 80%;
     height: auto;
     text-align: center;
@@ -123,8 +124,7 @@ export const H3 = styled.h3`
   color: green;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
-  width: 320px;
-  padding-left: 80px;
+
   @media (max-width: 800px) {
     font-size: 20px;
     text-align: center;
@@ -132,7 +132,7 @@ export const H3 = styled.h3`
   }
   @media (min-width: 1300px) {
     font-size: 20px;
-    height: auto;
+    // height: auto;
   }
 `
 

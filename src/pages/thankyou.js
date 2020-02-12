@@ -4,7 +4,6 @@ import cssVars from "../theme/_variables"
 import GlobalStyle from "../theme/globalStyle"
 import Layout from "../components/layout"
 
-
 const H1 = styled.h1`
   font-size: 50px;
   margin-top: 150px;
@@ -21,8 +20,9 @@ const ThankYou = () => {
   return (
     <>
       <Layout>
-      <H1>Thank You for submitting your message.</H1>
-      <H3>One of our representatives will cintact you shortly</H3>
+        <H1>Thank You!</H1>
+        <H3>We have received your submission.</H3>
+        <H3>One of our representatives will contact you shortly.</H3>
       </Layout>
     </>
   )
