@@ -125,9 +125,10 @@ export const H3 = styled.h3`
   font-size: 14px;
   width: 320px;
   padding-left: 80px;
-  margin: 0 auto;
   @media (max-width: 800px) {
     font-size: 20px;
+    text-align: center;
+    padding: 0px;
   }
   @media (min-width: 1300px) {
     font-size: 20px;
@@ -140,10 +141,10 @@ export const H3SignUp = styled.h3`
   font-family: Montserrat, sans-serif;
   font-size: 14px;
   width: 320px;
-  // padding-left: 80px;
   text-align: left;
   @media (max-width: 800px) {
     font-size: 20px;
+    text-align: center;
   }
   @media (min-width: 1300px) {
     font-size: 20px;
@@ -167,8 +168,9 @@ export const P = styled.label`
   color: #777;
   font-size: 16px;
   padding: 5px;
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
     width: initial;
+    text-align: center;
   }
 `
 export const SubWrapper = styled.div`
@@ -281,12 +283,12 @@ export const LowerSection = styled.section`
   display: flex;
   flex-direction: column;
   font-size: 8px;
-  width:50%;
+  width: 50%;
   align-self: center;
   text-align: center;
   padding: 0px 0px 50px 0px;
   line-height: 2;
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     width: 90%;
   }
 `
