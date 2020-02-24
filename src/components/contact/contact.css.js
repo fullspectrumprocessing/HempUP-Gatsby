@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import GlobalStyle from "../../theme/globalStyle"
 import cssVars from "../../theme/_variables.js"
 
 

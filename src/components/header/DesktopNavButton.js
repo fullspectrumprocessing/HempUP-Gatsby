@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import GlobalStyle from "../../theme/globalStyle"
 import cssVars from "../../theme/_variables.js"
-import { GlobalDispatchContext } from "../../provider/ContextProvider"
-import { GlobalStateContext } from "../../provider/ContextProvider"
+// import { GlobalDispatchContext } from "../../provider/ContextProvider"
+// import { GlobalStateContext } from "../../provider/ContextProvider"
 
 const DesktopNavButtonContainer = styled.div`
   display: inline-flex;
@@ -26,8 +26,8 @@ const StyledLink = styled(Link)`
 `
 
 const DesktopNavButton = props => {
-  const dispatch = useContext(GlobalDispatchContext)
-  const cart = useContext(GlobalStateContext)
+  // const dispatch = useContext(GlobalDispatchContext)
+  // const cart = useContext(GlobalStateContext)
 
   const [state, setState] = useState({
     menuSelected: false,

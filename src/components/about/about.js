@@ -19,9 +19,9 @@ import {
   H3,
   Wrapper,
   AnimateShop,
-  WhyImgDiv,
-  WhatImgDiv,
-  WhoImgDiv,
+  // WhyImgDiv,
+  // WhatImgDiv,
+  // WhoImgDiv,
 } from "./about.css"
 import { Link } from "gatsby"
 import { useSpring } from "react-spring"
