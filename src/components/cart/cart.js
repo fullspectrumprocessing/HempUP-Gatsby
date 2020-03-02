@@ -27,7 +27,7 @@ const Cart = props => {
   } = useContext(StoreContext)
 
   const handleCheckout = () => {
-    // window.open(checkout.webUrl)
+    window.open(checkout.webUrl)
     console.log(props)
   }
 
