@@ -2,7 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 const config = require("./content/meta/config")
-
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
@@ -56,11 +55,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `hemp-up-cbd`,
-        short_name: `hempup`,
+        name: `Hemp Up - A CBD Wellness Company`,
+        short_name: `Hemp Up`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#e9DeCe80`,
+        theme_color: `#4c7448`,
         display: `minimal-ui`,
         icon: `src/images/hempUpLogo.png`, // This path is relative to the root of the site.
         crossOrigin: `use-credentials`,
@@ -78,7 +77,6 @@ module.exports = {
         respectDNT: true,
       },
     },
-
     {
       resolve: "gatsby-source-shopify2",
       options: {
@@ -87,18 +85,6 @@ module.exports = {
         verbose: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-      },
-    },
-
     // !this (optional) plugin enables Progressive Web App + Offline functionality
     // !To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
