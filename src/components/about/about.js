@@ -19,9 +19,12 @@ import {
   H3,
   Wrapper,
   AnimateShop,
-  // WhyImgDiv,
-  // WhatImgDiv,
-  // WhoImgDiv,
+  WhyImgDiv,
+  WhatImgDiv,
+  WhoImgDiv,
+  Formula,
+  Health,
+  Products,
 } from "./about.css"
 import { Link } from "gatsby"
 import { useSpring } from "react-spring"
@@ -68,8 +71,8 @@ const AboutUsComp = () => {
     <>
       <Wrapper>
         <WhatRow>
-          <WhatIsTitle>What Is CBD</WhatIsTitle>
           <WhatIsCbd>
+            <WhatIsTitle>What Is CBD</WhatIsTitle>
             <WhatIsTextWrap>
               CBD, an abbreviation for Cannabidiol, is a chemical compound found
               in cannabis plants. Most people associate cannabis with the
@@ -83,13 +86,17 @@ const AboutUsComp = () => {
               it does have various beneficial uses.
             </WhatIsTextWrap>
           </WhatIsCbd>
-          {/* <WhatImgDiv>IMAGES</WhatImgDiv> */}
+          <WhatImgDiv>
+            <Formula />
+          </WhatImgDiv>
         </WhatRow>
 
         <WhoRow>
-          <WhoWeAreTitle>Who We Are</WhoWeAreTitle>
+          <WhoImgDiv>
+            <Health />
+          </WhoImgDiv>
           <WhoWeAre>
-            {" "}
+            <WhoWeAreTitle>Who We Are</WhoWeAreTitle>{" "}
             <WhoTextWrap>
               Here at Hemp Up, we are dedicated to improving your physical and
               mental well-being. We’ve crafted products with your life in mind
@@ -100,12 +107,11 @@ const AboutUsComp = () => {
               who uses our products.
             </WhoTextWrap>
           </WhoWeAre>
-          {/* <WhoImgDiv>IMAGES</WhoImgDiv> */}
         </WhoRow>
 
         <WhyRow>
-          <WhyUsTitle>Why Us</WhyUsTitle>
           <WhyUs>
+            <WhyUsTitle>Why Us</WhyUsTitle>
             <WhyTextWrap>
               All our products are produced in clean, modern facilities, every
               ingredient is lab-tested, and our local hemp source comes from the
@@ -119,7 +125,9 @@ const AboutUsComp = () => {
               treats for your pets!
             </WhyTextWrap>
           </WhyUs>
-          {/* <WhyImgDiv>IMAGES</WhyImgDiv> */}
+          <WhyImgDiv>
+            <Products />
+          </WhyImgDiv>
         </WhyRow>
         <ContactUs>
           <Link to="/contactus">
