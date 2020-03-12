@@ -26,11 +26,11 @@
 
 <!-- - Brand Statement -->
 
-- Add images to the about page
+- <del>Add images to the about page</del>
 - Shopping Cart
   - Create LogIn capabilities (Shopify, Google, or Netlify)
 - Better Styling
-- Shopify checkout
+- <del>Shopify checkout</del>
 - <strong>Pages and Routes</strong> -->
   - 404 page <em>Make the 404 page pretty unique; look for examples</em>
 - Age Restriction Modal

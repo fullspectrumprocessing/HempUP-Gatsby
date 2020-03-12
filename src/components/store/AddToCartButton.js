@@ -50,6 +50,6 @@ export default (props) => (
     className ="AddToCartButton"
     onClick={ props.handleAddToCart}
   >
-    <Text>add to cart</Text>
+    <Text>add to bag</Text>
   </AddToCartButton>
 )
