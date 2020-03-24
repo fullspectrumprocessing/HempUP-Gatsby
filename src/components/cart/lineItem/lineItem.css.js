@@ -10,55 +10,25 @@ export const H2 = styled.h2`
 
 export const RemoveButton = styled.button`
   color: ${cssVars.txtBrwn};
-  // height: 20%;
-  // align-self: center;
-  // width: 100px;
-position: absolute;
-background-color: transparent;
-top: 0;
-right: 0;
-border: none;
-&:hover {
-  color: #880000;
-}
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  right: 0;
+  border: none;
+  &:hover {
+    color: #880000;
+    background-color: ${cssVars.txtLghtGrn};
+    border: 1px outset green;
+  }
 `
 export const Wrapper = styled.div`
-// width: 650px;
-// background-color: rgba(255, 255, 255, 0.7);
-// padding: 30px 50px;
-// margin: 0 auto;
-// @media (max-width: 1101px) {
-//     max-width: none;
-//     width: 700px;
-// }
-// @media (max-width: 751px) {
-//     max-width: none;
-//     width: 90%;
-// }
-// @media (max-width: 600px) {
-//     margin: 0 auto;
-// }
-// @media (max-width: 500px) {
-//     width: 100%;
-// }
-// @media (max-width: 400px) {
-//     width: 100%;
-// }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `
-// export const Wrapper = styled.div`
-//   width: 75%;
-//   background-color: rgba(255, 255, 255, 0.7);
-//   padding: 30px 40px;
-//   margin: 0px 10px 10px 10px;
-//   display: flex;
-//   justify-content: center;
-//   @media (max-width: 800px) {
-//     width: 100%;
-//     flex-direction: column;
-//   }
-// `
+
 export const ContentRow1 = styled.div`
-width: 235px;
+  width: 235px;
   background: white;
   margin: 0 auto;
   padding-top: 15px;
@@ -92,7 +62,6 @@ export const ContentRow2 = styled.div`
 export const Image = styled.img`
   height: 180px;
   overflow: hidden;
-
 `
 export const ButtonLeft = styled.div`
   padding: 0px;
@@ -126,7 +95,8 @@ export const Card = styled.div`
   border: 1px solid white;
   @media (max-width: 550px) {
     flex-direction: column;
-    width: auto;
+    width: 100%;
+    align-items: center;
   }
 `
 export const Title = styled.h3`

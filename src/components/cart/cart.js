@@ -1,10 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useCallback,
-  useState,
-  useRef,
-} from "react"
+import React, { useContext, useEffect, useState } from "react"
 import StoreContext from "../../context/globalcontext"
 import LineItem from "./lineItem"
 import {
@@ -23,7 +17,7 @@ import { Link } from "gatsby"
 const Cart = props => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-  const [totalCart, setTotalCart] = useState()
+  // const [totalCart, setTotalCart] = useState()
   const getSearchResults = () => {
     console.log(state.numInCart, "HERE I AM")
   }
@@ -33,7 +27,7 @@ const Cart = props => {
   } = useContext(StoreContext)
 
   const handleCheckout = () => {
-    // window.open(checkout.webUrl)
+    window.open(checkout.webUrl)
     console.log(props)
   }
 
@@ -54,7 +48,7 @@ const Cart = props => {
       0
     )
 
-    console.log(totalCart)
+    // console.log(totalCart)
 
     dispatch({ type: "SET_NUM", numInCart: total })
 
@@ -79,14 +73,18 @@ const Cart = props => {
       </ItemWrap>
       <CheckoutWrap>
         <H2>Sub Total</H2>
-        <P>$ {checkout.totalPrice}</P>
+        <P>
+          $ {checkout.totalPrice} <em>*standard shipping added</em>
+        </P>
         <H2>Estimated Total</H2>
         <P>
           $ {estimatedCost} <em>*tax</em>
         </P>
         <br />
         <Button onClick={handleCheckout}>
-          <Link style={{"color": "white"}}to="/store/cart">Check out</Link>
+          <Link style={{ color: "white" }} to="/store/cart">
+            Check out
+          </Link>
         </Button>
       </CheckoutWrap>
     </Wrapper>

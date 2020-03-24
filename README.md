@@ -2,15 +2,15 @@
 
 ### MOBILE RESPONSIVENESS!!!!!
 
-### ABOUT PAGE STYLING (MAke Sections FLipCards with Title on front of card and text on the back)
+## ABOUT PAGE STYLING (MAke Sections FLipCards with Title on front of card and text on the back)
 
-### <strong>Input change function on cart page working (change quantity on cart page) with updating total price correctly. (started working on this, not functioning correctly, commented out code)</strong>
+## <strong>Input change function on cart page working (change quantity on cart page) with updating total price correctly. (started working on this, not functioning correctly, commented out code)</strong>
 
-### <strong>Format description comming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
+## <strong>Format description comming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
 
 ### Errors
 
-- Typekit Error: 
+- Typekit Error:
   ```
   GET https://use.typekit.net/fdo4rws.css net::ERR_FAILED
   Failed to decode downloaded font: https://use.typekit.net/fdo4rws.css
@@ -26,10 +26,11 @@
 
 <!-- - Brand Statement -->
 
+- <del>Add images to the about page</del>
 - Shopping Cart
   - Create LogIn capabilities (Shopify, Google, or Netlify)
 - Better Styling
-- Shopify checkout
+- <del>Shopify checkout</del>
 - <strong>Pages and Routes</strong> -->
   - 404 page <em>Make the 404 page pretty unique; look for examples</em>
 - Age Restriction Modal

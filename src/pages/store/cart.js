@@ -65,13 +65,13 @@ const CartPage = props => {
           </CartHeader>,
           500
         )}
-                <Modal
+                {/* <Modal
           open={openModal}
           toggle={closeModal}
         
         >
         We are unable to process online payments right now, please check back with us shortly.
-        </Modal>
+        </Modal> */}
         <Cart />
       </Layout>
     </>

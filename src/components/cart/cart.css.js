@@ -50,6 +50,7 @@ export const Empty = styled.h3`
 `
 
 export const H2 = styled.h2`
+  text-align: center;
   font-style: normal;
   text-shadow: ${cssVars.pshadow};
   font-family: ${cssVars.LATO};
