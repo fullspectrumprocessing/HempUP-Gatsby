@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Wrapper1, P, DivWrap, H3, Symbol, ToggleWrap, Pdiv } from "./FAQ.css"
+import { Wrapper1, P, DivWrap, H3, Symbol, ToggleWrap, Pdiv } from "./faqcss"
 import styled from "styled-components"
 import Slide from "react-reveal/Slide"
 import Fade from "react-reveal/Fade"
