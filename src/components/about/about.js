@@ -19,12 +19,12 @@ import {
   H3,
   Wrapper,
   AnimateShop,
-  WhyImgDiv,
-  WhatImgDiv,
-  WhoImgDiv,
-  Formula,
-  Health,
-  Products,
+  // WhyImgDiv,
+  // WhatImgDiv,
+  // WhoImgDiv,
+  // Formula,
+  // Health,
+  // Products,
 } from "./about.css"
 import { Link } from "gatsby"
 import { useSpring } from "react-spring"
@@ -86,15 +86,15 @@ const AboutUsComp = () => {
               it does have various beneficial uses.
             </WhatIsTextWrap>
           </WhatIsCbd>
-          <WhatImgDiv>
+          {/* <WhatImgDiv>
             <Formula />
-          </WhatImgDiv>
+          </WhatImgDiv> */}
         </WhatRow>
 
         <WhoRow>
-          <WhoImgDiv>
+          {/* <WhoImgDiv>
             <Health />
-          </WhoImgDiv>
+          </WhoImgDiv> */}
           <WhoWeAre>
             <WhoWeAreTitle>Who We Are</WhoWeAreTitle>{" "}
             <WhoTextWrap>
@@ -125,9 +125,9 @@ const AboutUsComp = () => {
               treats for your pets!
             </WhyTextWrap>
           </WhyUs>
-          <WhyImgDiv>
+          {/* <WhyImgDiv>
             <Products />
-          </WhyImgDiv>
+          </WhyImgDiv> */}
         </WhyRow>
         <ContactUs>
           <Link to="/contactus">

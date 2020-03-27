@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import cssVars from "../../theme/_variables.js"
 import { animated } from "react-spring"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+// import { useStaticQuery, graphql } from "gatsby"
+// import Img from "gatsby-image"
 
 export const Wrapper = styled.div`
   display: flex;
@@ -340,41 +340,41 @@ export const fluidImageAboutGrid = graphql`
   }
 `
 
-export const Data = () => {
-  const aboutImages = useStaticQuery(
-    graphql`
-      query AboutImageQuery {
-        cbdFormula: file(relativePath: { eq: "cbdChem.jpg" }) {
-          ...fluidImageAboutGrid
-        }
-        cbdHealth: file(relativePath: { eq: "cbdHealth.jpg" }) {
-          ...fluidImageAboutGrid
-        }
-        cbdProducts: file(relativePath: { eq: "cbdProducts.jpg" }) {
-          ...fluidImageAboutGrid
-        }
-      }
-    `
-  )
-  return aboutImages
-}
+// export const Data = () => {
+//   const aboutImages = useStaticQuery(
+//     graphql`
+//       query AboutImageQuery {
+//         cbdFormula: file(relativePath: { eq: "cbdChem.jpg" }) {
+//           ...fluidImageAboutGrid
+//         }
+//         cbdHealth: file(relativePath: { eq: "cbdHealth.jpg" }) {
+//           ...fluidImageAboutGrid
+//         }
+//         cbdProducts: file(relativePath: { eq: "cbdProducts.jpg" }) {
+//           ...fluidImageAboutGrid
+//         }
+//       }
+//     `
+//   )
+//   return aboutImages
+// }
 
-export const Formula = () => {
-  const aboutImages = Data()
-  return (
-    <Img
-      fluid={aboutImages.cbdFormula.childImageSharp.fluid}
-      alt="CBD Chemical Formula"
-    />
-  )
-}
+// export const Formula = () => {
+//   const aboutImages = Data()
+//   return (
+//     <Img
+//       fluid={aboutImages.cbdFormula.childImageSharp.fluid}
+//       alt="CBD Chemical Formula"
+//     />
+//   )
+// }
 
-export const Health = () => {
-  const aboutImages = Data()
-  return <Img fluid={aboutImages.cbdHealth.childImageSharp.fluid} />
-}
+// export const Health = () => {
+//   const aboutImages = Data()
+//   return <Img fluid={aboutImages.cbdHealth.childImageSharp.fluid} />
+// }
 
-export const Products = () => {
-  const aboutImages = Data()
-  return <Img fluid={aboutImages.cbdProducts.childImageSharp.fluid} />
-}
+// export const Products = () => {
+//   const aboutImages = Data()
+//   return <Img fluid={aboutImages.cbdProducts.childImageSharp.fluid} />
+// }
