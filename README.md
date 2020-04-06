@@ -1,9 +1,5 @@
 # TO-DOs
 
-### MOBILE RESPONSIVENESS!!!!!
-
-## ABOUT PAGE STYLING (MAke Sections FLipCards with Title on front of card and text on the back) (Kathleen)
-
 ## <strong>Input change function on cart page working (change quantity on cart page) with updating total price correctly. (started working on this, not functioning correctly, commented out code)</strong>
 
 ## <strong>Format description coming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
@@ -23,9 +19,7 @@
 - Shadows
 - Animations
 - A little more mobiel friendly
-
-<!-- - Brand Statement -->
-
+- ABOUT PAGE STYLING (MAke Sections FLipCards with Title on front of card and text on the back) (Kathleen)
 - Add images to the about page
 - Shopping Cart
   - Create LogIn capabilities (Shopify, Google, or Netlify)
