@@ -1,4 +1,4 @@
-import { Link, StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"

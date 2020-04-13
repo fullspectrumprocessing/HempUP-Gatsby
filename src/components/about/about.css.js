@@ -1,9 +1,7 @@
-import React from "react"
 import styled from "styled-components"
 import cssVars from "../../theme/_variables.js"
 import { animated } from "react-spring"
-// import { useStaticQuery, graphql } from "gatsby"
-// import Img from "gatsby-image"
+
 
 export const Wrapper = styled.div`
   display: flex;

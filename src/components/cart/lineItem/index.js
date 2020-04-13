@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback } from "react"
+import React, { useContext, useEffect } from "react"
 
 import StoreContext from "../../../context/globalcontext"
 import {
@@ -13,7 +13,6 @@ import {
 } from "./lineItem.css"
 import { GlobalDispatchContext } from "../../../provider/ContextProvider"
 import { GlobalStateContext } from "../../../provider/ContextProvider"
-// import Cart from "../cart"
 
 const LineItem = props => {
   const dispatch = useContext(GlobalDispatchContext)

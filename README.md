@@ -18,7 +18,7 @@
 - Title Styling
 - Shadows
 - Animations
-- A little more mobiel friendly
+- A little more mobile friendly
 - ABOUT PAGE STYLING (MAke Sections FLipCards with Title on front of card and text on the back) (Kathleen)
 - Add images to the about page
 - Shopping Cart
@@ -30,10 +30,10 @@
 - Age Restriction Modal
 - <del>Google Analytics</del>
   - Config GA
-- Social Media Accts
-  - Instagram
-  - Facebook
-  - Twitter
+- Social Media Accts (Kathleen said she was contacting Grace and Lucia about Socail Media)
+  - Instagram ??
+  - Facebook ??
+  - Twitter ??
   - Youtube ??
   - Pinterest ??
 
@@ -44,7 +44,7 @@
 - Social Media Links and SM acct creation (Kathleen)
 - Facebook API Implementation
 - Get internal IP Address from HempUp team in Colorado (Avery)
-- Customer incentive <em>"Free Shipping on orders over \$100</em>
+- Customer incentive <em>"Free Shipping on orders over $100</em>
 
 ### Things To Think About
 
