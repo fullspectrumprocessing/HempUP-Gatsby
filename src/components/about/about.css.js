@@ -5,7 +5,7 @@ import { animated } from "react-spring"
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   padding: 100px 100px 25px 100px;
   @media (max-width: 800px) {
     margin: 0px;
@@ -25,17 +25,45 @@ export const WhatRow = styled.div`
   flex-direction: column;
   align-self: flex-start;
 `
-
-export const WhatIsCbd = styled.div`
+export const WhatIsFront = styled.div`
   display: flex;
-  width: 50%;
+  width: 500px;
   justify-content: center;
   padding: 5px;
-  margin: 10px;
+  height: 410px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  background: ${cssVars.bckgrndBeige};
+  font-family: ${cssVars.Objktv};
+  padding: 15px;
+  color: ${cssVars.txtBrwnDrk};
+  border: 1px ghostwhite solid;
+  box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+  &:hover {
+    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+  }
+  // @media (max-width: 934px) {
+  //   width: 80%;
+  //   margin: 0 auto;
+  // }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+`
+export const WhatIsCbd = styled.div`
+  display: flex;
+  width: 500px;
+  height: 410px;
+  justify-content: center;
+  padding: 5px;
+  // margin: 10px;
   display: flex;
   justify-content: center;
   @media (max-width: 934px) {
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
   }
   @media (max-width: 750px) {
@@ -45,20 +73,22 @@ export const WhatIsCbd = styled.div`
 `
 
 export const WhatIsTitle = styled.h2`
-  font-size: 40px;
+  font-size: 70px;
   color: ${cssVars.txtGrn};
   font-family: ${cssVars.POSDI};
   font-style: normal;
-  margin-left: 50px;
+  width: 100%;
+  margin-top: 120px;
+  // margin-left: 50px;
   text-shadow: 1px 1px 5px #396f6f80;
   @media (max-width: 934px) {
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
     margin-left: 75px;
     margin-top: 100px;
   }
   @media (max-width: 750px) {
-    width: 100%;
+    // width: 100%;
     margin: 0 auto;
     text-align: center;
     margin-top: 100px;
@@ -69,12 +99,13 @@ export const WhatIsTitle = styled.h2`
 `
 
 export const WhatIsTextWrap = styled.div`
-  text-align: center;
-  width: 95%;
-  margin: 20px 0px 20px 0px;
+  text-align: left;
+  width: 500px;
+  height: 410px;
+  // margin: 20px 0px 20px 0px;
   background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
-  padding: 15px;
+  padding: 40px;
   color: ${cssVars.txtBrwnDrk};
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
@@ -116,34 +147,16 @@ export const WhoWeAre = styled.div`
     margin: 0 auto;
   }
 `
-export const WhoWeAreTitle = styled.h2`
-  font-size: 40px;
-  color: ${cssVars.txtGrn};
-  font-family: ${cssVars.POSDI};
-  font-style: normal;
-  align-self: flex-end;
-  margin-right: 70px;
-  text-shadow: 1px 1px 5px #396f6f80;
-  @media (max-width: 934px) {
-    width: 80%;
-    margin: 0 auto;
-    margin-left: 75px;
-    margin-top: 100px;
-  }
-  @media (max-width: 750px) {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 100px;
-  }
-  @media (max-width: 800px) {
-    margin-top: 50px;
-  }
-`
-export const WhoTextWrap = styled.div`
+export const WhoIsFront = styled.div`
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  padding: 5px;
+  height: 410px;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  width: 95%;
-  margin: 20px 0px 20px 0px;
+
   background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
@@ -153,6 +166,58 @@ export const WhoTextWrap = styled.div`
   &:hover {
     box-shadow: 1px 1px 15px ${cssVars.txtGrn};
   }
+  // @media (max-width: 934px) {
+  //   width: 80%;
+  //   margin: 0 auto;
+  // }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+`
+export const WhoWeAreTitle = styled.h2`
+font-size: 70px;
+color: ${cssVars.txtGrn};
+font-family: ${cssVars.POSDI};
+font-style: normal;
+width: 100%;
+margin-top: 120px;
+// margin-left: 50px;
+text-shadow: 1px 1px 5px #396f6f80;
+@media (max-width: 934px) {
+  // width: 80%;
+  margin: 0 auto;
+  margin-left: 75px;
+  margin-top: 100px;
+}
+@media (max-width: 750px) {
+  // width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+}
+@media (max-width: 800px) {
+  margin-top: 50px;
+}
+
+`
+export const WhoTextWrap = styled.div`
+text-align: left;
+width: 500px;
+height: 410px;
+// margin: 20px 0px 20px 0px;
+background: ${cssVars.bckgrndBeige};
+font-family: ${cssVars.Objktv};
+padding: 60px;
+color: ${cssVars.txtBrwnDrk};
+border: 1px ghostwhite solid;
+box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+&:hover {
+  box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+}
+@media (max-width: 800px) {
+  text-align: center;
+}
 `
 
 export const WhoImgDiv = styled.div`
