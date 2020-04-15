@@ -12,6 +12,7 @@ import {
   WhoIsFront,
   WhatRow,
   WhyRow,
+  WhyFront,
   WhoWeAreTitle,
   WhoTextWrap,
   WhyUsTitle,
@@ -175,20 +176,28 @@ const AboutUsComp = () => {
         </WhoRow>
 
         <WhyRow>
-          <WhyUsTitle>Why Us</WhyUsTitle>
-          <WhyUs>
-            <WhyTextWrap>
-              All our products are produced in clean, modern facilities, every
-              ingredient is lab-tested, and our local hemp source comes from the
-              beautiful state of Colorado. At Hemp Up, we manufacture CBD to
-              enhance the wellness of everybody who uses our products. You may
-              have seen people use sublingual CBD Oils, also known as CBD
-              tinctures or CBD hemp oil. These oils are popular because they are
-              absorbed under the tongue and take effect relatively quickly.
-              However, we offer a range of products designed to plug into any
-              lifestyle, including CBD-infused Coffee, CBD edibles, and even CBD
-              treats for your pets!
-            </WhyTextWrap>
+          <WhyUs
+            value="isFlipped3"
+            onMouseEnter={hover3}
+            onMouseLeave={unHover3}
+          >
+            <ReactCardFlip isFlipped={state.isFlipped3}>
+              <WhyFront key="front">
+                <WhyUsTitle>Why Us</WhyUsTitle>
+              </WhyFront>
+              <WhyTextWrap key="back">
+                All our products are produced in clean, modern facilities, every
+                ingredient is lab-tested, and our local hemp source comes from
+                the beautiful state of Colorado. At Hemp Up, we manufacture CBD
+                to enhance the wellness of everybody who uses our products. You
+                may have seen people use sublingual CBD Oils, also known as CBD
+                tinctures or CBD hemp oil. These oils are popular because they
+                are absorbed under the tongue and take effect relatively
+                quickly. However, we offer a range of products designed to plug
+                into any lifestyle, including CBD-infused Coffee, CBD edibles,
+                and even CBD treats for your pets!
+              </WhyTextWrap>
+            </ReactCardFlip>
           </WhyUs>
           {/* <WhyImgDiv>IMAGES</WhyImgDiv> */}
         </WhyRow>

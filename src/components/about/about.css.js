@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
     margin: 0px;
     width: 100%;
     padding: 0px !important;
+  
   }
 `
 
@@ -24,6 +25,8 @@ export const WhatRow = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+  margin-bottom: 50px;
+  margin-top: 60px;
 `
 export const WhatIsFront = styled.div`
   display: flex;
@@ -34,7 +37,6 @@ export const WhatIsFront = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-
   background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
@@ -49,9 +51,13 @@ export const WhatIsFront = styled.div`
   //   margin: 0 auto;
   // }
   @media (max-width: 750px) {
-    width: 100%;
     margin: 0 auto;
   }
+  @media (max-width: 520px) {
+    width: 300px;
+    height: 440px;
+  }
+  
 `
 export const WhatIsCbd = styled.div`
   display: flex;
@@ -63,17 +69,20 @@ export const WhatIsCbd = styled.div`
   display: flex;
   justify-content: center;
   @media (max-width: 934px) {
-    // width: 80%;
+    width: 80%;
     margin: 0 auto;
   }
   @media (max-width: 750px) {
     width: 100%;
-    margin: 0 auto;
+  }
+  @media (max-width: 520px) {
+    width: 300px;
+    height: 440px;
   }
 `
 
 export const WhatIsTitle = styled.h2`
-  font-size: 70px;
+  font-size: 75px;
   color: ${cssVars.txtGrn};
   font-family: ${cssVars.POSDI};
   font-style: normal;
@@ -82,20 +91,16 @@ export const WhatIsTitle = styled.h2`
   // margin-left: 50px;
   text-shadow: 1px 1px 5px #396f6f80;
   @media (max-width: 934px) {
-    // width: 80%;
-    margin: 0 auto;
-    margin-left: 75px;
-    margin-top: 100px;
   }
   @media (max-width: 750px) {
-    // width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 100px;
   }
   @media (max-width: 800px) {
-    margin-top: 50px;
+  } 
+  @media (max-width: 520px) {
+    width: 300px;
+    font-size: 55px;
   }
+
 `
 
 export const WhatIsTextWrap = styled.div`
@@ -110,10 +115,16 @@ export const WhatIsTextWrap = styled.div`
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
   &:hover {
-    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+    // box-shadow: 1px 1px 15px ${cssVars.txtGrn};
   }
   @media (max-width: 800px) {
-    text-align: center;
+    // text-align: center;
+  }
+  @media (max-width: 520px) {
+    width: 300px;
+    font-size: 13px;
+    padding: 35px;
+    height: 440px;
   }
 `
 
@@ -130,6 +141,7 @@ export const WhoRow = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-end;
+  margin-bottom: 50px;
 `
 export const WhoWeAre = styled.div`
   width: 50%;
@@ -143,6 +155,10 @@ export const WhoWeAre = styled.div`
     margin: 0 auto;
   }
   @media (max-width: 750px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @media (max-width: 520px) {
     width: 100%;
     margin: 0 auto;
   }
@@ -156,7 +172,6 @@ export const WhoIsFront = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-
   background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 15px;
@@ -164,40 +179,38 @@ export const WhoIsFront = styled.div`
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
   &:hover {
-    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+    // box-shadow: 1px 1px 15px ${cssVars.txtGrn};
   }
-  // @media (max-width: 934px) {
-  //   width: 80%;
-  //   margin: 0 auto;
-  // }
+  @media (max-width: 934px) {
+ 
+  }
   @media (max-width: 750px) {
-    width: 100%;
     margin: 0 auto;
+  }
+  @media (max-width: 520px) {
+    width: 300px;
   }
 `
 export const WhoWeAreTitle = styled.h2`
-font-size: 70px;
+font-size: 75px;
 color: ${cssVars.txtGrn};
 font-family: ${cssVars.POSDI};
 font-style: normal;
 width: 100%;
 margin-top: 120px;
-// margin-left: 50px;
 text-shadow: 1px 1px 5px #396f6f80;
 @media (max-width: 934px) {
-  // width: 80%;
-  margin: 0 auto;
-  margin-left: 75px;
-  margin-top: 100px;
+ 
 }
 @media (max-width: 750px) {
-  // width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 100px;
+
 }
 @media (max-width: 800px) {
-  margin-top: 50px;
+
+}
+@media (max-width: 520px) {
+  width: 300px;
+  font-size: 55px;
 }
 
 `
@@ -205,18 +218,22 @@ export const WhoTextWrap = styled.div`
 text-align: left;
 width: 500px;
 height: 410px;
-// margin: 20px 0px 20px 0px;
 background: ${cssVars.bckgrndBeige};
 font-family: ${cssVars.Objktv};
 padding: 60px;
 color: ${cssVars.txtBrwnDrk};
 border: 1px ghostwhite solid;
 box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-&:hover {
-  box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-}
+// &:hover {
+//   box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+// }
 @media (max-width: 800px) {
-  text-align: center;
+  // text-align: center;
+}
+@media (max-width: 520px) {
+  width: 300px;
+  font-size: 13px;
+  padding: 45px;
 }
 `
 
@@ -233,6 +250,37 @@ export const WhyRow = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+  margin-bottom: 50px;
+`
+
+export const WhyFront = styled.div`
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  padding: 5px;
+  height: 410px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: ${cssVars.bckgrndBeige};
+  font-family: ${cssVars.Objktv};
+  padding: 15px;
+  color: ${cssVars.txtBrwnDrk};
+  border: 1px ghostwhite solid;
+  box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+  &:hover {
+    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+  }
+  @media (max-width: 934px) {
+
+  }
+  @media (max-width: 750px) {
+
+  }
+  @media (max-width: 520px) {
+    width: 300px;
+      height: 430px;
+  }
 `
 export const WhyUs = styled.div`
   width: 50%;
@@ -251,43 +299,44 @@ export const WhyUs = styled.div`
   }
 `
 export const WhyUsTitle = styled.h2`
-  font-size: 40px;
-  color: ${cssVars.txtGrn};
-  font-family: ${cssVars.POSDI};
-  font-style: normal;
-  align-self: flex-start;
-  margin-left: 50px;
-  text-shadow: 1px 1px 5px #396f6f80;
-  @media (max-width: 934px) {
-    width: 80%;
-    margin: 0 auto;
-    margin-left: 75px;
-    margin-top: 100px;
-  }
-  @media (max-width: 750px) {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 100px;
-    text-align: center;
-  }
-  @media (max-width: 800px) {
-    margin-top: 50px;
-  }
+font-size: 75px;
+color: ${cssVars.txtGrn};
+font-family: ${cssVars.POSDI};
+font-style: normal;
+width: 100%;
+margin-top: 120px;
+text-shadow: 1px 1px 5px #396f6f80;
+@media (max-width: 934px) {
+ 
+}
+@media (max-width: 750px) {
+
+}
+@media (max-width: 800px) {
+}
+@media (max-width: 520px) {
+  width: 300px;
+  font-size: 55px;
+}
 `
 
 export const WhyTextWrap = styled.div`
-  text-align: center;
-  width: 95%;
-  margin: 20px 0px 20px 0px;
-  background: ${cssVars.bckgrndBeige};
-  font-family: ${cssVars.Objktv};
-  padding: 15px;
-  color: ${cssVars.txtBrwnDrk};
-  border: 1px ghostwhite solid;
-  box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-  &:hover {
-    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-  }
+text-align: left;
+width: 500px;
+height: 410px;
+background: ${cssVars.bckgrndBeige};
+font-family: ${cssVars.Objktv};
+padding: 50px;
+color: ${cssVars.txtBrwnDrk};
+border: 1px ghostwhite solid;
+box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+@media (max-width: 520px) {
+  width: 300px;
+  font-size: 13px;
+  padding: 35px;
+  height: 430px;
+}
+
 `
 
 export const WhyImgDiv = styled.div`
@@ -315,7 +364,6 @@ export const ContactButton = styled.button`
   width: 300px;
   border-radius: 20px;
   background-color: ${cssVars.btnGrdntLghtGreen};
-
   color: ${cssVars.grdntPink};
 `
 export const Animate = styled(animated.div)`
@@ -337,7 +385,6 @@ export const ShopButton = styled.button`
   width: 300px;
   border-radius: 20px;
   background-color: ${cssVars.btnGrdntLghtGreen};
-
   color: ${cssVars.grdntPink};
 `
 export const AnimateShop = styled(animated.div)`
