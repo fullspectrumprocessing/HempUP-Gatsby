@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { Container} from "reactstrap"
+import { Container } from "reactstrap"
 import Img from "gatsby-image"
 import Layout from "../../components/layout"
 import ProductForm from "../../components/store/productform"
@@ -34,7 +34,7 @@ const ProductImage = styled(Img)`
     margin: 0 auto;
   }
 `
-const ProductDescription = styled.text`
+const ProductDescription = styled.div`
   white-space: pre-wrap;
   min-width: 200px;
   width: 80%;
@@ -44,7 +44,6 @@ const ProductDescription = styled.text`
   font-weight: 400;
   pointer-events: none;
   height: 54px;
-  // padding: 20px 20px;
   margin: 0 auto;
   margin-top: 15px;
   @media only screen and (max-width: 576px) {
@@ -58,13 +57,12 @@ const StyledContainer = styled(Container)`
   margin-bottom: 50px;
   width: 100%;
   padding-bottom: 50px;
-  
 `
 
 const Row = styled.div`
   display: flex;
   @media only screen and (max-width: 1200px) {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 `
 const Col = styled.div`
@@ -74,17 +72,13 @@ const Col = styled.div`
     flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
- 
-    }
-    @media only screen and (max-width: 400px) {
-  width: 100%;
-   
-      }
-  
+  }
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+  }
 `
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
-
 
   return (
     <Layout>
@@ -100,12 +94,11 @@ const ProductPage = ({ data }) => {
             <ProductForm variants={product.variants || []} product={product} />
             <ProductDescription>
               {" "}
-              {product.description.split('\\n').map((item, key) => {
+              {product.description.split("\\n").map((item, key) => {
                 return (
                   <span key={key}>
                     {item}
                     <br />
-                  
                   </span>
                 )
               })}
