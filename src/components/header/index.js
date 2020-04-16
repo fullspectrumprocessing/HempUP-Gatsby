@@ -1,4 +1,4 @@
-import { Link, StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
@@ -49,8 +49,8 @@ class Header extends React.Component {
   state = {}
   getMenuName(page) {
     switch (page) {
-      case "FAQ":
-        return "FAQs"
+      case "faq":
+        return "faqs"
       case "/":
         return "home"
       default:

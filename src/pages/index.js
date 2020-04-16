@@ -85,6 +85,7 @@ const LandingMessageDiv = styled.div`
   text-align: center;
   margin-top: 60px;
   margin-bottom: 60px;
+  padding-bottom: 30px;
 
   @media (max-width: 796px) {
     margin: 60px 140px 0 140px;

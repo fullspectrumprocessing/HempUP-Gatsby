@@ -1,13 +1,9 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { MenuImage } from "./menu"
 import { CloseMenuIcon } from "./closemenu"
-
 import SideDrawer from "./sidedrawer"
 import DrawerOverlay from "./draweroverlay"
-import ShopBag from "../../images/bag.svg"
-import cssVars from "../../theme/_variables.js"
 
 const MenuIconWrapper = styled.a`
   align-self: center;

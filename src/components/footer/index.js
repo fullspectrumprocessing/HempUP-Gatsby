@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery, navigate } from "gatsby"
+import addToMailChimp from "gatsby-plugin-mailchimp"
 import {
   Foot,
   UL,
@@ -17,7 +18,7 @@ import {
   UpperSection,
   LowerSection,
   FooterLink,
-  H3SignUp
+  H3SignUp,
 } from "./footer.css"
 import Img from "gatsby-image"
 import { navigationFooterLinks } from "../navigationMap"
@@ -37,7 +38,11 @@ const Footer = () => {
 
     if (info) {
       console.log(info, "this is state")
-      //if state is populated send data to netlefy
+      // if state has info send email to Mailchimp
+      addToMailChimp(info.email).then(({msg, result}) => {
+        console.log(msg, result, "data from mailchimp")
+      })
+      //if state is populated send data to netlify
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -47,7 +52,7 @@ const Footer = () => {
         }),
       })
         // then go to thank you page
-        .then(() => navigate("/"))
+        .then(() => navigate("/subscribe"))
         .catch(error => alert(error))
     }
   }
@@ -72,9 +77,8 @@ const Footer = () => {
           </LogoWrap>
 
           <NavWrap>
-          <H3>MENU</H3>
+            <H3>MENU</H3>
             <UL>
-        
               {Object.keys(navigationFooterLinks).map((item, inx) => {
                 return (
                   <LI>

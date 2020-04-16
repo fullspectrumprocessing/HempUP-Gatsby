@@ -10,7 +10,7 @@ import {
   Price,
 } from "./homeshop.css"
 import { graphql, useStaticQuery } from "gatsby"
-import React, { useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import ItemsCarousel from "react-items-carousel"
 import ViewDetailsButton from "../../components/store/ViewDetailsButton"
@@ -97,7 +97,7 @@ const HomeShop = () => {
     }
   })
 
-// add to cart
+  // add to cart
   const handleAddToCart = node => {
     console.log("TODO: ProductGridItem handleAddToCart", node)
   }
@@ -108,7 +108,7 @@ const HomeShop = () => {
       <Wrapper>
         <div style={{ padding: `0 ${chevronWidth}px` }}>
           <ItemsCarousel
-               alwaysShowChevrons={true}
+            alwaysShowChevrons={true}
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
             numberOfCards={(() => {
@@ -130,157 +130,171 @@ const HomeShop = () => {
             {/* first card------------------------------ */}
             <Card>
               {console.log(data)}
-              <Link to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}>
-              <ContentWrap>
-              
+              <Link
+                to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}
+              >
+                <ContentWrap>
                   <Image
                     fluid={
                       data.allShopifyProduct.edges[8].node.images[0].localFile
                         .childImageSharp.fluid
                     }
                   />
-            
-                <Title>{data.allShopifyProduct.edges[8].node.title}</Title>
 
-                <Price>${data.allShopifyProduct.edges[8].node.variants[0].price}</Price>
-                {/* buttons section */}
-                {/* <AddToCartButton
+                  <Title>{data.allShopifyProduct.edges[8].node.title}</Title>
+
+                  <Price>
+                    ${data.allShopifyProduct.edges[8].node.variants[0].price}
+                  </Price>
+                  {/* buttons section */}
+                  {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[8].node)
                   }}
                 /> */}
 
-                <Link
-                  to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}
-                >
-                  <ViewDetailsButton />
-                </Link>
-              </ContentWrap>
+                  <Link
+                    to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}
+                  >
+                    <ViewDetailsButton />
+                  </Link>
+                </ContentWrap>
               </Link>
             </Card>
             {/* card 2 ---------------------------------- */}
             <Card>
-            <Link to={`/store/product/${data.allShopifyProduct.edges[6].node.handle}/`}>
-              <ContentWrap>
-                <Image
-                  fluid={
-                    data.allShopifyProduct.edges[6].node.images[0].localFile
-                      .childImageSharp.fluid
-                  }
-                />
+              <Link
+                to={`/store/product/${data.allShopifyProduct.edges[6].node.handle}/`}
+              >
+                <ContentWrap>
+                  <Image
+                    fluid={
+                      data.allShopifyProduct.edges[6].node.images[0].localFile
+                        .childImageSharp.fluid
+                    }
+                  />
 
-                <Title>{data.allShopifyProduct.edges[6].node.title}</Title>
+                  <Title>{data.allShopifyProduct.edges[6].node.title}</Title>
 
-          
-                <Price>${data.allShopifyProduct.edges[6].node.variants[0].price}</Price>
+                  <Price>
+                    ${data.allShopifyProduct.edges[6].node.variants[0].price}
+                  </Price>
 
-                {/* buttons section */}
-                {/* <AddToCartButton
+                  {/* buttons section */}
+                  {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[6].node)
                   }}
                 /> */}
 
-                <Link
+                  {/* <Link
                   to={`/store/product/${data.allShopifyProduct.edges[6].node.handle}/`}
-                >
+                > */}
                   <ViewDetailsButton />
-                </Link>
-              </ContentWrap>
+                  {/* </Link> */}
+                </ContentWrap>
               </Link>
             </Card>
             {/* card 3 -------------------------------------------- */}
             <Card>
-            <Link to={`/store/product/${data.allShopifyProduct.edges[2].node.handle}/`}>
-              <ContentWrap>
-                <Image
-                  fluid={
-                    data.allShopifyProduct.edges[2].node.images[0].localFile
-                      .childImageSharp.fluid
-                  }
-                />
+              <Link
+                to={`/store/product/${data.allShopifyProduct.edges[2].node.handle}/`}
+              >
+                <ContentWrap>
+                  <Image
+                    fluid={
+                      data.allShopifyProduct.edges[2].node.images[0].localFile
+                        .childImageSharp.fluid
+                    }
+                  />
 
-                <Title>{data.allShopifyProduct.edges[2].node.title}</Title>
+                  <Title>{data.allShopifyProduct.edges[2].node.title}</Title>
 
-             
-                <Price>${data.allShopifyProduct.edges[2].node.variants[0].price}</Price>
+                  <Price>
+                    ${data.allShopifyProduct.edges[2].node.variants[0].price}
+                  </Price>
 
-                {/* buttons section */}
-                {/* <AddToCartButton
+                  {/* buttons section */}
+                  {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[2].node)
                   }}
                 /> */}
 
-                <Link
+                  {/* <Link
                   to={`/store/product/${data.allShopifyProduct.edges[2].node.handle}/`}
-                >
+                > */}
                   <ViewDetailsButton />
-                </Link>
-              </ContentWrap>
+                  {/* </Link> */}
+                </ContentWrap>
               </Link>
             </Card>
             {/* card 4 ------------------------------------------- */}
             <Card>
-            <Link to={`/store/product/${data.allShopifyProduct.edges[4].node.handle}/`}>
-              <ContentWrap>
-             
+              <Link
+                to={`/store/product/${data.allShopifyProduct.edges[4].node.handle}/`}
+              >
+                <ContentWrap>
                   <Image
                     fluid={
                       data.allShopifyProduct.edges[4].node.images[0].localFile
                         .childImageSharp.fluid
                     }
                   />
-         
-                <Title>{data.allShopifyProduct.edges[4].node.title}</Title>
 
-            
-                <Price>${data.allShopifyProduct.edges[4].node.variants[0].price}</Price>
+                  <Title>{data.allShopifyProduct.edges[4].node.title}</Title>
 
-                {/* buttons section */}
-                {/* <AddToCartButton
+                  <Price>
+                    ${data.allShopifyProduct.edges[4].node.variants[0].price}
+                  </Price>
+
+                  {/* buttons section */}
+                  {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[4].node)
                   }}
                 /> */}
 
-                <Link
-                  to={`/store/product/${data.allShopifyProduct.edges[4].node.handle}/`}
-                >
-                  <ViewDetailsButton />
-                </Link>
-              </ContentWrap>
+                  <Link
+                    to={`/store/product/${data.allShopifyProduct.edges[4].node.handle}/`}
+                  >
+                    <ViewDetailsButton />
+                  </Link>
+                </ContentWrap>
               </Link>
             </Card>
             {/* card 5 --------------------------------------------- */}
             <Card>
-            <Link to={`/store/product/${data.allShopifyProduct.edges[5].node.handle}/`}>
-              <ContentWrap>
-              
-                <Image
-                  fluid={
-                    data.allShopifyProduct.edges[5].node.images[0].localFile
-                      .childImageSharp.fluid
-                  }
-                />
+              <Link
+                to={`/store/product/${data.allShopifyProduct.edges[5].node.handle}/`}
+              >
+                <ContentWrap>
+                  <Image
+                    fluid={
+                      data.allShopifyProduct.edges[5].node.images[0].localFile
+                        .childImageSharp.fluid
+                    }
+                  />
 
-                <Title>{data.allShopifyProduct.edges[5].node.title}</Title>
+                  <Title>{data.allShopifyProduct.edges[5].node.title}</Title>
 
-                <Price>${data.allShopifyProduct.edges[5].node.variants[0].price}</Price>
+                  <Price>
+                    ${data.allShopifyProduct.edges[5].node.variants[0].price}
+                  </Price>
 
-                {/* buttons section */}
-                {/* <AddToCartButton
+                  {/* buttons section */}
+                  {/* <AddToCartButton
                   handleAddToCart={() => {
                     handleAddToCart(data.allShopifyProduct.edges[5].node)
                   }}
                 /> */}
 
-                <Link
+                  {/* <Link
                   to={`/store/product/${data.allShopifyProduct.edges[5].node.handle}/`}
-                >
+                > */}
                   <ViewDetailsButton />
-                </Link>
-              </ContentWrap>
+                  {/* </Link> */}
+                </ContentWrap>
               </Link>
             </Card>
           </ItemsCarousel>

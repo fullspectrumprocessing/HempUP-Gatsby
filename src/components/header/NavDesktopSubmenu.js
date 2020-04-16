@@ -34,7 +34,7 @@ const SubMenu = styled.div`
 
 const SubMenuLinkGen = ({ item }) => {
   console.log("item", item)
-  // Usestate React hook, 
+  // Usestate React hook,
   const [menuSelected, setMenuSelected] = useState("")
 
   const handleMouseOver = evt => {
@@ -52,7 +52,9 @@ const SubMenuLinkGen = ({ item }) => {
         background: cssVars.whiteGlow,
       }}
       onMouseOver={handleMouseOver}
+      onFocus={handleMouseOver}
       onMouseOut={handleMouseOut}
+      onBlur={handleMouseOut}
     >
       {item}
     </SubMenuLink>

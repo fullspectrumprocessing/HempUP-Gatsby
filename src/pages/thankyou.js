@@ -1,13 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import cssVars from "../theme/_variables"
-import GlobalStyle from "../theme/globalStyle"
 import Layout from "../components/layout"
-
 
 const H1 = styled.h1`
   font-size: 50px;
-  margin-top: 150px;
+  margin-top: 50px;
   max-width: 800px;
   text-align: center;
 `
@@ -16,13 +14,28 @@ const H3 = styled.h3`
   font-size: 30px;
   text-align: center;
   max-width: 800px;
+  text-shadow: ${cssVars.h1shadow};
+`
+
+const ThankYouWrap = styled.div`
+  background-color: ${cssVars.bckgrndBeige};
+  text-align: center;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 const ThankYou = () => {
   return (
     <>
       <Layout>
-      <H1>Thank You for submitting your message.</H1>
-      <H3>One of our representatives will cintact you shortly</H3>
+        <ThankYouWrap>
+          <H1>Thank You!</H1>
+          <H3>We have received your submission.</H3>
+          <H3>One of our representatives will contact you shortly.</H3>
+        </ThankYouWrap>
       </Layout>
     </>
   )

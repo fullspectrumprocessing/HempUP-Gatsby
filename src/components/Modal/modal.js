@@ -1,8 +1,7 @@
-import React, { useEffect} from "react"
+import React, { useEffect } from "react"
 import { createPortal } from "react-dom"
 import { ModalWrapper, ModalBody, CloseButton } from "./modal.css"
-// import Optout from "../OptOut/optout"
-import { Link } from "gatsby"
+
 // Creates a portal outside the DOM hierarchy
 const Portal = ({ children }) => {
   const modalRoot = document.getElementById("___gatsby")
@@ -29,7 +28,7 @@ const Modal = ({ children, toggle, open }) => {
     <>
       {!isSSR && (
         <Portal>
-          {(open) && (
+          {open && (
             <ModalWrapper>
               {open && (
                 <ModalBody onClick={event => event.stopPropagation()}>
@@ -37,7 +36,6 @@ const Modal = ({ children, toggle, open }) => {
                   {children}
                 </ModalBody>
               )}
-             
             </ModalWrapper>
           )}
         </Portal>

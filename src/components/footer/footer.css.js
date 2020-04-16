@@ -27,8 +27,7 @@ export const Foot = styled.footer`
 export const UL = styled.ul`
   list-style-type: none;
   width: 320px;
-  margin: 0 auto;
-  padding-left: 80px;
+  text-align: center;
   @media (max-width: 800px) {
     display: flex;
     width: 100%;
@@ -45,7 +44,9 @@ export const NavWrap = styled.div`
   height: 375px;
   margin-top: 40px;
   flex-direction: column;
+  align-items: center;
   @media (max-width: 800px) {
+    align-items: center;
     width: 80%;
     height: auto;
     text-align: center;
@@ -123,15 +124,15 @@ export const H3 = styled.h3`
   color: green;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
-  width: 320px;
-  padding-left: 80px;
-  margin: 0 auto;
+
   @media (max-width: 800px) {
     font-size: 20px;
+    text-align: center;
+    padding: 0px;
   }
   @media (min-width: 1300px) {
     font-size: 20px;
-    height: auto;
+    // height: auto;
   }
 `
 
@@ -140,10 +141,10 @@ export const H3SignUp = styled.h3`
   font-family: Montserrat, sans-serif;
   font-size: 14px;
   width: 320px;
-  // padding-left: 80px;
   text-align: left;
   @media (max-width: 800px) {
     font-size: 20px;
+    text-align: center;
   }
   @media (min-width: 1300px) {
     font-size: 20px;
@@ -167,8 +168,9 @@ export const P = styled.label`
   color: #777;
   font-size: 16px;
   padding: 5px;
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
     width: initial;
+    text-align: center;
   }
 `
 export const SubWrapper = styled.div`
@@ -238,12 +240,10 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
   background: linear-gradient(rgba(255,255,255, 0.4), rgba(255,255,255, 0.95));
   z-index: 100;
-  /* width: 100vw; */
   padding: 1rem ;
-  margin-top: 40px;
+  // margin-top: 40px;
   padding: 10px 10px 0 10px;
   text-align: left;
-  /* color: ${cssVars.txtBrwn}; */
   color:#777;
   font-family: ${cssVars.LATO}
 `
@@ -281,12 +281,12 @@ export const LowerSection = styled.section`
   display: flex;
   flex-direction: column;
   font-size: 8px;
-  width:50%;
+  width: 50%;
   align-self: center;
   text-align: center;
   padding: 0px 0px 50px 0px;
   line-height: 2;
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     width: 90%;
   }
 `

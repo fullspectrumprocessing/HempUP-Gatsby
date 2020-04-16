@@ -5,7 +5,7 @@ const navigationMap = {
   // store: ["pet", "isolate",  "drink", "vitamins",],
   about: [], //["who we are", "why us", "follow", "contact us"],
   // news: [],
-  FAQ: []
+  faqs: []
 }
 
 const navigationFooterLinks = {
@@ -15,7 +15,7 @@ const navigationFooterLinks = {
   "About Us": "/about",
   "Store": "/store",
   // News: "/news",
-  "FAQs": "/FAQ",
+  "FAQs": "/faqs",
   "Privacy Policy": "/privacypolicy",
   "Terms and Conditions": "/termsandconditions",
 }
