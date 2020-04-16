@@ -1,11 +1,9 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import GlobalStyle from "../../theme/globalStyle"
 import cssVars from "../../theme/_variables.js"
-// import { GlobalDispatchContext } from "../../provider/ContextProvider"
-// import { GlobalStateContext } from "../../provider/ContextProvider"
 
 const DesktopNavButtonContainer = styled.div`
   display: inline-flex;
@@ -26,16 +24,9 @@ const StyledLink = styled(Link)`
 `
 
 const DesktopNavButton = props => {
-  // const dispatch = useContext(GlobalDispatchContext)
-  // const cart = useContext(GlobalStateContext)
-
   const [state, setState] = useState({
     menuSelected: false,
   })
-
-  // getSlug(slug){
-  //   return slug
-  // }
 
   const handleMouseOver = evt => {
     setState({ menuSelected: true })
@@ -45,19 +36,10 @@ const DesktopNavButton = props => {
     setState({ menuSelected: false })
   }
 
-  // const check = () => {
-  //  if (cart.numInCart === 0) {
-  //    console.log(cart.numInCart, "IN HRERERERER")
-  //    dispatch({ type: "SET_NUM", numInCart: 0 })
-
-  //  }
-  // }
-
   return (
     <DesktopNavButtonContainer>
       <GlobalStyle />
       <StyledLink
-        // onClick={check}
         to={props.to}
         highlighted={state.menuSelected ? "true" : ""}
         activeStyle={{

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect } from "react"
 import StoreContext from "../../context/globalcontext"
 import LineItem from "./lineItem"
 import {
@@ -17,7 +17,6 @@ import { Link } from "gatsby"
 const Cart = props => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-  // const [totalCart, setTotalCart] = useState()
   const getSearchResults = () => {
     console.log(state.numInCart, "HERE I AM")
   }
