@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-// import React from "react"
-import styled from "styled-components"
-import cssVars from "../../theme/_variables.js"
-import { animated } from "react-spring"
-// import { useStaticQuery, graphql } from "gatsby"
-// import Img from "gatsby-image"
-=======
 import styled from "styled-components"
 import cssVars from "../../theme/_variables.js"
 import { animated } from "react-spring"
 
->>>>>>> 162c177564d50f38bfe2fabcbb39940f619e0f0e
 
 export const Wrapper = styled.div`
   display: flex;
