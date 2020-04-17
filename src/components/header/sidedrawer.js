@@ -155,7 +155,7 @@ const SideDrawer = props => {
               </ExpandedMenuDiv>
             )} */}
             <Li>
-              <NavTitleLink to="/FAQ">FAQs</NavTitleLink>
+              <NavTitleLink to="/faqs">FAQs</NavTitleLink>
             </Li>
             <Li>
               <NavTitleLink to="/contactus">contact us</NavTitleLink>
