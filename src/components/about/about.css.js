@@ -33,10 +33,8 @@ export const WhatIsFront = styled.div`
   display: flex;
   width: 500px;
   justify-content: center;
-  padding: 5px;
   height: 410px;
   display: flex;
-  justify-content: center;
   text-align: center;
   background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
@@ -61,12 +59,12 @@ export const WhatIsFront = styled.div`
   
 `
 export const WhatIsCbd = styled.div`
-  display: flex;
-  width: 500px;
-  height: 410px;
-  justify-content: center;
+  // width: 500px;
+  // height: 410px;
+  width: 50%;
   padding: 5px;
-  // margin: 10px;
+  margin: 10px;
+  align-self: flex-start;
   display: flex;
   justify-content: center;
   @media (max-width: 934px) {
@@ -167,8 +165,6 @@ export const WhoWeAre = styled.div`
 export const WhoIsFront = styled.div`
   display: flex;
   width: 500px;
-  justify-content: center;
-  padding: 5px;
   height: 410px;
   display: flex;
   justify-content: center;
@@ -257,8 +253,6 @@ export const WhyRow = styled.div`
 export const WhyFront = styled.div`
   display: flex;
   width: 500px;
-  justify-content: center;
-  padding: 5px;
   height: 410px;
   display: flex;
   justify-content: center;
