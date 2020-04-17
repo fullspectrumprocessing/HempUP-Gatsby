@@ -44,9 +44,9 @@ export const WhatIsFront = styled.div`
   color: ${cssVars.txtBrwnDrk};
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-  &:hover {
-    box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-  }
+  // &:hover {
+  //   box-shadow: 1px 1px 15px ${cssVars.txtGrn};
+  // }
   // @media (max-width: 934px) {
   //   width: 80%;
   //   margin: 0 auto;
