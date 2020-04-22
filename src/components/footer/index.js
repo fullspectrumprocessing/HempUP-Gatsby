@@ -1,11 +1,16 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery, navigate } from "gatsby"
 import addToMailChimp from "gatsby-plugin-mailchimp"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import {
   Foot,
   UL,
   SubWrapper,
   LogoWrap,
+  SocialWrap,
+  FbookWrap,
+  InstaWrap,
+  H3Follow,
   H3,
   LI,
   P,
@@ -65,7 +70,21 @@ const Footer = () => {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
-      }
+      },
+      fb: file(relativePath: { eq: "fb.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      },
+      insta: file(relativePath: { eq: "insta.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      },
     }
   `)
   return (
@@ -114,6 +133,28 @@ const Footer = () => {
               />
               <Submit type="submit">Sign Up</Submit>
             </Form>
+
+            <H3Follow>Follow Us</H3Follow>
+          <SocialWrap>
+            <OutboundLink
+             target="_blank"
+             rel="noopener noreferrer"
+             href="https://www.facebook.com/HempUp-100432164983805"
+            >
+            <FbookWrap>
+            <Img fluid={data.fb.childImageSharp.fluid} alt="Facebook logo" />
+            </FbookWrap>
+            </OutboundLink>
+            <OutboundLink 
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/hempupcbd"
+            >
+            <InstaWrap>
+            <Img fluid={data.insta.childImageSharp.fluid} alt="Instagram logo" />
+            </InstaWrap>
+            </OutboundLink>
+          </SocialWrap>
           </SubWrapper>
         </Foot>
       </UpperSection>
