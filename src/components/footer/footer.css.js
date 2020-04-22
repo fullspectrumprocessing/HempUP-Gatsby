@@ -120,6 +120,30 @@ export const LogoWrap = styled.div`
     margin-left: -50px;
   }
 `
+
+export const  SocialWrap = styled.div`
+display: flex;
+flex-direction: row;
+`
+
+export const FbookWrap = styled.div`
+width: 30px;
+height: 30px;
+margin: 5px;
+:hover {
+  opacity: .6;
+}
+`
+
+export const InstaWrap = styled.div`
+width: 30px;
+height: 30px;
+margin: 5px;
+:hover {
+  opacity: .6;
+}
+`
+
 export const H3 = styled.h3`
   color: green;
   font-family: Montserrat, sans-serif;
@@ -151,6 +175,23 @@ export const H3SignUp = styled.h3`
     height: auto;
   }
 `
+export const H3Follow = styled.h3`
+  color: green;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  width: 320px;
+  text-align: left;
+  padding-top: 25px;
+  @media (max-width: 800px) {
+    font-size: 20px;
+    text-align: center;
+  }
+  @media (min-width: 1300px) {
+    font-size: 20px;
+    height: auto;
+  }
+`
+
 export const A = styled(OutboundLink)`
   color: green;
   font-family: Montserrat, sans-serif;
