@@ -134,7 +134,7 @@ const Footer = () => {
               <Submit type="submit">Sign Up</Submit>
             </Form>
 
-            <H3Follow>Follow Us</H3Follow>
+            <H3Follow>FOLLOW US</H3Follow>
           <SocialWrap>
             <OutboundLink
              target="_blank"

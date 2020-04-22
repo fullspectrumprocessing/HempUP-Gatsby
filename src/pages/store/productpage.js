@@ -43,11 +43,13 @@ const ProductDescription = styled.div`
   color: #707070;
   font-weight: 400;
   pointer-events: none;
-  height: 54px;
+  // height: 54px;
   margin: 0 auto;
   margin-top: 15px;
   @media only screen and (max-width: 576px) {
     text-align: center;
+    height: auto;
+    padding-top: 20px;
   }
 `
 const StyledContainer = styled(Container)`

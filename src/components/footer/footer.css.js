@@ -181,8 +181,8 @@ export const H3Follow = styled.h3`
   font-size: 14px;
   width: 320px;
   text-align: left;
+  padding-top: 25px;
   @media (max-width: 800px) {
-    padding-top: 20px;
     font-size: 20px;
     text-align: center;
   }
