@@ -45,16 +45,17 @@
 - <strong>Input change function on cart page working (change quantity on cart page) with updating total price correctly. (started working on this, not functioning correctly, commented out code)</strong>
 - Text Shadows on FAqs page
 - Animations
-- Mobile Responsiveness (Product description page, not sized for smaller screens to acoutn for the new product information coming from shopify )<strong>Format description coming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong>
+-<del> Mobile Responsiveness (Product description page, not sized for smaller screens to acoutn for the new product information coming from shopify )</del>
+<del><strong>Format description coming in from Shopify (paragraph spaces, list bullet points). Troubleshoot html format not coming in. </strong></del>
 - ABOUT PAGE STYLING (Make Sections FLipCards with Title on front of card and text on the back) (Kathleen)
 - Add images to the about page
 - Better Styling
 - <strong>Pages and Routes</strong> -->
   - 404 page <em>Make the 404 page pretty unique; look for examples</em>
 - Age Restriction Modal
-- Social Media Accts (Kathleen said she was contacting Grace and Lucia about Socail Media)
-  - Instagram ??
-  - Facebook ??
+- <del>Social Media Accts (Kathleen said she was contacting Grace and Lucia about Socail Media)</del>
+  - <del>Instagram </del>
+  - <del>Facebook </del>
   - Twitter ??
   - Youtube ??
   - Pinterest ??
@@ -63,7 +64,7 @@
 
 - News API Research (Kathleen)
 - Reviews/Comments API (Kathleen)
-- Social Media Links and SM acct creation (Kathleen)
+- <del>Social Media Links and SM acct creation (Kathleen)</del>
 - Facebook API Implementation
 - Get internal IP Address from HempUp team in Colorado (Avery)
 - Customer incentive <em>"Free Shipping on orders over \$100</em>
