@@ -124,6 +124,7 @@ export const LogoWrap = styled.div`
 export const  SocialWrap = styled.div`
 display: flex;
 flex-direction: row;
+margin-top: 6px;
 `
 
 export const FbookWrap = styled.div`
