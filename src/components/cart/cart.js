@@ -73,11 +73,11 @@ const Cart = props => {
       <CheckoutWrap>
         <H2>Sub Total</H2>
         <P>
-          $ {checkout.totalPrice} <em>*standard shipping added</em>
+          $ {checkout.totalPrice} <em>*before tax</em>
         </P>
-        <H2>Estimated Total</H2>
+        <H2>Total</H2>
         <P>
-          $ {estimatedCost} <em>*tax</em>
+          $ {estimatedCost} <em>*with estimated tax</em>
         </P>
         <br />
         <Button onClick={handleCheckout}>

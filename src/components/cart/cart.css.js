@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     padding: 0px;
   }
   &:hover {
-    box-shadow: 1px 2px 15px darkgreen;
+    box-shadow: 1px 2px 15px white;
   }
 `
 
@@ -90,8 +90,8 @@ export const CheckoutWrap = styled.div`
 export const Button = styled.div`
   background: ${cssVars.btnGrdntLghtGreen};
   color: white !important;
-  font-size: 40px;
-  padding: 15px;
+  font-size: 38px;
+  // padding: 15px;
   width: 90%;
   height: 100px;
   text-align: center;

@@ -130,6 +130,7 @@ const ExploreButton = styled.button`
   letter-spacing: 3px;
   border: none;
   margin: 0 auto;
+  padding: 13px;
   background: radial-gradient(rgba(54, 120, 47, 0.63), rgba(54, 120, 47, 0.85));
   color: ${cssVars.txtLghtGrn};
   font-family: ${cssVars.Objktv};

@@ -175,7 +175,7 @@ height: 70px;
     product &&
     product.node && (
       <GridItem>
-
+        {console.log(product, "produce")}
         <Link to={`/store/product/${product.node.handle}/`}>
           <GridImg
             fluid={product.node.images[0].localFile.childImageSharp.fluid}

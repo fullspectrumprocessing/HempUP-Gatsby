@@ -127,6 +127,7 @@ const LineItem = props => {
   return (
     <Wrapper>
       {console.log(state, "line_state!!!")}
+      {console.log(line_item, "line_item!!!")}
       <Card>
         <ContentRow1>{variantImage}</ContentRow1>
         <ContentRow2>
