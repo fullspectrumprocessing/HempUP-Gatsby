@@ -14,7 +14,11 @@ import { GlobalDispatchContext } from "../../provider/ContextProvider"
 import { GlobalStateContext } from "../../provider/ContextProvider"
 import { Link } from "gatsby"
 
+
 const Cart = props => {
+  console.log(props, "PROPS IN CART")
+  const product = props;
+  console.log(product, "PRODUCT PROPS");
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
   const getSearchResults = () => {
@@ -27,11 +31,13 @@ const Cart = props => {
 
   const handleCheckout = () => {
     window.open(checkout.webUrl)
-    console.log(props)
+  
   }
 
+  console.log(checkout, "CHECKOUT CART")
+
   const line_items = checkout.lineItems.map(line_item => {
-    return <LineItem key={line_item.id.toString()} line_item={line_item} />
+    return <LineItem key={line_item.id.toString()} line_item={line_item} product={product}/>
   })
 
   useEffect(() => {
@@ -89,5 +95,7 @@ const Cart = props => {
     </Wrapper>
   )
 }
+
+
 
 export default Cart

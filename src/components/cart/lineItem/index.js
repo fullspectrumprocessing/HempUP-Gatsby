@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react"
-
+import React, { useContext, useEffect, useState } from "react"
+import {Link } from 'gatsby'
 import StoreContext from "../../../context/globalcontext"
 import {
   Wrapper,
@@ -14,12 +14,16 @@ import {
 import { GlobalDispatchContext } from "../../../provider/ContextProvider"
 import { GlobalStateContext } from "../../../provider/ContextProvider"
 
+
+
+
 const LineItem = props => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-
-  const { line_item } = props
-
+console.log(props, "PROPS");
+  const { line_item, product } = props
+  console.log(product, "PRODUCT")
+  const [title, setTitle] = useState("")
   //!quantity handlinh hook
   // const [quantityChange, setQuantityChange] = useState(false)
   // const [quantityCart, setQuantityCart] = useState(line_item.quantity ? line_item.quantity : quantityCart)
@@ -32,6 +36,27 @@ const LineItem = props => {
   } = useContext(StoreContext)
 
   const checkState = () => {}
+
+  const getLink = () => {
+    console.log(product.products, "PRODUCT IN HERE")
+    let arr = product.products;
+    let name = "";
+    for (let i = 0; i < arr.length; i++ ) {
+      console.log(arr[i].node.title);
+      console.log(line_item.title)
+      if (arr[i].node.title === line_item.title) {
+        name = arr[i].node.handle;
+        setTitle(name);
+      }
+
+    }
+   
+    console.log(title, "TITLE");
+  }
+
+  useEffect(() => {
+    getLink();
+  })
 
   const variantImage = line_item.variant.image ? (
     <Image
@@ -65,7 +90,6 @@ const LineItem = props => {
 
     console.log(state, "STATE!!")
 
-    // checkState()
   }
 
   // added------------------------------------
@@ -131,13 +155,13 @@ const LineItem = props => {
       <Card>
         <ContentRow1>{variantImage}</ContentRow1>
         <ContentRow2>
-          <Title>
+         <Link to={`/store/product/${title}/`}> <Title>
             {line_item.title}
             {`  `}
             {line_item.variant.title === !"Default Title"
               ? line_item.variant.title
               : ""}
-          </Title>
+          </Title></Link>
           {/* <Price>{selectedOptions}</Price> */}
           <Price>${line_item.variant.price}</Price>
           {/* <Input
