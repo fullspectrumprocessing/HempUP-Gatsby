@@ -105,6 +105,9 @@ export const Title = styled.h3`
   color: grey;
   font-family: ${cssVars.Objktv};
   padding-bottom: 20px;
+  :hover {
+    color: ${cssVars.txtBrwn};
+  }
 `
 export const Price = styled.h3`
   font-size: 18px;

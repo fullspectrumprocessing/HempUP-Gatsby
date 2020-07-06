@@ -32,7 +32,7 @@ const fadeNSlide = (component, delay = 0) => {
     </Fade>
   )
 }
-const CartPage = props => {
+const CartPage = ({ data }) => {
   const [openModal, setModal] = useState(false)
 
   useEffect(() => {
@@ -67,10 +67,62 @@ const CartPage = props => {
         >
         We are unable to process online payments right now, please check back with us shortly.
         </Modal> */}
-        <Cart />
+        <Cart products={data.allShopifyProduct.edges}/>
       </Layout>
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    allShopifyProduct(sort: { fields: [createdAt], order: ASC }) {
+      edges {
+        node {
+          id
+          productType
+          title
+          handle
+          createdAt
+          shopifyId
+          options {
+            id
+            name
+            values
+          }
+          variants {
+            id
+            title
+            price
+            availableForSale
+            shopifyId
+            selectedOptions {
+              name
+              value
+            }
+          }
+          images {
+            id
+            originalSrc
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+          priceRange {
+            maxVariantPrice {
+              amount
+            }
+            minVariantPrice {
+              amount
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default CartPage
