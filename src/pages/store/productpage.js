@@ -43,7 +43,6 @@ const ProductDescription = styled.div`
   color: #707070;
   font-weight: 400;
   pointer-events: none;
-  // height: 54px;
   margin: 0 auto;
   margin-top: 15px;
   @media only screen and (max-width: 576px) {
@@ -105,17 +104,17 @@ const ProductPage = ({ data }) => {
                 )
               })}
             </ProductDescription>
-            {console.log(product, "descrtipion")}
           </Col>
         </Row>
-        <div class="yotpo yotpo-main-widget"
-data-product-id={"SKU/" + product.id}
-data-price="Product Price"
-data-currency="Price Currency"
-data-name="Product Title"
-data-url="The urlof your product page"
-data-image-url="The product image url">
-</div>
+        <div
+          class="yotpo yotpo-main-widget"
+          data-product-id={"SKU/" + product.id}
+          data-price="Product Price"
+          data-currency="Price Currency"
+          data-name="Product Title"
+          data-url="The urlof your product page"
+          data-image-url="The product image url"
+        ></div>
       </StyledContainer>
     </Layout>
   )

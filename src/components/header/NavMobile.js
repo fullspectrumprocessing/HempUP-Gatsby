@@ -37,7 +37,7 @@ class NavMobile extends React.Component {
   //refactored a bit so the desktop nav can share the same state as the mobile nav
   // NEVERMIND... but now its a big loop. could refactor for readability
   handleSetSubMenu = type => {
-    console.log("handleSetSubMenu", this.state)
+
 
     this.setState(
       prevState => {
@@ -53,7 +53,7 @@ class NavMobile extends React.Component {
         return newState
       },
       () => {
-        console.log("handleSetSubMenu post", this.state)
+    
       }
     )
   }

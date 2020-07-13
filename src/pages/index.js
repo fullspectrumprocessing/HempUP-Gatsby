@@ -168,29 +168,11 @@ const HomeProductWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `
-
-//! Does ths have a special purpose ???
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
 `
-
-//!  Layout alreadyt has an overlay so this is redundant
-
-// const Overlay = styled.div`
-//  width: 100%;
-//  min-height: 1175px;
-//  background-color: rgba(255, 255, 255, 0.35);
-//  position: absolute;
-//  top: 0;
-//  bottom: 0;
-//  z-index: -20;
-//  @media (max-width: 1100px) {
-//    min-height: 1000px;
-//  }
-// `
-
 const HeroWrap = styled.div`
   margin: 80px 0px;
   padding: 80px 0px;
@@ -214,7 +196,6 @@ const Landing = () => {
   return (
     <Layout>
       <Wrapper>
-        {/* <Overlay></Overlay> */}
         <SEO
           title="Hemp Up - Landing Page"
           keywords={["wellness", "CBD", "herbal", "hemp"]}

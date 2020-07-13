@@ -14,16 +14,10 @@ import { GlobalDispatchContext } from "../../provider/ContextProvider"
 import { GlobalStateContext } from "../../provider/ContextProvider"
 import { Link } from "gatsby"
 
-
 const Cart = props => {
-  console.log(props, "PROPS IN CART")
-  const product = props;
-  console.log(product, "PRODUCT PROPS");
+  const product = props
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-  const getSearchResults = () => {
-    console.log(state.numInCart, "HERE I AM")
-  }
 
   const {
     store: { checkout },
@@ -31,35 +25,31 @@ const Cart = props => {
 
   const handleCheckout = () => {
     window.open(checkout.webUrl)
-  
   }
 
-  console.log(checkout, "CHECKOUT CART")
-
   const line_items = checkout.lineItems.map(line_item => {
-    return <LineItem key={line_item.id.toString()} line_item={line_item} product={product}/>
+    return (
+      <LineItem
+        key={line_item.id.toString()}
+        line_item={line_item}
+        product={product}
+      />
+    )
   })
 
   useEffect(() => {
     let array = []
     const reducer = (accumulator, currentValue) => accumulator + currentValue
-    console.log(checkout)
+
     for (let i = 0; i < checkout.lineItems.length; i++) {
       array.push(checkout.lineItems[i].quantity)
-      console.log(array, "array")
     }
     let total = array.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
       0
     )
 
-    // console.log(totalCart)
-
     dispatch({ type: "SET_NUM", numInCart: total })
-
-    console.log(total, "final")
-
-    getSearchResults()
   }, [checkout.lineItems.length])
 
   const estimatedCost = (
@@ -95,7 +85,5 @@ const Cart = props => {
     </Wrapper>
   )
 }
-
-
 
 export default Cart

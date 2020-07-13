@@ -83,22 +83,16 @@ const PrivacyMain = () => {
         <DivWrap>
           {/* Section 1 */}
           <Shell>
-            <ToggleWrap  onClick={() => {
-                    toggle.show1 === "-"
-                      ? setToggle({ ...toggle, show1: "+" })
-                      : setToggle({ ...toggle, show1: "-" })
-                  }}>
+            <ToggleWrap
+              onClick={() => {
+                toggle.show1 === "-"
+                  ? setToggle({ ...toggle, show1: "+" })
+                  : setToggle({ ...toggle, show1: "-" })
+              }}
+            >
               <Shell2>
                 <H3>What is CBD?</H3>
-                <Symbol
-                  // onClick={() => {
-                  //   toggle.show1 === "-"
-                  //     ? setToggle({ ...toggle, show1: "+" })
-                  //     : setToggle({ ...toggle, show1: "-" })
-                  // }}
-                >
-                  {toggle.show1}
-                </Symbol>
+                <Symbol>{toggle.show1}</Symbol>
               </Shell2>
               <Pdiv
                 style={
@@ -119,11 +113,13 @@ const PrivacyMain = () => {
 
           {/* Section 2 */}
           <Shell>
-            <ToggleWrap onClick={() => {
-                    toggle.show2 === "-"
-                      ? setToggle({ ...toggle, show2: "+" })
-                      : setToggle({ ...toggle, show2: "-" })
-                  }}>
+            <ToggleWrap
+              onClick={() => {
+                toggle.show2 === "-"
+                  ? setToggle({ ...toggle, show2: "+" })
+                  : setToggle({ ...toggle, show2: "-" })
+              }}
+            >
               <Shell2>
                 <H3>Is CBD legal?</H3>
                 <Symbol
@@ -159,11 +155,13 @@ const PrivacyMain = () => {
 
           {/* Section 3 */}
           <Shell>
-            <ToggleWrap onClick={() => {
-                    toggle.show3 === "-"
-                      ? setToggle({ ...toggle, show3: "+" })
-                      : setToggle({ ...toggle, show3: "-" })
-                  }}>
+            <ToggleWrap
+              onClick={() => {
+                toggle.show3 === "-"
+                  ? setToggle({ ...toggle, show3: "+" })
+                  : setToggle({ ...toggle, show3: "-" })
+              }}
+            >
               <Shell2>
                 <H3>Will CBD get me high?</H3>
                 <Symbol
@@ -195,11 +193,13 @@ const PrivacyMain = () => {
 
           {/* Section 4 */}
           <Shell>
-            <ToggleWrap onClick={() => {
-                    toggle.show4 === "-"
-                      ? setToggle({ ...toggle, show4: "+" })
-                      : setToggle({ ...toggle, show4: "-" })
-                  }}>
+            <ToggleWrap
+              onClick={() => {
+                toggle.show4 === "-"
+                  ? setToggle({ ...toggle, show4: "+" })
+                  : setToggle({ ...toggle, show4: "-" })
+              }}
+            >
               <Shell2>
                 <H3>How is hemp different from marijuana?</H3>
                 <Symbol
@@ -233,11 +233,13 @@ const PrivacyMain = () => {
 
           {/* Section 5 */}
           <Shell>
-            <ToggleWrap onClick={() => {
-                    toggle.show5 === "-"
-                      ? setToggle({ ...toggle, show5: "+" })
-                      : setToggle({ ...toggle, show5: "-" })
-                  }}>
+            <ToggleWrap
+              onClick={() => {
+                toggle.show5 === "-"
+                  ? setToggle({ ...toggle, show5: "+" })
+                  : setToggle({ ...toggle, show5: "-" })
+              }}
+            >
               <Shell2>
                 <H3>Does HempUp CBD need to be refrigerated?</H3>
                 <Symbol

@@ -2,19 +2,15 @@
 
 const navigationMap = {
   "/": [],
-  // store: ["pet", "isolate",  "drink", "vitamins",],
-  about: [], //["who we are", "why us", "follow", "contact us"],
-  // news: [],
+  about: [], 
   faqs: []
 }
 
 const navigationFooterLinks = {
   "Home": "/",
   "Contact Us": "/contactus",
-  // "Sign up for our Newsletter": "/subscribe",
   "About Us": "/about",
   "Store": "/store",
-  // News: "/news",
   "FAQs": "/faqs",
   "Privacy Policy": "/privacypolicy",
   "Terms and Conditions": "/termsandconditions",

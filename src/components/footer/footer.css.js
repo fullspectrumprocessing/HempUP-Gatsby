@@ -59,21 +59,6 @@ export const LI = styled.li`
   width: 90%;
 `
 
-// export const StyledLink = styled(Link)`
-//   text-decoration: none;
-//   font-family: Montserrat, sans-serif;
-//   font-size: 14px;
-//   padding: 0;
-//   margin: 0;
-//   color: green;
-//   &:hover {
-//     color: yellow;
-//   }
-//   @media (min-width: 1300px) {
-//     font-size: 20px;
-//     height: auto;
-//   }
-// `
 export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -121,28 +106,28 @@ export const LogoWrap = styled.div`
   }
 `
 
-export const  SocialWrap = styled.div`
-display: flex;
-flex-direction: row;
-margin-top: 6px;
+export const SocialWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 6px;
 `
 
 export const FbookWrap = styled.div`
-width: 30px;
-height: 30px;
-margin: 5px;
-:hover {
-  opacity: .6;
-}
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  :hover {
+    opacity: 0.6;
+  }
 `
 
 export const InstaWrap = styled.div`
-width: 30px;
-height: 30px;
-margin: 5px;
-:hover {
-  opacity: .6;
-}
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  :hover {
+    opacity: 0.6;
+  }
 `
 
 export const H3 = styled.h3`
@@ -223,10 +208,6 @@ export const SubWrapper = styled.div`
   @media (max-width: 800px) {
     width: 80%;
     align-items: center;
-    // text-align: left;
-    // align-items: left;
-    // padding-left: 30px;
-    // margin-left: 18px;
   }
 `
 export const Form = styled.form`
@@ -280,25 +261,26 @@ export const Div = styled.div`
 export const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
-  background: linear-gradient(rgba(255,255,255, 0.4), rgba(255,255,255, 0.95));
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.95)
+  );
   z-index: 100;
-  padding: 1rem ;
-  // margin-top: 40px;
+  padding: 1rem;
   padding: 10px 10px 0 10px;
   text-align: left;
-  color:#777;
-  font-family: ${cssVars.LATO}
+  color: #777;
+  font-family: ${cssVars.LATO};
 `
 export const StyledLink = styled(Link)`
-  /* color: ${cssVars.txtBrwn}; */
-  color:#777;
+  color: #777;
   margin: 5px 0px;
   margin-left: 0px !important;
   padding: 0px;
   font-size: 16px;
   text-decoration: none;
   :hover {
-      color:${cssVars.txtGrn} !important;
+    color: ${cssVars.txtGrn} !important;
   }
   @media (min-width: 796px) {
     flex-direction: column;

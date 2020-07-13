@@ -171,6 +171,5 @@ export const AdressWrapper = styled.div`
   @media (max-width: 920px) {
     width: 100%;
     height: auto;
-    // border: 2px solid white;
   }
 `

@@ -1,12 +1,8 @@
 @import "variables.scss";
 
 .side-drawer {
-  // height: 97.5%;
   height: calc(100% - 4.30em);
-  // margin-top: 19%;
-  // background: linear-gradient(rgba(255, 238, 238, 0.623),rgba(221, 239, 187, 0.699) );
   background: rgba($color: #ffffff, $alpha: 0.75);
-  // box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -26,14 +22,6 @@
   justify-content: space-around;
 }
 
-// .side-drawer ul {
-//   height: 100%;
-//   list-style: none;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-// }
-
 .side-drawer li {
   margin: 0.5rem 0;
   list-style: none;
@@ -49,7 +37,6 @@
 
 .side-drawer a:hover,
 .side-drawer a:active {
-  // color: #fa923f;
   color: rgba(76, 116, 72, 1);
 }
 

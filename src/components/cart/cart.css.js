@@ -91,7 +91,6 @@ export const Button = styled.div`
   background: ${cssVars.btnGrdntLghtGreen};
   color: white !important;
   font-size: 38px;
-  // padding: 15px;
   width: 90%;
   height: 100px;
   text-align: center;

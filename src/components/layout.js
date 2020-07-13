@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react"
+import React, { useContext, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import GlobalStyle from "../theme/globalStyle"
@@ -26,49 +26,40 @@ const Main = styled.main`
   align-items: center;
 `
 
-const Layout = ({ children}) => {
-
+const Layout = ({ children }) => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
 
-    //!Initializing context
-    const {
-    
-      store: { client, adding, checkout },
-    } = useContext(StoreContext)
- 
- 
+  //!Initializing context
+  const {
+    store: { client, adding, checkout },
+  } = useContext(StoreContext)
+
   useEffect(() => {
     let array = []
-    // const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
     for (let i = 0; i < checkout.lineItems.length; i++) {
-        array.push(checkout.lineItems[i].quantity)
+      array.push(checkout.lineItems[i].quantity)
     }
-     let total = array.reduce(
-      ( accumulator, currentValue ) => accumulator + currentValue,
+    let total = array.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
       0
     )
- 
- 
-    dispatch({ type: "SET_NUM", numInCart: total })
-    
-  }, [checkout.lineItems.length])
-    return (
-      <>
- 
-        {/* <ContextProvider> */}
-          <GlobalStyle />
-          <StyledBGImage>
-            <Overlay></Overlay>
-          </StyledBGImage>
 
-          <Main>{children}</Main>
-          <Footer />
-          <Header />
-        {/* </ContextProvider> */}
-      </>
-    )
-  
+    dispatch({ type: "SET_NUM", numInCart: total })
+  }, [checkout.lineItems.length])
+  return (
+    <>
+      <GlobalStyle />
+      <StyledBGImage>
+        <Overlay></Overlay>
+      </StyledBGImage>
+
+      <Main>{children}</Main>
+      <Footer />
+      <Header />
+    </>
+  )
 }
 
 Layout.propTypes = {

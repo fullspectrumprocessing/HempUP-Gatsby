@@ -9,9 +9,6 @@ const SubscribeTitle = styled.h1`
   margin-top: 50px;
   max-width: 800px;
   text-align: center;  
-//font-size: 50px;
-//font-family: ${cssVars.LATO};
-//color: ${cssVars.txtBrwn};
 `
 const SubscriptionMessage = styled.h3`
   font-size: 30px;

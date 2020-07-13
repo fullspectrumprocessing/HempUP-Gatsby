@@ -1,26 +1,19 @@
 import React, { useState, useEffect } from "react"
 import Client from "shopify-buy"
-
 import Context from "../context/globalcontext"
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()
-
-// new sec--------------------------------------------
 
 // inital state
 const initialState = {
   isCart: false,
   bestFriends: {},
   numInCart: 0,
-
 }
 
 // reducer function takes in state and action and updates global state
 function reducer(state, action) {
-  // if action type is SET_PAGE , set state to action.page
-
   if (action.type === "SET_CART") {
-  
     return {
       ...state,
       isCart: action.isCart,
@@ -30,17 +23,10 @@ function reducer(state, action) {
       ...state,
       numInCart: action.numInCart,
     }
-  } else if (action.type === "SET_FRIEND") {
-    return {
-      ...state,
-      bestFriends: action.bestFriends,
-    }
-  }else {
+  } else {
     throw new Error("bad action type")
   }
 }
-
-
 
 const client = Client.buildClient({
   storefrontAccessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
@@ -48,9 +34,8 @@ const client = Client.buildClient({
 })
 
 const ContextProvider = ({ children }) => {
-  // new______________________________
   const [state, dispatch] = React.useReducer(reducer, initialState)
-  // _----------------------------------
+
   let initialStoreState = {
     client,
     adding: false,
@@ -108,7 +93,7 @@ const ContextProvider = ({ children }) => {
 
   return (
     <GlobalStateContext.Provider value={state}>
-       <GlobalDispatchContext.Provider value={dispatch}>
+      <GlobalDispatchContext.Provider value={dispatch}>
         <Context.Provider
           value={{
             store,
@@ -119,7 +104,6 @@ const ContextProvider = ({ children }) => {
               }
 
               updateStore(prevState => {
-                console.log(prevState, "prev sate")
                 return { ...prevState, adding: true }
               })
 
@@ -162,11 +146,9 @@ const ContextProvider = ({ children }) => {
             },
           }}
         >
-         
           {children}
-         
         </Context.Provider>
-        </GlobalDispatchContext.Provider>
+      </GlobalDispatchContext.Provider>
     </GlobalStateContext.Provider>
   )
 }

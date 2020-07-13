@@ -58,7 +58,6 @@ export default props => {
   }
   return (
     <>
-      {console.log(props, "products")}
       {fadeNSlide(
         <StoreHeader>
           <StoreTitle>{props.page ? props.page : "All Items"}</StoreTitle>

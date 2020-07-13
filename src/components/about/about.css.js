@@ -2,7 +2,6 @@ import styled from "styled-components"
 import cssVars from "../../theme/_variables.js"
 import { animated } from "react-spring"
 
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,14 +11,12 @@ export const Wrapper = styled.div`
     margin: 0px;
     width: 100%;
     padding: 0px !important;
-  
   }
 `
 
 export const H3 = styled.h3`
   font-size: 40px;
   color: ghostwhite;
-  //! WHat is CBD section
 `
 export const WhatRow = styled.div`
   width: 100%;
@@ -42,13 +39,7 @@ export const WhatIsFront = styled.div`
   color: ${cssVars.txtBrwnDrk};
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-  // &:hover {
-  //   box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-  // }
-  // @media (max-width: 934px) {
-  //   width: 80%;
-  //   margin: 0 auto;
-  // }
+
   @media (max-width: 750px) {
     margin: 0 auto;
   }
@@ -56,11 +47,8 @@ export const WhatIsFront = styled.div`
     width: 300px;
     height: 440px;
   }
-  
 `
 export const WhatIsCbd = styled.div`
-  // width: 500px;
-  // height: 410px;
   width: 50%;
   padding: 5px;
   margin: 10px;
@@ -87,38 +75,27 @@ export const WhatIsTitle = styled.h2`
   font-style: normal;
   width: 100%;
   margin-top: 120px;
-  // margin-left: 50px;
+
   text-shadow: 1px 1px 5px #396f6f80;
-  @media (max-width: 934px) {
-  }
-  @media (max-width: 750px) {
-  }
-  @media (max-width: 800px) {
-  } 
+
   @media (max-width: 520px) {
     width: 300px;
     font-size: 55px;
   }
-
 `
 
 export const WhatIsTextWrap = styled.div`
   text-align: left;
   width: 500px;
   height: 410px;
-  // margin: 20px 0px 20px 0px;
+
   background: ${cssVars.bckgrndBeige};
   font-family: ${cssVars.Objktv};
   padding: 40px;
   color: ${cssVars.txtBrwnDrk};
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-  &:hover {
-    // box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-  }
-  @media (max-width: 800px) {
-    // text-align: center;
-  }
+
   @media (max-width: 520px) {
     width: 300px;
     font-size: 13px;
@@ -175,11 +152,8 @@ export const WhoIsFront = styled.div`
   color: ${cssVars.txtBrwnDrk};
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-  &:hover {
-    // box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-  }
+
   @media (max-width: 934px) {
- 
   }
   @media (max-width: 750px) {
     margin: 0 auto;
@@ -189,49 +163,35 @@ export const WhoIsFront = styled.div`
   }
 `
 export const WhoWeAreTitle = styled.h2`
-font-size: 75px;
-color: ${cssVars.txtGrn};
-font-family: ${cssVars.POSDI};
-font-style: normal;
-width: 100%;
-margin-top: 120px;
-text-shadow: 1px 1px 5px #396f6f80;
-@media (max-width: 934px) {
- 
-}
-@media (max-width: 750px) {
+  font-size: 75px;
+  color: ${cssVars.txtGrn};
+  font-family: ${cssVars.POSDI};
+  font-style: normal;
+  width: 100%;
+  margin-top: 120px;
+  text-shadow: 1px 1px 5px #396f6f80;
 
-}
-@media (max-width: 800px) {
-
-}
-@media (max-width: 520px) {
-  width: 300px;
-  font-size: 55px;
-}
-
+  @media (max-width: 520px) {
+    width: 300px;
+    font-size: 55px;
+  }
 `
 export const WhoTextWrap = styled.div`
-text-align: left;
-width: 500px;
-height: 410px;
-background: ${cssVars.bckgrndBeige};
-font-family: ${cssVars.Objktv};
-padding: 60px;
-color: ${cssVars.txtBrwnDrk};
-border: 1px ghostwhite solid;
-box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-// &:hover {
-//   box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-// }
-@media (max-width: 800px) {
-  // text-align: center;
-}
-@media (max-width: 520px) {
-  width: 300px;
-  font-size: 13px;
-  padding: 45px;
-}
+  text-align: left;
+  width: 500px;
+  height: 410px;
+  background: ${cssVars.bckgrndBeige};
+  font-family: ${cssVars.Objktv};
+  padding: 60px;
+  color: ${cssVars.txtBrwnDrk};
+  border: 1px ghostwhite solid;
+  box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+
+  @media (max-width: 520px) {
+    width: 300px;
+    font-size: 13px;
+    padding: 45px;
+  }
 `
 
 export const WhoImgDiv = styled.div`
@@ -263,18 +223,10 @@ export const WhyFront = styled.div`
   color: ${cssVars.txtBrwnDrk};
   border: 1px ghostwhite solid;
   box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-  &:hover {
-    // box-shadow: 1px 1px 15px ${cssVars.txtGrn};
-  }
-  @media (max-width: 934px) {
 
-  }
-  @media (max-width: 750px) {
-
-  }
   @media (max-width: 520px) {
     width: 300px;
-      height: 430px;
+    height: 430px;
   }
 `
 export const WhyUs = styled.div`
@@ -294,44 +246,36 @@ export const WhyUs = styled.div`
   }
 `
 export const WhyUsTitle = styled.h2`
-font-size: 75px;
-color: ${cssVars.txtGrn};
-font-family: ${cssVars.POSDI};
-font-style: normal;
-width: 100%;
-margin-top: 120px;
-text-shadow: 1px 1px 5px #396f6f80;
-@media (max-width: 934px) {
- 
-}
-@media (max-width: 750px) {
+  font-size: 75px;
+  color: ${cssVars.txtGrn};
+  font-family: ${cssVars.POSDI};
+  font-style: normal;
+  width: 100%;
+  margin-top: 120px;
+  text-shadow: 1px 1px 5px #396f6f80;
 
-}
-@media (max-width: 800px) {
-}
-@media (max-width: 520px) {
-  width: 300px;
-  font-size: 55px;
-}
+  @media (max-width: 520px) {
+    width: 300px;
+    font-size: 55px;
+  }
 `
 
 export const WhyTextWrap = styled.div`
-text-align: left;
-width: 500px;
-height: 410px;
-background: ${cssVars.bckgrndBeige};
-font-family: ${cssVars.Objktv};
-padding: 50px;
-color: ${cssVars.txtBrwnDrk};
-border: 1px ghostwhite solid;
-box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
-@media (max-width: 520px) {
-  width: 300px;
-  font-size: 13px;
-  padding: 35px;
-  height: 430px;
-}
-
+  text-align: left;
+  width: 500px;
+  height: 410px;
+  background: ${cssVars.bckgrndBeige};
+  font-family: ${cssVars.Objktv};
+  padding: 50px;
+  color: ${cssVars.txtBrwnDrk};
+  border: 1px ghostwhite solid;
+  box-shadow: 1px 2px 10px ${cssVars.txtBrwnDrk};
+  @media (max-width: 520px) {
+    width: 300px;
+    font-size: 13px;
+    padding: 35px;
+    height: 430px;
+  }
 `
 
 export const WhyImgDiv = styled.div`
@@ -394,52 +338,3 @@ export const AnimateShop = styled(animated.div)`
   will-change: transform;
   height: 200px;
 `
-
-// export const fluidImageAboutGrid = graphql`
-//   fragment fluidImageAboutGrid on File {
-//     childImageSharp {
-//       fluid(maxWidth: 1920) {
-//         ...GatsbyImageSharpFluid
-//       }
-//     }
-//   }
-// `
-
-// export const Data = () => {
-//   const aboutImages = useStaticQuery(
-//     graphql`
-//       query AboutImageQuery {
-//         cbdFormula: file(relativePath: { eq: "cbdChem.jpg" }) {
-//           ...fluidImageAboutGrid
-//         }
-//         cbdHealth: file(relativePath: { eq: "cbdHealth.jpg" }) {
-//           ...fluidImageAboutGrid
-//         }
-//         cbdProducts: file(relativePath: { eq: "cbdProducts.jpg" }) {
-//           ...fluidImageAboutGrid
-//         }
-//       }
-//     `
-//   )
-//   return aboutImages
-// }
-
-// export const Formula = () => {
-//   const aboutImages = Data()
-//   return (
-//     <Img
-//       fluid={aboutImages.cbdFormula.childImageSharp.fluid}
-//       alt="CBD Chemical Formula"
-//     />
-//   )
-// }
-
-// export const Health = () => {
-//   const aboutImages = Data()
-//   return <Img fluid={aboutImages.cbdHealth.childImageSharp.fluid} />
-// }
-
-// export const Products = () => {
-//   const aboutImages = Data()
-//   return <Img fluid={aboutImages.cbdProducts.childImageSharp.fluid} />
-// }
