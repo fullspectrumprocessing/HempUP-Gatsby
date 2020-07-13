@@ -1,20 +1,8 @@
 import React from 'react'
-import PropsType from 'prop-types'
-import { useStaticQuery,  graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
-/*
-
-TODO: AddToCartButton recieves:
- - 'id' (the main product id)
- - variants.id
- - quantity
- and adds them to the cart data
-*/
 
 const AddToCartButton = styled.button`
-  // width: 150px;
-  // width: 75px;
   display: inline-block;
   height: 40px;
   border-radius: 12px;
@@ -24,15 +12,6 @@ const AddToCartButton = styled.button`
   margin:8px 4px 0px 4px;
   &:hover {
     background-color: white;
-  }
-
-
-  @media only screen and (min-width: 800px) {
-    // width: 170px;
-    // width: 100px;
-    // height: 50px;
-    // display: inline-block;
-    // margin-top: 0;
   }
 `
 

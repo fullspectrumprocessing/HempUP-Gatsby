@@ -41,14 +41,8 @@ const CartPage = ({ data }) => {
       setModal(true)
     }
 
-    console.log(openModal, ":modal status")
   }, [])
 
-  // const closeModal = () => {
-  //   setModal(false)
-  //   sessionStorage.setItem("modalStatus", "closed")
-  //   console.log(openModal, "modal status close buttn")
-  // }
 
   return (
     <>
@@ -60,13 +54,6 @@ const CartPage = ({ data }) => {
           </CartHeader>,
           500
         )}
-        {/* <Modal
-          open={openModal}
-          toggle={closeModal}
-        
-        >
-        We are unable to process online payments right now, please check back with us shortly.
-        </Modal> */}
         <Cart products={data.allShopifyProduct.edges}/>
       </Layout>
     </>

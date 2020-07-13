@@ -4,35 +4,6 @@ import cssVars from './_variables'
 const GlobalStyle = createGlobalStyle`
     @import url(https://use.typekit.net/fdo4rws.css);
 
-
-    // @font-face {
-    //   font-family: 'poynter-oldstyle-display';
-    //   font-style: normal;
-    //   font-weight: 400;
-    //   src: url(https://use.typekit.net/fdo4rws.css);
-    //   font-display: swap;
-    // }
-    // @font-face {
-    //   font-family: 'Hind';
-    //   font-style: normal;
-    //   font-weight: 400;
-    //   src: url(https://use.typekit.net/fdo4rws.css);
-    //   font-display: swap;
-    // }
-    // @font-face {
-    //   font-family: 'lato';
-    //   font-style: normal;
-    //   font-weight: 400;
-    //   src: url(https://use.typekit.net/fdo4rws.css);
-    //   font-display: swap;
-    // }
-    // @font-face {
-    //   font-family: 'objektiv-mk1';
-    //   font-style: normal;
-    //   font-weight: 400;
-    //   src: url(https://use.typekit.net/fdo4rws.css);
-    //   font-display: swap;
-    // }
     
     a {
       text-decoration: none !important;

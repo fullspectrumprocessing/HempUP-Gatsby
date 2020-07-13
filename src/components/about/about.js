@@ -22,12 +22,6 @@ import {
   H3,
   Wrapper,
   AnimateShop,
-  // WhyImgDiv,
-  // WhatImgDiv,
-  // WhoImgDiv,
-  // Formula,
-  // Health,
-  // Products,
 } from "./about.css"
 import { Link } from "gatsby"
 import { useSpring } from "react-spring"
@@ -147,8 +141,6 @@ const AboutUsComp = () => {
                 you high or give you the effects you’d usually get from smoking
                 cannabis, but it does have various beneficial uses.
               </WhatIsTextWrap>
-
-              {/* <WhatImgDiv>IMAGES</WhatImgDiv> */}
             </ReactCardFlip>
           </WhatIsCbd>
         </WhatRow>
@@ -201,9 +193,6 @@ const AboutUsComp = () => {
               </WhyTextWrap>
             </ReactCardFlip>
           </WhyUs>
-          {/* <WhyImgDiv>
-            <Products />
-          </WhyImgDiv> */}
         </WhyRow>
         <ContactUs>
           <Link to="/contactus">

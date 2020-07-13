@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext, useCallback } from "react"
-// import PropTypes from "prop-types"
 import styled from "styled-components"
-// import Img from "gatsby-image"
 import { Container, Row, FormGroup, Label, Input } from "reactstrap"
 import AddToCartButton from "../../components/store/AddToCartButton"
 import { formatPrice } from "../../utils/stringFormatHelpers"
@@ -32,12 +30,12 @@ const ButtonContainer = styled.div`
 `
 
 const StyledInput = styled(Input)`
-width: 70px !important;
-margin: 0 auto;
+  width: 70px !important;
+  margin: 0 auto;
 `
 
 const ProductForm = ({ product }) => {
-//  set up global state and dispatch
+  //  set up global state and dispatch
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
 
@@ -69,7 +67,6 @@ const ProductForm = ({ product }) => {
   const handleQuantityChange = evt => {
     const isDigit = evt.target.value.match(/\d/g, "") && evt.target.value < 21 //number
     isDigit && setQuantity(evt.target.value)
-    
   }
 
   //! getting product data based on it title
@@ -82,15 +79,12 @@ const ProductForm = ({ product }) => {
   }
 
   //! this handles the add to cart submission
-  // TODO: Create Store Context for shopping cart
   const handleAddToCart = () => {
- 
     addVariantToCart(productVariant.shopifyId, quantity)
-  
- 
-    dispatch({ type: "SET_NUM", numInCart: state.numInCart += parseInt(quantity) })
-    dispatch({ type: "SET_FRIEND", bestFriends: "dog" })
-
+    dispatch({
+      type: "SET_NUM",
+      numInCart: (state.numInCart += parseInt(quantity)),
+    })
   }
 
   //!Handling product variant availability
@@ -113,14 +107,11 @@ const ProductForm = ({ product }) => {
 
   // ! checking for product availability on mount
   useEffect(() => {
-
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
 
-
   return (
     <StyledContainer>
-   
       <Row>
         <StyledFormGroup>
           <Label for="exampleNumber">Select Quantity:</Label>
@@ -131,8 +122,6 @@ const ProductForm = ({ product }) => {
             name="quantity"
             id="quantitySelect"
             min="1"
-           
-            // step="1"
           />
         </StyledFormGroup>
         {product.variants && product.variants.length > 1 && (
@@ -162,7 +151,6 @@ const ProductForm = ({ product }) => {
         <AddToCartButton
           handleAddToCart={handleAddToCart}
           disabled={!available || adding}
-         
         />
       </ButtonContainer>
     </StyledContainer>

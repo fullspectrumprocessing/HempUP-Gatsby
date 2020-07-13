@@ -13,21 +13,6 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-// export const Image = () => {
-//   const data = useStaticQuery(graphql`
-//     query {
-//       placeholderImage: file(relativePath: { eq: "hempUpLogo.png" }) {
-//         childImageSharp {
-//           fixed(width: 100, height: 100) {
-//             ...GatsbyImageSharpFixed
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   return <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-// }
 
 export const BagImage = () => {
   const data = useStaticQuery(graphql`

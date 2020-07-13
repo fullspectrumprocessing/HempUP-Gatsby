@@ -1,5 +1,5 @@
 import React from "react"
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
+import { Parallax } from "react-spring/renderprops-addons"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import GlobalStyle from "../../theme/globalStyle"
@@ -128,32 +128,9 @@ const SideDrawer = props => {
             )}
 
             <Li>
-              {/* <NavTitle onClick={props.expandAboutList}>about us</NavTitle> */}
               <NavTitleLink to="/about">about</NavTitleLink>
             </Li>
-            {/* {!!props.expandedAbout && (
-              <ExpandedMenuDiv>
-                <Ul>
-                  <Li> Who We Are?</Li>
-                  <Li> Why Us?</Li>
-                  <Li> Why CBD?</Li>
-                  <Li> Join Us</Li>
-                </Ul>
-              </ExpandedMenuDiv>
-            )} */}
-            {/* <Li>
-              <NavTitle onClick={props.expandNewsList}>news</NavTitle>
-            </Li> */}
-            {/* {!!props.expandedNews && (
-              <ExpandedMenuDiv>
-                <Ul>
-                  <Li>News</Li>
-                  <Li>News</Li>
-                  <Li>News</Li>
-
-                </Ul>
-              </ExpandedMenuDiv>
-            )} */}
+ 
             <Li>
               <NavTitleLink to="/faqs">FAQs</NavTitleLink>
             </Li>

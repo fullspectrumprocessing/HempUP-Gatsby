@@ -23,10 +23,5 @@ module.exports = {
   manifestThemeColor: "#666",
   manifestDisplay: "standalone",
 
-  //   // social
-  //   authorSocialLinks: [
-  //     { name: "github", url: "https://github.com/fullspectrumprocessing" },
-  //     // { name: "twitter", url: "https://twitter.com/hempup" },
-  //     // { name: "facebook", url: "https://www.facebook.com/hempup/" },
-  //   ],
+
 }

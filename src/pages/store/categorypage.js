@@ -30,7 +30,6 @@ const ProductHeader = styled.div`
   }
 `
 const StyledContainer = styled.div`
-  /* background: rgba(255,255,255, 0.7); */
   margin-left: 0px !important;
   margin-right: 0px !important;
   width: 100% !important;
@@ -41,7 +40,6 @@ const StyledContainer = styled.div`
 `
 const ProducTypePage = props => {
   const { data } = props
-  console.log("PRO TYPE", data.allShopifyProduct.edges[0].node.productType)
   return (
     <Layout>
       <SEO
@@ -50,7 +48,6 @@ const ProducTypePage = props => {
       />
       <StyledContainer>
         <PageHeader>
-          {/* {data.allShopifyProduct.edges[0].node.productType} */}
         </PageHeader>
         <ProductGrid
           products={data.allShopifyProduct.edges}

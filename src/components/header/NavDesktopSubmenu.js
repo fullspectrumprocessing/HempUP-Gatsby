@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-// import Slide from 'react-reveal/Slide';
 import { navigationMap } from "../navigationMap"
 import cssVars from "../../theme/_variables"
 import GlobalStyle from "../../theme/globalStyle"
@@ -33,7 +32,6 @@ const SubMenu = styled.div`
 `
 
 const SubMenuLinkGen = ({ item }) => {
-  console.log("item", item)
   // Usestate React hook,
   const [menuSelected, setMenuSelected] = useState("")
 

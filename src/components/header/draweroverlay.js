@@ -1,11 +1,11 @@
 import React from "react"
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const DrawerOverlay = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  margin-top: 4.30em;
+  margin-top: 4.3em;
   top: 0;
   left: 0;
   background: linear-gradient(
@@ -14,14 +14,9 @@ const DrawerOverlay = styled.div`
   );
   z-index: -2;
 
-
   @media (min-width: 769px) {
-      display: none;
+    display: none;
   }
 `
 
-
-export default (props) => (
-  <DrawerOverlay onClick={props.click} />
-
-)
+export default props => <DrawerOverlay onClick={props.click} />

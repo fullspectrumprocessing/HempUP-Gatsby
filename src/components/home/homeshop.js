@@ -97,11 +97,6 @@ const HomeShop = () => {
     }
   })
 
-  // add to cart
-  const handleAddToCart = node => {
-    console.log("TODO: ProductGridItem handleAddToCart", node)
-  }
-
   return (
     <>
       <H2>Our Most Popular Products</H2>
@@ -129,7 +124,7 @@ const HomeShop = () => {
           >
             {/* first card------------------------------ */}
             <Card>
-              {console.log(data)}
+    
               <Link
                 to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}
               >
@@ -146,12 +141,6 @@ const HomeShop = () => {
                   <Price>
                     ${data.allShopifyProduct.edges[8].node.variants[0].price}
                   </Price>
-                  {/* buttons section */}
-                  {/* <AddToCartButton
-                  handleAddToCart={() => {
-                    handleAddToCart(data.allShopifyProduct.edges[8].node)
-                  }}
-                /> */}
 
                   <Link
                     to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}
@@ -180,18 +169,7 @@ const HomeShop = () => {
                     ${data.allShopifyProduct.edges[6].node.variants[0].price}
                   </Price>
 
-                  {/* buttons section */}
-                  {/* <AddToCartButton
-                  handleAddToCart={() => {
-                    handleAddToCart(data.allShopifyProduct.edges[6].node)
-                  }}
-                /> */}
-
-                  {/* <Link
-                  to={`/store/product/${data.allShopifyProduct.edges[6].node.handle}/`}
-                > */}
                   <ViewDetailsButton />
-                  {/* </Link> */}
                 </ContentWrap>
               </Link>
             </Card>
@@ -214,18 +192,7 @@ const HomeShop = () => {
                     ${data.allShopifyProduct.edges[2].node.variants[0].price}
                   </Price>
 
-                  {/* buttons section */}
-                  {/* <AddToCartButton
-                  handleAddToCart={() => {
-                    handleAddToCart(data.allShopifyProduct.edges[2].node)
-                  }}
-                /> */}
-
-                  {/* <Link
-                  to={`/store/product/${data.allShopifyProduct.edges[2].node.handle}/`}
-                > */}
                   <ViewDetailsButton />
-                  {/* </Link> */}
                 </ContentWrap>
               </Link>
             </Card>
@@ -247,13 +214,6 @@ const HomeShop = () => {
                   <Price>
                     ${data.allShopifyProduct.edges[4].node.variants[0].price}
                   </Price>
-
-                  {/* buttons section */}
-                  {/* <AddToCartButton
-                  handleAddToCart={() => {
-                    handleAddToCart(data.allShopifyProduct.edges[4].node)
-                  }}
-                /> */}
 
                   <Link
                     to={`/store/product/${data.allShopifyProduct.edges[4].node.handle}/`}
@@ -282,18 +242,7 @@ const HomeShop = () => {
                     ${data.allShopifyProduct.edges[5].node.variants[0].price}
                   </Price>
 
-                  {/* buttons section */}
-                  {/* <AddToCartButton
-                  handleAddToCart={() => {
-                    handleAddToCart(data.allShopifyProduct.edges[5].node)
-                  }}
-                /> */}
-
-                  {/* <Link
-                  to={`/store/product/${data.allShopifyProduct.edges[5].node.handle}/`}
-                > */}
                   <ViewDetailsButton />
-                  {/* </Link> */}
                 </ContentWrap>
               </Link>
             </Card>

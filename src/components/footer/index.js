@@ -42,10 +42,10 @@ const Footer = () => {
     e.preventDefault()
 
     if (info) {
-      console.log(info, "this is state")
+
       // if state has info send email to Mailchimp
       addToMailChimp(info.email).then(({msg, result}) => {
-        console.log(msg, result, "data from mailchimp")
+   
       })
       //if state is populated send data to netlify
       fetch("/", {
@@ -123,7 +123,6 @@ const Footer = () => {
             >
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="subscribe" />
-              {/* <label>Email Address:</label> */}
               <Input
                 name="email"
                 type="email"
