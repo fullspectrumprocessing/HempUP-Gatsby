@@ -124,7 +124,6 @@ const HomeShop = () => {
           >
             {/* first card------------------------------ */}
             <Card>
-    
               <Link
                 to={`/store/product/${data.allShopifyProduct.edges[8].node.handle}/`}
               >

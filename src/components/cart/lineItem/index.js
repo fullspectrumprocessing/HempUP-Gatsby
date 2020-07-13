@@ -17,9 +17,9 @@ import { GlobalStateContext } from "../../../provider/ContextProvider"
 const LineItem = props => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-  console.log(props, "PROPS")
+
   const { line_item, product } = props
-  console.log(product, "PRODUCT")
+
   const [title, setTitle] = useState("")
 
   const {
@@ -33,8 +33,7 @@ const LineItem = props => {
     let arr = product.products
     let name = ""
     for (let i = 0; i < arr.length; i++) {
-      console.log(arr[i].node.title)
-      console.log(line_item.title)
+   
       if (arr[i].node.title === line_item.title) {
         name = arr[i].node.handle
         setTitle(name)
@@ -66,8 +65,7 @@ const LineItem = props => {
 
   const handleRemove = () => {
     removeLineItem(client, checkout.id, line_item.id)
-    console.log(line_item, "lineItem---")
-    console.log(checkout, "CHECKOUT")
+
 
     dispatch({
       type: "SET_NUM",
